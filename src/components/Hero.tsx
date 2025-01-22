@@ -743,20 +743,4 @@ export default function Hero() {
       </AnimatePresence>
     </div>
   )
-}
-
-// Add keyframes for the pulse animation
-const style = document.createElement('style')
-style.textContent = `
-  @keyframes pulse {
-    0%, 100% {
-      transform: scale(1);
-      opacity: 0.1;
-    }
-    50% {
-      transform: scale(2);
-      opacity: 0.3;
-    }
-  }
-`
-document.head.appendChild(style) 
+} 
