@@ -10,11 +10,16 @@
   },
   "dependencies": {
     "@heroicons/react": "^2.2.0",
+    "@react-three/drei": "^9.121.2",
+    "@react-three/fiber": "^8.17.12",
+    "@types/three": "^0.172.0",
     "framer-motion": "^11.18.0",
+    "gsap": "^3.12.7",
     "next": "15.1.4",
-    "react": "^19.0.0",
-    "react-dom": "^19.0.0",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
     "react-tsparticles": "^2.9.3",
+    "three": "^0.172.0",
     "tsparticles-engine": "^2.9.3",
     "tsparticles-slim": "^2.9.3"
   },

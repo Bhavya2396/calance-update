@@ -34,13 +34,31 @@ import {
   SparklesIcon,
   ScaleIcon,
   HeartIcon,
-  BanknotesIcon
+  BanknotesIcon,
+  BoltIcon,
+  PuzzlePieceIcon,
+  CubeIcon,
+  PlusCircleIcon,
+  CpuChipIcon
 } from '@heroicons/react/24/solid'
 import { useRef, useState, useEffect } from 'react'
 import Image from 'next/image'
 import ParticleBackground from '@/components/ParticleBackground'
 import GlowingButton from '@/components/GlowingButton'
 import TechStackIllustration from '@/components/TechStackIllustration'
+import BrainCircuit from '@/components/BrainCircuit'
+import Hero from '@/components/Hero'
+
+// Add these type definitions at the top
+type SolutionType = 'Custom Development' | 'Cloud Migration' | 'Security Implementation' | 'Data Analytics'
+type ProjectScale = 'Small (1-3 months)' | 'Medium (3-6 months)' | 'Large (6-12 months)' | 'Enterprise (12+ months)'
+
+interface AdditionalService {
+  name: string
+  price: string
+  icon: React.ReactNode
+  percentage: number
+}
 
 const steps = [
   {
@@ -538,6 +556,74 @@ const blogPosts = [
 ];
 
 export default function Home() {
+  // Add state management
+  const [selectedSolution, setSelectedSolution] = useState<SolutionType | null>(null)
+  const [selectedScale, setSelectedScale] = useState<ProjectScale | null>(null)
+  const [selectedServices, setSelectedServices] = useState<Set<string>>(new Set())
+
+  // Base prices for different solution types
+  const solutionBasePrices: Record<SolutionType, number> = {
+    'Custom Development': 100000,
+    'Cloud Migration': 80000,
+    'Security Implementation': 120000,
+    'Data Analytics': 90000
+  }
+
+  // Scale multipliers
+  const scaleMultipliers: Record<ProjectScale, number> = {
+    'Small (1-3 months)': 1,
+    'Medium (3-6 months)': 2.5,
+    'Large (6-12 months)': 5,
+    'Enterprise (12+ months)': 10
+  }
+
+  // Additional services configuration
+  const additionalServices: AdditionalService[] = [
+    { name: '24/7 Support', price: '+15%', icon: <PhoneIcon className="w-4 h-4" />, percentage: 15 },
+    { name: 'DevOps Integration', price: '+20%', icon: <CpuChipIcon className="w-4 h-4" />, percentage: 20 },
+    { name: 'AI/ML Implementation', price: '+25%', icon: <CommandLineIcon className="w-4 h-4" />, percentage: 25 },
+    { name: 'Security Hardening', price: '+15%', icon: <ShieldCheckIcon className="w-4 h-4" />, percentage: 15 }
+  ]
+
+  // Calculate base price
+  const baseSolutionPrice = selectedSolution ? solutionBasePrices[selectedSolution] : 0
+  const scaleMultiplier = selectedScale ? scaleMultipliers[selectedScale] : 0
+  const scaledBasePrice = baseSolutionPrice * scaleMultiplier
+
+  // Calculate additional services cost
+  const additionalServicesTotal = additionalServices.reduce((total, service) => {
+    if (selectedServices.has(service.name)) {
+      return total + (scaledBasePrice * (service.percentage / 100))
+    }
+    return total
+  }, 0)
+
+  // Calculate optimization discount (10% if more than 2 services selected)
+  const optimizationDiscount = selectedServices.size >= 2 ? (scaledBasePrice + additionalServicesTotal) * 0.1 : 0
+
+  // Calculate total
+  const totalEstimate = scaledBasePrice + additionalServicesTotal - optimizationDiscount
+
+  // Format currency
+  const formatCurrency = (amount: number) => {
+    return new Intl.NumberFormat('en-US', {
+      style: 'currency',
+      currency: 'USD',
+      maximumFractionDigits: 0
+    }).format(amount)
+  }
+
+  // Handle service toggle
+  const toggleService = (serviceName: string) => {
+    const newServices = new Set(selectedServices)
+    if (newServices.has(serviceName)) {
+      newServices.delete(serviceName)
+    } else {
+      newServices.add(serviceName)
+    }
+    setSelectedServices(newServices)
+  }
+
   const [currentCase, setCurrentCase] = useState(0);
   const targetRef = useRef<HTMLDivElement>(null);
   const { scrollYProgress } = useScroll({
@@ -549,212 +635,9 @@ export default function Home() {
   const scale = useTransform(scrollYProgress, [0, 0.5], [0.8, 1]);
 
   return (
-    <main className="min-h-screen bg-[#0A1628]">
+    <main className="bg-[#0A1628] text-white min-h-screen">
+      <Hero />
       {/* Main Content Sections */}
-      {/* Hero Section */}
-      <section id="intro" className="relative overflow-hidden bg-[#0A1628] pt-16 pb-12 sm:pt-20 sm:pb-16">
-        <ParticleBackground />
-        
-        <div className="relative z-10 mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 items-center">
-            {/* Left Column - Main Content */}
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.8 }}
-              className="text-left space-y-6"
-            >
-              <div className="space-y-4">
-                <motion.h1 
-                  className="text-4xl lg:text-5xl font-bold"
-                  initial={{ opacity: 0, y: 20 }}
-                  animate={{ opacity: 1, y: 0 }}
-                  transition={{ delay: 0.3 }}
-                >
-                  <span className="text-white">Building Tomorrow's</span>{' '}
-                  <span className="bg-gradient-to-r from-[#FF6B2C] to-[#3B82F6] bg-clip-text text-transparent">
-                    Digital Foundation
-                  </span>
-                </motion.h1>
-
-                <motion.p 
-                  className="text-lg text-gray-400 max-w-xl"
-                  initial={{ opacity: 0, y: 20 }}
-                  animate={{ opacity: 1, y: 0 }}
-                  transition={{ delay: 0.5 }}
-                >
-                  Transform your business with cutting-edge solutions tailored to your needs.
-                </motion.p>
-              </div>
-            </motion.div>
-
-            {/* Right Column - Interactive AI Dashboard */}
-                <motion.div
-              initial={{ opacity: 0, scale: 0.8 }}
-              animate={{ opacity: 1, scale: 1 }}
-              transition={{ duration: 1, delay: 0.5 }}
-              className="relative"
-            >
-              <div className="relative aspect-[16/9] bg-[#0F172A]/80 rounded-2xl border border-[#1A2B44] overflow-hidden backdrop-blur-sm p-6">
-                {/* Live Status Indicator */}
-                <div className="flex items-center gap-2 mb-6">
-                  <motion.div 
-                    className="w-2 h-2 rounded-full bg-[#10B981]"
-                    animate={{ scale: [1, 1.2, 1] }}
-                    transition={{ duration: 1.5, repeat: Infinity }}
-                  />
-                  <span className="text-sm text-white">AI Analysis Active</span>
-                </div>
-
-                {/* Main Grid */}
-                <div className="grid grid-cols-12 gap-6 h-full">
-                  {/* Left Side - Metrics & Insights */}
-                  <div className="col-span-5 space-y-4">
-                    <motion.div 
-                      className="bg-[#1A2B44]/50 rounded-xl p-4"
-                      initial={{ opacity: 0, x: -20 }}
-                      animate={{ opacity: 1, x: 0 }}
-                      transition={{ delay: 0.8 }}
-                    >
-                      <div className="flex items-center gap-2 mb-3">
-                        <SparklesIcon className="w-4 h-4 text-[#FF6B2C]" />
-                        <span className="text-sm text-white">Real-time Insights</span>
-                      </div>
-                      <div className="space-y-2">
-                        {[
-                          "Revenue growth trend detected",
-                          "Customer satisfaction improving",
-                          "Process optimization opportunity"
-                        ].map((insight, i) => (
-                          <motion.div
-                            key={insight}
-                            className="flex items-center gap-2 text-xs text-gray-400"
-                            initial={{ opacity: 0, x: -10 }}
-                            animate={{ opacity: 1, x: 0 }}
-                            transition={{ delay: 1 + (i * 0.2) }}
-                          >
-                            <CheckIcon className="w-3 h-3 text-[#10B981]" />
-                            {insight}
-                          </motion.div>
-                        ))}
-                      </div>
-                    </motion.div>
-
-                    {/* Data Processing Visualization */}
-                    <motion.div
-                      className="relative h-24 bg-[#1A2B44]/50 rounded-xl overflow-hidden"
-                      initial={{ opacity: 0 }}
-                      animate={{ opacity: 1 }}
-                      transition={{ delay: 1.2 }}
-                    >
-                      {[...Array(10)].map((_, i) => (
-                        <motion.div
-                          key={i}
-                          className="absolute h-0.5 bg-gradient-to-r from-[#FF6B2C] to-[#3B82F6]"
-                          style={{
-                            top: `${(i * 10) + Math.random() * 5}%`,
-                            left: 0,
-                            right: 0,
-                          }}
-                          animate={{
-                            scaleX: [0, 1],
-                            opacity: [0, 0.5, 0]
-                          }}
-                          transition={{
-                            duration: 2,
-                            repeat: Infinity,
-                            delay: i * 0.1
-                          }}
-                        />
-                      ))}
-                    </motion.div>
-                  </div>
-
-                  {/* Right Side - Network Visualization */}
-                  <div className="col-span-7 relative">
-                    <svg className="absolute inset-0">
-                      <defs>
-                        <linearGradient id="line-gradient" x1="0" y1="0" x2="1" y2="0">
-                          <stop offset="0%" stopColor="#FF6B2C" />
-                          <stop offset="100%" stopColor="#3B82F6" />
-                        </linearGradient>
-                      </defs>
-                      {[
-                        "M 20,20 L 80,30",
-                        "M 80,30 L 50,70",
-                        "M 50,70 L 85,80"
-                      ].map((path, i) => (
-                        <motion.path
-                          key={i}
-                          d={path}
-                          stroke="url(#line-gradient)"
-                          strokeWidth="1"
-                          fill="none"
-                          initial={{ pathLength: 0 }}
-                          animate={{ pathLength: 1 }}
-                          transition={{ delay: i * 0.5, duration: 1.5 }}
-                        />
-                      ))}
-                    </svg>
-
-                    {/* Interactive Nodes */}
-                    {[
-                      { x: 20, y: 20 },
-                      { x: 80, y: 30 },
-                      { x: 50, y: 70 }
-                    ].map((pos, i) => (
-                      <motion.div
-                        key={i}
-                        className="absolute w-3 h-3"
-                        style={{ left: `${pos.x}%`, top: `${pos.y}%` }}
-                        initial={{ scale: 0 }}
-                        animate={{ scale: 1 }}
-                        transition={{ delay: i * 0.3 }}
-                      >
-                        <motion.div
-                          className="w-full h-full rounded-full bg-gradient-to-r from-[#FF6B2C] to-[#3B82F6]"
-                          animate={{
-                            scale: [1, 1.2, 1],
-                            opacity: [0.5, 1, 0.5]
-                          }}
-                          transition={{
-                            duration: 2,
-                            repeat: Infinity,
-                            delay: i * 0.2
-                          }}
-                        />
-                      </motion.div>
-                    ))}
-                  </div>
-                </div>
-
-                {/* Bottom Stats */}
-                <div className="absolute bottom-0 left-0 right-0 p-4">
-                  <div className="grid grid-cols-3 gap-4">
-                    {[
-                      { label: "AI Models", value: "12" },
-                      { label: "Accuracy", value: "99.8%" },
-                      { label: "Processing", value: "Real-time" }
-                    ].map((stat, i) => (
-                      <motion.div
-                        key={stat.label}
-                        className="bg-[#1A2B44]/50 rounded-lg p-2 text-center"
-                        initial={{ opacity: 0, y: 10 }}
-                  animate={{ opacity: 1, y: 0 }}
-                        transition={{ delay: 1.5 + (i * 0.2) }}
-                      >
-                        <div className="text-sm font-bold text-white">{stat.value}</div>
-                        <div className="text-xs text-gray-400">{stat.label}</div>
-                      </motion.div>
-                    ))}
-                  </div>
-                </div>
-              </div>
-            </motion.div>
-          </div>
-        </div>
-      </section>
-
       {/* AI Services Section */}
       <section id="ai-services" className="py-24 bg-[#0A1628] relative overflow-hidden min-h-screen flex items-center">
         <div className="absolute inset-0">
@@ -955,67 +838,33 @@ export default function Home() {
               </div>
       </section>
 
-      {/* Technology Partners Section */}
-      <section className="py-24 bg-[#0A1628] relative overflow-hidden">
-        <div className="absolute inset-0">
-          <div className="absolute inset-0 bg-gradient-to-b from-[#0F2137] to-[#0A1628]" />
-        </div>
-
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative">
+      {/* Technology Partners */}
+      <section className="py-24 bg-[#0A1628]">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
-            <motion.div
-              className="inline-flex items-center gap-2 text-[#FF6B2C] mb-4"
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-            >
-              <StarIcon className="w-5 h-5" />
-              <span className="text-sm font-semibold uppercase tracking-wider">Technology Partners</span>
-            </motion.div>
-            <motion.h2 
-              className="text-4xl font-bold text-white mb-6"
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-            >
-              Powered by Industry Leaders
-            </motion.h2>
-            <motion.p 
-              className="text-gray-400 text-lg max-w-2xl mx-auto"
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-            >
-              We partner with leading technology providers to deliver cutting-edge solutions
-            </motion.p>
+            <div className="inline-flex items-center justify-center gap-2 px-4 py-2 rounded-full bg-[#1A2B44] text-[#FF6B2C] mb-6">
+              <LinkIcon className="w-5 h-5" />
+              <span className="text-sm font-medium">Trusted Partners</span>
+            </div>
+            <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">
+              Technology Partners
+            </h2>
+            <p className="text-gray-400 text-lg max-w-2xl mx-auto">
+              We collaborate with industry leaders to deliver cutting-edge solutions
+            </p>
           </div>
 
-          {/* Technology Partners Grid */}
           <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-8">
-            {technologyPartners.map((partner, index) => (
-            <motion.div
-                key={partner.name}
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ delay: index * 0.1 }}
-                className="flex flex-col items-center gap-4"
+            {Array(12).fill(null).map((_, i) => (
+              <motion.div
+                key={i}
+                className="bg-[#1A2B44]/50 backdrop-blur-sm rounded-xl border border-[#243B61] p-6 hover:border-[#FF6B2C]/50 transition-all duration-300 group"
+                whileHover={{ scale: 1.05 }}
               >
-                <div className="group relative w-full aspect-[3/2] bg-[#0F2137]/80 rounded-xl p-6 flex items-center justify-center overflow-hidden hover:bg-[#162942] transition-all duration-300">
-                  <div className="absolute inset-0 bg-gradient-to-br from-[#FF6B2C]/5 to-[#3B82F6]/5 opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
-                  <Image
-                    src={partner.logo}
-                    alt={partner.name}
-                    width={120}
-                    height={60}
-                    className="object-contain filter grayscale group-hover:grayscale-0 transition-all duration-300"
-                  />
+                <div className="aspect-[3/2] flex items-center justify-center">
+                  <span className="text-gray-400 group-hover:text-[#FF6B2C] transition-colors">Partner {i + 1}</span>
                 </div>
-                <div className="text-center">
-                  <div className="text-sm font-medium text-white">{partner.name}</div>
-                  <div className="text-xs text-gray-400">{partner.category}</div>
-                </div>
-            </motion.div>
+              </motion.div>
             ))}
           </div>
         </div>
@@ -2493,193 +2342,263 @@ export default function Home() {
                           </div>
       </section>
 
-      {/* 7. Contact Us */}
-            <section id="contact" className="py-32 bg-[#0A1628] relative overflow-hidden">
-              <div className="absolute inset-0">
-                <div className="absolute inset-0 bg-gradient-to-br from-[#FF6B2C]/5 to-[#3B82F6]/5" />
-                <div className="absolute inset-0 bg-[url('/images/noise.png')] opacity-5" />
-                <div className="absolute right-0 top-0 w-1/2 h-1/2 bg-[#FF6B2C]/5 rounded-full blur-[120px]" />
-                <div className="absolute left-0 bottom-0 w-1/2 h-1/2 bg-[#3B82F6]/5 rounded-full blur-[120px]" />
+      {/* Price Estimator Section */}
+      <section id="estimate" className="relative py-32 bg-[#0A1628] overflow-hidden">
+        <div className="absolute inset-0">
+          <div className="absolute inset-0 bg-gradient-to-br from-[#FF6B2C]/5 to-[#3B82F6]/5" />
+          <motion.div 
+            className="absolute inset-0"
+            animate={{ 
+              background: [
+                "radial-gradient(800px circle at 0% 0%, rgba(255, 107, 44, 0.1), transparent 50%)",
+                "radial-gradient(800px circle at 100% 100%, rgba(59, 130, 246, 0.1), transparent 50%)"
+              ]
+            }}
+            transition={{ duration: 20, repeat: Infinity }}
+          />
+        </div>
+        
+        <div className="relative max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center mb-16">
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.5 }}
+              className="space-y-4"
+            >
+              <div className="inline-flex items-center justify-center gap-2 px-4 py-2 rounded-full bg-[#1A2B44] text-[#FF6B2C] mb-4">
+                <CurrencyDollarIcon className="w-5 h-5" />
+                <span className="text-sm font-medium tracking-wide">Instant Pricing</span>
+              </div>
+              <h2 className="text-4xl md:text-5xl font-bold text-white mb-4">
+                Solution Price Estimator
+              </h2>
+              <p className="text-gray-400 text-lg max-w-2xl mx-auto">
+                Get an instant estimate for your custom solution. Adjust parameters to see real-time cost updates.
+              </p>
+            </motion.div>
+          </div>
+
+          <div className="grid lg:grid-cols-5 gap-8">
+            {/* Estimator Controls */}
+            <motion.div 
+              initial={{ opacity: 0, x: -20 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.5, delay: 0.2 }}
+              className="lg:col-span-3 bg-[#1A2B44]/50 backdrop-blur-sm rounded-3xl border border-[#243B61] p-8 space-y-8 hover:border-[#FF6B2C]/50 transition-colors shadow-xl hover:shadow-2xl hover:shadow-[#FF6B2C]/5"
+            >
+              <div>
+                <label className="block text-sm font-medium text-gray-300 mb-4 flex items-center">
+                  <div className="w-8 h-8 rounded-lg bg-[#FF6B2C]/10 flex items-center justify-center mr-3">
+                    <CodeBracketIcon className="w-5 h-5 text-[#FF6B2C]" />
+                  </div>
+                  Solution Type
+                </label>
+                <div className="grid grid-cols-2 gap-3">
+                  {Object.keys(solutionBasePrices).map((type) => (
+                    <motion.button
+                      key={type}
+                      whileHover={{ scale: 1.02 }}
+                      whileTap={{ scale: 0.98 }}
+                      onClick={() => setSelectedSolution(type as SolutionType)}
+                      className={`px-4 py-4 rounded-xl text-sm font-medium transition-all
+                        ${selectedSolution === type 
+                          ? 'bg-gradient-to-r from-[#FF6B2C] to-[#FF8F2C] border-transparent shadow-lg shadow-[#FF6B2C]/20' 
+                          : 'border border-[#243B61] hover:border-transparent'}
+                        text-white hover:shadow-lg hover:shadow-[#FF6B2C]/20
+                        relative overflow-hidden group`}
+                    >
+                      <span className="relative z-10">{type}</span>
+                      <div className="absolute inset-0 bg-gradient-to-r from-[#FF6B2C] to-[#FF8F2C] opacity-0 group-hover:opacity-100 transition-opacity" />
+                    </motion.button>
+                  ))}
+                </div>
               </div>
 
-              <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative">
-                <motion.div 
-                  className="text-center mb-16"
-                  initial={{ opacity: 0, y: 20 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  viewport={{ once: true }}
-                >
-                  <div className="inline-flex items-center justify-center gap-2 px-4 py-2 rounded-full bg-[#1A2B44] text-[#FF6B2C] mb-6">
-                    <EnvelopeIcon className="w-5 h-5" />
-                    <span className="text-sm font-medium tracking-wide">Get in Touch</span>
+              <div>
+                <label className="block text-sm font-medium text-gray-300 mb-4 flex items-center">
+                  <div className="w-8 h-8 rounded-lg bg-[#3B82F6]/10 flex items-center justify-center mr-3">
+                    <ChartBarIcon className="w-5 h-5 text-[#3B82F6]" />
                   </div>
-                  <h2 className="text-4xl md:text-5xl font-bold text-white mb-6">Let's Build Something Amazing Together</h2>
-                  <p className="text-xl text-gray-400 max-w-2xl mx-auto">
-                    Ready to transform your business? Reach out to us and discover how our expertise can drive your success.
-                  </p>
-                </motion.div>
+                  Project Scale
+                </label>
+                <div className="space-y-3">
+                  {Object.keys(scaleMultipliers).map((scale) => (
+                    <motion.button
+                      key={scale}
+                      whileHover={{ scale: 1.01 }}
+                      whileTap={{ scale: 0.99 }}
+                      onClick={() => setSelectedScale(scale as ProjectScale)}
+                      className={`w-full px-5 py-4 rounded-xl text-sm font-medium transition-all
+                        ${selectedScale === scale
+                          ? 'bg-gradient-to-r from-[#3B82F6] to-[#60A5FA] border-transparent shadow-lg shadow-[#3B82F6]/20'
+                          : 'border border-[#243B61] hover:border-transparent'}
+                        text-white hover:shadow-lg hover:shadow-[#3B82F6]/20
+                        flex items-center justify-between group`}
+                    >
+                      <span className="flex items-center">
+                        <span className={`w-2 h-2 rounded-full ${selectedScale === scale ? 'bg-white' : 'bg-[#3B82F6]'} mr-3 group-hover:bg-white`} />
+                        {scale}
+                      </span>
+                      <span className={`${selectedScale === scale ? 'text-white' : 'text-gray-400'} group-hover:text-white font-medium`}>
+                        {scale.includes('Small') ? '$20k - $50k' :
+                         scale.includes('Medium') ? '$50k - $150k' :
+                         scale.includes('Large') ? '$150k - $500k' :
+                         '$500k+'}
+                      </span>
+                    </motion.button>
+                  ))}
+                </div>
+              </div>
 
-                <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-start">
-                  {/* Left Column - Contact Form */}
-                  <motion.div
-                    className="bg-[#0F172A]/80 backdrop-blur-xl rounded-2xl p-10 border border-[#1A2B44] hover:border-[#FF6B2C]/20 transition-colors duration-300 shadow-xl"
-                    initial={{ opacity: 0, x: -20 }}
-                    whileInView={{ opacity: 1, x: 0 }}
-                    viewport={{ once: true }}
-                  >
-                    <form className="space-y-8">
-                      <div className="space-y-6">
-                        <div className="space-y-6">
-                          <div>
-                            <label htmlFor="name" className="block text-white font-medium mb-2 tracking-wide">Full Name</label>
-                            <div className="relative">
-                              <input 
-                                type="text" 
-                                id="name" 
-                                name="name" 
-                                placeholder="John Doe" 
-                                className="w-full p-4 rounded-xl bg-[#1A2B44]/50 text-white border border-[#1A2B44] focus:border-[#FF6B2C]/50 focus:ring-2 focus:ring-[#FF6B2C]/20 transition-all placeholder:text-gray-500"
-                              />
-                              <UserIcon className="absolute right-4 top-1/2 -translate-y-1/2 w-5 h-5 text-gray-500" />
-                            </div>
-                          </div>
-                          <div>
-                            <label htmlFor="email" className="block text-white font-medium mb-2 tracking-wide">Email Address</label>
-                            <div className="relative">
-                              <input 
-                                type="email" 
-                                id="email" 
-                                name="email" 
-                                placeholder="john@example.com" 
-                                className="w-full p-4 rounded-xl bg-[#1A2B44]/50 text-white border border-[#1A2B44] focus:border-[#FF6B2C]/50 focus:ring-2 focus:ring-[#FF6B2C]/20 transition-all placeholder:text-gray-500"
-                              />
-                              <EnvelopeIcon className="absolute right-4 top-1/2 -translate-y-1/2 w-5 h-5 text-gray-500" />
-                            </div>
-                          </div>
-                          <div>
-                            <label htmlFor="message" className="block text-white font-medium mb-2 tracking-wide">Your Message</label>
-                            <textarea 
-                              id="message" 
-                              name="message" 
-                              placeholder="Tell us about your project..." 
-                              rows={5} 
-                              className="w-full p-4 rounded-xl bg-[#1A2B44]/50 text-white border border-[#1A2B44] focus:border-[#FF6B2C]/50 focus:ring-2 focus:ring-[#FF6B2C]/20 transition-all placeholder:text-gray-500 resize-none"
+              <div>
+                <label className="block text-sm font-medium text-gray-300 mb-4 flex items-center">
+                  <div className="w-8 h-8 rounded-lg bg-[#FF6B2C]/10 flex items-center justify-center mr-3">
+                    <PuzzlePieceIcon className="w-5 h-5 text-[#FF6B2C]" />
+                  </div>
+                  Additional Services
+                </label>
+                <div className="space-y-3">
+                  {additionalServices.map((service) => (
+                    <label
+                      key={service.name}
+                      className={`flex items-center justify-between p-4 rounded-xl 
+                        ${selectedServices.has(service.name) 
+                          ? 'bg-[#243B61] border-[#FF6B2C] shadow-lg shadow-[#FF6B2C]/10' 
+                          : 'border-[#243B61]'}
+                        border hover:bg-[#243B61]/50 transition-all cursor-pointer group`}
+                    >
+                      <div className="flex items-center">
+                        <div className="relative">
+                          <input
+                            type="checkbox"
+                            checked={selectedServices.has(service.name)}
+                            onChange={() => toggleService(service.name)}
+                            className="form-checkbox h-4 w-4 rounded border-[#243B61] text-[#FF6B2C] focus:ring-[#FF6B2C] bg-transparent"
+                          />
+                          {selectedServices.has(service.name) && (
+                            <motion.div
+                              initial={{ scale: 0 }}
+                              animate={{ scale: 1 }}
+                              className="absolute -top-2 -right-2 w-3 h-3 bg-[#FF6B2C] rounded-full"
                             />
-                          </div>
+                          )}
                         </div>
-                        <motion.button
-                          type="submit"
-                          className="w-full bg-gradient-to-r from-[#FF6B2C] to-[#FF8F2C] text-white p-4 rounded-xl font-medium tracking-wide hover:opacity-90 transition-opacity flex items-center justify-center gap-2 group"
-                          whileHover={{ scale: 1.02 }}
-                          whileTap={{ scale: 0.98 }}
-                        >
-                          Send Message
-                          <ArrowRightIcon className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
-                        </motion.button>
+                        <span className="ml-4 text-sm text-white group-hover:text-white/90 flex items-center">
+                          <span className="w-6 h-6 rounded-lg bg-[#FF6B2C]/10 flex items-center justify-center mr-2">
+                            {service.icon}
+                          </span>
+                          {service.name}
+                        </span>
                       </div>
-                    </form>
-                  </motion.div>
+                      <span className="text-sm text-[#FF6B2C] font-medium group-hover:text-white/90">{service.price}</span>
+                    </label>
+                  ))}
+                </div>
+              </div>
+            </motion.div>
 
-                  {/* Right Column - Contact Information */}
-                  <motion.div
-                    className="space-y-8"
-                    initial={{ opacity: 0, x: 20 }}
-                    whileInView={{ opacity: 1, x: 0 }}
-                    viewport={{ once: true }}
+            {/* Estimate Summary */}
+            <motion.div 
+              initial={{ opacity: 0, x: 20 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.5, delay: 0.4 }}
+              className="lg:col-span-2 lg:sticky lg:top-6 space-y-6"
+            >
+              <div className="bg-[#1A2B44]/50 backdrop-blur-sm rounded-3xl border border-[#243B61] p-8 hover:border-[#FF6B2C]/50 transition-colors shadow-xl hover:shadow-2xl hover:shadow-[#FF6B2C]/5">
+                <h3 className="text-2xl font-semibold text-white mb-8">
+                  Investment Summary
+                </h3>
+                
+                <div className="space-y-4 mb-8">
+                  <div className="flex justify-between items-center p-4 rounded-xl bg-[#243B61]/20 hover:bg-[#243B61]/30 transition-colors group">
+                    <span className="text-gray-400 flex items-center group-hover:text-white/90 transition-colors">
+                      <div className="w-8 h-8 rounded-lg bg-[#FF6B2C]/10 flex items-center justify-center mr-3">
+                        <CubeIcon className="w-5 h-5 text-[#FF6B2C]" />
+                      </div>
+                      Base Solution
+                    </span>
+                    <span className="text-white font-medium">{formatCurrency(scaledBasePrice)}</span>
+                  </div>
+                  <div className="flex justify-between items-center p-4 rounded-xl bg-[#243B61]/20 hover:bg-[#243B61]/30 transition-colors group">
+                    <span className="text-gray-400 flex items-center group-hover:text-white/90 transition-colors">
+                      <div className="w-8 h-8 rounded-lg bg-[#3B82F6]/10 flex items-center justify-center mr-3">
+                        <PlusCircleIcon className="w-5 h-5 text-[#3B82F6]" />
+                      </div>
+                      Additional Services
+                    </span>
+                    <span className="text-white font-medium">{formatCurrency(additionalServicesTotal)}</span>
+                  </div>
+                  {optimizationDiscount > 0 && (
+                    <motion.div 
+                      initial={{ opacity: 0, height: 0 }}
+                      animate={{ opacity: 1, height: 'auto' }}
+                      exit={{ opacity: 0, height: 0 }}
+                      className="flex justify-between items-center p-4 rounded-xl bg-[#243B61]/20 hover:bg-[#243B61]/30 transition-colors group"
+                    >
+                      <span className="text-gray-400 flex items-center group-hover:text-white/90 transition-colors">
+                        <div className="w-8 h-8 rounded-lg bg-green-500/10 flex items-center justify-center mr-3">
+                          <SparklesIcon className="w-5 h-5 text-green-400" />
+                        </div>
+                        Optimization Discount
+                      </span>
+                      <span className="text-green-400 font-medium">-{formatCurrency(optimizationDiscount)}</span>
+                    </motion.div>
+                  )}
+                  <div className="h-px bg-[#243B61]" />
+                  <div className="flex justify-between items-center p-6 rounded-xl bg-gradient-to-r from-[#FF6B2C]/10 to-[#FF8F2C]/10 border border-[#FF6B2C]/20">
+                    <span className="text-lg text-white font-medium">Total Estimate</span>
+                    <motion.span 
+                      key={totalEstimate}
+                      initial={{ scale: 0.8, opacity: 0 }}
+                      animate={{ scale: 1, opacity: 1 }}
+                      className="text-3xl text-transparent bg-clip-text bg-gradient-to-r from-[#FF6B2C] to-[#FF8F2C] font-bold"
+                    >
+                      {formatCurrency(totalEstimate)}
+                    </motion.span>
+                  </div>
+                </div>
+
+                <div className="space-y-4">
+                  <motion.button 
+                    whileHover={{ scale: 1.02 }}
+                    whileTap={{ scale: 0.98 }}
+                    className="w-full px-6 py-4 bg-gradient-to-r from-[#FF6B2C] to-[#FF8F2C] text-white font-medium rounded-xl hover:shadow-lg hover:shadow-[#FF6B2C]/20 transition-all flex items-center justify-center gap-2 group"
                   >
-                    <div className="space-y-6">
-                      <h3 className="text-2xl font-bold text-white tracking-wide">Our Office</h3>
-                      <div className="grid gap-8">
-                        <div className="flex items-start gap-6 group">
-                          <div className="w-12 h-12 rounded-xl bg-[#1A2B44] flex items-center justify-center text-[#FF6B2C] group-hover:scale-110 transition-transform">
-                            <MapPinIcon className="w-6 h-6" />
-                          </div>
-                          <div>
-                            <h4 className="text-white font-medium mb-2">Los Angeles</h4>
-                            <p className="text-gray-400 leading-relaxed">
-                              5000 Birch Street, West Tower, Suite 3000<br />
-                              Newport Beach, CA 92660
-                            </p>
-                          </div>
-                        </div>
-                        <div className="flex items-start gap-6 group">
-                          <div className="w-12 h-12 rounded-xl bg-[#1A2B44] flex items-center justify-center text-[#FF6B2C] group-hover:scale-110 transition-transform">
-                            <PhoneIcon className="w-6 h-6" />
-                          </div>
-                          <div>
-                            <h4 className="text-white font-medium mb-2">Phone</h4>
-                            <p className="text-gray-400">+1 (818) 206-7410</p>
-                          </div>
-                        </div>
-                        <div className="flex items-start gap-6 group">
-                          <div className="w-12 h-12 rounded-xl bg-[#1A2B44] flex items-center justify-center text-[#FF6B2C] group-hover:scale-110 transition-transform">
-                            <EnvelopeIcon className="w-6 h-6" />
-                          </div>
-                          <div>
-                            <h4 className="text-white font-medium mb-2">Email</h4>
-                            <p className="text-gray-400">info@calance.com</p>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
+                    Request Detailed Proposal
+                    <ArrowRightIcon className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
+                  </motion.button>
+                  <motion.button 
+                    whileHover={{ scale: 1.02 }}
+                    whileTap={{ scale: 0.98 }}
+                    className="w-full px-6 py-4 border border-[#243B61] text-white font-medium rounded-xl hover:bg-[#243B61] transition-colors flex items-center justify-center gap-2"
+                  >
+                    Schedule Consultation
+                    <ClockIcon className="w-5 h-5" />
+                  </motion.button>
+                </div>
+              </div>
 
-                    <div className="pt-8 border-t border-[#1A2B44]">
-                      <h3 className="text-2xl font-bold text-white mb-6 tracking-wide">Connect With Us</h3>
-                      <div className="flex gap-4">
-                        {[
-                          { icon: <LinkIcon className="w-5 h-5" />, label: "LinkedIn", href: "#" },
-                          { icon: <ChatBubbleLeftRightIcon className="w-5 h-5" />, label: "Twitter", href: "#" },
-                          { icon: <ShareIcon className="w-5 h-5" />, label: "Social", href: "#" }
-                        ].map((social) => (
-                          <motion.a
-                            key={social.label}
-                            href={social.href}
-                            className="w-12 h-12 rounded-xl bg-[#1A2B44] flex items-center justify-center text-[#FF6B2C] hover:bg-[#FF6B2C] hover:text-white transition-colors"
-                            whileHover={{ scale: 1.1 }}
-                            whileTap={{ scale: 0.9 }}
-                          >
-                            {social.icon}
-                          </motion.a>
-                        ))}
-                      </div>
-                    </div>
-                  </motion.div>
+              <div className="bg-[#1A2B44]/50 backdrop-blur-sm rounded-3xl border border-[#243B61] p-8 hover:border-[#FF6B2C]/50 transition-colors shadow-xl hover:shadow-2xl hover:shadow-[#FF6B2C]/5">
+                <div className="flex items-start gap-6">
+                  <div className="flex-shrink-0 w-12 h-12 rounded-xl bg-gradient-to-r from-[#FF6B2C] to-[#FF8F2C] flex items-center justify-center">
+                    <SparklesIcon className="w-6 h-6 text-white" />
+                  </div>
+                  <div>
+                    <h4 className="text-white font-medium mb-2">Satisfaction Guaranteed</h4>
+                    <p className="text-sm text-gray-400 leading-relaxed">
+                      Our estimates include a comprehensive solution design, dedicated team, and guaranteed delivery milestones.
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </motion.div>
           </div>
         </div>
       </section>
     </main>
   )
 }
-
-// TypeScript interfaces
-interface TypewriterTextProps {
-  text: string;
-  delay?: number;
-}
-
-// Helper Components
-const TypewriterText: React.FC<TypewriterTextProps> = ({ text, delay = 0 }) => {
-  const [displayText, setDisplayText] = useState("");
-  const [currentIndex, setCurrentIndex] = useState(0);
-
-  useEffect(() => {
-    if (delay) {
-      const delayTimeout = setTimeout(() => {
-        const interval = setInterval(() => {
-          if (currentIndex < text.length) {
-            setDisplayText(prev => prev + text[currentIndex]);
-            setCurrentIndex(prev => prev + 1);
-          } else {
-            clearInterval(interval);
-          }
-        }, 50);
-
-        return () => clearInterval(interval);
-      }, delay * 1000);
-
-      return () => clearTimeout(delayTimeout);
-    }
-  }, [text, currentIndex, delay]);
-
-  return <div className="text-white">{displayText}</div>;
-};
