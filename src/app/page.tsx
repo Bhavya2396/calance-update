@@ -639,17 +639,17 @@ export default function Home() {
       <Hero />
       {/* Main Content Sections */}
       {/* AI Services Section */}
-      <section id="ai-services" className="py-24 bg-[#0A1628] relative overflow-hidden min-h-screen flex items-center">
+      <section id="ai-services" className="py-12 sm:py-24 bg-[#0A1628] relative overflow-hidden min-h-screen flex items-center">
         <div className="absolute inset-0">
           <div className="absolute inset-0 bg-gradient-to-br from-[#FF6B2C]/10 to-[#3B82F6]/10" />
           <motion.div 
             className="absolute inset-0"
             animate={{ 
               background: [
-                "radial-gradient(600px circle at 30% 30%, rgba(255, 107, 44, 0.15), transparent 70%)",
-                "radial-gradient(600px circle at 70% 70%, rgba(59, 130, 246, 0.15), transparent 70%)",
-                "radial-gradient(600px circle at 30% 70%, rgba(255, 107, 44, 0.15), transparent 70%)",
-                "radial-gradient(600px circle at 70% 30%, rgba(59, 130, 246, 0.15), transparent 70%)"
+                "radial-gradient(300px circle at 30% 30%, rgba(255, 107, 44, 0.15), transparent 70%)",
+                "radial-gradient(300px circle at 70% 70%, rgba(59, 130, 246, 0.15), transparent 70%)",
+                "radial-gradient(300px circle at 30% 70%, rgba(255, 107, 44, 0.15), transparent 70%)",
+                "radial-gradient(300px circle at 70% 30%, rgba(59, 130, 246, 0.15), transparent 70%)"
               ]
             }}
             transition={{ duration: 10, repeat: Infinity }}
@@ -660,17 +660,17 @@ export default function Home() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative">
           {/* Section Header */}
           <motion.div 
-            className="text-center mb-16"
+            className="text-center mb-8 sm:mb-16"
                   initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
           >
             <div className="inline-flex items-center justify-center gap-2 px-4 py-2 rounded-full bg-[#1A2B44] text-[#FF6B2C] mb-4">
-              <SparklesIcon className="w-5 h-5" />
-              <span className="text-sm font-medium tracking-wide">AI-Powered Solutions</span>
+              <SparklesIcon className="w-4 h-4 sm:w-5 sm:h-5" />
+              <span className="text-xs sm:text-sm font-medium tracking-wide">AI-Powered Solutions</span>
             </div>
-            <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">Intelligent Solutions for Every Industry</h2>
-            <p className="text-lg text-gray-400 max-w-2xl mx-auto">
+            <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-white mb-4">Intelligent Solutions for Every Industry</h2>
+            <p className="text-base sm:text-lg text-gray-400 max-w-2xl mx-auto">
               Harness the power of AI to transform your industry with our specialized solutions
             </p>
           </motion.div>
@@ -830,48 +830,16 @@ export default function Home() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
           >
-            <GlowingButton href="#contact" className="bg-gradient-to-r from-[#FF6B2C] to-[#3B82F6]">
+            <GlowingButton href="/ai-solutions" className="bg-gradient-to-r from-[#FF6B2C] to-[#3B82F6]">
               Explore AI Solutions
                     <ArrowRightIcon className="w-4 h-4 ml-2" />
                   </GlowingButton>
                 </motion.div>
-              </div>
-      </section>
-
-      {/* Technology Partners */}
-      <section className="py-24 bg-[#0A1628]">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-16">
-            <div className="inline-flex items-center justify-center gap-2 px-4 py-2 rounded-full bg-[#1A2B44] text-[#FF6B2C] mb-6">
-              <LinkIcon className="w-5 h-5" />
-              <span className="text-sm font-medium">Trusted Partners</span>
-            </div>
-            <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">
-              Technology Partners
-            </h2>
-            <p className="text-gray-400 text-lg max-w-2xl mx-auto">
-              We collaborate with industry leaders to deliver cutting-edge solutions
-            </p>
-          </div>
-
-          <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-8">
-            {Array(12).fill(null).map((_, i) => (
-              <motion.div
-                key={i}
-                className="bg-[#1A2B44]/50 backdrop-blur-sm rounded-xl border border-[#243B61] p-6 hover:border-[#FF6B2C]/50 transition-all duration-300 group"
-                whileHover={{ scale: 1.05 }}
-              >
-                <div className="aspect-[3/2] flex items-center justify-center">
-                  <span className="text-gray-400 group-hover:text-[#FF6B2C] transition-colors">Partner {i + 1}</span>
-                </div>
-              </motion.div>
-            ))}
-          </div>
         </div>
       </section>
 
       {/* 2. Our Solutions - Where Innovation Meets Implementation */}
-      <section id="solutions" className="py-32 bg-[#0A1628] relative">
+      <section id="solutions" className="py-16 sm:py-32 bg-[#0A1628] relative">
         <div className="absolute inset-0 bg-[#0F172A]" />
         <div className="absolute inset-0 bg-[url('/images/noise.png')] opacity-5" />
         <div className="absolute right-0 top-1/4 w-1/2 h-1/2 bg-[#FF6B2C]/5 rounded-full blur-[120px]" />
@@ -879,73 +847,40 @@ export default function Home() {
 
         <div className="relative max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
           <motion.div 
-            className="text-center mb-24"
+            className="text-center mb-12 sm:mb-24"
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
           >
             <div className="inline-flex items-center justify-center gap-2 px-4 py-2 rounded-full bg-[#1A2B44] text-[#FF6B2C] mb-6">
-              <RocketLaunchIcon className="w-5 h-5" />
-              <span className="text-sm font-medium tracking-wide">Enterprise Solutions</span>
+              <RocketLaunchIcon className="w-4 h-4 sm:w-5 sm:h-5" />
+              <span className="text-xs sm:text-sm font-medium tracking-wide">Enterprise Solutions</span>
             </div>
-            <h2 className="text-4xl md:text-5xl font-bold text-white mb-8 leading-tight">
+            <h2 className="text-2xl sm:text-4xl md:text-5xl font-bold text-white mb-6 sm:mb-8 leading-tight">
               Innovative Solutions for Digital Excellence
             </h2>
-            <p className="text-xl text-gray-400 max-w-2xl mx-auto mb-6 leading-relaxed">
+            <p className="text-base sm:text-xl text-gray-400 max-w-2xl mx-auto mb-6 leading-relaxed">
               Delivering robust, scalable solutions that empower your business to thrive in the digital age. Our enterprise solutions are built on proven methodologies and industry best practices.
             </p>
           </motion.div>
 
           {/* Implementation Journey Section */}
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-20 items-start mb-32">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 sm:gap-20 items-start mb-16 sm:mb-32">
             {/* Left Column - Timeline */}
             <motion.div
-              className="space-y-12"
+              className="space-y-8 sm:space-y-12"
               initial={{ opacity: 0, x: -20 }}
               whileInView={{ opacity: 1, x: 0 }}
               viewport={{ once: true }}
             >
-              <h3 className="text-3xl font-bold text-white leading-tight">Your Digital Transformation Journey</h3>
-              <div className="space-y-16 relative">
+              <h3 className="text-2xl sm:text-3xl font-bold text-white leading-tight">Your Digital Transformation Journey</h3>
+              <div className="space-y-8 sm:space-y-16 relative">
                 <div className="absolute left-8 top-8 bottom-8 w-0.5 bg-gradient-to-b from-[#FF6B2C] via-[#3B82F6] to-[#FF6B2C] opacity-20" />
                 
-                {[
-                  { 
-                    phase: 'Discovery & Assessment',
-                    duration: '2-3 weeks', 
-                    icon: <ClipboardDocumentCheckIcon className="w-6 h-6" />,
-                    title: 'Comprehensive Analysis',
-                    description: 'In-depth analysis of your current systems, identification of pain points, and mapping of business requirements to technical solutions.',
-                    color: 'from-[#FF6B2C] to-[#FF8F2C]'
-                  },
-                  {
-                    phase: 'Strategic Planning',
-                    duration: '3-4 weeks', 
-                    icon: <ChartPieIcon className="w-6 h-6" />,
-                    title: 'Roadmap Development',
-                    description: 'Development of detailed implementation plan, resource allocation, risk mitigation strategies, and success metrics definition.',
-                    color: 'from-[#3B82F6] to-[#60A5FA]'
-                  },
-                  { 
-                    phase: 'Implementation', 
-                    duration: '8-12 weeks', 
-                    icon: <RocketLaunchIcon className="w-6 h-6" />,
-                    title: 'Solution Deployment', 
-                    description: 'Systematic rollout of solutions with continuous testing, validation, and stakeholder communication throughout the process.',
-                    color: 'from-[#FF6B2C] to-[#FF8F2C]'
-                  },
-                  { 
-                    phase: 'Optimization', 
-                    duration: 'Ongoing', 
-                    icon: <ArrowPathIcon className="w-6 h-6" />,
-                    title: 'Continuous Enhancement',
-                    description: 'Regular performance monitoring, system updates, and proactive optimization based on usage patterns and emerging needs.',
-                    color: 'from-[#3B82F6] to-[#60A5FA]'
-                  }
-                ].map((step, index) => (
+                {transformationSteps.map((step, index) => (
                   <motion.div
                     key={step.phase}
-                    className="relative pl-24 group"
+                    className="relative pl-16 sm:pl-24 group"
                     initial={{ opacity: 0, x: -20 }}
                     whileInView={{ opacity: 1, x: 0 }}
                     viewport={{ once: true }}
@@ -953,7 +888,7 @@ export default function Home() {
                   >
                     {/* Timeline Node */}
                     <motion.div 
-                      className={`absolute left-4 w-8 h-8 rounded-full bg-gradient-to-r ${step.color} p-0.5 cursor-pointer`}
+                      className={`absolute left-4 w-6 h-6 sm:w-8 sm:h-8 rounded-full bg-gradient-to-r ${step.color} p-0.5 cursor-pointer`}
                       whileHover={{ scale: 1.2 }}
                       whileTap={{ scale: 0.9 }}
                     >
@@ -963,16 +898,16 @@ export default function Home() {
                     </motion.div>
 
                     {/* Content */}
-                    <div className="bg-[#0F2137]/80 rounded-2xl p-8 border border-[#1A2B44] group-hover:border-[#FF6B2C]/20 transition-all duration-300">
-                    <div className="flex items-center gap-4 mb-4">
-                        <span className={`text-transparent bg-clip-text bg-gradient-to-r ${step.color} font-medium tracking-wide`}>
+                    <div className="bg-[#0F2137]/80 rounded-xl sm:rounded-2xl p-6 sm:p-8 border border-[#1A2B44] group-hover:border-[#FF6B2C]/20 transition-all duration-300">
+                      <div className="flex flex-col sm:flex-row sm:items-center gap-2 sm:gap-4 mb-4">
+                        <span className={`text-transparent bg-clip-text bg-gradient-to-r ${step.color} font-medium tracking-wide text-sm sm:text-base`}>
                           {step.phase}
                         </span>
-                      <span className="text-sm text-gray-500 tracking-wide">• {step.duration}</span>
+                        <span className="text-xs sm:text-sm text-gray-500 tracking-wide">• {step.duration}</span>
                     </div>
                       
-                    <h4 className="text-white font-medium mb-3 tracking-wide">{step.title}</h4>
-                    <p className="text-gray-400 text-sm leading-relaxed">{step.description}</p>
+                      <h4 className="text-white font-medium mb-3 tracking-wide text-base sm:text-lg">{step.title}</h4>
+                      <p className="text-gray-400 text-sm sm:text-base leading-relaxed">{step.description}</p>
 
                       {/* Progress Line */}
                       <motion.div
@@ -995,43 +930,43 @@ export default function Home() {
               whileInView={{ opacity: 1, x: 0 }}
               viewport={{ once: true }}
             >
-              <div className="bg-[#0F172A]/80 backdrop-blur-xl rounded-2xl p-10 border border-[#1A2B44] hover:border-[#FF6B2C]/20 transition-colors duration-300 shadow-xl">
-                <div className="space-y-10">
-                  <div className="flex items-center justify-between mb-8">
-                    <h4 className="text-2xl font-bold text-white tracking-wide">Implementation Success Metrics</h4>
+              <div className="bg-[#0F172A]/80 backdrop-blur-xl rounded-xl sm:rounded-2xl p-6 sm:p-10 border border-[#1A2B44] hover:border-[#FF6B2C]/20 transition-colors duration-300 shadow-xl">
+                <div className="space-y-6 sm:space-y-10">
+                  <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4 sm:gap-0 mb-6 sm:mb-8">
+                    <h4 className="text-xl sm:text-2xl font-bold text-white tracking-wide">Implementation Success Metrics</h4>
                     <div className="flex items-center gap-3">
-                      <div className="w-2.5 h-2.5 rounded-full bg-[#10B981] animate-pulse" />
-                      <span className="text-sm text-gray-400 tracking-wide">Real-time Data</span>
+                      <div className="w-2 h-2 sm:w-2.5 sm:h-2.5 rounded-full bg-[#10B981] animate-pulse" />
+                      <span className="text-xs sm:text-sm text-gray-400 tracking-wide">Real-time Data</span>
                     </div>
                   </div>
 
-                  <div className="grid gap-8">
+                  <div className="grid gap-6 sm:gap-8">
                     {[
                       { 
                         label: "Enterprise Projects Delivered", 
                         value: "200+", 
                         trend: "Growing portfolio", 
                         detail: "Across various industries",
-                        icon: <RocketLaunchIcon className="w-6 h-6" />
+                        icon: <RocketLaunchIcon className="w-5 h-5 sm:w-6 sm:h-6" />
                       },
                       { 
                         label: "Average Implementation Time", 
                         value: "12 weeks", 
                         trend: "Efficient delivery", 
                         detail: "With proven methodology",
-                        icon: <ClockIcon className="w-6 h-6" />
+                        icon: <ClockIcon className="w-5 h-5 sm:w-6 sm:h-6" />
                       },
                       { 
                         label: "Client Satisfaction Rate", 
                         value: "98%", 
                         trend: "Consistent quality", 
                         detail: "Based on client feedback",
-                        icon: <StarIcon className="w-6 h-6" />
+                        icon: <StarIcon className="w-5 h-5 sm:w-6 sm:h-6" />
                       }
                     ].map((metric, index) => (
                       <motion.div
                         key={metric.label}
-                        className="bg-[#0A1628]/80 backdrop-blur-sm rounded-xl p-8 relative overflow-hidden border border-[#1A2B44] group hover:border-[#FF6B2C]/20 transition-all duration-300"
+                        className="bg-[#0A1628]/80 backdrop-blur-sm rounded-lg sm:rounded-xl p-6 sm:p-8 relative overflow-hidden border border-[#1A2B44] group hover:border-[#FF6B2C]/20 transition-all duration-300"
                         initial={{ opacity: 0, y: 20 }}
                         whileInView={{ opacity: 1, y: 0 }}
                         viewport={{ once: true }}
@@ -1043,13 +978,13 @@ export default function Home() {
                             <div className="p-2 rounded-lg bg-[#1A2B44] text-[#FF6B2C]">
                               {metric.icon}
                             </div>
-                            <span className="text-sm text-gray-400 tracking-wide">{metric.label}</span>
+                            <span className="text-xs sm:text-sm text-gray-400 tracking-wide">{metric.label}</span>
                           </div>
                           <div className="flex items-end gap-3 mb-2">
-                            <span className="text-3xl font-bold text-white tracking-wide">{metric.value}</span>
-                            <span className="text-sm text-[#10B981] mb-1.5 tracking-wide">{metric.trend}</span>
+                            <span className="text-2xl sm:text-3xl font-bold text-white tracking-wide">{metric.value}</span>
+                            <span className="text-xs sm:text-sm text-[#10B981] mb-1.5 tracking-wide">{metric.trend}</span>
                           </div>
-                          <p className="text-sm text-gray-500 tracking-wide">{metric.detail}</p>
+                          <p className="text-xs sm:text-sm text-gray-500 tracking-wide">{metric.detail}</p>
                         </div>
                       </motion.div>
                     ))}
@@ -1066,17 +1001,17 @@ export default function Home() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
           >
-            <div className="inline-flex items-center gap-2 px-6 py-3 rounded-full bg-[#0F2137] border border-white/5 text-white mb-8">
-              <span className="text-sm">Ready to see our solutions in action?</span>
-              <ArrowRightIcon className="w-4 h-4 text-[#FF6B2C]" />
+            <div className="inline-flex items-center gap-2 px-4 sm:px-6 py-2 sm:py-3 rounded-full bg-[#0F2137] border border-white/5 text-white mb-6 sm:mb-8">
+              <span className="text-xs sm:text-sm">Ready to see our solutions in action?</span>
+              <ArrowRightIcon className="w-3 h-3 sm:w-4 sm:h-4 text-[#FF6B2C]" />
             </div>
             <div className="flex justify-center gap-4">
               <GlowingButton 
                 href="#enterprise" 
-                className="bg-gradient-to-r from-[#FF6B2C] to-[#FF8F2C]"
+                className="bg-gradient-to-r from-[#FF6B2C] to-[#FF8F2C] text-sm sm:text-base"
               >
                 Explore Enterprise Solutions
-                <ArrowRightIcon className="w-4 h-4 ml-2" />
+                <ArrowRightIcon className="w-3 h-3 sm:w-4 sm:h-4 ml-2" />
               </GlowingButton>
             </div>
           </motion.div>
@@ -1084,7 +1019,7 @@ export default function Home() {
       </section>
 
       {/* 3. Enterprise Solutions */}
-      <section id="enterprise" className="bg-[#0A1628] relative overflow-hidden">
+      <section id="enterprise" className="bg-[#0A1628] relative overflow-hidden py-16 sm:py-24">
         <div className="absolute inset-0">
           <motion.div 
             className="absolute inset-0 bg-gradient-to-br opacity-20"
@@ -1104,35 +1039,35 @@ export default function Home() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative">
           {/* Section Header */}
           <motion.div 
-            className="py-8 flex flex-col items-center mb-8"
+            className="py-4 sm:py-8 flex flex-col items-center mb-8 sm:mb-12"
             ref={targetRef}
             style={{
               opacity,
               scale,
             }}
           >
-            <div className="inline-flex items-center justify-center gap-3 px-5 py-2.5 rounded-full bg-gradient-to-r from-[#FF6B2C]/10 to-[#3B82F6]/10 border border-[#FF6B2C]/20 text-[#FF6B2C] mb-4">
-              <CogIcon className="w-5 h-5" />
-              <span className="text-sm font-medium tracking-wide">Enterprise Solutions</span>
-              <div className="w-2 h-2 rounded-full bg-[#FF6B2C] animate-pulse" />
+            <div className="inline-flex items-center justify-center gap-3 px-4 sm:px-5 py-2 sm:py-2.5 rounded-full bg-gradient-to-r from-[#FF6B2C]/10 to-[#3B82F6]/10 border border-[#FF6B2C]/20 text-[#FF6B2C] mb-4">
+              <CogIcon className="w-4 h-4 sm:w-5 sm:h-5" />
+              <span className="text-xs sm:text-sm font-medium tracking-wide">Enterprise Solutions</span>
+              <div className="w-1.5 h-1.5 sm:w-2 sm:h-2 rounded-full bg-[#FF6B2C] animate-pulse" />
             </div>
             
             <motion.h2 
-              className="text-3xl md:text-4xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-white to-gray-400 mb-4 text-center max-w-4xl leading-tight"
+              className="text-2xl sm:text-3xl md:text-4xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-white to-gray-400 mb-4 text-center max-w-4xl leading-tight px-4"
             >
               Transforming Businesses Through Technology
             </motion.h2>
           </motion.div>
 
           {/* Solutions Grid */}
-          <div className="space-y-32">
+          <div className="space-y-16 sm:space-y-32">
             {features.map((feature, index) => (
               <div 
                 key={feature.title}
-                className="py-16"
+                className="py-8 sm:py-16"
               >
                 <motion.div
-                  className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center w-full"
+                  className="grid grid-cols-1 lg:grid-cols-2 gap-8 sm:gap-12 items-center w-full"
                   initial={{ opacity: 0 }}
                   whileInView={{ opacity: 1 }}
                   viewport={{ once: true, margin: "-20%" }}
@@ -1140,26 +1075,26 @@ export default function Home() {
               >
                 {/* Text Content */}
                   <motion.div 
-                    className="space-y-8"
+                    className="space-y-6 sm:space-y-8"
                     initial={{ opacity: 0, x: -50 }}
                     whileInView={{ opacity: 1, x: 0 }}
                     viewport={{ once: true, margin: "-20%" }}
                     transition={{ duration: 0.5 }}
                   >
-                <div className="space-y-6">
-                  <div className="flex items-center gap-4">
+                    <div className="space-y-4 sm:space-y-6">
+                      <div className="flex items-center gap-3 sm:gap-4">
                     <motion.div 
-                      className="p-3 rounded-lg bg-[#FF6B2C]/10 text-[#FF6B2C]"
+                          className="p-2 sm:p-3 rounded-lg bg-[#FF6B2C]/10 text-[#FF6B2C]"
                       whileHover={{ scale: 1.05 }}
                       transition={{ type: "spring", stiffness: 400, damping: 10 }}
                     >
                       {feature.icon}
                     </motion.div>
-                    <h3 className="text-2xl font-bold text-white">
+                        <h3 className="text-xl sm:text-2xl font-bold text-white">
                       {feature.title}
                     </h3>
                   </div>
-                  <p className="text-gray-400 text-lg leading-relaxed">
+                      <p className="text-base sm:text-lg text-gray-400 leading-relaxed">
                     {feature.description}
                   </p>
                       
@@ -1167,8 +1102,8 @@ export default function Home() {
                       <div className="space-y-4 border-l-2 border-[#FF6B2C]/20 pl-4">
                         {feature.title.includes('Apps & Automation') && (
                           <>
-                            <h4 className="text-white font-medium">Key Features:</h4>
-                            <ul className="space-y-2 text-gray-400">
+                            <h4 className="text-sm sm:text-base text-white font-medium">Key Features:</h4>
+                            <ul className="space-y-2 text-sm sm:text-base text-gray-400">
                               <li>• Custom Application Development with modern tech stack</li>
                               <li>• Robotic Process Automation (RPA) implementation</li>
                               <li>• API Integration & Middleware Solutions</li>
@@ -1178,8 +1113,8 @@ export default function Home() {
                         )}
                         {feature.title.includes('Infrastructure') && (
                           <>
-                            <h4 className="text-white font-medium">Services Include:</h4>
-                            <ul className="space-y-2 text-gray-400">
+                            <h4 className="text-sm sm:text-base text-white font-medium">Services Include:</h4>
+                            <ul className="space-y-2 text-sm sm:text-base text-gray-400">
                               <li>• Cloud Infrastructure Management</li>
                               <li>• 24/7 System Monitoring & Support</li>
                               <li>• Disaster Recovery & Backup Solutions</li>
@@ -1189,8 +1124,8 @@ export default function Home() {
                         )}
                         {feature.title.includes('Business Intelligence') && (
                           <>
-                            <h4 className="text-white font-medium">Analytics Solutions:</h4>
-                            <ul className="space-y-2 text-gray-400">
+                            <h4 className="text-sm sm:text-base text-white font-medium">Analytics Solutions:</h4>
+                            <ul className="space-y-2 text-sm sm:text-base text-gray-400">
                               <li>• Real-time Data Analytics & Visualization</li>
                               <li>• Predictive Analytics & Machine Learning</li>
                               <li>• Custom Dashboard Development</li>
@@ -1200,8 +1135,8 @@ export default function Home() {
                         )}
                         {feature.title.includes('Security') && (
                           <>
-                            <h4 className="text-white font-medium">Security Framework:</h4>
-                            <ul className="space-y-2 text-gray-400">
+                            <h4 className="text-sm sm:text-base text-white font-medium">Security Framework:</h4>
+                            <ul className="space-y-2 text-sm sm:text-base text-gray-400">
                               <li>• Advanced Threat Protection</li>
                               <li>• Compliance Management (HIPAA, SOC2, ISO)</li>
                               <li>• Security Audits & Vulnerability Assessment</li>
@@ -1211,8 +1146,8 @@ export default function Home() {
                         )}
                         {feature.title.includes('Construction Software') && (
                           <>
-                            <h4 className="text-white font-medium">Integration Capabilities:</h4>
-                            <ul className="space-y-2 text-gray-400">
+                            <h4 className="text-sm sm:text-base text-white font-medium">Integration Capabilities:</h4>
+                            <ul className="space-y-2 text-sm sm:text-base text-gray-400">
                               <li>• Procore & Sage Integration Solutions</li>
                               <li>• Document Management System Integration</li>
                               <li>• Cost Control & Budget Tracking</li>
@@ -1222,8 +1157,8 @@ export default function Home() {
                         )}
                         {feature.title.includes('DevOps') && (
                           <>
-                            <h4 className="text-white font-medium">DevOps Solutions:</h4>
-                            <ul className="space-y-2 text-gray-400">
+                            <h4 className="text-sm sm:text-base text-white font-medium">DevOps Solutions:</h4>
+                            <ul className="space-y-2 text-sm sm:text-base text-gray-400">
                               <li>• CI/CD Pipeline Implementation</li>
                               <li>• Container Orchestration (Kubernetes)</li>
                               <li>• Infrastructure as Code (IaC)</li>
@@ -1239,9 +1174,9 @@ export default function Home() {
                     whileHover={{ x: 5 }}
                     transition={{ type: "spring", stiffness: 400, damping: 10 }}
                   >
-                    <GlowingButton href="#contact" className="bg-[#FF6B2C] hover:bg-[#FF8F2C]">
+                      <GlowingButton href="#contact" className="bg-[#FF6B2C] hover:bg-[#FF8F2C] text-sm sm:text-base">
                       Learn More
-                      <ArrowRightIcon className="w-4 h-4 ml-2" />
+                        <ArrowRightIcon className="w-3 h-3 sm:w-4 sm:h-4 ml-2" />
                     </GlowingButton>
                   </motion.div>
                   </motion.div>
@@ -1937,13 +1872,13 @@ export default function Home() {
                                 </div>
 
             {/* Enhanced Navigation */}
-            <div className="flex justify-center">
-              <div className="inline-flex p-1.5 gap-2 bg-[#0F2137]/80 rounded-2xl backdrop-blur-sm">
+            <div className="flex justify-center overflow-x-auto px-4 -mx-4 sm:px-0 sm:mx-0">
+              <div className="inline-flex p-1.5 gap-1 sm:gap-2 bg-[#0F2137]/80 rounded-2xl backdrop-blur-sm">
                 {successCases.map((caseStudy, index) => (
                   <motion.button
                     key={index}
                     onClick={() => setCurrentCase(index)}
-                    className={`flex items-center gap-3 px-6 py-3 rounded-xl transition-all duration-300 ${
+                    className={`flex items-center gap-2 sm:gap-3 px-3 sm:px-6 py-2 sm:py-3 rounded-xl transition-all duration-300 ${
                       currentCase === index 
                         ? 'bg-gradient-to-r from-[#FF6B2C] to-[#3B82F6] text-white shadow-lg' 
                         : 'hover:bg-[#162942] text-gray-400 hover:text-white'
@@ -1951,7 +1886,7 @@ export default function Home() {
                     whileHover={{ scale: 1.02 }}
                     whileTap={{ scale: 0.98 }}
                   >
-                    <div className="w-8 h-8 relative rounded-lg overflow-hidden bg-white/5 p-1.5">
+                    <div className="w-6 h-6 sm:w-8 sm:h-8 relative rounded-lg overflow-hidden bg-white/5 p-1.5">
                       <Image
                         src={caseStudy.companyLogo}
                         alt={caseStudy.testimonial.company}
@@ -1959,24 +1894,23 @@ export default function Home() {
                         className="object-contain"
                       />
                           </div>
-                    <span className="font-medium whitespace-nowrap">{caseStudy.testimonial.company}</span>
+                    <span className="text-sm sm:text-base font-medium whitespace-nowrap">{caseStudy.testimonial.company}</span>
                   </motion.button>
                                 ))}
-                              </div>
                         </div>
                         </div>
 
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-            {/* Left Column - Success Metrics */}
+            <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 sm:gap-12 mt-8 sm:mt-12">
+              {/* Left Column - Success */}
             <motion.div
               initial={{ opacity: 0, x: -20 }}
               whileInView={{ opacity: 1, x: 0 }}
               viewport={{ once: true }}
-              className="space-y-8"
+                className="space-y-6 sm:space-y-8"
             >
               <div>
                 <motion.h2 
-                  className="text-4xl font-bold text-white mb-4"
+                    className="text-2xl sm:text-3xl md:text-4xl font-bold text-white mb-3 sm:mb-4"
                   key={currentCase}
                   initial={{ opacity: 0, y: 20 }}
                   animate={{ opacity: 1, y: 0 }}
@@ -1986,7 +1920,7 @@ export default function Home() {
                   {successCases[currentCase].title}
                 </motion.h2>
                 <motion.p 
-                  className="text-gray-400 text-lg"
+                    className="text-base sm:text-lg text-gray-400"
                   key={`desc-${currentCase}`}
                   initial={{ opacity: 0, y: 20 }}
                   animate={{ opacity: 1, y: 0 }}
@@ -1998,11 +1932,11 @@ export default function Home() {
               </div>
 
               {/* Key Metrics */}
-              <div className="grid grid-cols-2 gap-6">
+                <div className="grid grid-cols-2 gap-3 sm:gap-6">
                 {successCases[currentCase].metrics.map((metric, index) => (
                   <motion.div
                     key={`${currentCase}-${metric.label}`}
-                    className="bg-[#0F2137]/80 rounded-lg p-6 relative overflow-hidden group"
+                      className="bg-[#0F2137]/80 rounded-lg p-4 sm:p-6 relative overflow-hidden group"
                     initial={{ opacity: 0, y: 20 }}
                     animate={{ opacity: 1, y: 0 }}
                     exit={{ opacity: 0, y: -20 }}
@@ -2010,16 +1944,16 @@ export default function Home() {
                   >
                     <div className={`absolute inset-0 bg-gradient-to-r ${metric.color} opacity-0 group-hover:opacity-10 transition-opacity duration-300`} />
                     <motion.div
-                      className={`text-3xl font-bold bg-gradient-to-r ${metric.color} bg-clip-text text-transparent mb-2`}
+                        className={`text-xl sm:text-2xl md:text-3xl font-bold bg-gradient-to-r ${metric.color} bg-clip-text text-transparent mb-1 sm:mb-2`}
                       initial={{ opacity: 0, y: 10 }}
                       animate={{ opacity: 1, y: 0 }}
                       transition={{ delay: 0.2 + index * 0.1 }}
                     >
                       {metric.value}
                     </motion.div>
-                    <div className="text-sm text-gray-400">{metric.label}</div>
+                      <div className="text-xs sm:text-sm text-gray-400">{metric.label}</div>
                     <motion.div
-                      className={`h-1 bg-gradient-to-r ${metric.color} rounded-full mt-4`}
+                        className={`h-1 bg-gradient-to-r ${metric.color} rounded-full mt-2 sm:mt-4`}
                       initial={{ width: 0 }}
                       animate={{ width: "100%" }}
                       transition={{ delay: 0.4 + index * 0.1 }}
@@ -2030,49 +1964,49 @@ export default function Home() {
 
               {/* Testimonial */}
               <motion.blockquote 
-                className="relative bg-[#0F2137]/80 rounded-lg p-6 border-l-4 border-[#FF6B2C]"
+                  className="relative bg-[#0F2137]/50 rounded-xl p-4 sm:p-6"
                 key={`quote-${currentCase}`}
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
                 exit={{ opacity: 0, y: -20 }}
                 transition={{ duration: 0.5 }}
               >
-                <div className="text-lg text-gray-300 mb-4">
+                  <div className="text-base sm:text-lg text-gray-300 mb-4">
                   {successCases[currentCase].testimonial.fullQuote}
                 </div>
-                <footer className="flex items-center gap-4">
-                  <div className="relative w-12 h-12 rounded-full overflow-hidden bg-gradient-to-r from-[#FF6B2C] to-[#3B82F6] p-[2px]">
+                  <footer className="flex items-center gap-3 sm:gap-4">
+                    <div className="relative w-10 h-10 sm:w-12 sm:h-12 rounded-full overflow-hidden bg-gradient-to-r from-[#FF6B2C] to-[#3B82F6] p-[2px]">
                     <div className="w-full h-full rounded-full overflow-hidden bg-[#0F2137] flex items-center justify-center">
         <Image
                         src="/images/illustrations/calance-logo (3).webp"
                         alt="Calance Logo"
-                        width={30}
-                        height={30}
+                          width={24}
+                          height={24}
                         className="object-contain filter brightness-0 invert opacity-80"
                       />
                     </div>
                   </div>
                   <div>
-                    <div className="font-semibold text-white">{successCases[currentCase].testimonial.author}</div>
-                    <div className="text-sm text-gray-400">{successCases[currentCase].testimonial.role}</div>
-                    <div className="text-sm text-[#FF6B2C]">{successCases[currentCase].testimonial.company}</div>
+                      <div className="text-sm sm:text-base font-semibold text-white">{successCases[currentCase].testimonial.author}</div>
+                      <div className="text-xs sm:text-sm text-gray-400">{successCases[currentCase].testimonial.role}</div>
+                      <div className="text-xs sm:text-sm text-[#FF6B2C]">{successCases[currentCase].testimonial.company}</div>
                   </div>
       </footer>
               </motion.blockquote>
 
               <motion.button
-                className="inline-flex items-center gap-2 text-[#FF6B2C] hover:text-[#FF8F2C] transition-colors group"
+                  className="inline-flex items-center gap-2 text-[#FF6B2C] hover:text-[#FF8F2C] transition-colors group text-sm sm:text-base"
                 whileHover={{ x: 5 }}
                 type="button"
               >
                 <span className="font-medium">Read Full Case Study</span>
-                <ArrowRightIcon className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
+                  <ArrowRightIcon className="w-3 h-3 sm:w-4 sm:h-4 group-hover:translate-x-1 transition-transform" />
               </motion.button>
             </motion.div>
 
             {/* Right Column - Illustration */}
             <motion.div
-              className="relative"
+                className="relative lg:sticky lg:top-6"
               initial={{ opacity: 0, x: 20 }}
               whileInView={{ opacity: 1, x: 0 }}
               viewport={{ once: true }}
@@ -2101,7 +2035,7 @@ export default function Home() {
 
               {/* Company Logo */}
                     <motion.div
-                className="absolute -bottom-6 right-6 bg-[#0F2137] rounded-lg p-4 shadow-xl"
+                  className="absolute -bottom-4 sm:-bottom-6 right-4 sm:right-6 bg-[#0F2137] rounded-lg p-3 sm:p-4 shadow-xl"
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
                 key={`logo-${currentCase}`}
@@ -2109,12 +2043,13 @@ export default function Home() {
                 <Image
                   src={successCases[currentCase].companyLogo}
                   alt={`${successCases[currentCase].testimonial.company} logo`}
-                  width={120}
-                  height={40}
+                    width={100}
+                    height={35}
                   className="object-contain"
                 />
               </motion.div>
             </motion.div>
+            </div>
           </div>
         </div>
       </section>
@@ -2233,18 +2168,18 @@ export default function Home() {
               </motion.div>
 
           {/* Blog Grid */}
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8">
             {blogPosts.map((post, index) => (
               <motion.article
                 key={post.title}
-                className="bg-[#0F172A]/80 rounded-2xl overflow-hidden border border-[#1A2B44] hover:border-[#FF6B2C]/20 transition-colors duration-300 group"
+                className="bg-[#0F172A]/80 rounded-xl overflow-hidden border border-[#1A2B44] hover:border-[#FF6B2C]/20 transition-colors duration-300 group"
                     initial={{ opacity: 0, y: 20 }}
                     whileInView={{ opacity: 1, y: 0 }}
                     viewport={{ once: true }}
                     transition={{ delay: index * 0.1 }}
                   >
                 {/* Image Container */}
-                <div className="relative aspect-[16/9] overflow-hidden">
+                <div className="relative aspect-video overflow-hidden">
                   {post.image.endsWith('.mp4') ? (
                     <video
                       src={post.image}
@@ -2273,11 +2208,11 @@ export default function Home() {
                     </div>
 
                 {/* Content */}
-                <div className="p-6 space-y-4">
-                  <h3 className="text-xl font-bold text-white group-hover:text-[#FF6B2C] transition-colors duration-300">
+                <div className="p-4 sm:p-6 space-y-4">
+                  <h3 className="text-lg sm:text-xl font-bold text-white group-hover:text-[#FF6B2C] transition-colors duration-300 line-clamp-2">
                     {post.title}
                       </h3>
-                  <p className="text-gray-400 text-sm line-clamp-2">
+                  <p className="text-sm text-gray-400 line-clamp-2">
                     {post.excerpt}
                   </p>
 
@@ -2309,7 +2244,7 @@ export default function Home() {
             </div>
 
                 {/* Call-to-action */}
-                <div className="px-6 pb-6">
+                <div className="px-4 sm:px-6 pb-4 sm:pb-6">
                   <motion.button
                     className="w-full bg-[#1A2B44] text-white p-3 rounded-xl font-medium tracking-wide hover:bg-[#FF6B2C] transition-colors flex items-center justify-center gap-2 group"
                     whileHover={{ scale: 1.02 }}
@@ -2343,57 +2278,57 @@ export default function Home() {
       </section>
 
       {/* Price Estimator Section */}
-      <section id="estimate" className="relative py-32 bg-[#0A1628] overflow-hidden">
-        <div className="absolute inset-0">
-          <div className="absolute inset-0 bg-gradient-to-br from-[#FF6B2C]/5 to-[#3B82F6]/5" />
+      <section id="estimate" className="relative py-16 sm:py-32 bg-[#0A1628] overflow-hidden">
+              <div className="absolute inset-0">
+                <div className="absolute inset-0 bg-gradient-to-br from-[#FF6B2C]/5 to-[#3B82F6]/5" />
           <motion.div 
             className="absolute inset-0"
             animate={{ 
               background: [
-                "radial-gradient(800px circle at 0% 0%, rgba(255, 107, 44, 0.1), transparent 50%)",
-                "radial-gradient(800px circle at 100% 100%, rgba(59, 130, 246, 0.1), transparent 50%)"
+                "radial-gradient(400px circle at 0% 0%, rgba(255, 107, 44, 0.1), transparent 50%)",
+                "radial-gradient(400px circle at 100% 100%, rgba(59, 130, 246, 0.1), transparent 50%)"
               ]
             }}
             transition={{ duration: 20, repeat: Infinity }}
           />
-        </div>
-        
+              </div>
+
         <div className="relative max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-16">
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
+          <div className="text-center mb-8 sm:mb-16">
+                <motion.div 
+                  initial={{ opacity: 0, y: 20 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true }}
               transition={{ duration: 0.5 }}
               className="space-y-4"
             >
               <div className="inline-flex items-center justify-center gap-2 px-4 py-2 rounded-full bg-[#1A2B44] text-[#FF6B2C] mb-4">
-                <CurrencyDollarIcon className="w-5 h-5" />
-                <span className="text-sm font-medium tracking-wide">Instant Pricing</span>
-              </div>
-              <h2 className="text-4xl md:text-5xl font-bold text-white mb-4">
+                <CurrencyDollarIcon className="w-4 h-4 sm:w-5 sm:h-5" />
+                <span className="text-xs sm:text-sm font-medium tracking-wide">Instant Pricing</span>
+                  </div>
+              <h2 className="text-2xl sm:text-4xl md:text-5xl font-bold text-white mb-4">
                 Solution Price Estimator
               </h2>
-              <p className="text-gray-400 text-lg max-w-2xl mx-auto">
+              <p className="text-base sm:text-lg text-gray-400 max-w-2xl mx-auto">
                 Get an instant estimate for your custom solution. Adjust parameters to see real-time cost updates.
-              </p>
-            </motion.div>
+                  </p>
+                </motion.div>
           </div>
 
-          <div className="grid lg:grid-cols-5 gap-8">
+          <div className="grid lg:grid-cols-5 gap-6 sm:gap-8">
             {/* Estimator Controls */}
-            <motion.div 
-              initial={{ opacity: 0, x: -20 }}
-              whileInView={{ opacity: 1, x: 0 }}
-              viewport={{ once: true }}
+                  <motion.div
+                    initial={{ opacity: 0, x: -20 }}
+                    whileInView={{ opacity: 1, x: 0 }}
+                    viewport={{ once: true }}
               transition={{ duration: 0.5, delay: 0.2 }}
-              className="lg:col-span-3 bg-[#1A2B44]/50 backdrop-blur-sm rounded-3xl border border-[#243B61] p-8 space-y-8 hover:border-[#FF6B2C]/50 transition-colors shadow-xl hover:shadow-2xl hover:shadow-[#FF6B2C]/5"
-            >
-              <div>
+              className="lg:col-span-3 bg-[#1A2B44]/50 backdrop-blur-sm rounded-2xl sm:rounded-3xl border border-[#243B61] p-6 sm:p-8 space-y-6 sm:space-y-8 hover:border-[#FF6B2C]/50 transition-colors shadow-xl hover:shadow-2xl hover:shadow-[#FF6B2C]/5"
+                  >
+                          <div>
                 <label className="block text-sm font-medium text-gray-300 mb-4 flex items-center">
                   <div className="w-8 h-8 rounded-lg bg-[#FF6B2C]/10 flex items-center justify-center mr-3">
                     <CodeBracketIcon className="w-5 h-5 text-[#FF6B2C]" />
-                  </div>
+                            </div>
                   Solution Type
                 </label>
                 <div className="grid grid-cols-2 gap-3">
@@ -2414,14 +2349,14 @@ export default function Home() {
                       <div className="absolute inset-0 bg-gradient-to-r from-[#FF6B2C] to-[#FF8F2C] opacity-0 group-hover:opacity-100 transition-opacity" />
                     </motion.button>
                   ))}
-                </div>
+                          </div>
               </div>
 
-              <div>
+                          <div>
                 <label className="block text-sm font-medium text-gray-300 mb-4 flex items-center">
                   <div className="w-8 h-8 rounded-lg bg-[#3B82F6]/10 flex items-center justify-center mr-3">
                     <ChartBarIcon className="w-5 h-5 text-[#3B82F6]" />
-                  </div>
+                            </div>
                   Project Scale
                 </label>
                 <div className="space-y-3">
@@ -2450,10 +2385,10 @@ export default function Home() {
                       </span>
                     </motion.button>
                   ))}
-                </div>
+                          </div>
               </div>
 
-              <div>
+                          <div>
                 <label className="block text-sm font-medium text-gray-300 mb-4 flex items-center">
                   <div className="w-8 h-8 rounded-lg bg-[#FF6B2C]/10 flex items-center justify-center mr-3">
                     <PuzzlePieceIcon className="w-5 h-5 text-[#FF6B2C]" />
@@ -2485,26 +2420,26 @@ export default function Home() {
                               className="absolute -top-2 -right-2 w-3 h-3 bg-[#FF6B2C] rounded-full"
                             />
                           )}
-                        </div>
+                          </div>
                         <span className="ml-4 text-sm text-white group-hover:text-white/90 flex items-center">
                           <span className="w-6 h-6 rounded-lg bg-[#FF6B2C]/10 flex items-center justify-center mr-2">
                             {service.icon}
                           </span>
                           {service.name}
                         </span>
-                      </div>
+                        </div>
                       <span className="text-sm text-[#FF6B2C] font-medium group-hover:text-white/90">{service.price}</span>
                     </label>
                   ))}
-                </div>
+                      </div>
               </div>
-            </motion.div>
+                  </motion.div>
 
             {/* Estimate Summary */}
-            <motion.div 
-              initial={{ opacity: 0, x: 20 }}
-              whileInView={{ opacity: 1, x: 0 }}
-              viewport={{ once: true }}
+                  <motion.div
+                    initial={{ opacity: 0, x: 20 }}
+                    whileInView={{ opacity: 1, x: 0 }}
+                    viewport={{ once: true }}
               transition={{ duration: 0.5, delay: 0.4 }}
               className="lg:col-span-2 lg:sticky lg:top-6 space-y-6"
             >
@@ -2518,20 +2453,20 @@ export default function Home() {
                     <span className="text-gray-400 flex items-center group-hover:text-white/90 transition-colors">
                       <div className="w-8 h-8 rounded-lg bg-[#FF6B2C]/10 flex items-center justify-center mr-3">
                         <CubeIcon className="w-5 h-5 text-[#FF6B2C]" />
-                      </div>
+                          </div>
                       Base Solution
                     </span>
                     <span className="text-white font-medium">{formatCurrency(scaledBasePrice)}</span>
-                  </div>
+                          </div>
                   <div className="flex justify-between items-center p-4 rounded-xl bg-[#243B61]/20 hover:bg-[#243B61]/30 transition-colors group">
                     <span className="text-gray-400 flex items-center group-hover:text-white/90 transition-colors">
                       <div className="w-8 h-8 rounded-lg bg-[#3B82F6]/10 flex items-center justify-center mr-3">
                         <PlusCircleIcon className="w-5 h-5 text-[#3B82F6]" />
-                      </div>
+                        </div>
                       Additional Services
                     </span>
                     <span className="text-white font-medium">{formatCurrency(additionalServicesTotal)}</span>
-                  </div>
+                          </div>
                   {optimizationDiscount > 0 && (
                     <motion.div 
                       initial={{ opacity: 0, height: 0 }}
@@ -2542,7 +2477,7 @@ export default function Home() {
                       <span className="text-gray-400 flex items-center group-hover:text-white/90 transition-colors">
                         <div className="w-8 h-8 rounded-lg bg-green-500/10 flex items-center justify-center mr-3">
                           <SparklesIcon className="w-5 h-5 text-green-400" />
-                        </div>
+                          </div>
                         Optimization Discount
                       </span>
                       <span className="text-green-400 font-medium">-{formatCurrency(optimizationDiscount)}</span>
@@ -2559,8 +2494,8 @@ export default function Home() {
                     >
                       {formatCurrency(totalEstimate)}
                     </motion.span>
-                  </div>
-                </div>
+                        </div>
+                          </div>
 
                 <div className="space-y-4">
                   <motion.button 
@@ -2579,23 +2514,23 @@ export default function Home() {
                     Schedule Consultation
                     <ClockIcon className="w-5 h-5" />
                   </motion.button>
-                </div>
-              </div>
+                          </div>
+                        </div>
 
               <div className="bg-[#1A2B44]/50 backdrop-blur-sm rounded-3xl border border-[#243B61] p-8 hover:border-[#FF6B2C]/50 transition-colors shadow-xl hover:shadow-2xl hover:shadow-[#FF6B2C]/5">
                 <div className="flex items-start gap-6">
                   <div className="flex-shrink-0 w-12 h-12 rounded-xl bg-gradient-to-r from-[#FF6B2C] to-[#FF8F2C] flex items-center justify-center">
                     <SparklesIcon className="w-6 h-6 text-white" />
-                  </div>
+                      </div>
                   <div>
                     <h4 className="text-white font-medium mb-2">Satisfaction Guaranteed</h4>
                     <p className="text-sm text-gray-400 leading-relaxed">
                       Our estimates include a comprehensive solution design, dedicated team, and guaranteed delivery milestones.
                     </p>
-                  </div>
-                </div>
-              </div>
-            </motion.div>
+                    </div>
+                      </div>
+                    </div>
+                  </motion.div>
           </div>
         </div>
       </section>

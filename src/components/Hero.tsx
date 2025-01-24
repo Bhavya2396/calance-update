@@ -17,7 +17,8 @@ import {
   CircleStackIcon,
   ArrowTrendingUpIcon,
   UserGroupIcon,
-  ClockIcon
+  ClockIcon,
+  XMarkIcon
 } from '@heroicons/react/24/outline'
 
 const services = [
@@ -213,9 +214,21 @@ const MetricCard = ({ label, value, trend }: { label: string, value: string | nu
 export default function Hero() {
   const containerRef = useRef<HTMLDivElement>(null)
   const { scrollY } = useScroll()
-  const y = useTransform(scrollY, [0, 500], [0, 200])
-  const opacity = useTransform(scrollY, [0, 200], [1, 0])
-  const scale = useTransform(scrollY, [0, 200], [1, 0.8])
+  const [isMobile, setIsMobile] = useState(false)
+
+  useEffect(() => {
+    const checkMobile = () => {
+      setIsMobile(window.innerWidth < 768)
+    }
+    
+    checkMobile()
+    window.addEventListener('resize', checkMobile)
+    return () => window.removeEventListener('resize', checkMobile)
+  }, [])
+
+  const y = useTransform(scrollY, [0, 500], [0, isMobile ? 0 : 200])
+  const opacity = useTransform(scrollY, [0, 200], [1, isMobile ? 1 : 0])
+  const scale = useTransform(scrollY, [0, 200], [1, isMobile ? 1 : 0.8])
   
   const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 })
   const [activeService, setActiveService] = useState<number | null>(null)
@@ -238,7 +251,6 @@ export default function Hero() {
   }, [])
 
   const handleServiceHover = (index: number) => {
-    // Calculate if popup should appear above or below based on position
     const angle = index * (2 * Math.PI / 9)
     const y = Math.sin(angle)
     setPopupPosition(y > 0 ? 'top' : 'bottom')
@@ -248,10 +260,10 @@ export default function Hero() {
   return (
     <div 
       ref={containerRef}
-      className="relative min-h-screen flex items-center justify-center overflow-hidden bg-[#0A1628]"
+      className="relative min-h-[calc(100vh-4rem)] flex items-center justify-center overflow-hidden bg-[#0A1628] px-4 sm:px-6 py-24 sm:py-32"
     >
-      {/* Dynamic Background */}
-      <div className="absolute inset-0 overflow-hidden">
+      {/* Dynamic Background - Hidden on mobile */}
+      <div className="absolute inset-0 overflow-hidden hidden sm:block">
         <motion.div 
           className="absolute inset-0"
           animate={{ 
@@ -266,7 +278,7 @@ export default function Hero() {
         />
         
         <div 
-          className="absolute inset-0" 
+          className="absolute inset-0 hidden sm:block" 
           style={{
             backgroundImage: `radial-gradient(circle at ${mousePosition.x * 100}% ${mousePosition.y * 100}%, rgba(255, 107, 44, 0.1) 0%, transparent 25%)`,
             transition: 'background-position 0.3s ease-out'
@@ -276,35 +288,48 @@ export default function Hero() {
         </div>
       </div>
 
+      {/* Mobile-only background */}
+      <div className="absolute inset-0 overflow-hidden sm:hidden">
+        <motion.div 
+          className="absolute inset-0"
+          animate={{ 
+            background: [
+              "radial-gradient(300px circle at 50% 30%, rgba(255, 107, 44, 0.15), transparent 70%)",
+              "radial-gradient(300px circle at 50% 70%, rgba(59, 130, 246, 0.15), transparent 70%)",
+            ]
+          }}
+          transition={{ duration: 5, repeat: Infinity }}
+        />
+      </div>
+
       {/* Main content */}
       <motion.div
-        style={{ y, opacity, scale }}
-        className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-32"
+        style={isMobile ? {} : { y, opacity, scale }}
+        className="relative z-10 w-full max-w-7xl mx-auto flex flex-col"
       >
-        <div className="grid lg:grid-cols-2 gap-12 items-center">
-          {/* Left Column - Text Content */}
+        {/* Mobile Layout */}
+        <div className="block sm:hidden">
+          {/* Text Content for Mobile */}
           <motion.div
-            initial={{ opacity: 0, x: -20 }}
-            animate={{ opacity: 1, x: 0 }}
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8 }}
-            className="text-left space-y-8"
+            className="text-center space-y-4 pt-20 pb-6 px-4"
           >
             {/* Badge */}
             <motion.div 
-              className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-gradient-to-r from-[#FF6B2C]/10 to-[#3B82F6]/10 border border-[#FF6B2C]/20"
-              whileHover={{ scale: 1.05 }}
-              whileTap={{ scale: 0.95 }}
+              className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full bg-gradient-to-r from-[#FF6B2C]/10 to-[#3B82F6]/10 border border-[#FF6B2C]/20"
             >
-              <SparklesIcon className="w-5 h-5 text-[#FF6B2C]" />
-              <span className="text-sm font-medium bg-gradient-to-r from-[#FF6B2C] to-[#3B82F6] bg-clip-text text-transparent">
+              <SparklesIcon className="w-3.5 h-3.5 text-[#FF6B2C]" />
+              <span className="text-xs font-medium bg-gradient-to-r from-[#FF6B2C] to-[#3B82F6] bg-clip-text text-transparent">
                 Enterprise Technology Solutions
               </span>
             </motion.div>
 
-            {/* Heading */}
-            <div className="space-y-4">
+            {/* Heading for Mobile */}
+            <div className="space-y-3">
               <motion.h1 
-                className="text-5xl lg:text-7xl font-bold leading-tight"
+                className="text-3xl font-bold leading-tight px-4"
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ delay: 0.2 }}
@@ -316,7 +341,7 @@ export default function Hero() {
               </motion.h1>
               
               <motion.p 
-                className="text-xl text-gray-400"
+                className="text-sm text-gray-400 max-w-[280px] mx-auto px-4"
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ delay: 0.4 }}
@@ -324,289 +349,381 @@ export default function Hero() {
                 Comprehensive technology solutions that drive innovation and growth across your enterprise
               </motion.p>
             </div>
-
-            {/* CTA Buttons */}
-            <motion.div
-              className="flex flex-wrap gap-4"
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ delay: 0.6 }}
-            >
-              <GlowingButton
-                href="#solutions"
-                className="bg-gradient-to-r from-[#FF6B2C] to-[#FF8F2C] px-8 py-4 text-lg"
-              >
-                Explore Solutions
-              </GlowingButton>
-              <GlowingButton
-                href="#contact"
-                className="bg-gradient-to-r from-[#3B82F6]/10 to-[#60A5FA]/10 border-2 border-[#3B82F6]/20 hover:border-[#3B82F6]/40 px-8 py-4 text-lg"
-              >
-                Get Started
-              </GlowingButton>
-            </motion.div>
           </motion.div>
 
-          {/* Right Column - Interactive Service Network */}
+          {/* Interactive Service Network for Mobile */}
           <motion.div
             initial={{ opacity: 0, scale: 0.8 }}
             animate={{ opacity: 1, scale: 1 }}
             transition={{ delay: 0.3 }}
-            className="relative aspect-square"
+            className="relative aspect-square max-w-[280px] mx-auto w-full mb-6"
           >
-            {/* Service Network */}
-            <div className="relative w-full h-full">
-              {/* Neural Network Lines */}
-              <svg className="absolute inset-0 w-full h-full">
-                {/* Background connection lines */}
-                {services.map((service, i) => 
-                  service.connections.map((targetIndex) => (
-                    <motion.line
-                      key={`${i}-${targetIndex}-bg`}
-                      x1={`${50 + Math.cos(i * (2 * Math.PI / 9)) * 40}%`}
-                      y1={`${50 + Math.sin(i * (2 * Math.PI / 9)) * 40}%`}
-                      x2={`${50 + Math.cos(targetIndex * (2 * Math.PI / 9)) * 40}%`}
-                      y2={`${50 + Math.sin(targetIndex * (2 * Math.PI / 9)) * 40}%`}
-                      stroke="rgba(255,255,255,0.05)"
-                      strokeWidth="1"
-                    />
-                  ))
-                )}
-                
-                {/* Active connection lines */}
-                {activeService !== null && services[activeService].connections.map((targetIndex) => (
-                  <g key={`${activeService}-${targetIndex}`}>
-                    <motion.line
-                      x1={`${50 + Math.cos(activeService * (2 * Math.PI / 9)) * 40}%`}
-                      y1={`${50 + Math.sin(activeService * (2 * Math.PI / 9)) * 40}%`}
-                      x2={`${50 + Math.cos(targetIndex * (2 * Math.PI / 9)) * 40}%`}
-                      y2={`${50 + Math.sin(targetIndex * (2 * Math.PI / 9)) * 40}%`}
-                      stroke={`url(#gradient-${activeService})`}
-                      strokeWidth="2"
-                      initial={{ pathLength: 0, opacity: 0 }}
-                      animate={{ pathLength: 1, opacity: 0.8 }}
-                      transition={{ duration: 0.5 }}
-                    />
-                    <motion.circle
-                      r="2"
-                      fill="white"
-                      initial={{
-                        x: 50 + Math.cos(activeService * (2 * Math.PI / 9)) * 40,
-                        y: 50 + Math.sin(activeService * (2 * Math.PI / 9)) * 40
-                      }}
-                      animate={{
-                        x: [
-                          50 + Math.cos(activeService * (2 * Math.PI / 9)) * 40,
-                          50 + Math.cos(targetIndex * (2 * Math.PI / 9)) * 40
-                        ],
-                        y: [
-                          50 + Math.sin(activeService * (2 * Math.PI / 9)) * 40,
-                          50 + Math.sin(targetIndex * (2 * Math.PI / 9)) * 40
-                        ]
-                      }}
-                      transition={{
-                        duration: 1.5,
-                        repeat: Infinity,
-                        ease: "linear"
-                      }}
-                    />
-                  </g>
-                ))}
-                <defs>
-                  {services.map((service, index) => {
-                    const [fromColor, toColor] = service.color
-                      .split(' ')
-                      .filter(part => part.startsWith('from-') || part.startsWith('to-'))
-                      .map(part => part.replace('from-', '').replace('to-', '').replace('[', '').replace(']', ''))
-                    return (
-                      <linearGradient
-                        key={`gradient-${index}`}
-                        id={`gradient-${index}`}
-                        gradientTransform="rotate(90)"
-                      >
-                        <stop offset="0%" stopColor={`#${fromColor}`} />
-                        <stop offset="100%" stopColor={`#${toColor}`} />
-                      </linearGradient>
-                    )
-                  })}
-                </defs>
-              </svg>
-
-              {/* Service Icons */}
-              {services.map((service, index) => {
-                const angle = index * (2 * Math.PI / 9)
-                const x = 50 + Math.cos(angle) * 40
-                const y = 50 + Math.sin(angle) * 40
-                
-                return (
-                  <motion.div
-                    key={index}
-                    className="absolute"
-                    style={{
-                      top: `${y}%`,
-                      left: `${x}%`,
-                      transform: 'translate(-50%, -50%)',
-                      zIndex: activeService === index ? 20 : 10
-                    }}
-                    onMouseEnter={() => handleServiceHover(index)}
-                    onMouseLeave={() => setActiveService(null)}
-                  >
-                    <motion.div
-                      className={`w-14 h-14 rounded-xl bg-gradient-to-r ${service.color} p-0.5 cursor-pointer relative group`}
-                      whileHover={{ scale: 1.05 }}
-                    >
-                      <div className="w-full h-full rounded-xl bg-[#0A1628] flex items-center justify-center text-white p-2.5">
-                        {service.icon}
-                      </div>
-
-                      {/* Service Dashboard Popup */}
-                      <AnimatePresence>
-                        {activeService === index && (
-                          <motion.div
-                            className={`absolute ${popupPosition === 'top' ? 'bottom-[120%]' : 'top-[120%]'} left-1/2 transform -translate-x-1/2 bg-[#0F172A] rounded-lg border border-[#1A2B44] shadow-2xl w-[240px] z-30`}
-                            initial={{ opacity: 0, y: popupPosition === 'top' ? 20 : -20, scale: 0.95 }}
-                            animate={{ opacity: 1, y: 0, scale: 1 }}
-                            exit={{ opacity: 0, scale: 0.95 }}
-                            transition={{ duration: 0.2 }}
-                          >
-                            {/* Content Container */}
-                            <div className="relative divide-y divide-[#1A2B44]">
-                              {/* Header Section */}
-                              <div className={`p-2.5 bg-gradient-to-br ${service.color}/5`}>
-                                <div className="flex items-center justify-between mb-1.5">
-                                  <h3 className="text-white font-medium text-sm">{service.label}</h3>
-                                  <div className="flex items-center gap-1.5">
-                                    <div className="w-1.5 h-1.5 rounded-full bg-green-500 animate-pulse" />
-                                    <span className="text-[10px] text-gray-400">Live</span>
-                                  </div>
-                                </div>
-                                <p className="text-[11px] text-gray-300 leading-snug">{service.description}</p>
-                              </div>
-
-                              {/* Stats Grid */}
-                              <div className="p-2.5 bg-[#1A2B44]/20">
-                                <div className="grid grid-cols-3 gap-1">
-                                  {Object.entries(service.stats).map(([key, value], i) => (
-                                    <div
-                                      key={key}
-                                      className="bg-[#0F172A] rounded p-1.5 text-center"
-                                    >
-                                      <div className="text-[10px] text-gray-400 mb-0.5 truncate">{key}</div>
-                                      <div className="text-xs font-medium text-white truncate">{value}</div>
-                                    </div>
-                                  ))}
-                                </div>
-                              </div>
-
-                              {/* Metrics */}
-                              <div className="p-2.5 space-y-2 bg-[#1A2B44]/10">
-                                {service.metrics.map((metric, i) => (
-                                  <div
-                                    key={i}
-                                    className="bg-[#0F172A] rounded p-2"
-                                  >
-                                    <div className="flex items-center justify-between mb-1">
-                                      <span className="text-[11px] font-medium text-white truncate flex-1">{metric.label}</span>
-                                      <span className={`text-[10px] px-1.5 py-0.5 rounded-full ml-1 ${metric.trend.startsWith('+') ? 'bg-green-500/10 text-green-400' : 'bg-red-500/10 text-red-400'}`}>
-                                        {metric.trend}
-                                      </span>
-                                    </div>
-                                    <div className="flex items-center gap-2">
-                                      <div className="text-sm font-semibold text-white">{metric.value}</div>
-                                      <div className={`flex-1 h-1 rounded-full bg-gradient-to-r ${service.color}/20`}>
-                                        <motion.div
-                                          className={`h-full rounded-full bg-gradient-to-r ${service.color}`}
-                                          initial={{ width: 0 }}
-                                          animate={{ width: metric.trend.startsWith('+') ? '75%' : '45%' }}
-                                          transition={{ duration: 0.5 }}
-                                        />
-                                      </div>
-                                    </div>
-                                  </div>
-                                ))}
-                              </div>
-
-                              {/* Connected Services */}
-                              <div className="p-2.5 bg-[#1A2B44]/20">
-                                <div className="text-[10px] font-medium text-gray-400 mb-1.5">Connected Services</div>
-                                <div className="flex flex-wrap gap-1">
-                                  {service.connections.map((connIndex) => (
-                                    <div
-                                      key={connIndex}
-                                      className={`px-1.5 py-0.5 rounded bg-[#0F172A] text-[10px] text-white flex items-center gap-1 border border-[#1A2B44]`}
-                                    >
-                                      <div className="w-2.5 h-2.5 opacity-75">
-                                        {services[connIndex].icon}
-                                      </div>
-                                      <span className="truncate">{services[connIndex].label}</span>
-                                    </div>
-                                  ))}
-                                </div>
-                              </div>
-
-                              {/* Actions */}
-                              <div className="p-2.5 flex gap-1.5 bg-[#1A2B44]/20">
-                                <button 
-                                  className="flex-1 px-2 py-1.5 bg-[#243B61] hover:bg-[#2D4875] rounded text-[10px] text-white font-medium flex items-center justify-center gap-1 transition-colors"
-                                >
-                                  <ChartBarIcon className="w-3 h-3" />
-                                  Analytics
-                                </button>
-                                <button 
-                                  className={`flex-1 px-2 py-1.5 rounded text-[10px] text-white font-medium flex items-center justify-center gap-1 bg-gradient-to-r ${service.color} hover:opacity-90 transition-opacity`}
-                                >
-                                  <CogIcon className="w-3 h-3" />
-                                  Configure
-                                </button>
-                              </div>
-                            </div>
-                          </motion.div>
-                        )}
-                      </AnimatePresence>
-                    </motion.div>
-                  </motion.div>
-                )
-              })}
-
-              {/* Optimized Central Particle System */}
-              <motion.div 
-                className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-24 h-24 cursor-pointer"
-                onClick={() => setShowCentralDashboard(true)}
+            {/* Service Icons */}
+            {services.map((service, index) => (
+              <motion.div
+                key={index}
+                className="absolute w-14 h-14 rounded-xl bg-[#0F2137] border border-white/10 flex items-center justify-center cursor-pointer transition-transform hover:scale-105"
+                style={{
+                  top: `${Math.sin((index * 2 * Math.PI) / services.length) * 40 + 50}%`,
+                  left: `${Math.cos((index * 2 * Math.PI) / services.length) * 40 + 50}%`,
+                  transform: 'translate(-50%, -50%)'
+                }}
                 whileHover={{ scale: 1.1 }}
+                onClick={() => setActiveService(index)}
               >
-                <div className="relative w-full h-full">
-                  {/* Core */}
-                  <div className="absolute inset-0 rounded-full bg-gradient-to-r from-[#FF6B2C] via-[#3B82F6] to-[#10B981] opacity-20 blur-lg animate-pulse" />
-                  
-                  {/* Static Rings */}
-                  <div className="absolute inset-0 rounded-full border-2 border-white/5" />
-                  <div className="absolute inset-0 rounded-full border border-white/10 scale-75" />
-                  <div className="absolute inset-0 rounded-full border border-white/15 scale-50" />
-                  
-                  {/* Minimal Rotating Particles */}
-                  <div className="absolute inset-0 animate-spin-slow">
-                    {[...Array(4)].map((_, i) => (
-                      <div
-                        key={i}
-                        className="absolute top-1/2 left-1/2 w-1.5 h-1.5 rounded-full bg-white/40"
-                        style={{
-                          transform: `rotate(${i * 90}deg) translateX(${32}px)`,
-                        }}
-                      />
-                    ))}
-                  </div>
+                <div className="w-6 h-6 text-[#FF6B2C]">
+                  {service.icon}
                 </div>
               </motion.div>
-            </div>
+            ))}
+
+            {/* Central Icon */}
+            <motion.div 
+              className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-16 h-16 cursor-pointer"
+              onClick={() => setShowCentralDashboard(true)}
+              whileHover={{ scale: 1.1 }}
+            >
+              <div className="relative w-full h-full">
+                <div className="absolute inset-0 rounded-full bg-gradient-to-r from-[#FF6B2C] via-[#3B82F6] to-[#10B981] opacity-20 blur-lg animate-pulse" />
+                <div className="absolute inset-0 rounded-full border border-white/10" />
+                <div className="absolute inset-0 flex items-center justify-center">
+                  <RocketLaunchIcon className="w-8 h-8 text-[#FF6B2C]" />
+                </div>
+              </div>
+            </motion.div>
+          </motion.div>
+
+          {/* CTA Buttons */}
+          <motion.div
+            className="flex flex-col gap-3 px-4 pb-6"
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ delay: 0.6 }}
+          >
+            <GlowingButton
+              href="#solutions"
+              className="w-full bg-gradient-to-r from-[#FF6B2C] to-[#FF8F2C] px-4 py-3 text-sm"
+            >
+              Explore Solutions
+            </GlowingButton>
+            <GlowingButton
+              href="#contact"
+              className="w-full bg-gradient-to-r from-[#3B82F6]/10 to-[#60A5FA]/10 border-2 border-[#3B82F6]/20 hover:border-[#3B82F6]/40 px-4 py-3 text-sm"
+            >
+              Get Started
+            </GlowingButton>
           </motion.div>
         </div>
+
+        {/* Desktop Layout */}
+        <div className="hidden sm:block">
+          <div className="grid lg:grid-cols-2 gap-12 lg:gap-16 items-center">
+            {/* Left Column - Text Content */}
+            <motion.div
+              initial={{ opacity: 0, x: -20 }}
+              animate={{ opacity: 1, x: 0 }}
+              transition={{ duration: 0.8 }}
+              className="text-center lg:text-left space-y-6 sm:space-y-8 mt-16 sm:mt-20"
+            >
+              {/* Badge */}
+              <motion.div 
+                className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-gradient-to-r from-[#FF6B2C]/10 to-[#3B82F6]/10 border border-[#FF6B2C]/20"
+                whileHover={{ scale: 1.05 }}
+                whileTap={{ scale: 0.95 }}
+              >
+                <SparklesIcon className="w-4 h-4 sm:w-5 sm:h-5 text-[#FF6B2C]" />
+                <span className="text-xs sm:text-sm font-medium bg-gradient-to-r from-[#FF6B2C] to-[#3B82F6] bg-clip-text text-transparent">
+                  Enterprise Technology Solutions
+                </span>
+              </motion.div>
+
+              {/* Heading */}
+              <div className="space-y-4">
+                <motion.h1 
+                  className="text-4xl sm:text-5xl lg:text-7xl font-bold leading-tight"
+                  initial={{ opacity: 0, y: 20 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  transition={{ delay: 0.2 }}
+                >
+                  <span className="text-white">Transform Your</span>{' '}
+                  <span className="bg-gradient-to-r from-[#FF6B2C] via-[#3B82F6] to-[#10B981] bg-clip-text text-transparent">
+                    Digital Future
+                  </span>
+                </motion.h1>
+                
+                <motion.p 
+                  className="text-base sm:text-xl text-gray-400 max-w-xl mx-auto lg:mx-0"
+                  initial={{ opacity: 0, y: 20 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  transition={{ delay: 0.4 }}
+                >
+                  Comprehensive technology solutions that drive innovation and growth across your enterprise
+                </motion.p>
+              </div>
+            </motion.div>
+
+            {/* Right Column - Interactive Service Network */}
+            <motion.div
+              initial={{ opacity: 0, scale: 0.8 }}
+              animate={{ opacity: 1, scale: 1 }}
+              transition={{ delay: 0.3 }}
+              className="relative aspect-square max-w-[500px] mx-auto lg:mx-0 w-full"
+            >
+              {/* Service Network */}
+              <div className="relative w-full h-full">
+                {/* Neural Network Lines */}
+                <svg className="absolute inset-0 w-full h-full">
+                  {/* Background connection lines */}
+                  {services.map((service, i) => 
+                    service.connections.map((targetIndex) => (
+                      <motion.line
+                        key={`${i}-${targetIndex}-bg`}
+                        x1={`${50 + Math.cos(i * (2 * Math.PI / 9)) * 40}%`}
+                        y1={`${50 + Math.sin(i * (2 * Math.PI / 9)) * 40}%`}
+                        x2={`${50 + Math.cos(targetIndex * (2 * Math.PI / 9)) * 40}%`}
+                        y2={`${50 + Math.sin(targetIndex * (2 * Math.PI / 9)) * 40}%`}
+                        stroke="rgba(255,255,255,0.05)"
+                        strokeWidth="1"
+                      />
+                    ))
+                  )}
+                  
+                  {/* Active connection lines */}
+                  {activeService !== null && services[activeService].connections.map((targetIndex) => (
+                    <g key={`${activeService}-${targetIndex}`}>
+                      <motion.line
+                        x1={`${50 + Math.cos(activeService * (2 * Math.PI / 9)) * 40}%`}
+                        y1={`${50 + Math.sin(activeService * (2 * Math.PI / 9)) * 40}%`}
+                        x2={`${50 + Math.cos(targetIndex * (2 * Math.PI / 9)) * 40}%`}
+                        y2={`${50 + Math.sin(targetIndex * (2 * Math.PI / 9)) * 40}%`}
+                        stroke={`url(#gradient-${activeService})`}
+                        strokeWidth="2"
+                        initial={{ pathLength: 0, opacity: 0 }}
+                        animate={{ pathLength: 1, opacity: 0.8 }}
+                        transition={{ duration: 0.5 }}
+                      />
+                      <motion.circle
+                        r="2"
+                        fill="white"
+                        initial={{
+                          x: 50 + Math.cos(activeService * (2 * Math.PI / 9)) * 40,
+                          y: 50 + Math.sin(activeService * (2 * Math.PI / 9)) * 40
+                        }}
+                        animate={{
+                          x: [
+                            50 + Math.cos(activeService * (2 * Math.PI / 9)) * 40,
+                            50 + Math.cos(targetIndex * (2 * Math.PI / 9)) * 40
+                          ],
+                          y: [
+                            50 + Math.sin(activeService * (2 * Math.PI / 9)) * 40,
+                            50 + Math.sin(targetIndex * (2 * Math.PI / 9)) * 40
+                          ]
+                        }}
+                        transition={{
+                          duration: 1.5,
+                          repeat: Infinity,
+                          ease: "linear"
+                        }}
+                      />
+                    </g>
+                  ))}
+                  <defs>
+                    {services.map((service, index) => {
+                      const [fromColor, toColor] = service.color
+                        .split(' ')
+                        .filter(part => part.startsWith('from-') || part.startsWith('to-'))
+                        .map(part => part.replace('from-', '').replace('to-', '').replace('[', '').replace(']', ''))
+                      return (
+                        <linearGradient
+                          key={`gradient-${index}`}
+                          id={`gradient-${index}`}
+                          gradientTransform="rotate(90)"
+                        >
+                          <stop offset="0%" stopColor={`#${fromColor}`} />
+                          <stop offset="100%" stopColor={`#${toColor}`} />
+                        </linearGradient>
+                      )
+                    })}
+                  </defs>
+                </svg>
+
+                {/* Service Icons - Adjust size for mobile */}
+                {services.map((service, index) => {
+                  const angle = index * (2 * Math.PI / 9)
+                  const x = 50 + Math.cos(angle) * (window.innerWidth < 640 ? 35 : 40)
+                  const y = 50 + Math.sin(angle) * (window.innerWidth < 640 ? 35 : 40)
+                  
+                  return (
+                    <motion.div
+                      key={index}
+                      className="absolute"
+                      style={{
+                        top: `${y}%`,
+                        left: `${x}%`,
+                        transform: 'translate(-50%, -50%)',
+                        zIndex: activeService === index ? 50 : 10
+                      }}
+                      onMouseEnter={() => handleServiceHover(index)}
+                      onMouseLeave={() => setActiveService(null)}
+                    >
+                      <motion.div
+                        className={`w-10 h-10 sm:w-14 sm:h-14 rounded-xl bg-gradient-to-r ${service.color} p-0.5 cursor-pointer relative group`}
+                        whileHover={{ scale: 1.05 }}
+                      >
+                        <div className="w-full h-full rounded-xl bg-[#0A1628] flex items-center justify-center text-white p-2">
+                          {service.icon}
+                        </div>
+
+                        {/* Service Dashboard Popup */}
+                        <AnimatePresence>
+                          {activeService === index && (
+                            <div className="fixed inset-0 z-[1000] pointer-events-none">
+                              <div className="absolute inset-0 flex items-center justify-center">
+                                <motion.div
+                                  className={`w-[240px] sm:w-[280px] bg-[#0F172A] rounded-lg border border-[#1A2B44] shadow-2xl pointer-events-auto`}
+                                  initial={{ opacity: 0, y: popupPosition === 'top' ? 20 : -20, scale: 0.95 }}
+                                  animate={{ opacity: 1, y: 0, scale: 1 }}
+                                  exit={{ opacity: 0, scale: 0.95 }}
+                                  transition={{ duration: 0.2 }}
+                                  style={{ 
+                                    position: 'absolute',
+                                    left: `${x}%`,
+                                    top: popupPosition === 'top' ? `${y - 80}%` : `${y + 20}%`,
+                                    transform: 'translate(-50%, -50%)',
+                                    willChange: 'transform'
+                                  }}
+                                >
+                                  {/* Content Container */}
+                                  <div className="relative divide-y divide-[#1A2B44]">
+                                    {/* Header Section */}
+                                    <div className={`p-2.5 bg-gradient-to-br ${service.color}/5`}>
+                                      <div className="flex items-center justify-between mb-1.5">
+                                        <h3 className="text-white font-medium text-sm">{service.label}</h3>
+                                        <div className="flex items-center gap-1.5">
+                                          <div className="w-1.5 h-1.5 rounded-full bg-green-500 animate-pulse" />
+                                          <span className="text-[10px] text-gray-400">Live</span>
+                                        </div>
+                                      </div>
+                                      <p className="text-[11px] text-gray-300 leading-snug">{service.description}</p>
+                                    </div>
+
+                                    {/* Stats Grid */}
+                                    <div className="p-2.5 bg-[#1A2B44]/20">
+                                      <div className="grid grid-cols-3 gap-1">
+                                        {Object.entries(service.stats).map(([key, value], i) => (
+                                          <div
+                                            key={key}
+                                            className="bg-[#0F172A] rounded p-1.5 text-center"
+                                          >
+                                            <div className="text-[10px] text-gray-400 mb-0.5 truncate">{key}</div>
+                                            <div className="text-xs font-medium text-white truncate">{value}</div>
+                                          </div>
+                                        ))}
+                                      </div>
+                                    </div>
+
+                                    {/* Metrics */}
+                                    <div className="p-2.5 space-y-2 bg-[#1A2B44]/10">
+                                      {service.metrics.map((metric, i) => (
+                                        <div
+                                          key={i}
+                                          className="bg-[#0F172A] rounded p-2"
+                                        >
+                                          <div className="flex items-center justify-between mb-1">
+                                            <span className="text-[11px] font-medium text-white truncate flex-1">{metric.label}</span>
+                                            <span className={`text-[10px] px-1.5 py-0.5 rounded-full ml-1 ${metric.trend.startsWith('+') ? 'bg-green-500/10 text-green-400' : 'bg-red-500/10 text-red-400'}`}>
+                                              {metric.trend}
+                                            </span>
+                                          </div>
+                                          <div className="flex items-center gap-2">
+                                            <div className="text-sm font-semibold text-white">{metric.value}</div>
+                                            <div className={`flex-1 h-1 rounded-full bg-gradient-to-r ${service.color}/20`}>
+                                              <motion.div
+                                                className={`h-full rounded-full bg-gradient-to-r ${service.color}`}
+                                                initial={{ width: 0 }}
+                                                animate={{ width: metric.trend.startsWith('+') ? '75%' : '45%' }}
+                                                transition={{ duration: 0.5 }}
+                                              />
+                                            </div>
+                                          </div>
+                                        </div>
+                                      ))}
+                                    </div>
+
+                                    {/* Connected Services */}
+                                    <div className="p-2.5 bg-[#1A2B44]/20">
+                                      <div className="text-[10px] font-medium text-gray-400 mb-1.5">Connected Services</div>
+                                      <div className="flex flex-wrap gap-1">
+                                        {service.connections.map((connIndex) => (
+                                          <div
+                                            key={connIndex}
+                                            className={`px-1.5 py-0.5 rounded bg-[#0F172A] text-[10px] text-white flex items-center gap-1 border border-[#1A2B44]`}
+                                          >
+                                            <div className="w-2.5 h-2.5 opacity-75">
+                                              {services[connIndex].icon}
+                                            </div>
+                                            <span className="truncate">{services[connIndex].label}</span>
+                                          </div>
+                                        ))}
+                                      </div>
+                                    </div>
+
+                                    {/* Actions */}
+                                    <div className="p-2.5 flex gap-1.5 bg-[#1A2B44]/20">
+                                      <button 
+                                        className="flex-1 px-2 py-1.5 bg-[#243B61] hover:bg-[#2D4875] rounded text-[10px] text-white font-medium flex items-center justify-center gap-1 transition-colors"
+                                      >
+                                        <ChartBarIcon className="w-3 h-3" />
+                                        Analytics
+                                      </button>
+                                      <button 
+                                        className={`flex-1 px-2 py-1.5 rounded text-[10px] text-white font-medium flex items-center justify-center gap-1 bg-gradient-to-r ${service.color} hover:opacity-90 transition-opacity`}
+                                      >
+                                        <CogIcon className="w-3 h-3" />
+                                        Configure
+                                      </button>
+                                    </div>
+                                  </div>
+                                </motion.div>
+                              </div>
+                            </div>
+                          )}
+                        </AnimatePresence>
+                      </motion.div>
+                    </motion.div>
+                  )
+                })}
+              </div>
+            </motion.div>
+          </div>
+        </div>
+
+        {/* CTA Buttons - Shared between layouts but styled differently */}
+        <motion.div
+          className="flex flex-col sm:flex-row justify-center gap-4 mt-8 sm:mt-16"
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ delay: 0.6 }}
+        >
+          <GlowingButton
+            href="#solutions"
+            className="w-full sm:w-auto bg-gradient-to-r from-[#FF6B2C] to-[#FF8F2C] px-6 sm:px-8 py-3 sm:py-4 text-base sm:text-lg"
+          >
+            Explore Solutions
+          </GlowingButton>
+          <GlowingButton
+            href="#contact"
+            className="w-full sm:w-auto bg-gradient-to-r from-[#3B82F6]/10 to-[#60A5FA]/10 border-2 border-[#3B82F6]/20 hover:border-[#3B82F6]/40 px-6 sm:px-8 py-3 sm:py-4 text-base sm:text-lg"
+          >
+            Get Started
+          </GlowingButton>
+        </motion.div>
       </motion.div>
 
       {/* Central Dashboard Modal */}
       <AnimatePresence>
         {showCentralDashboard && (
           <>
-            {/* Backdrop */}
             <motion.div
               className="fixed inset-0 bg-black/60 backdrop-blur-sm z-[100]"
               initial={{ opacity: 0 }}
@@ -614,124 +731,76 @@ export default function Hero() {
               exit={{ opacity: 0 }}
               onClick={() => setShowCentralDashboard(false)}
             />
-            
-            {/* Modal */}
             <motion.div
-              className="fixed top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-[90vw] max-w-6xl max-h-[85vh] bg-[#0F172A] rounded-2xl border border-[#1A2B44] shadow-2xl overflow-hidden z-[101]"
+              className="fixed top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-[95vw] sm:w-[90vw] max-w-6xl h-[85vh] sm:h-[80vh] bg-[#0F172A] rounded-xl border border-[#1A2B44] shadow-2xl overflow-hidden z-[101]"
               initial={{ opacity: 0, scale: 0.9 }}
               animate={{ opacity: 1, scale: 1 }}
               exit={{ opacity: 0, scale: 0.9 }}
             >
-              {/* Glass Effect */}
-              <div className="absolute inset-0 bg-gradient-to-br from-white/5 via-transparent to-black/20 pointer-events-none" />
-
-              {/* Content */}
               <div className="relative h-full flex flex-col">
-                {/* Header */}
-                <div className="p-6 border-b border-[#1A2B44]">
+                {/* Modal Header */}
+                <div className="p-4 sm:p-6 border-b border-[#1A2B44]">
                   <div className="flex items-center justify-between">
                     <div>
-                      <h2 className="text-2xl font-bold text-white mb-2">Enterprise Solutions Dashboard</h2>
-                      <p className="text-gray-400">Comprehensive overview of our integrated technology solutions</p>
+                      <h2 className="text-xl sm:text-2xl font-bold text-white mb-1 sm:mb-2">Enterprise Solutions</h2>
+                      <p className="text-sm text-gray-400">Overview of our integrated solutions</p>
                     </div>
                     <button
                       onClick={() => setShowCentralDashboard(false)}
-                      className="p-2 hover:bg-white/5 rounded-lg transition-colors"
+                      className="p-1.5 sm:p-2 hover:bg-white/5 rounded-lg transition-colors"
                     >
-                      <svg className="w-6 h-6 text-gray-400" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
-                      </svg>
+                      <XMarkIcon className="w-5 h-5 sm:w-6 sm:h-6 text-gray-400" />
                     </button>
                   </div>
                 </div>
 
-                {/* Dashboard Grid */}
-                <div className="flex-1 overflow-auto p-6">
-                  <div className="grid grid-cols-3 gap-6">
-                    {services.map((service, index) => (
-                      <motion.div
-                        key={index}
-                        className="bg-[#1A2B44]/50 rounded-xl border border-[#1A2B44] overflow-hidden"
-                        initial={{ opacity: 0, y: 20 }}
-                        animate={{ opacity: 1, y: 0 }}
-                        transition={{ delay: index * 0.1 }}
-                      >
-                        {/* Service Header */}
-                        <div className={`p-4 bg-gradient-to-r ${service.color}/10`}>
-                          <div className="flex items-start gap-3">
-                            <div className={`p-2.5 rounded-lg bg-gradient-to-r ${service.color}/20`}>
-                              {service.icon}
-                            </div>
-                            <div>
-                              <h3 className="text-white font-medium">{service.label}</h3>
-                              <p className="text-sm text-gray-400 mt-1">{service.description}</p>
-                            </div>
-                          </div>
+                {/* Modal Content */}
+                <div className="flex-1 overflow-y-auto p-4 sm:p-6 space-y-4">
+                  {services.map((service, index) => (
+                    <motion.div
+                      key={index}
+                      className="p-4 rounded-xl bg-[#1A2B44]/30 border border-[#1A2B44] hover:border-[#FF6B2C]/20 transition-colors"
+                      initial={{ opacity: 0, y: 20 }}
+                      animate={{ opacity: 1, y: 0 }}
+                      transition={{ delay: index * 0.1 }}
+                    >
+                      <div className="flex items-start gap-4">
+                        <div className="w-10 h-10 rounded-lg bg-[#0F2137] border border-white/10 flex items-center justify-center">
+                          <div className="w-5 h-5 text-[#FF6B2C]">{service.icon}</div>
                         </div>
-
-                        {/* Stats Overview */}
-                        <div className="p-4 space-y-4">
-                          {/* Quick Stats */}
-                          <div className="grid grid-cols-3 gap-2">
+                        <div className="flex-1 min-w-0">
+                          <h3 className="text-lg font-semibold text-white mb-1">{service.label}</h3>
+                          <p className="text-sm text-gray-400 mb-3">{service.description}</p>
+                          <div className="grid grid-cols-2 sm:grid-cols-3 gap-2 text-sm">
                             {Object.entries(service.stats).map(([key, value]) => (
-                              <div key={key} className="text-center p-2 bg-[#243B61]/30 rounded-lg">
-                                <div className="text-xs text-gray-400">{key}</div>
-                                <div className="text-sm font-medium text-white mt-1">{value}</div>
-                              </div>
-                            ))}
-                          </div>
-
-                          {/* Metrics */}
-                          <div className="space-y-2">
-                            {service.metrics.map((metric, i) => (
-                              <div key={i} className="flex items-center justify-between p-2 bg-[#243B61]/30 rounded-lg">
-                                <div>
-                                  <div className="text-xs text-gray-400">{metric.label}</div>
-                                  <div className="text-sm font-medium text-white">{metric.value}</div>
-                                </div>
-                                <span className={`text-xs px-2 py-1 rounded-full ${metric.trend.startsWith('+') ? 'bg-green-500/10 text-green-400' : 'bg-red-500/10 text-red-400'}`}>
-                                  {metric.trend}
-                                </span>
+                              <div key={key} className="p-2 rounded-lg bg-black/20">
+                                <div className="text-gray-400 capitalize text-xs">{key}</div>
+                                <div className="text-white font-medium truncate">{value}</div>
                               </div>
                             ))}
                           </div>
                         </div>
-
-                        {/* Connected Services */}
-                        <div className="p-4 border-t border-[#1A2B44] bg-[#1A2B44]/30">
-                          <div className="text-xs text-gray-400 mb-2">Connected Services</div>
-                          <div className="flex flex-wrap gap-2">
-                            {service.connections.map((connIndex) => (
-                              <div
-                                key={connIndex}
-                                className={`px-2 py-1 rounded-lg text-xs bg-gradient-to-r ${services[connIndex].color}/10 text-white`}
-                              >
-                                {services[connIndex].label}
-                              </div>
-                            ))}
-                          </div>
-                        </div>
-                      </motion.div>
-                    ))}
-                  </div>
+                      </div>
+                    </motion.div>
+                  ))}
                 </div>
 
-                {/* Footer Actions */}
-                <div className="p-6 border-t border-[#1A2B44] bg-[#1A2B44]/30">
-                  <div className="flex justify-between items-center">
-                    <div className="flex items-center gap-4">
+                {/* Modal Footer */}
+                <div className="p-4 sm:p-6 border-t border-[#1A2B44] bg-[#1A2B44]/30">
+                  <div className="flex flex-col sm:flex-row justify-between items-start sm:items-center gap-4">
+                    <div className="flex flex-col sm:flex-row items-start sm:items-center gap-4">
                       <div className="flex items-center gap-2">
                         <div className="w-2 h-2 rounded-full bg-green-500 animate-pulse" />
                         <span className="text-sm text-gray-400">All Systems Operational</span>
                       </div>
                       <div className="text-sm text-gray-400">Last updated: Just now</div>
                     </div>
-                    <div className="flex gap-4">
-                      <button className="px-4 py-2 bg-[#243B61] text-white rounded-lg text-sm hover:bg-[#2D4875] transition-colors">
-                        View Full Analytics
+                    <div className="flex flex-col sm:flex-row gap-3 w-full sm:w-auto">
+                      <button className="px-4 py-2 bg-[#243B61] text-white rounded-lg text-sm hover:bg-[#2D4875] transition-colors w-full sm:w-auto">
+                        View Analytics
                       </button>
-                      <button className="px-4 py-2 bg-gradient-to-r from-[#FF6B2C] to-[#FF8F2C] text-white rounded-lg text-sm hover:opacity-90 transition-opacity">
-                        Configure Services
+                      <button className="px-4 py-2 bg-gradient-to-r from-[#FF6B2C] to-[#FF8F2C] text-white rounded-lg text-sm hover:opacity-90 transition-opacity w-full sm:w-auto">
+                        Configure
                       </button>
                     </div>
                   </div>
