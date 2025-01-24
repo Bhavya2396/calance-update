@@ -215,7 +215,6 @@ export default function Hero() {
   const containerRef = useRef<HTMLDivElement>(null)
   const { scrollY } = useScroll()
   const [isMobile, setIsMobile] = useState(false)
-  const [mounted, setMounted] = useState(false)
 
   useEffect(() => {
     const checkMobile = () => {
@@ -226,14 +225,6 @@ export default function Hero() {
     window.addEventListener('resize', checkMobile)
     return () => window.removeEventListener('resize', checkMobile)
   }, [])
-
-  useEffect(() => {
-    setMounted(true)
-  }, [])
-
-  if (!mounted) {
-    return null
-  }
 
   const y = useTransform(scrollY, [0, 500], [0, isMobile ? 0 : 200])
   const opacity = useTransform(scrollY, [0, 200], [1, isMobile ? 1 : 0])
@@ -369,10 +360,10 @@ export default function Hero() {
           >
             {/* Service Icons */}
             {services.map((service, index) => (
-              <motion.div
-                key={index}
+                  <motion.div
+                    key={index}
                 className="absolute w-14 h-14 rounded-xl bg-[#0F2137] border border-white/10 flex items-center justify-center cursor-pointer transition-transform hover:scale-105"
-                style={{
+                    style={{
                   top: `${Math.sin((index * 2 * Math.PI) / services.length) * 40 + 50}%`,
                   left: `${Math.cos((index * 2 * Math.PI) / services.length) * 40 + 50}%`,
                   transform: 'translate(-50%, -50%)'
@@ -381,13 +372,13 @@ export default function Hero() {
                 onClick={() => setActiveService(index)}
               >
                 <div className="w-6 h-6 text-[#FF6B2C]">
-                  {service.icon}
-                </div>
+                        {service.icon}
+                      </div>
               </motion.div>
             ))}
 
             {/* Central Icon */}
-            <motion.div 
+                                            <motion.div
               className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-16 h-16 cursor-pointer"
               onClick={() => setShowCentralDashboard(true)}
               whileHover={{ scale: 1.1 }}
@@ -397,13 +388,13 @@ export default function Hero() {
                 <div className="absolute inset-0 rounded-full border border-white/10" />
                 <div className="absolute inset-0 flex items-center justify-center">
                   <RocketLaunchIcon className="w-8 h-8 text-[#FF6B2C]" />
-                </div>
-              </div>
-            </motion.div>
-          </motion.div>
+                                  </div>
+                                </div>
+                              </motion.div>
+                    </motion.div>
 
           {/* CTA Buttons */}
-          <motion.div
+              <motion.div 
             className="flex flex-col gap-3 px-4 pb-6"
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
@@ -765,18 +756,18 @@ export default function Hero() {
 
                 {/* Modal Content */}
                 <div className="flex-1 overflow-y-auto p-4 sm:p-6 space-y-4">
-                  {services.map((service, index) => (
-                    <motion.div
-                      key={index}
+                    {services.map((service, index) => (
+                      <motion.div
+                        key={index}
                       className="p-4 rounded-xl bg-[#1A2B44]/30 border border-[#1A2B44] hover:border-[#FF6B2C]/20 transition-colors"
-                      initial={{ opacity: 0, y: 20 }}
-                      animate={{ opacity: 1, y: 0 }}
-                      transition={{ delay: index * 0.1 }}
-                    >
+                        initial={{ opacity: 0, y: 20 }}
+                        animate={{ opacity: 1, y: 0 }}
+                        transition={{ delay: index * 0.1 }}
+                      >
                       <div className="flex items-start gap-4">
                         <div className="w-10 h-10 rounded-lg bg-[#0F2137] border border-white/10 flex items-center justify-center">
                           <div className="w-5 h-5 text-[#FF6B2C]">{service.icon}</div>
-                        </div>
+                            </div>
                         <div className="flex-1 min-w-0">
                           <h3 className="text-lg font-semibold text-white mb-1">{service.label}</h3>
                           <p className="text-sm text-gray-400 mb-3">{service.description}</p>
@@ -788,10 +779,10 @@ export default function Hero() {
                               </div>
                             ))}
                           </div>
+                          </div>
                         </div>
-                      </div>
-                    </motion.div>
-                  ))}
+                      </motion.div>
+                    ))}
                 </div>
 
                 {/* Modal Footer */}

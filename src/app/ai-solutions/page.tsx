@@ -235,16 +235,10 @@ interface ComponentProps {
 }
 
 export default function AISolutions() {
-  const [mounted, setMounted] = useState(false)
   const [activeSection, setActiveSection] = useState<ToolId | null>(null)
   const [isProcessing, setIsProcessing] = useState(false)
   const mainContentRef = useRef<HTMLDivElement>(null)
   const { scrollYProgress } = useScroll()
-
-  useEffect(() => {
-    if (typeof window === 'undefined') return;
-    setMounted(true)
-  }, [])
 
   // Handle tool selection
   const handleToolClick = (toolId: ToolId) => {
@@ -255,70 +249,86 @@ export default function AISolutions() {
     }
   }
 
-  if (!mounted) {
-    return null
-  }
+  // Get props for each component type with proper return types
+  const getDocumentProps = (): DocumentProcessorProps => ({
+    onAnalyze: handleAnalysisComplete
+  });
 
-  // Get props for the active component
-  const getComponentProps = (id: ToolId): ComponentProps[typeof id] => {
-    switch (id) {
-      case 'document':
-        return {
-          onAnalyze: (result) => {
-            console.log('Document analysis result:', result)
-            setIsProcessing(false)
-          }
-        } as ComponentProps['document']
-      case 'topics':
-        return {
-          words: mockWordCloudData
-        } as ComponentProps['topics']
-      case 'sentiment':
-        return {
-          sentiment: mockSentimentData
-        } as ComponentProps['sentiment']
-      case 'prediction':
-        return {
-          timeRange: mockSalesPredictions.timeRange,
-          baselinePredictions: mockSalesPredictions.baselinePredictions,
-          optimisticPredictions: mockSalesPredictions.optimisticPredictions,
-          pessimisticPredictions: mockSalesPredictions.pessimisticPredictions
-        } as ComponentProps['prediction']
+  const getTopicsProps = (): WordCloudProps => ({
+    words: [
+      { text: 'AI', value: 100 },
+      { text: 'Machine Learning', value: 80 },
+      { text: 'Neural Networks', value: 75 },
+      { text: 'Deep Learning', value: 70 },
+      { text: 'Data Science', value: 65 },
+      { text: 'Automation', value: 60 },
+      { text: 'Analytics', value: 55 },
+      { text: 'Big Data', value: 50 },
+      { text: 'Algorithms', value: 45 },
+      { text: 'Innovation', value: 40 }
+    ]
+  });
+
+  const getSentimentProps = (): SentimentChartProps => ({
+    sentiment: {
+      positive: 65,
+      negative: 15,
+      neutral: 20,
+      emotions: {
+        joy: 40,
+        sadness: 10,
+        anger: 5,
+        fear: 15,
+        surprise: 30
+      }
     }
-  }
+  });
+
+  const getPredictionProps = (): SalesPredictionChartProps => ({
+    timeRange: 12,
+    baselinePredictions: Array.from({ length: 12 }, () => Math.floor(Math.random() * 100)),
+    optimisticPredictions: Array.from({ length: 12 }, () => Math.floor(Math.random() * 150)),
+    pessimisticPredictions: Array.from({ length: 12 }, () => Math.floor(Math.random() * 50))
+  });
 
   // Render the active component with proper props
   const renderActiveComponent = () => {
-    if (!activeSection) return null
+    if (!activeSection) return null;
+    const tool = tools.find(t => t.id === activeSection);
+    if (!tool) return null;
 
-    const containerClass = "w-full h-full bg-[#0A1A35]/80 backdrop-blur-sm rounded-xl p-6"
+    const containerClass = "w-full h-full flex items-center justify-center p-4";
 
-    switch (activeSection) {
+    switch (tool.id) {
       case 'document':
         return (
           <div className={containerClass}>
-            <DocumentProcessor {...(getComponentProps('document') as DocumentProcessorProps)} />
+            <DocumentProcessor {...getDocumentProps()} />
           </div>
-        )
+        );
       case 'topics':
         return (
           <div className={containerClass}>
-            <WordCloud {...(getComponentProps('topics') as WordCloudProps)} />
+            <WordCloud {...getTopicsProps()} />
           </div>
-        )
+        );
       case 'sentiment':
         return (
           <div className={containerClass}>
-            <SentimentChart {...(getComponentProps('sentiment') as SentimentChartProps)} />
+            <SentimentChart {...getSentimentProps()} />
           </div>
-        )
+        );
       case 'prediction':
         return (
           <div className={containerClass}>
-            <SalesPredictionChart {...(getComponentProps('prediction') as SalesPredictionChartProps)} />
+            <SalesPredictionChart {...getPredictionProps()} />
           </div>
-        )
+        );
     }
+  };
+
+  const handleAnalysisComplete = (result: any) => {
+    setIsProcessing(false)
   }
 
   return (
@@ -445,14 +455,14 @@ export default function AISolutions() {
               </div>
 
           {/* Active Component Container with navy tint */}
-          <AnimatePresence mode="wait">
+              <AnimatePresence mode="wait">
             {activeSection && (
-              <motion.div
+                  <motion.div
                 key={activeSection}
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
                 exit={{ opacity: 0, y: -20 }}
-                transition={{ duration: 0.3 }}
+                    transition={{ duration: 0.3 }}
                 className="rounded-lg border border-white/10 bg-[#0A1A35]/80 backdrop-blur-md p-4 sm:p-6"
               >
                 {/* Component Header - Larger text for mobile */}

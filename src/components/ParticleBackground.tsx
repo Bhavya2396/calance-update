@@ -1,98 +1,63 @@
-'use client'
+import { motion } from 'framer-motion';
 
-import { useEffect, useRef } from 'react'
-
-interface Particle {
-  x: number
-  y: number
-  radius: number
-  color: string
-  speedX: number
-  speedY: number
-}
-
-export default function ParticleBackground() {
-  const canvasRef = useRef<HTMLCanvasElement>(null)
-
-  useEffect(() => {
-    if (typeof window === 'undefined') return;
-
-    const canvas = canvasRef.current
-    if (!canvas) return
-
-    const ctx = canvas.getContext('2d')
-    if (!ctx) return
-
-    const particles: Particle[] = []
-    let animationFrameId: number
-
-    const resizeCanvas = () => {
-      if (!canvas) return
-      canvas.width = window.innerWidth
-      canvas.height = window.innerHeight
-    }
-
-    const createParticle = (): Particle => ({
-      x: Math.random() * (canvas?.width || 0),
-      y: Math.random() * (canvas?.height || 0),
-      radius: Math.random() * 2 + 1,
-      color: `rgba(255, 255, 255, ${Math.random() * 0.2})`,
-      speedX: Math.random() * 0.5 - 0.25,
-      speedY: Math.random() * 0.5 - 0.25
-    })
-
-    const initParticles = () => {
-      const particleCount = Math.min(
-        Math.floor((window.innerWidth * window.innerHeight) / 15000),
-        100
-      )
-      particles.length = 0
-      for (let i = 0; i < particleCount; i++) {
-        particles.push(createParticle())
-      }
-    }
-
-    const animate = () => {
-      if (!ctx || !canvas) return
-      ctx.clearRect(0, 0, canvas.width, canvas.height)
-
-      particles.forEach(particle => {
-        particle.x += particle.speedX
-        particle.y += particle.speedY
-
-        if (particle.x < 0) particle.x = canvas.width
-        if (particle.x > canvas.width) particle.x = 0
-        if (particle.y < 0) particle.y = canvas.height
-        if (particle.y > canvas.height) particle.y = 0
-
-        ctx.beginPath()
-        ctx.arc(particle.x, particle.y, particle.radius, 0, Math.PI * 2)
-        ctx.fillStyle = particle.color
-        ctx.fill()
-      })
-
-      animationFrameId = requestAnimationFrame(animate)
-    }
-
-    resizeCanvas()
-    initParticles()
-    animate()
-
-    window.addEventListener('resize', () => {
-      resizeCanvas()
-      initParticles()
-    })
-
-    return () => {
-      cancelAnimationFrame(animationFrameId)
-      window.removeEventListener('resize', resizeCanvas)
-    }
-  }, [])
-
+const ParticleBackground = () => {
   return (
-    <canvas
-      ref={canvasRef}
-      className="fixed inset-0 z-0 bg-transparent pointer-events-none"
-    />
-  )
-} 
+    <div className="absolute inset-0 -z-10 overflow-hidden">
+      {/* Animated gradient backgrounds */}
+      <motion.div
+        className="absolute -inset-[10px] opacity-50"
+        animate={{
+          background: [
+            'radial-gradient(circle at 50% 50%, rgba(56, 189, 248, 0.1) 0%, transparent 50%)',
+            'radial-gradient(circle at 60% 60%, rgba(56, 189, 248, 0.1) 0%, transparent 50%)',
+            'radial-gradient(circle at 50% 50%, rgba(56, 189, 248, 0.1) 0%, transparent 50%)',
+          ],
+        }}
+        transition={{
+          duration: 8,
+          repeat: Infinity,
+          ease: "linear"
+        }}
+      />
+
+      {/* Glowing orbs */}
+      <motion.div
+        className="absolute top-20 left-[20%] w-[400px] h-[400px] rounded-full bg-blue-500/20"
+        style={{ filter: 'blur(100px)' }}
+        animate={{
+          scale: [1, 1.2, 1],
+          opacity: [0.3, 0.2, 0.3],
+        }}
+        transition={{
+          duration: 10,
+          repeat: Infinity,
+          ease: "linear"
+        }}
+      />
+      
+      <motion.div
+        className="absolute bottom-20 right-[20%] w-[400px] h-[400px] rounded-full bg-purple-500/20"
+        style={{ filter: 'blur(100px)' }}
+        animate={{
+          scale: [1.2, 1, 1.2],
+          opacity: [0.2, 0.3, 0.2],
+        }}
+        transition={{
+          duration: 8,
+          repeat: Infinity,
+          ease: "linear"
+        }}
+      />
+
+      {/* Vignette effect */}
+      <div 
+        className="absolute inset-0"
+        style={{
+          background: 'radial-gradient(circle at 50% 50%, transparent 20%, rgba(0, 0, 0, 0.4) 100%)'
+        }}
+      />
+    </div>
+  );
+};
+
+export default ParticleBackground; 
