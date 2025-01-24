@@ -3,154 +3,146 @@
 import { useEffect, useRef } from 'react'
 import { motion } from 'framer-motion'
 
+interface Node {
+  x: number
+  y: number
+  connections: Node[]
+  pulseRadius: number
+  pulseOpacity: number
+  pulseDirection: number
+}
+
 interface BrainCircuitProps {
   className?: string
 }
 
-export default function BrainCircuit({ className }: BrainCircuitProps) {
+export default function BrainCircuit({ className = '' }: BrainCircuitProps) {
   const canvasRef = useRef<HTMLCanvasElement>(null)
 
   useEffect(() => {
+    if (typeof window === 'undefined') return;
+
     const canvas = canvasRef.current
     if (!canvas) return
 
     const ctx = canvas.getContext('2d')
     if (!ctx) return
 
-    // Set canvas size
-    const handleResize = () => {
+    const nodes: Node[] = []
+    let animationFrameId: number
+
+    const resizeCanvas = () => {
+      if (!canvas) return
       canvas.width = window.innerWidth
       canvas.height = window.innerHeight
     }
-    handleResize()
-    window.addEventListener('resize', handleResize)
 
-    // Circuit node class
-    class Node {
-      x: number
-      y: number
-      connections: Node[]
-      pulseOffset: number
-      pulseSpeed: number
-      size: number
-
-      constructor(x: number, y: number) {
-        this.x = x
-        this.y = y
-        this.connections = []
-        this.pulseOffset = Math.random() * Math.PI * 2
-        this.pulseSpeed = 0.02 + Math.random() * 0.02
-        this.size = 2 + Math.random() * 2
-      }
-
-      connect(node: Node) {
-        if (!this.connections.includes(node)) {
-          this.connections.push(node)
-          node.connections.push(this)
-        }
-      }
-
-      update(time: number) {
-        this.pulseOffset += this.pulseSpeed
-        this.size = 2 + Math.sin(this.pulseOffset) * 1
-      }
-
-      draw(ctx: CanvasRenderingContext2D, time: number) {
-        // Draw node
-        ctx.beginPath()
-        ctx.arc(this.x, this.y, this.size, 0, Math.PI * 2)
-        ctx.fillStyle = `rgba(255, 107, 44, ${0.3 + Math.sin(this.pulseOffset) * 0.2})`
-        ctx.fill()
-
-        // Draw connections
-        this.connections.forEach(node => {
-          const dx = node.x - this.x
-          const dy = node.y - this.y
-          const distance = Math.sqrt(dx * dx + dy * dy)
-          
-          // Only draw if within reasonable distance
-          if (distance < 200) {
-            ctx.beginPath()
-            ctx.moveTo(this.x, this.y)
-            ctx.lineTo(node.x, node.y)
-            
-            // Pulse effect along the line
-            const gradient = ctx.createLinearGradient(this.x, this.y, node.x, node.y)
-            const pulsePos = (Math.sin(time * 0.001 + this.pulseOffset) + 1) / 2
-            
-            gradient.addColorStop(0, 'rgba(255, 107, 44, 0)')
-            gradient.addColorStop(pulsePos, 'rgba(255, 107, 44, 0.2)')
-            gradient.addColorStop(1, 'rgba(255, 107, 44, 0)')
-            
-            ctx.strokeStyle = gradient
-            ctx.lineWidth = 1
-            ctx.stroke()
-          }
-        })
-      }
-    }
-
-    // Create nodes in a brain-like shape
-    const nodes: Node[] = []
-    const numNodes = 50
-    const centerX = canvas.width / 2
-    const centerY = canvas.height / 2
-
-    for (let i = 0; i < numNodes; i++) {
-      const angle = (i / numNodes) * Math.PI * 2
-      const radius = 100 + Math.random() * 100
-      const x = centerX + Math.cos(angle) * radius
-      const y = centerY + Math.sin(angle) * radius
-      nodes.push(new Node(x, y))
-    }
-
-    // Connect nodes
-    nodes.forEach(node => {
-      const nearestNodes = nodes
-        .filter(n => n !== node)
-        .sort((a, b) => {
-          const distA = Math.sqrt(Math.pow(a.x - node.x, 2) + Math.pow(a.y - node.y, 2))
-          const distB = Math.sqrt(Math.pow(b.x - node.x, 2) + Math.pow(b.y - node.y, 2))
-          return distA - distB
-        })
-        .slice(0, 3)
-
-      nearestNodes.forEach(nearNode => node.connect(nearNode))
+    const createNode = (x: number, y: number): Node => ({
+      x,
+      y,
+      connections: [],
+      pulseRadius: 0,
+      pulseOpacity: 0,
+      pulseDirection: 1
     })
 
-    // Animation loop
-    let animationFrameId: number
-    let time = 0
+    const initNodes = () => {
+      nodes.length = 0
+      const nodeCount = Math.min(Math.floor((window.innerWidth * window.innerHeight) / 40000), 50)
+      
+      for (let i = 0; i < nodeCount; i++) {
+        const x = Math.random() * canvas.width
+        const y = Math.random() * canvas.height
+        nodes.push(createNode(x, y))
+      }
+
+      // Connect nodes
+      nodes.forEach(node => {
+        const closestNodes = nodes
+          .filter(n => n !== node)
+          .sort((a, b) => {
+            const distA = Math.hypot(node.x - a.x, node.y - a.y)
+            const distB = Math.hypot(node.x - b.x, node.y - b.y)
+            return distA - distB
+          })
+          .slice(0, 3)
+
+        node.connections = closestNodes
+      })
+    }
+
+    const drawNode = (node: Node) => {
+      if (!ctx) return
+
+      // Draw connections
+      node.connections.forEach(connection => {
+        ctx.beginPath()
+        ctx.moveTo(node.x, node.y)
+        ctx.lineTo(connection.x, connection.y)
+        ctx.strokeStyle = 'rgba(255, 107, 44, 0.2)'
+        ctx.lineWidth = 1
+        ctx.stroke()
+      })
+
+      // Draw node
+      ctx.beginPath()
+      ctx.arc(node.x, node.y, 2, 0, Math.PI * 2)
+      ctx.fillStyle = '#FF6B2C'
+      ctx.fill()
+
+      // Draw pulse
+      if (node.pulseOpacity > 0) {
+        ctx.beginPath()
+        ctx.arc(node.x, node.y, node.pulseRadius, 0, Math.PI * 2)
+        ctx.strokeStyle = `rgba(255, 107, 44, ${node.pulseOpacity})`
+        ctx.stroke()
+      }
+    }
 
     const animate = () => {
-      time++
-      
-      ctx.fillStyle = 'rgba(10, 10, 10, 0.1)'
-      ctx.fillRect(0, 0, canvas.width, canvas.height)
+      if (!ctx || !canvas) return
+      ctx.clearRect(0, 0, canvas.width, canvas.height)
 
       nodes.forEach(node => {
-        node.update(time)
-        node.draw(ctx, time)
+        // Update pulse
+        if (node.pulseDirection > 0) {
+          node.pulseRadius += 0.5
+          node.pulseOpacity -= 0.02
+          if (node.pulseOpacity <= 0) {
+            node.pulseDirection = -1
+            node.pulseRadius = 0
+            node.pulseOpacity = 0
+          }
+        } else if (Math.random() < 0.02) {
+          node.pulseDirection = 1
+          node.pulseOpacity = 0.3
+        }
+
+        drawNode(node)
       })
 
       animationFrameId = requestAnimationFrame(animate)
     }
 
+    resizeCanvas()
+    initNodes()
     animate()
 
+    window.addEventListener('resize', () => {
+      resizeCanvas()
+      initNodes()
+    })
+
     return () => {
-      window.removeEventListener('resize', handleResize)
       cancelAnimationFrame(animationFrameId)
+      window.removeEventListener('resize', resizeCanvas)
     }
   }, [])
 
   return (
     <motion.canvas
       ref={canvasRef}
-      className={`w-full h-full ${className || ''}`}
-      initial={{ opacity: 0 }}
-      animate={{ opacity: 1 }}
-      transition={{ duration: 1 }}
+      className={`fixed inset-0 z-0 bg-transparent pointer-events-none ${className}`}
     />
   )
 } 

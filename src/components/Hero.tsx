@@ -215,6 +215,7 @@ export default function Hero() {
   const containerRef = useRef<HTMLDivElement>(null)
   const { scrollY } = useScroll()
   const [isMobile, setIsMobile] = useState(false)
+  const [mounted, setMounted] = useState(false)
 
   useEffect(() => {
     const checkMobile = () => {
@@ -225,6 +226,14 @@ export default function Hero() {
     window.addEventListener('resize', checkMobile)
     return () => window.removeEventListener('resize', checkMobile)
   }, [])
+
+  useEffect(() => {
+    setMounted(true)
+  }, [])
+
+  if (!mounted) {
+    return null
+  }
 
   const y = useTransform(scrollY, [0, 500], [0, isMobile ? 0 : 200])
   const opacity = useTransform(scrollY, [0, 200], [1, isMobile ? 1 : 0])
