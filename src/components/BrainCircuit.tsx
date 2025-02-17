@@ -1,6 +1,6 @@
 'use client'
 
-import { useEffect, useRef } from 'react'
+import { useEffect, useRef, useState } from 'react'
 import { motion } from 'framer-motion'
 
 interface BrainCircuitProps {
@@ -9,6 +9,31 @@ interface BrainCircuitProps {
 
 export default function BrainCircuit({ className }: BrainCircuitProps) {
   const canvasRef = useRef<HTMLCanvasElement>(null)
+  const [dimensions, setDimensions] = useState({ width: 0, height: 0 })
+  const nodesRef = useRef<Node[]>([])
+  const animationFrameRef = useRef<number | undefined>(undefined)
+
+  // Handle resize
+  useEffect(() => {
+    const handleResize = () => {
+      if (typeof window !== 'undefined' && canvasRef.current) {
+        const canvas = canvasRef.current
+        setDimensions({
+          width: window.innerWidth,
+          height: window.innerHeight
+        })
+        canvas.width = window.innerWidth
+        canvas.height = window.innerHeight
+      }
+    }
+
+    handleResize()
+
+    if (typeof window !== 'undefined') {
+      window.addEventListener('resize', handleResize)
+      return () => window.removeEventListener('resize', handleResize)
+    }
+  }, [])
 
   useEffect(() => {
     const canvas = canvasRef.current
@@ -16,14 +41,6 @@ export default function BrainCircuit({ className }: BrainCircuitProps) {
 
     const ctx = canvas.getContext('2d')
     if (!ctx) return
-
-    // Set canvas size
-    const handleResize = () => {
-      canvas.width = window.innerWidth
-      canvas.height = window.innerHeight
-    }
-    handleResize()
-    window.addEventListener('resize', handleResize)
 
     // Circuit node class
     class Node {
@@ -139,7 +156,6 @@ export default function BrainCircuit({ className }: BrainCircuitProps) {
     animate()
 
     return () => {
-      window.removeEventListener('resize', handleResize)
       cancelAnimationFrame(animationFrameId)
     }
   }, [])

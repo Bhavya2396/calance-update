@@ -38,20 +38,23 @@ const COLORS = {
 export default function WordCloud({ words }: WordCloudProps) {
   const [selectedWord, setSelectedWord] = useState<PositionedWord | null>(null)
   const [layout, setLayout] = useState<PositionedWord[]>([])
-  const [dimensions, setDimensions] = useState({ width: 800, height: 500 })
+  const [dimensions, setDimensions] = useState({ width: 0, height: 0 })
   const containerRef = useRef<HTMLDivElement>(null)
 
   useEffect(() => {
     const updateDimensions = () => {
-      if (containerRef.current) {
+      if (typeof window !== 'undefined' && containerRef.current) {
         const { width, height } = containerRef.current.getBoundingClientRect()
-        setDimensions({ width, height: height * 0.8 })
+        setDimensions({ width, height })
       }
     }
 
     updateDimensions()
-    window.addEventListener('resize', updateDimensions)
-    return () => window.removeEventListener('resize', updateDimensions)
+
+    if (typeof window !== 'undefined') {
+      window.addEventListener('resize', updateDimensions)
+      return () => window.removeEventListener('resize', updateDimensions)
+    }
   }, [])
 
   useEffect(() => {

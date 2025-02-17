@@ -38,9 +38,9 @@ const COLORS = {
   negative: '#EF4444',
   neutral: '#64748B',
   emotions: {
-    joy: '#FF6B2C',
-    sadness: '#3B82F6',
-    anger: '#EF4444',
+  joy: '#FF6B2C',
+  sadness: '#3B82F6',
+  anger: '#EF4444',
     fear: '#8B5CF6',
     surprise: '#F59E0B'
   }
@@ -126,10 +126,10 @@ export default function SentimentChart({ sentiment }: SentimentChartProps) {
                    COLORS.neutral 
           }}>
             {sentimentScore}%
-          </div>
+            </div>
           <div className="text-sm text-gray-400">Net Sentiment Index</div>
         </motion.div>
-        <motion.div
+            <motion.div 
           initial={{ opacity: 0, y: -10 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 0.1 }}
@@ -139,7 +139,7 @@ export default function SentimentChart({ sentiment }: SentimentChartProps) {
           <div className="text-xl sm:text-2xl font-bold text-white">{total.toLocaleString()}</div>
           <div className="text-sm text-gray-400">Total Interactions</div>
         </motion.div>
-        <motion.div
+              <motion.div
           initial={{ opacity: 0, y: -10 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 0.2 }}
@@ -151,7 +151,7 @@ export default function SentimentChart({ sentiment }: SentimentChartProps) {
           </div>
           <div className="text-sm text-gray-400">Primary Emotional Signal</div>
         </motion.div>
-      </div>
+          </div>
 
       {/* Main Content */}
       <div className="flex-1 grid grid-cols-1 sm:grid-cols-2 gap-4 sm:gap-6 min-h-0">
@@ -193,7 +193,7 @@ export default function SentimentChart({ sentiment }: SentimentChartProps) {
           <div className="flex items-center justify-between sticky top-0 bg-black/80 backdrop-blur-sm p-2 rounded-lg z-10">
             <h3 className="text-sm text-gray-400">Emotional Analysis</h3>
             <div className="text-xs text-gray-500">Click for details</div>
-          </div>
+      </div>
           {Object.entries(sentiment.emotions).map(([emotion, value], index) => (
             <motion.div
               key={emotion}
@@ -224,7 +224,7 @@ export default function SentimentChart({ sentiment }: SentimentChartProps) {
                   initial={{ width: 0 }}
                   animate={{ width: `${value}%` }}
                   className="absolute inset-y-0 left-0 rounded-full"
-                  style={{ 
+                style={{ 
                     backgroundColor: COLORS.emotions[emotion as keyof typeof COLORS.emotions],
                     opacity: activeEmotion === emotion ? 1 : 0.6
                   }}

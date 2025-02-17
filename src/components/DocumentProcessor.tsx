@@ -151,7 +151,7 @@ export default function DocumentProcessor({ onAnalyze }: DocumentProcessorProps)
           <div className="text-sm text-gray-400">Status</div>
           <div className="text-lg sm:text-2xl font-bold text-white">
             {isProcessing ? 'Processing' : result ? 'Completed' : 'Ready'}
-          </div>
+            </div>
         </motion.div>
         <motion.div
           initial={{ opacity: 0, y: -10 }}
@@ -175,7 +175,7 @@ export default function DocumentProcessor({ onAnalyze }: DocumentProcessorProps)
             {result ? `${(result.confidence * 100).toFixed(1)}%` : 'N/A'}
           </div>
         </motion.div>
-      </div>
+              </div>
 
       {/* Main Content */}
       <div className="flex-1 grid grid-cols-1 lg:grid-cols-2 gap-4 min-h-0">
@@ -205,7 +205,7 @@ export default function DocumentProcessor({ onAnalyze }: DocumentProcessorProps)
                   </p>
                   <div className="text-xs text-gray-500">
                     Supported formats: PDF, DOC, DOCX, TXT (Max 10MB)
-                  </div>
+            </div>
                 </motion.div>
               )}
               
@@ -221,7 +221,7 @@ export default function DocumentProcessor({ onAnalyze }: DocumentProcessorProps)
                   </div>
                   <div className="text-sm text-gray-400 mb-4">
                     {(file.size / (1024 * 1024)).toFixed(2)} MB
-                  </div>
+              </div>
                   <div className="flex flex-col sm:flex-row items-center justify-center gap-2 sm:gap-4">
                     <button
                       onClick={() => setFile(null)}
@@ -265,8 +265,8 @@ export default function DocumentProcessor({ onAnalyze }: DocumentProcessorProps)
                 </div>
               </motion.div>
             )}
-          </div>
-        </div>
+              </div>
+            </div>
 
         {/* Analysis Results */}
         <div className="space-y-3 sm:space-y-4 overflow-y-auto max-h-[400px] lg:max-h-none pr-2 scrollbar-thin scrollbar-thumb-white/10 hover:scrollbar-thumb-white/20">
@@ -285,7 +285,7 @@ export default function DocumentProcessor({ onAnalyze }: DocumentProcessorProps)
               {/* Key Points */}
               <motion.div
                 initial={{ opacity: 0, x: 20 }}
-                animate={{ opacity: 1, x: 0 }}
+                    animate={{ opacity: 1, x: 0 }}
                 transition={{ delay: 0.1 }}
                 className="p-3 sm:p-4 rounded-lg bg-black/20 border border-white/5"
               >
@@ -296,8 +296,8 @@ export default function DocumentProcessor({ onAnalyze }: DocumentProcessorProps)
                       <span className="w-1.5 h-1.5 mt-2 rounded-full bg-[#FF6B2C] mr-2" />
                       <span className="text-sm sm:text-base text-white">{point}</span>
                     </li>
-                  ))}
-                </ul>
+                ))}
+              </ul>
               </motion.div>
 
               {/* Entities */}
@@ -326,13 +326,13 @@ export default function DocumentProcessor({ onAnalyze }: DocumentProcessorProps)
                         <span className="text-xs sm:text-sm text-gray-400">
                           {(entity.confidence * 100).toFixed(0)}%
                         </span>
-                      </div>
-                    </div>
+            </div>
+          </div>
                   ))}
-                </div>
-              </motion.div>
+          </div>
+        </motion.div>
             </>
-          )}
+      )}
         </div>
       </div>
     </div>

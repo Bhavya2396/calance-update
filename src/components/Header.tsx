@@ -16,26 +16,28 @@ const navigation = [
 export default function Header() {
   const [isScrolled, setIsScrolled] = useState(false)
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false)
-  const [isVisible, setIsVisible] = useState(true)
+  const [visible, setVisible] = useState(true)
   const [prevScrollPos, setPrevScrollPos] = useState(0)
 
   useEffect(() => {
     const handleScroll = () => {
-      const currentScrollPos = window.scrollY
-      setIsScrolled(currentScrollPos > 10)
-      
-      // Show header when scrolling up, hide when scrolling down
-      setIsVisible(prevScrollPos > currentScrollPos || currentScrollPos < 10)
-      setPrevScrollPos(currentScrollPos)
+      if (typeof window !== 'undefined') {
+        const currentScrollPos = window.scrollY
+        setIsScrolled(currentScrollPos > 10)
+        setVisible(prevScrollPos > currentScrollPos || currentScrollPos < 10)
+        setPrevScrollPos(currentScrollPos)
+      }
     }
 
-    window.addEventListener('scroll', handleScroll)
-    return () => window.removeEventListener('scroll', handleScroll)
+    if (typeof window !== 'undefined') {
+      window.addEventListener('scroll', handleScroll)
+      return () => window.removeEventListener('scroll', handleScroll)
+    }
   }, [prevScrollPos])
 
   return (
     <header className={`fixed w-full z-50 transition-all duration-300 bg-[#0A1628]/80 backdrop-blur-sm border-b border-white/5 transform ${
-      isVisible ? 'translate-y-0' : '-translate-y-full'
+      visible ? 'translate-y-0' : '-translate-y-full'
     }`}>
       <nav className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8" aria-label="Top">
         <div className="flex h-20 items-center justify-between">
@@ -45,13 +47,15 @@ export default function Header() {
             animate={{ opacity: 1, x: 0 }}
             className="flex items-center"
           >
-            <Image
-              src="/images/illustrations/Screenshot_2025-01-16_at_4.36.53_AM-removebg-preview.png"
-              alt="Calance Logo"
-              width={150}
-              height={40}
-              className="h-10 w-auto"
-            />
+            <a href="/" className="flex items-center">
+              <Image
+                src="/images/illustrations/Screenshot_2025-01-16_at_4.36.53_AM-removebg-preview.png"
+                alt="Calance Logo"
+                width={150}
+                height={40}
+                className="h-10 w-auto"
+              />
+            </a>
           </motion.div>
 
           {/* Desktop Navigation */}
