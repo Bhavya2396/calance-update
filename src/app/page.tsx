@@ -638,6 +638,186 @@ export default function Home() {
     <main className="bg-[#0A1628] text-white min-h-screen">
       <Hero />
       {/* Main Content Sections */}
+      {/* 2. Our Solutions - Where Innovation Meets Implementation */}
+      <section id="solutions" className="py-16 sm:py-32 bg-[#0A1628] relative">
+        <div className="absolute inset-0 bg-[#0F172A]" />
+        <div className="absolute inset-0 bg-[url('/images/noise.png')] opacity-5" />
+        <div className="absolute right-0 top-1/4 w-1/2 h-1/2 bg-[#FF6B2C]/5 rounded-full blur-[120px]" />
+        <div className="absolute left-0 bottom-1/4 w-1/2 h-1/2 bg-[#3B82F6]/5 rounded-full blur-[120px]" />
+
+        <div className="relative max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+          <motion.div 
+            className="text-center mb-12 sm:mb-24"
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+          >
+            <div className="inline-flex items-center justify-center gap-2 px-4 py-2 rounded-full bg-[#1A2B44] text-[#FF6B2C] mb-6">
+              <RocketLaunchIcon className="w-4 h-4 sm:w-5 sm:h-5" />
+              <span className="text-xs sm:text-sm font-medium tracking-wide">Enterprise Solutions</span>
+            </div>
+            <h2 className="text-2xl sm:text-4xl md:text-5xl font-bold text-white mb-6 sm:mb-8 leading-tight">
+              Innovative Solutions for Digital Excellence
+            </h2>
+            <p className="text-base sm:text-xl text-gray-400 max-w-2xl mx-auto mb-6 leading-relaxed">
+              Delivering robust, scalable solutions that empower your business to thrive in the digital age. Our enterprise solutions are built on proven methodologies and industry best practices.
+            </p>
+          </motion.div>
+
+          {/* Implementation Journey Section */}
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 sm:gap-20 items-start mb-16 sm:mb-32">
+            {/* Left Column - Timeline */}
+            <motion.div
+              className="space-y-8 sm:space-y-12"
+              initial={{ opacity: 0, x: -20 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              viewport={{ once: true }}
+            >
+              <h3 className="text-2xl sm:text-3xl font-bold text-white leading-tight">Your Digital Transformation Journey</h3>
+              <div className="space-y-8 sm:space-y-16 relative">
+                <div className="absolute left-8 top-8 bottom-8 w-0.5 bg-gradient-to-b from-[#FF6B2C] via-[#3B82F6] to-[#FF6B2C] opacity-20" />
+                
+                {transformationSteps.map((step, index) => (
+                  <motion.div
+                    key={step.phase}
+                    className="relative pl-16 sm:pl-24 group"
+                    initial={{ opacity: 0, x: -20 }}
+                    whileInView={{ opacity: 1, x: 0 }}
+                    viewport={{ once: true }}
+                    transition={{ delay: index * 0.15 }}
+                  >
+                    {/* Timeline Node */}
+                    <motion.div 
+                      className={`absolute left-4 w-6 h-6 sm:w-8 sm:h-8 rounded-full bg-gradient-to-r ${step.color} p-0.5 cursor-pointer`}
+                      whileHover={{ scale: 1.2 }}
+                      whileTap={{ scale: 0.9 }}
+                    >
+                      <div className="w-full h-full rounded-full bg-[#0A1628] flex items-center justify-center text-white">
+                        {step.icon}
+                      </div>
+                    </motion.div>
+
+                    {/* Content */}
+                    <div className="bg-[#0F2137]/80 rounded-xl sm:rounded-2xl p-6 sm:p-8 border border-[#1A2B44] group-hover:border-[#FF6B2C]/20 transition-all duration-300">
+                      <div className="flex flex-col sm:flex-row sm:items-center gap-2 sm:gap-4 mb-4">
+                        <span className={`text-transparent bg-clip-text bg-gradient-to-r ${step.color} font-medium tracking-wide text-sm sm:text-base`}>
+                          {step.phase}
+                        </span>
+                        <span className="text-xs sm:text-sm text-gray-500 tracking-wide">• {step.duration}</span>
+                    </div>
+                      
+                      <h4 className="text-white font-medium mb-3 tracking-wide text-base sm:text-lg">{step.title}</h4>
+                      <p className="text-gray-400 text-sm sm:text-base leading-relaxed">{step.description}</p>
+
+                      {/* Progress Line */}
+                      <motion.div
+                        className={`h-1 bg-gradient-to-r ${step.color} rounded-full mt-6`}
+                        initial={{ width: 0 }}
+                        whileInView={{ width: "100%" }}
+                        viewport={{ once: true }}
+                        transition={{ delay: 0.4 }}
+                      />
+                    </div>
+                  </motion.div>
+                ))}
+              </div>
+            </motion.div>
+
+            {/* Right Column - Implementation Success Metrics */}
+            <motion.div
+              className="relative lg:sticky lg:top-8"
+              initial={{ opacity: 0, x: 20 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              viewport={{ once: true }}
+            >
+              <div className="bg-[#0F172A]/80 backdrop-blur-xl rounded-xl sm:rounded-2xl p-6 sm:p-10 border border-[#1A2B44] hover:border-[#FF6B2C]/20 transition-colors duration-300 shadow-xl">
+                <div className="space-y-6 sm:space-y-10">
+                  <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4 sm:gap-0 mb-6 sm:mb-8">
+                    <h4 className="text-xl sm:text-2xl font-bold text-white tracking-wide">Implementation Success Metrics</h4>
+                    <div className="flex items-center gap-3">
+                      <div className="w-2 h-2 sm:w-2.5 sm:h-2.5 rounded-full bg-[#10B981] animate-pulse" />
+                      <span className="text-xs sm:text-sm text-gray-400 tracking-wide">Real-time Data</span>
+                    </div>
+                  </div>
+
+                  <div className="grid gap-6 sm:gap-8">
+                    {[
+                      { 
+                        label: "Enterprise Projects Delivered", 
+                        value: "200+", 
+                        trend: "Growing portfolio", 
+                        detail: "Across various industries",
+                        icon: <RocketLaunchIcon className="w-5 h-5 sm:w-6 sm:h-6" />
+                      },
+                      { 
+                        label: "Average Implementation Time", 
+                        value: "12 weeks", 
+                        trend: "Efficient delivery", 
+                        detail: "With proven methodology",
+                        icon: <ClockIcon className="w-5 h-5 sm:w-6 sm:h-6" />
+                      },
+                      { 
+                        label: "Client Satisfaction Rate", 
+                        value: "98%", 
+                        trend: "Consistent quality", 
+                        detail: "Based on client feedback",
+                        icon: <StarIcon className="w-5 h-5 sm:w-6 sm:h-6" />
+                      }
+                    ].map((metric, index) => (
+                      <motion.div
+                        key={metric.label}
+                        className="bg-[#0A1628]/80 backdrop-blur-sm rounded-lg sm:rounded-xl p-6 sm:p-8 relative overflow-hidden border border-[#1A2B44] group hover:border-[#FF6B2C]/20 transition-all duration-300"
+                        initial={{ opacity: 0, y: 20 }}
+                        whileInView={{ opacity: 1, y: 0 }}
+                        viewport={{ once: true }}
+                        transition={{ delay: index * 0.1 }}
+                      >
+                        <div className="absolute inset-0 bg-gradient-to-br from-[#FF6B2C]/5 to-[#3B82F6]/5 opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+                        <div className="relative z-10">
+                          <div className="flex items-center gap-3 mb-3">
+                            <div className="p-2 rounded-lg bg-[#1A2B44] text-[#FF6B2C]">
+                              {metric.icon}
+                            </div>
+                            <span className="text-xs sm:text-sm text-gray-400 tracking-wide">{metric.label}</span>
+                          </div>
+                          <div className="flex items-end gap-3 mb-2">
+                            <span className="text-2xl sm:text-3xl font-bold text-white tracking-wide">{metric.value}</span>
+                            <span className="text-xs sm:text-sm text-[#10B981] mb-1.5 tracking-wide">{metric.trend}</span>
+                          </div>
+                          <p className="text-xs sm:text-sm text-gray-500 tracking-wide">{metric.detail}</p>
+                        </div>
+                      </motion.div>
+                    ))}
+                  </div>
+                </div>
+              </div>
+            </motion.div>
+          </div>
+
+          {/* Transition to Enterprise Solutions */}
+          <motion.div
+            className="text-center"
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+          >
+            <div className="inline-flex items-center gap-2 px-4 sm:px-6 py-2 sm:py-3 rounded-full bg-[#0F2137] border border-white/5 text-white mb-6 sm:mb-8">
+              <span className="text-xs sm:text-sm">Ready to see our solutions in action?</span>
+              <ArrowRightIcon className="w-3 h-3 sm:w-4 sm:h-4 text-[#FF6B2C]" />
+            </div>
+            <div className="flex justify-center gap-4">
+              <GlowingButton 
+                href="#enterprise" 
+                className="bg-gradient-to-r from-[#FF6B2C] to-[#FF8F2C] text-sm sm:text-base"
+              >
+                Explore Enterprise Solutions
+                <ArrowRightIcon className="w-3 h-3 sm:w-4 sm:h-4 ml-2" />
+              </GlowingButton>
+            </div>
+          </motion.div>
+        </div>
+      </section>
+
       {/* AI Services Section */}
       <section id="ai-services" className="py-12 sm:py-24 bg-[#0A1628] relative overflow-hidden min-h-screen flex items-center">
         <div className="absolute inset-0">
@@ -835,186 +1015,6 @@ export default function Home() {
                     <ArrowRightIcon className="w-4 h-4 ml-2" />
                   </GlowingButton>
                 </motion.div>
-        </div>
-      </section>
-
-      {/* 2. Our Solutions - Where Innovation Meets Implementation */}
-      <section id="solutions" className="py-16 sm:py-32 bg-[#0A1628] relative">
-        <div className="absolute inset-0 bg-[#0F172A]" />
-        <div className="absolute inset-0 bg-[url('/images/noise.png')] opacity-5" />
-        <div className="absolute right-0 top-1/4 w-1/2 h-1/2 bg-[#FF6B2C]/5 rounded-full blur-[120px]" />
-        <div className="absolute left-0 bottom-1/4 w-1/2 h-1/2 bg-[#3B82F6]/5 rounded-full blur-[120px]" />
-
-        <div className="relative max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-          <motion.div 
-            className="text-center mb-12 sm:mb-24"
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-          >
-            <div className="inline-flex items-center justify-center gap-2 px-4 py-2 rounded-full bg-[#1A2B44] text-[#FF6B2C] mb-6">
-              <RocketLaunchIcon className="w-4 h-4 sm:w-5 sm:h-5" />
-              <span className="text-xs sm:text-sm font-medium tracking-wide">Enterprise Solutions</span>
-            </div>
-            <h2 className="text-2xl sm:text-4xl md:text-5xl font-bold text-white mb-6 sm:mb-8 leading-tight">
-              Innovative Solutions for Digital Excellence
-            </h2>
-            <p className="text-base sm:text-xl text-gray-400 max-w-2xl mx-auto mb-6 leading-relaxed">
-              Delivering robust, scalable solutions that empower your business to thrive in the digital age. Our enterprise solutions are built on proven methodologies and industry best practices.
-            </p>
-          </motion.div>
-
-          {/* Implementation Journey Section */}
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 sm:gap-20 items-start mb-16 sm:mb-32">
-            {/* Left Column - Timeline */}
-            <motion.div
-              className="space-y-8 sm:space-y-12"
-              initial={{ opacity: 0, x: -20 }}
-              whileInView={{ opacity: 1, x: 0 }}
-              viewport={{ once: true }}
-            >
-              <h3 className="text-2xl sm:text-3xl font-bold text-white leading-tight">Your Digital Transformation Journey</h3>
-              <div className="space-y-8 sm:space-y-16 relative">
-                <div className="absolute left-8 top-8 bottom-8 w-0.5 bg-gradient-to-b from-[#FF6B2C] via-[#3B82F6] to-[#FF6B2C] opacity-20" />
-                
-                {transformationSteps.map((step, index) => (
-                  <motion.div
-                    key={step.phase}
-                    className="relative pl-16 sm:pl-24 group"
-                    initial={{ opacity: 0, x: -20 }}
-                    whileInView={{ opacity: 1, x: 0 }}
-                    viewport={{ once: true }}
-                    transition={{ delay: index * 0.15 }}
-                  >
-                    {/* Timeline Node */}
-                    <motion.div 
-                      className={`absolute left-4 w-6 h-6 sm:w-8 sm:h-8 rounded-full bg-gradient-to-r ${step.color} p-0.5 cursor-pointer`}
-                      whileHover={{ scale: 1.2 }}
-                      whileTap={{ scale: 0.9 }}
-                    >
-                      <div className="w-full h-full rounded-full bg-[#0A1628] flex items-center justify-center text-white">
-                        {step.icon}
-                      </div>
-                    </motion.div>
-
-                    {/* Content */}
-                    <div className="bg-[#0F2137]/80 rounded-xl sm:rounded-2xl p-6 sm:p-8 border border-[#1A2B44] group-hover:border-[#FF6B2C]/20 transition-all duration-300">
-                      <div className="flex flex-col sm:flex-row sm:items-center gap-2 sm:gap-4 mb-4">
-                        <span className={`text-transparent bg-clip-text bg-gradient-to-r ${step.color} font-medium tracking-wide text-sm sm:text-base`}>
-                          {step.phase}
-                        </span>
-                        <span className="text-xs sm:text-sm text-gray-500 tracking-wide">• {step.duration}</span>
-                    </div>
-                      
-                      <h4 className="text-white font-medium mb-3 tracking-wide text-base sm:text-lg">{step.title}</h4>
-                      <p className="text-gray-400 text-sm sm:text-base leading-relaxed">{step.description}</p>
-
-                      {/* Progress Line */}
-                      <motion.div
-                        className={`h-1 bg-gradient-to-r ${step.color} rounded-full mt-6`}
-                        initial={{ width: 0 }}
-                        whileInView={{ width: "100%" }}
-                        viewport={{ once: true }}
-                        transition={{ delay: 0.4 }}
-                      />
-                    </div>
-                  </motion.div>
-                ))}
-              </div>
-            </motion.div>
-
-            {/* Right Column - Implementation Success Metrics */}
-            <motion.div
-              className="relative lg:sticky lg:top-8"
-              initial={{ opacity: 0, x: 20 }}
-              whileInView={{ opacity: 1, x: 0 }}
-              viewport={{ once: true }}
-            >
-              <div className="bg-[#0F172A]/80 backdrop-blur-xl rounded-xl sm:rounded-2xl p-6 sm:p-10 border border-[#1A2B44] hover:border-[#FF6B2C]/20 transition-colors duration-300 shadow-xl">
-                <div className="space-y-6 sm:space-y-10">
-                  <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4 sm:gap-0 mb-6 sm:mb-8">
-                    <h4 className="text-xl sm:text-2xl font-bold text-white tracking-wide">Implementation Success Metrics</h4>
-                    <div className="flex items-center gap-3">
-                      <div className="w-2 h-2 sm:w-2.5 sm:h-2.5 rounded-full bg-[#10B981] animate-pulse" />
-                      <span className="text-xs sm:text-sm text-gray-400 tracking-wide">Real-time Data</span>
-                    </div>
-                  </div>
-
-                  <div className="grid gap-6 sm:gap-8">
-                    {[
-                      { 
-                        label: "Enterprise Projects Delivered", 
-                        value: "200+", 
-                        trend: "Growing portfolio", 
-                        detail: "Across various industries",
-                        icon: <RocketLaunchIcon className="w-5 h-5 sm:w-6 sm:h-6" />
-                      },
-                      { 
-                        label: "Average Implementation Time", 
-                        value: "12 weeks", 
-                        trend: "Efficient delivery", 
-                        detail: "With proven methodology",
-                        icon: <ClockIcon className="w-5 h-5 sm:w-6 sm:h-6" />
-                      },
-                      { 
-                        label: "Client Satisfaction Rate", 
-                        value: "98%", 
-                        trend: "Consistent quality", 
-                        detail: "Based on client feedback",
-                        icon: <StarIcon className="w-5 h-5 sm:w-6 sm:h-6" />
-                      }
-                    ].map((metric, index) => (
-                      <motion.div
-                        key={metric.label}
-                        className="bg-[#0A1628]/80 backdrop-blur-sm rounded-lg sm:rounded-xl p-6 sm:p-8 relative overflow-hidden border border-[#1A2B44] group hover:border-[#FF6B2C]/20 transition-all duration-300"
-                        initial={{ opacity: 0, y: 20 }}
-                        whileInView={{ opacity: 1, y: 0 }}
-                        viewport={{ once: true }}
-                        transition={{ delay: index * 0.1 }}
-                      >
-                        <div className="absolute inset-0 bg-gradient-to-br from-[#FF6B2C]/5 to-[#3B82F6]/5 opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
-                        <div className="relative z-10">
-                          <div className="flex items-center gap-3 mb-3">
-                            <div className="p-2 rounded-lg bg-[#1A2B44] text-[#FF6B2C]">
-                              {metric.icon}
-                            </div>
-                            <span className="text-xs sm:text-sm text-gray-400 tracking-wide">{metric.label}</span>
-                          </div>
-                          <div className="flex items-end gap-3 mb-2">
-                            <span className="text-2xl sm:text-3xl font-bold text-white tracking-wide">{metric.value}</span>
-                            <span className="text-xs sm:text-sm text-[#10B981] mb-1.5 tracking-wide">{metric.trend}</span>
-                          </div>
-                          <p className="text-xs sm:text-sm text-gray-500 tracking-wide">{metric.detail}</p>
-                        </div>
-                      </motion.div>
-                    ))}
-                  </div>
-                </div>
-              </div>
-            </motion.div>
-          </div>
-
-          {/* Transition to Enterprise Solutions */}
-          <motion.div
-            className="text-center"
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-          >
-            <div className="inline-flex items-center gap-2 px-4 sm:px-6 py-2 sm:py-3 rounded-full bg-[#0F2137] border border-white/5 text-white mb-6 sm:mb-8">
-              <span className="text-xs sm:text-sm">Ready to see our solutions in action?</span>
-              <ArrowRightIcon className="w-3 h-3 sm:w-4 sm:h-4 text-[#FF6B2C]" />
-            </div>
-            <div className="flex justify-center gap-4">
-              <GlowingButton 
-                href="#enterprise" 
-                className="bg-gradient-to-r from-[#FF6B2C] to-[#FF8F2C] text-sm sm:text-base"
-              >
-                Explore Enterprise Solutions
-                <ArrowRightIcon className="w-3 h-3 sm:w-4 sm:h-4 ml-2" />
-              </GlowingButton>
-            </div>
-          </motion.div>
         </div>
       </section>
 
