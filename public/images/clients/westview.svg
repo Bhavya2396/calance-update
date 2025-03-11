@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="200" height="60" viewBox="0 0 200 60" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <g transform="translate(10,10)">
+    <!-- Building Icon -->
+    <path d="M0 40V10L20 0L40 10V40H0Z" fill="currentColor"/>
+    <path d="M15 15H25V25H15V15Z" fill="none" stroke="currentColor" stroke-width="2"/>
+    
+    <!-- WESTVIEW Letters -->
+    <g transform="translate(50,0)">
+      <path d="M0 0L10 40L20 0L30 40L40 0H50L40 40H30L20 20L10 40H0L10 0H0Z" fill="currentColor"/>
+      <path d="M60 0H80V40H60V0Z" fill="currentColor"/>
+      <path d="M90 0H110C120 0 125 5 125 15V25C125 35 120 40 110 40H90V0ZM105 15H110V25H105V15Z" fill="currentColor"/>
+      <path d="M135 0H155V40H135V0Z" fill="currentColor"/>
+      <path d="M165 0L175 40L185 0L195 40L205 0H215L205 40H195L185 20L175 40H165L175 0H165Z" fill="currentColor"/>
+    </g>
+  </g>
+</svg> 

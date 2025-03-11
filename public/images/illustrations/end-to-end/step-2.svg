@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="400" height="300" viewBox="0 0 400 300" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <!-- Background Grid -->
+  <path d="M0 0h400v300H0z" fill="#0A1628" fill-opacity=".1"/>
+  <path d="M25 25h350v250H25z" stroke="#3B82F6" stroke-opacity=".1" stroke-width="1" stroke-dasharray="4 4"/>
+  
+  <!-- Processing Unit -->
+  <g transform="translate(150,100)">
+    <!-- CPU -->
+    <rect x="-50" y="-50" width="100" height="100" rx="8" fill="#1A2B44" stroke="#3B82F6" stroke-width="2"/>
+    
+    <!-- Circuit Paths -->
+    <path d="M-30 -30h60M-30 0h60M-30 30h60" 
+          stroke="#3B82F6" stroke-width="2" stroke-linecap="round" stroke-opacity="0.3"/>
+    <path d="M-30 -30v60M0 -30v60M30 -30v60" 
+          stroke="#3B82F6" stroke-width="2" stroke-linecap="round" stroke-opacity="0.3"/>
+    
+    <!-- Processing Animation -->
+    <circle cx="0" cy="0" r="20" fill="none" stroke="#3B82F6" stroke-width="2">
+      <animate attributeName="r" values="20;25;20" dur="2s" repeatCount="indefinite"/>
+      <animate attributeName="stroke-opacity" values="1;0.5;1" dur="2s" repeatCount="indefinite"/>
+    </circle>
+  </g>
+  
+  <!-- Data Flow -->
+  <g>
+    <!-- Input Flow -->
+    <path d="M50 150C100 150 120 100 150 100" 
+          stroke="#3B82F6" stroke-width="2" fill="none" stroke-dasharray="4 4">
+      <animate attributeName="stroke-dashoffset" values="0;100" dur="2s" repeatCount="indefinite"/>
+    </path>
+    
+    <!-- Output Flow -->
+    <path d="M250 100C280 100 300 150 350 150" 
+          stroke="#3B82F6" stroke-width="2" fill="none" stroke-dasharray="4 4">
+      <animate attributeName="stroke-dashoffset" values="0;100" dur="2s" repeatCount="indefinite"/>
+    </path>
+  </g>
+  
+  <!-- Analysis Nodes -->
+  <g transform="translate(100,200)">
+    <!-- Analysis Icons -->
+    <g transform="translate(0,0)">
+      <circle cx="0" cy="0" r="20" fill="#1A2B44" stroke="#3B82F6" stroke-width="2"/>
+      <path d="M-10 0L0 10L10 -10" stroke="#3B82F6" stroke-width="2" fill="none"/>
+    </g>
+    
+    <g transform="translate(100,0)">
+      <circle cx="0" cy="0" r="20" fill="#1A2B44" stroke="#3B82F6" stroke-width="2"/>
+      <path d="M-10 -10L10 10M-10 10L10 -10" stroke="#3B82F6" stroke-width="2"/>
+    </g>
+    
+    <g transform="translate(200,0)">
+      <circle cx="0" cy="0" r="20" fill="#1A2B44" stroke="#3B82F6" stroke-width="2"/>
+      <rect x="-8" y="-8" width="16" height="16" stroke="#3B82F6" stroke-width="2" fill="none"/>
+    </g>
+  </g>
+  
+  <!-- Animated Elements -->
+  <g>
+    <rect x="20" y="20" width="10" height="10" rx="2" fill="#3B82F6" fill-opacity="0.2">
+      <animate attributeName="y" values="20;25;20" dur="4s" repeatCount="indefinite"/>
+    </rect>
+    <circle cx="380" cy="280" r="8" fill="#3B82F6" fill-opacity="0.2">
+      <animate attributeName="cy" values="280;275;280" dur="3s" repeatCount="indefinite"/>
+    </circle>
+  </g>
+  
+  <!-- Processing Text -->
+  <g transform="translate(150,50)">
+    <text font-family="monospace" font-size="12" fill="#3B82F6" fill-opacity="0.4">
+      <tspan x="0" y="0">analyze()</tspan>
+      <tspan x="0" y="20">process()</tspan>
+      <tspan x="0" y="40">transform()</tspan>
+    </text>
+  </g>
+</svg> 

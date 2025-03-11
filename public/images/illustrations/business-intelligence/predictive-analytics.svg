@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="400" height="300" viewBox="0 0 400 300" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <!-- Trend Line -->
+  <g transform="translate(50,50)">
+    <!-- Grid -->
+    <path d="M0 0h300v200H0z" stroke="#7C3AED" stroke-opacity="0.1" stroke-width="1" stroke-dasharray="4 4"/>
+    
+    <!-- Main Trend Line -->
+    <path d="M0 180C50 160 100 120 150 100C200 80 250 40 300 20" stroke="#7C3AED" stroke-width="3" fill="none">
+      <animate attributeName="stroke-dasharray" values="0,1000;1000,0" dur="2s" />
+    </path>
+    
+    <!-- Prediction Zone -->
+    <path d="M300 20C350 0 400 -20" stroke="#7C3AED" stroke-width="3" stroke-dasharray="5 5" opacity="0.5">
+      <animate attributeName="opacity" values="0.3;0.8;0.3" dur="2s" repeatCount="indefinite"/>
+    </path>
+    
+    <!-- Confidence Interval -->
+    <path d="M0 160C50 140 100 100 150 80C200 60 250 20 300 0" stroke="#3B82F6" stroke-width="1" fill="none" opacity="0.3"/>
+    <path d="M0 200C50 180 100 140 150 120C200 100 250 60 300 40" stroke="#3B82F6" stroke-width="1" fill="none" opacity="0.3"/>
+    <path d="M0 160C50 140 100 100 150 80C200 60 250 20 300 0C350 -20 400 -40" fill="#3B82F6" fill-opacity="0.1"/>
+    <path d="M0 200C50 180 100 140 150 120C200 100 250 60 300 40C350 20 400 0" fill="#3B82F6" fill-opacity="0.1"/>
+  </g>
+  
+  <!-- Data Points -->
+  <g>
+    <circle cx="100" cy="210" r="4" fill="#7C3AED">
+      <animate attributeName="r" values="3;5;3" dur="2s" repeatCount="indefinite"/>
+    </circle>
+    <circle cx="200" cy="150" r="4" fill="#7C3AED">
+      <animate attributeName="r" values="3;5;3" dur="2s" repeatCount="indefinite" begin="0.5s"/>
+    </circle>
+    <circle cx="300" cy="70" r="4" fill="#7C3AED">
+      <animate attributeName="r" values="3;5;3" dur="2s" repeatCount="indefinite" begin="1s"/>
+    </circle>
+  </g>
+  
+  <!-- AI/ML Symbols -->
+  <g transform="translate(320,50)">
+    <rect x="0" y="0" width="30" height="30" rx="4" fill="#7C3AED" fill-opacity="0.2"/>
+    <path d="M5 15L15 25L25 5" stroke="#7C3AED" stroke-width="2"/>
+  </g>
+</svg> 

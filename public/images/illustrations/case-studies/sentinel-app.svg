@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="400" height="300" viewBox="0 0 400 300" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <!-- Background Pattern -->
+  <path d="M50 50 h300 v200 h-300 z" stroke="#243B61" stroke-width="1" opacity="0.1"/>
+  <path d="M50 150 h300 M200 50 v200" stroke="#243B61" stroke-width="1" opacity="0.1"/>
+  
+  <!-- Mobile Device -->
+  <rect x="160" y="80" width="80" height="140" rx="10" fill="#1A2B44" stroke="#8B5CF6" stroke-width="2"/>
+  <rect x="170" y="90" width="60" height="100" rx="5" fill="#243B61" stroke="#8B5CF6" stroke-width="1"/>
+  <circle cx="200" cy="205" r="8" fill="#1A2B44" stroke="#8B5CF6" stroke-width="2"/>
+  
+  <!-- Water Flow Icons -->
+  <path d="M120 120 q20 -20 40 0 q20 20 40 0" stroke="#3B82F6" stroke-width="2" fill="none"/>
+  <path d="M120 140 q20 -20 40 0 q20 20 40 0" stroke="#3B82F6" stroke-width="2" fill="none"/>
+  
+  <!-- IoT Sensors -->
+  <circle cx="100" y="160" r="15" fill="#1A2B44" stroke="#2DD4BF" stroke-width="2"/>
+  <path d="M90 160 h20 M100 150 v20" stroke="#2DD4BF" stroke-width="2"/>
+  
+  <circle cx="300" y="160" r="15" fill="#1A2B44" stroke="#2DD4BF" stroke-width="2"/>
+  <path d="M290 160 h20 M300 150 v20" stroke="#2DD4BF" stroke-width="2"/>
+  
+  <!-- Connection Lines -->
+  <path d="M115 160 L170 160" stroke="#2DD4BF" stroke-width="2" stroke-dasharray="4 4"/>
+  <path d="M230 160 L285 160" stroke="#2DD4BF" stroke-width="2" stroke-dasharray="4 4"/>
+  
+  <!-- Remote Control -->
+  <path d="M120 200 L280 200" stroke="#8B5CF6" stroke-width="2" stroke-dasharray="5 5"/>
+  <circle cx="200" cy="200" r="5" fill="#8B5CF6"/>
+  
+  <!-- Metrics -->
+  <rect x="80" y="80" width="60" height="30" rx="15" fill="#1A2B44" stroke="#2DD4BF" stroke-width="2"/>
+  <text x="90" y="100" fill="#2DD4BF" font-family="Arial" font-size="12">24/7</text>
+  
+  <rect x="260" y="80" width="60" height="30" rx="15" fill="#1A2B44" stroke="#2DD4BF" stroke-width="2"/>
+  <text x="270" y="100" fill="#2DD4BF" font-family="Arial" font-size="12">+85%</text>
+  
+  <!-- App Interface Elements -->
+  <rect x="175" y="100" width="50" height="10" rx="2" fill="#8B5CF6" opacity="0.5"/>
+  <rect x="175" y="120" width="50" height="10" rx="2" fill="#8B5CF6" opacity="0.5"/>
+  <rect x="175" y="140" width="50" height="10" rx="2" fill="#8B5CF6" opacity="0.5"/>
+</svg> 

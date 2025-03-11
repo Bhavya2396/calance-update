@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="400" height="300" viewBox="0 0 400 300" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <!-- Background Grid -->
+  <path d="M50 50 h300 v200 h-300 z" stroke="#243B61" stroke-width="1" opacity="0.1"/>
+  <path d="M50 150 h300 M200 50 v200" stroke="#243B61" stroke-width="1" opacity="0.1"/>
+  
+  <!-- PMWeb System -->
+  <rect x="80" y="100" width="100" height="60" rx="10" fill="#1A2B44" stroke="#F97316" stroke-width="2"/>
+  <text x="105" y="135" fill="#F97316" font-family="Arial" font-size="12">PMWeb</text>
+  
+  <!-- PeopleSoft System -->
+  <rect x="220" y="100" width="100" height="60" rx="10" fill="#1A2B44" stroke="#3B82F6" stroke-width="2"/>
+  <text x="240" y="135" fill="#3B82F6" font-family="Arial" font-size="12">PeopleSoft</text>
+  
+  <!-- Integration Flow -->
+  <path d="M180 130 L220 130" stroke="#2DD4BF" stroke-width="2" stroke-dasharray="4 4"/>
+  <circle cx="200" cy="130" r="8" fill="#1A2B44" stroke="#2DD4BF" stroke-width="2"/>
+  
+  <!-- Project Icons -->
+  <rect x="90" y="70" width="30" height="30" rx="5" fill="#1A2B44" stroke="#F97316" stroke-width="2"/>
+  <path d="M100 80 h10 M100 85 h10 M100 90 h10" stroke="#F97316" stroke-width="2"/>
+  
+  <!-- HR Icons -->
+  <circle cx="270" cy="85" r="15" fill="#1A2B44" stroke="#3B82F6" stroke-width="2"/>
+  <path d="M265 85 h10 M270 80 v10" stroke="#3B82F6" stroke-width="2"/>
+  
+  <!-- Data Flow -->
+  <path d="M130 160 L180 200" stroke="#2DD4BF" stroke-width="2" stroke-dasharray="4 4"/>
+  <path d="M220 200 L270 160" stroke="#2DD4BF" stroke-width="2" stroke-dasharray="4 4"/>
+  
+  <!-- Integration Hub -->
+  <rect x="160" y="200" width="80" height="40" rx="5" fill="#1A2B44" stroke="#2DD4BF" stroke-width="2"/>
+  <text x="175" y="225" fill="#2DD4BF" font-family="Arial" font-size="12">Bi-Direct</text>
+  
+  <!-- Metrics -->
+  <rect x="80" y="180" width="60" height="30" rx="15" fill="#1A2B44" stroke="#F97316" stroke-width="2"/>
+  <text x="90" y="200" fill="#F97316" font-family="Arial" font-size="12">100%</text>
+  
+  <rect x="260" y="180" width="60" height="30" rx="15" fill="#1A2B44" stroke="#3B82F6" stroke-width="2"/>
+  <text x="270" y="200" fill="#3B82F6" font-family="Arial" font-size="12">-60%</text>
+  
+  <!-- Status Indicators -->
+  <path d="M320 130 L380 130" stroke="#2DD4BF" stroke-width="2"/>
+  <text x="330" y="125" fill="#2DD4BF" font-family="Arial" font-size="10">Real-time</text>
+  <text x="330" y="140" fill="#2DD4BF" font-family="Arial" font-size="10">Sync</text>
+</svg> 

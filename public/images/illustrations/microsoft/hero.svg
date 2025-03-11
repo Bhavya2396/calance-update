@@ -1,0 +1,124 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="800" height="600" viewBox="0 0 800 600" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <!-- Background Grid -->
+  <defs>
+    <pattern id="grid" width="40" height="40" patternUnits="userSpaceOnUse">
+      <path d="M 40 0 L 0 0 0 40" fill="none" stroke="#00A4EF" stroke-width="0.5"/>
+    </pattern>
+    <!-- Gradient -->
+    <linearGradient id="msGradient" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#00A4EF"/>
+      <stop offset="100%" stop-color="#0078D4"/>
+    </linearGradient>
+  </defs>
+  <rect width="800" height="600" fill="url(#grid)" opacity="0.1"/>
+
+  <!-- Central Hub -->
+  <g transform="translate(400,300)">
+    <!-- Background Circles -->
+    <circle r="180" fill="#00A4EF" opacity="0.03">
+      <animate attributeName="r" values="175;180;175" dur="3s" repeatCount="indefinite"/>
+    </circle>
+    <circle r="140" fill="#00A4EF" opacity="0.05">
+      <animate attributeName="r" values="135;140;135" dur="3s" repeatCount="indefinite"/>
+    </circle>
+    <circle r="100" fill="#00A4EF" opacity="0.08">
+      <animate attributeName="r" values="95;100;95" dur="3s" repeatCount="indefinite"/>
+    </circle>
+  </g>
+
+  <!-- Microsoft Solutions -->
+  <g transform="translate(400,300)">
+    <!-- M365 -->
+    <g transform="translate(-120,-120)">
+      <rect width="80" height="80" rx="15" fill="#00A4EF">
+        <animate attributeName="opacity" values="0.8;1;0.8" dur="3s" repeatCount="indefinite"/>
+      </rect>
+      <path d="M20 25h8v20l8-10 8 10V25h8v30h-8l-8-10-8 10h-8V25z" fill="white"/>
+      <text x="40" y="65" text-anchor="middle" fill="white" font-family="Arial" font-size="12">365</text>
+    </g>
+
+    <!-- SharePoint -->
+    <g transform="translate(120,-120)">
+      <circle r="40" fill="#0078D4">
+        <animate attributeName="r" values="38;40;38" dur="3s" repeatCount="indefinite"/>
+      </circle>
+      <path d="M-15 -15h30v30h-30z" fill="white"/>
+      <text x="0" y="45" text-anchor="middle" fill="white" font-family="Arial" font-size="12">SharePoint</text>
+    </g>
+
+    <!-- Dynamics -->
+    <g transform="translate(-120,120)">
+      <rect width="80" height="80" rx="15" fill="#002050">
+        <animate attributeName="opacity" values="0.8;1;0.8" dur="3s" repeatCount="indefinite"/>
+      </rect>
+      <circle cx="40" cy="40" r="20" stroke="white" stroke-width="3" fill="none"/>
+      <text x="40" y="85" text-anchor="middle" fill="white" font-family="Arial" font-size="12">Dynamics</text>
+    </g>
+
+    <!-- Azure -->
+    <g transform="translate(120,120)">
+      <rect width="80" height="80" rx="15" fill="#0078D4">
+        <animate attributeName="opacity" values="0.8;1;0.8" dur="3s" repeatCount="indefinite"/>
+      </rect>
+      <path d="M20 30h40v20h-40z" fill="white"/>
+      <text x="40" y="85" text-anchor="middle" fill="white" font-family="Arial" font-size="12">Azure</text>
+    </g>
+
+    <!-- Center Logo -->
+    <g>
+      <circle r="50" fill="url(#msGradient)"/>
+      <path d="M-25 -25h20v20h-20zM5 -25h20v20h-20zM-25 5h20v20h-20zM5 5h20v20h-20z" fill="white"/>
+    </g>
+
+    <!-- Connecting Lines -->
+    <g stroke="url(#msGradient)" stroke-width="2">
+      <path d="M-50 0L-90 -90">
+        <animate attributeName="stroke-dasharray" values="5,5;10,10;5,5" dur="3s" repeatCount="indefinite"/>
+      </path>
+      <path d="M50 0L90 -90">
+        <animate attributeName="stroke-dasharray" values="5,5;10,10;5,5" dur="3s" repeatCount="indefinite"/>
+      </path>
+      <path d="M-50 0L-90 90">
+        <animate attributeName="stroke-dasharray" values="5,5;10,10;5,5" dur="3s" repeatCount="indefinite"/>
+      </path>
+      <path d="M50 0L90 90">
+        <animate attributeName="stroke-dasharray" values="5,5;10,10;5,5" dur="3s" repeatCount="indefinite"/>
+      </path>
+    </g>
+
+    <!-- Moving Dots -->
+    <g fill="#00A4EF">
+      <circle r="4">
+        <animateMotion 
+          path="M-50 0L-90 -90"
+          dur="2s"
+          repeatCount="indefinite"/>
+      </circle>
+      <circle r="4">
+        <animateMotion 
+          path="M50 0L90 -90"
+          dur="2s"
+          repeatCount="indefinite"/>
+      </circle>
+      <circle r="4">
+        <animateMotion 
+          path="M-50 0L-90 90"
+          dur="2s"
+          repeatCount="indefinite"/>
+      </circle>
+      <circle r="4">
+        <animateMotion 
+          path="M50 0L90 90"
+          dur="2s"
+          repeatCount="indefinite"/>
+      </circle>
+    </g>
+  </g>
+
+  <!-- Pulse Effect -->
+  <circle cx="400" cy="300" r="200" stroke="url(#msGradient)" stroke-width="2" fill="none">
+    <animate attributeName="r" values="200;220;200" dur="2s" repeatCount="indefinite"/>
+    <animate attributeName="opacity" values="0.6;0;0.6" dur="2s" repeatCount="indefinite"/>
+  </circle>
+</svg> 

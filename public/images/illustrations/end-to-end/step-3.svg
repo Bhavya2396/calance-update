@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="400" height="300" viewBox="0 0 400 300" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <!-- Background Grid -->
+  <path d="M0 0h400v300H0z" fill="#0A1628" fill-opacity=".1"/>
+  <path d="M25 25h350v250H25z" stroke="#3B82F6" stroke-opacity=".1" stroke-width="1" stroke-dasharray="4 4"/>
+  
+  <!-- Insights Dashboard -->
+  <g transform="translate(50,50)">
+    <!-- Dashboard Frame -->
+    <rect x="0" y="0" width="300" height="200" rx="8" fill="#1A2B44" stroke="#3B82F6" stroke-width="2"/>
+    
+    <!-- Chart Elements -->
+    <g transform="translate(20,20)">
+      <!-- Bar Chart -->
+      <g>
+        <rect x="0" y="0" width="20" height="60" rx="2" fill="#3B82F6" fill-opacity="0.3"/>
+        <rect x="30" y="20" width="20" height="40" rx="2" fill="#3B82F6" fill-opacity="0.5"/>
+        <rect x="60" y="10" width="20" height="50" rx="2" fill="#3B82F6" fill-opacity="0.7"/>
+      </g>
+      
+      <!-- Line Chart -->
+      <g transform="translate(100,0)">
+        <path d="M0 50C20 20 40 40 60 10" 
+              stroke="#3B82F6" stroke-width="2" fill="none"/>
+        <circle cx="0" cy="50" r="3" fill="#3B82F6"/>
+        <circle cx="20" cy="20" r="3" fill="#3B82F6"/>
+        <circle cx="40" cy="40" r="3" fill="#3B82F6"/>
+        <circle cx="60" cy="10" r="3" fill="#3B82F6"/>
+      </g>
+      
+      <!-- Pie Chart -->
+      <g transform="translate(200,30)">
+        <path d="M0 0A30 30 0 0 1 26 15L0 0Z" fill="#3B82F6" fill-opacity="0.3"/>
+        <path d="M26 15A30 30 0 0 1 0 30L0 0Z" fill="#3B82F6" fill-opacity="0.5"/>
+        <path d="M0 30A30 30 0 0 1 -26 15L0 0Z" fill="#3B82F6" fill-opacity="0.7"/>
+        <path d="M-26 15A30 30 0 0 1 0 0L0 0Z" fill="#3B82F6" fill-opacity="0.9"/>
+      </g>
+    </g>
+    
+    <!-- Metrics -->
+    <g transform="translate(20,120)">
+      <rect x="0" y="0" width="80" height="30" rx="4" fill="#243B61"/>
+      <rect x="100" y="0" width="80" height="30" rx="4" fill="#243B61"/>
+      <rect x="200" y="0" width="80" height="30" rx="4" fill="#243B61"/>
+    </g>
+    
+    <!-- Action Buttons -->
+    <g transform="translate(20,160)">
+      <rect x="0" y="0" width="120" height="20" rx="4" fill="#3B82F6"/>
+      <text x="60" y="14" font-family="sans-serif" font-size="12" fill="white" text-anchor="middle">Take Action</text>
+    </g>
+  </g>
+  
+  <!-- Animated Insights -->
+  <g>
+    <!-- Floating Data Points -->
+    <circle cx="200" cy="100" r="4" fill="#3B82F6">
+      <animate attributeName="cy" values="100;90;100" dur="3s" repeatCount="indefinite"/>
+      <animate attributeName="opacity" values="1;0.5;1" dur="3s" repeatCount="indefinite"/>
+    </circle>
+    <circle cx="250" cy="150" r="4" fill="#3B82F6">
+      <animate attributeName="cy" values="150;140;150" dur="2.5s" repeatCount="indefinite"/>
+      <animate attributeName="opacity" values="0.5;1;0.5" dur="2.5s" repeatCount="indefinite"/>
+    </circle>
+    <circle cx="300" cy="120" r="4" fill="#3B82F6">
+      <animate attributeName="cy" values="120;110;120" dur="4s" repeatCount="indefinite"/>
+      <animate attributeName="opacity" values="1;0.5;1" dur="4s" repeatCount="indefinite"/>
+    </circle>
+  </g>
+  
+  <!-- Action Flow -->
+  <g transform="translate(50,270)">
+    <path d="M0 0h300" stroke="#3B82F6" stroke-width="2" stroke-dasharray="4 4">
+      <animate attributeName="stroke-dashoffset" values="0;100" dur="3s" repeatCount="indefinite"/>
+    </path>
+    <circle cx="150" cy="0" r="6" fill="#3B82F6">
+      <animate attributeName="r" values="6;8;6" dur="2s" repeatCount="indefinite"/>
+    </circle>
+  </g>
+  
+  <!-- Animated Elements -->
+  <g>
+    <rect x="20" y="20" width="10" height="10" rx="2" fill="#3B82F6" fill-opacity="0.2">
+      <animate attributeName="y" values="20;25;20" dur="4s" repeatCount="indefinite"/>
+    </rect>
+    <circle cx="380" cy="280" r="8" fill="#3B82F6" fill-opacity="0.2">
+      <animate attributeName="cy" values="280;275;280" dur="3s" repeatCount="indefinite"/>
+    </circle>
+  </g>
+</svg> 

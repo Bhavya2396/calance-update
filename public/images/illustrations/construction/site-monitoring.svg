@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="400" height="300" viewBox="0 0 400 300" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <!-- Site Layout -->
+  <g transform="translate(50,50)">
+    <!-- Site Perimeter -->
+    <rect x="0" y="0" width="300" height="200" rx="8" fill="#1A2B44" stroke="#F59E0B" stroke-width="2"/>
+    
+    <!-- Grid Lines -->
+    <g stroke="#3B82F6" stroke-width="1" stroke-opacity="0.2">
+      <path d="M50 0v200M100 0v200M150 0v200M200 0v200M250 0v200"/>
+      <path d="M0 50h300M0 100h300M0 150h300"/>
+    </g>
+    
+    <!-- Monitoring Points -->
+    <g>
+      <!-- Camera 1 -->
+      <g transform="translate(20,20)">
+        <circle cx="0" cy="0" r="10" fill="#243B61" stroke="#F59E0B" stroke-width="2"/>
+        <path d="M-5 0L5 0M0 -5L0 5" stroke="#F59E0B" stroke-width="2"/>
+        <!-- Camera Range -->
+        <path d="M0 0L40 -20L40 20Z" fill="#F59E0B" fill-opacity="0.1" stroke="#F59E0B" stroke-width="1"/>
+      </g>
+      
+      <!-- Camera 2 -->
+      <g transform="translate(280,20)">
+        <circle cx="0" cy="0" r="10" fill="#243B61" stroke="#F59E0B" stroke-width="2"/>
+        <path d="M-5 0L5 0M0 -5L0 5" stroke="#F59E0B" stroke-width="2"/>
+        <!-- Camera Range -->
+        <path d="M0 0L-40 -20L-40 20Z" fill="#F59E0B" fill-opacity="0.1" stroke="#F59E0B" stroke-width="1"/>
+      </g>
+      
+      <!-- Sensors -->
+      <g>
+        <circle cx="100" cy="100" r="8" fill="#243B61" stroke="#3B82F6" stroke-width="2">
+          <animate attributeName="r" values="8;10;8" dur="2s" repeatCount="indefinite"/>
+        </circle>
+        <circle cx="200" cy="100" r="8" fill="#243B61" stroke="#3B82F6" stroke-width="2">
+          <animate attributeName="r" values="8;10;8" dur="2.5s" repeatCount="indefinite"/>
+        </circle>
+        <circle cx="150" cy="150" r="8" fill="#243B61" stroke="#3B82F6" stroke-width="2">
+          <animate attributeName="r" values="8;10;8" dur="3s" repeatCount="indefinite"/>
+        </circle>
+      </g>
+    </g>
+  </g>
+  
+  <!-- Data Dashboard -->
+  <g transform="translate(50,100)">
+    <!-- Metrics -->
+    <g transform="translate(0,150)">
+      <!-- Temperature -->
+      <rect x="0" y="0" width="60" height="40" rx="4" fill="#243B61" stroke="#EF4444" stroke-width="2"/>
+      <text x="10" y="25" fill="#EF4444" font-family="monospace" font-size="12">28°C</text>
+      
+      <!-- Humidity -->
+      <rect x="70" y="0" width="60" height="40" rx="4" fill="#243B61" stroke="#3B82F6" stroke-width="2"/>
+      <text x="80" y="25" fill="#3B82F6" font-family="monospace" font-size="12">65%</text>
+      
+      <!-- Air Quality -->
+      <rect x="140" y="0" width="60" height="40" rx="4" fill="#243B61" stroke="#22C55E" stroke-width="2"/>
+      <text x="150" y="25" fill="#22C55E" font-family="monospace" font-size="12">Good</text>
+    </g>
+  </g>
+  
+  <!-- Connection Lines -->
+  <g stroke="#3B82F6" stroke-width="2" stroke-dasharray="4 4">
+    <path d="M100 150L30 250">
+      <animate attributeName="stroke-dashoffset" values="0;100" dur="2s" repeatCount="indefinite"/>
+    </path>
+    <path d="M200 150L100 250">
+      <animate attributeName="stroke-dashoffset" values="0;100" dur="2s" repeatCount="indefinite"/>
+    </path>
+    <path d="M150 200L170 250">
+      <animate attributeName="stroke-dashoffset" values="0;100" dur="2s" repeatCount="indefinite"/>
+    </path>
+  </g>
+  
+  <!-- Status Indicators -->
+  <g>
+    <circle cx="100" cy="150" r="4" fill="#22C55E">
+      <animate attributeName="opacity" values="1;0;1" dur="2s" repeatCount="indefinite"/>
+    </circle>
+    <circle cx="200" cy="150" r="4" fill="#F59E0B">
+      <animate attributeName="opacity" values="0;1;0" dur="1.5s" repeatCount="indefinite"/>
+    </circle>
+    <circle cx="150" cy="200" r="4" fill="#3B82F6">
+      <animate attributeName="opacity" values="1;0;1" dur="3s" repeatCount="indefinite"/>
+    </circle>
+  </g>
+</svg> 

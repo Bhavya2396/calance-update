@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="200" height="60" viewBox="0 0 200 60" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <g transform="translate(20,10)">
+    <!-- DNA Helix Symbol -->
+    <path d="M0 0C10 10 20 10 30 0C40 10 50 10 60 0" stroke="currentColor" stroke-width="4" fill="none"/>
+    <path d="M0 20C10 30 20 30 30 20C40 30 50 30 60 20" stroke="currentColor" stroke-width="4" fill="none"/>
+    
+    <!-- VEROGEN Letters -->
+    <g transform="translate(70,0)">
+      <path d="M0 0L20 40L40 0H30L20 20L10 0H0Z" fill="currentColor"/>
+      <path d="M50 0H70V40H50V0Z" fill="currentColor"/>
+      <path d="M80 0H100C110 0 115 5 115 15V25C115 35 110 40 100 40H80V0ZM95 15H100V25H95V15Z" fill="currentColor"/>
+      <path d="M125 0H145V40H125V0Z" fill="currentColor"/>
+      <path d="M155 0H175C185 0 190 5 190 15V25C190 35 185 40 175 40H155V0ZM170 15H175V25H170V15Z" fill="currentColor"/>
+      <path d="M200 0H220V40H200V0Z" fill="currentColor"/>
+    </g>
+  </g>
+</svg> 

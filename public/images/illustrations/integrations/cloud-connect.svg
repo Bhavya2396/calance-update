@@ -1,0 +1,123 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="400" height="300" viewBox="0 0 400 300" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <!-- Background Grid Pattern -->
+  <defs>
+    <pattern id="grid" x="0" y="0" width="20" height="20" patternUnits="userSpaceOnUse">
+      <path d="M 20 0 L 0 0 0 20" fill="none" stroke="#243B61" stroke-width="0.5" opacity="0.2"/>
+    </pattern>
+    <linearGradient id="glow" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#3B82F6;stop-opacity:0.2"/>
+      <stop offset="100%" style="stop-color:#FF6B2C;stop-opacity:0.2"/>
+    </linearGradient>
+  </defs>
+  
+  <!-- Background -->
+  <rect width="400" height="300" fill="url(#grid)"/>
+  <rect width="400" height="300" fill="url(#glow)"/>
+
+  <!-- Cloud Services -->
+  <g transform="translate(200, 150)">
+    <!-- Central Cloud -->
+    <g>
+      <path d="M-40,-20 Q-30,-40 0,-40 T40,-20 Q50,-10 40,0 T0,20 T-40,0 Q-50,-10 -40,-20" 
+            fill="#1A2B44" stroke="#3B82F6" stroke-width="2"/>
+      <text x="0" y="5" fill="#3B82F6" font-family="monospace" font-size="12" text-anchor="middle">CLOUD</text>
+    </g>
+
+    <!-- Service Icons -->
+    <g>
+      <!-- Storage -->
+      <g transform="translate(-80, -60)">
+        <rect x="-25" y="-25" width="50" height="50" rx="10" fill="#1A2B44" stroke="#FF6B2C" stroke-width="2"/>
+        <rect x="-15" y="-10" width="30" height="20" rx="2" fill="none" stroke="#FF6B2C" stroke-width="2"/>
+        <text x="0" y="25" fill="#FF6B2C" font-family="monospace" font-size="8" text-anchor="middle">Storage</text>
+      </g>
+
+      <!-- Compute -->
+      <g transform="translate(80, -60)">
+        <rect x="-25" y="-25" width="50" height="50" rx="10" fill="#1A2B44" stroke="#3B82F6" stroke-width="2"/>
+        <path d="M-10,-10 L10,10 M-10,10 L10,-10" stroke="#3B82F6" stroke-width="2"/>
+        <text x="0" y="25" fill="#3B82F6" font-family="monospace" font-size="8" text-anchor="middle">Compute</text>
+      </g>
+
+      <!-- Database -->
+      <g transform="translate(-80, 60)">
+        <rect x="-25" y="-25" width="50" height="50" rx="10" fill="#1A2B44" stroke="#3B82F6" stroke-width="2"/>
+        <rect x="-15" y="-15" width="30" height="8" rx="2" fill="#3B82F6" opacity="0.8"/>
+        <rect x="-15" y="-5" width="30" height="8" rx="2" fill="#3B82F6" opacity="0.6"/>
+        <rect x="-15" y="5" width="30" height="8" rx="2" fill="#3B82F6" opacity="0.4"/>
+        <text x="0" y="25" fill="#3B82F6" font-family="monospace" font-size="8" text-anchor="middle">Database</text>
+      </g>
+
+      <!-- Functions -->
+      <g transform="translate(80, 60)">
+        <rect x="-25" y="-25" width="50" height="50" rx="10" fill="#1A2B44" stroke="#FF6B2C" stroke-width="2"/>
+        <text x="0" y="-5" fill="#FF6B2C" font-family="monospace" font-size="12" text-anchor="middle">λ</text>
+        <text x="0" y="25" fill="#FF6B2C" font-family="monospace" font-size="8" text-anchor="middle">Functions</text>
+      </g>
+    </g>
+
+    <!-- Connection Lines -->
+    <g>
+      <!-- Storage Connection -->
+      <path d="M-80,-60 L-20,-20" stroke="#FF6B2C" stroke-width="2" stroke-dasharray="4,4">
+        <animate attributeName="stroke-dashoffset" values="8;0" dur="2s" repeatCount="indefinite"/>
+      </path>
+      <circle r="3" fill="#FF6B2C">
+        <animateMotion
+          path="M-80,-60 L-20,-20"
+          dur="3s"
+          repeatCount="indefinite"
+        />
+      </circle>
+
+      <!-- Compute Connection -->
+      <path d="M80,-60 L20,-20" stroke="#3B82F6" stroke-width="2" stroke-dasharray="4,4">
+        <animate attributeName="stroke-dashoffset" values="0;8" dur="2s" repeatCount="indefinite"/>
+      </path>
+      <circle r="3" fill="#3B82F6">
+        <animateMotion
+          path="M80,-60 L20,-20"
+          dur="3s"
+          repeatCount="indefinite"
+        />
+      </circle>
+
+      <!-- Database Connection -->
+      <path d="M-80,60 L-20,20" stroke="#3B82F6" stroke-width="2" stroke-dasharray="4,4">
+        <animate attributeName="stroke-dashoffset" values="8;0" dur="2s" repeatCount="indefinite"/>
+      </path>
+      <circle r="3" fill="#3B82F6">
+        <animateMotion
+          path="M-80,60 L-20,20"
+          dur="3s"
+          repeatCount="indefinite"
+        />
+      </circle>
+
+      <!-- Functions Connection -->
+      <path d="M80,60 L20,20" stroke="#FF6B2C" stroke-width="2" stroke-dasharray="4,4">
+        <animate attributeName="stroke-dashoffset" values="0;8" dur="2s" repeatCount="indefinite"/>
+      </path>
+      <circle r="3" fill="#FF6B2C">
+        <animateMotion
+          path="M80,60 L20,20"
+          dur="3s"
+          repeatCount="indefinite"
+        />
+      </circle>
+    </g>
+
+    <!-- Rotating Ring -->
+    <circle cx="0" cy="0" r="100" fill="none" stroke="url(#glow)" stroke-width="2" opacity="0.5">
+      <animateTransform
+        attributeName="transform"
+        type="rotate"
+        from="0 0 0"
+        to="360 0 0"
+        dur="30s"
+        repeatCount="indefinite"
+      />
+    </circle>
+  </g>
+</svg> 

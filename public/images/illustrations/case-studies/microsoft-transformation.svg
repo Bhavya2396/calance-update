@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="800" height="400" viewBox="0 0 800 400" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <pattern id="grid" width="40" height="40" patternUnits="userSpaceOnUse">
+      <path d="M 40 0 L 0 0 0 40" fill="none" stroke="#00A4EF" stroke-width="0.5"/>
+    </pattern>
+    <linearGradient id="msGradient" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#00A4EF"/>
+      <stop offset="100%" stop-color="#0078D4"/>
+    </linearGradient>
+  </defs>
+  
+  <!-- Background -->
+  <rect width="800" height="400" fill="#0A1628"/>
+  <rect width="800" height="400" fill="url(#grid)" opacity="0.1"/>
+  
+  <!-- Left Side: Legacy -->
+  <g transform="translate(200,200)">
+    <rect width="160" height="160" rx="20" fill="#1A2B44" stroke="#243B61" stroke-width="2"/>
+    <rect x="20" y="40" width="120" height="20" rx="4" fill="#243B61"/>
+    <rect x="20" y="70" width="120" height="20" rx="4" fill="#243B61"/>
+    <rect x="20" y="100" width="120" height="20" rx="4" fill="#243B61"/>
+  </g>
+  
+  <!-- Center: Transformation -->
+  <g transform="translate(400,200)">
+    <circle r="60" fill="#00A4EF" opacity="0.1">
+      <animate attributeName="r" values="55;60;55" dur="3s" repeatCount="indefinite"/>
+    </circle>
+    <circle r="40" fill="#00A4EF" opacity="0.2">
+      <animate attributeName="r" values="35;40;35" dur="3s" repeatCount="indefinite"/>
+    </circle>
+    <path d="M-30 0h60M10 -10l20 10l-20 10" stroke="url(#msGradient)" stroke-width="4" fill="none">
+      <animate attributeName="stroke-dasharray" values="0,100;100,0" dur="2s" repeatCount="indefinite"/>
+    </path>
+  </g>
+  
+  <!-- Right Side: Modern -->
+  <g transform="translate(600,200)">
+    <rect width="160" height="160" rx="20" fill="#1A2B44" stroke="#243B61" stroke-width="2"/>
+    
+    <!-- Microsoft Logo Grid -->
+    <g transform="translate(-40,-40)">
+      <rect width="80" height="80" rx="10" fill="url(#msGradient)"/>
+      <path d="M20 20h30v30H20zM55 20h30v30H55zM20 55h30v30H20zM55 55h30v30H55z" fill="white" opacity="0.9"/>
+    </g>
+    
+    <!-- Cloud Elements -->
+    <g transform="translate(0,40)">
+      <circle cx="0" cy="0" r="20" fill="#00A4EF" opacity="0.2"/>
+      <circle cx="30" cy="0" r="20" fill="#00A4EF" opacity="0.2"/>
+      <circle cx="15" cy="-15" r="20" fill="#00A4EF" opacity="0.2"/>
+    </g>
+  </g>
+  
+  <!-- Data Flow -->
+  <g>
+    {[0, 1, 2].map(i => `
+      <circle r="3" fill="#00A4EF">
+        <animateMotion
+          path="M280 200H520"
+          dur="2s"
+          begin="${i * 0.6}s"
+          repeatCount="indefinite"
+        />
+        <animate
+          attributeName="opacity"
+          values="0;1;0"
+          dur="2s"
+          begin="${i * 0.6}s"
+          repeatCount="indefinite"
+        />
+      </circle>
+    `).join('')}
+  </g>
+  
+  <!-- Labels -->
+  <g font-family="Arial" font-size="14" fill="white" opacity="0.9">
+    <text x="200" y="320" text-anchor="middle">Legacy Systems</text>
+    <text x="600" y="320" text-anchor="middle">Modern Cloud</text>
+  </g>
+</svg> 

@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="400" height="300" viewBox="0 0 400 300" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <!-- Cloud Platform -->
+  <g transform="translate(150,100)">
+    <path d="M100 50C100 22.3858 122.386 0 150 0C177.614 0 200 22.3858 200 50C200 77.6142 177.614 100 150 100C122.386 100 100 77.6142 100 50Z" fill="#3B82F6" fill-opacity="0.1"/>
+    <path d="M120 40C120 28.9543 128.954 20 140 20H160C171.046 20 180 28.9543 180 40V60C180 71.0457 171.046 80 160 80H140C128.954 80 120 71.0457 120 60V40Z" stroke="#3B82F6" stroke-width="2"/>
+    
+    <!-- Server Icons -->
+    <g transform="translate(-100,0)">
+      <rect x="0" y="0" width="60" height="80" rx="4" fill="#1A2B44"/>
+      <rect x="10" y="10" width="40" height="10" rx="2" fill="#243B61"/>
+      <rect x="10" y="30" width="40" height="10" rx="2" fill="#243B61"/>
+      <rect x="10" y="50" width="40" height="10" rx="2" fill="#243B61"/>
+      <circle cx="45" cy="15" r="2" fill="#10B981"/>
+    </g>
+    
+    <!-- Connection Lines -->
+    <path d="M-30 40L120 40" stroke="#3B82F6" stroke-width="2" stroke-dasharray="4 4"/>
+    <circle cx="-30" cy="40" r="4" fill="#3B82F6">
+      <animate attributeName="opacity" values="1;0;1" dur="2s" repeatCount="indefinite"/>
+    </circle>
+  </g>
+  
+  <!-- Data Flow -->
+  <g transform="translate(50,200)">
+    <path d="M0 0L300 0" stroke="#10B981" stroke-width="2" stroke-dasharray="4 4"/>
+    <circle cx="150" cy="0" r="4" fill="#10B981">
+      <animate attributeName="opacity" values="1;0;1" dur="1.5s" repeatCount="indefinite"/>
+    </circle>
+  </g>
+</svg> 

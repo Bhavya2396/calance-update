@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="400" height="300" viewBox="0 0 400 300" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <!-- Code Repository -->
+  <g transform="translate(50,50)">
+    <rect x="0" y="0" width="120" height="200" rx="8" fill="#1A2B44" stroke="#F59E0B" stroke-width="2"/>
+    
+    <!-- Code Files -->
+    <g>
+      <rect x="10" y="20" width="100" height="20" rx="4" fill="#243B61"/>
+      <rect x="20" y="25" width="60" height="10" rx="2" fill="#F59E0B" fill-opacity="0.3"/>
+      
+      <rect x="10" y="50" width="100" height="20" rx="4" fill="#243B61"/>
+      <rect x="20" y="55" width="40" height="10" rx="2" fill="#F59E0B" fill-opacity="0.3"/>
+      
+      <rect x="10" y="80" width="100" height="20" rx="4" fill="#243B61"/>
+      <rect x="20" y="85" width="70" height="10" rx="2" fill="#F59E0B" fill-opacity="0.3"/>
+    </g>
+    
+    <!-- Git Branch -->
+    <g transform="translate(10,120)">
+      <circle cx="10" cy="10" r="4" fill="#F59E0B"/>
+      <circle cx="40" cy="10" r="4" fill="#F59E0B"/>
+      <circle cx="70" cy="10" r="4" fill="#F59E0B"/>
+      <path d="M10 10L40 10L70 10" stroke="#F59E0B" stroke-width="2"/>
+      <path d="M40 10L40 40" stroke="#F59E0B" stroke-width="2" stroke-dasharray="4 4"/>
+      <circle cx="40" cy="40" r="4" fill="#22C55E"/>
+    </g>
+  </g>
+  
+  <!-- Build Pipeline -->
+  <g transform="translate(200,50)">
+    <!-- Pipeline Stages -->
+    <g>
+      <!-- Build -->
+      <rect x="0" y="0" width="60" height="40" rx="4" fill="#243B61"/>
+      <path d="M15 15L45 15M15 25L35 25" stroke="#F59E0B" stroke-width="2"/>
+      
+      <!-- Test -->
+      <rect x="0" y="60" width="60" height="40" rx="4" fill="#243B61"/>
+      <path d="M20 70L40 90M40 70L20 90" stroke="#22C55E" stroke-width="2"/>
+      
+      <!-- Deploy -->
+      <rect x="0" y="120" width="60" height="40" rx="4" fill="#243B61"/>
+      <path d="M20 140h20M30 130v20" stroke="#22C55E" stroke-width="2"/>
+      
+      <!-- Connection Lines -->
+      <path d="M30 40v20" stroke="#F59E0B" stroke-width="2" stroke-dasharray="4 4"/>
+      <path d="M30 100v20" stroke="#F59E0B" stroke-width="2" stroke-dasharray="4 4"/>
+    </g>
+    
+    <!-- Status Indicators -->
+    <g transform="translate(70,0)">
+      <circle cx="0" cy="20" r="4" fill="#22C55E">
+        <animate attributeName="opacity" values="1;0;1" dur="2s" repeatCount="indefinite"/>
+      </circle>
+      <circle cx="0" cy="80" r="4" fill="#22C55E">
+        <animate attributeName="opacity" values="0;1;0" dur="1.5s" repeatCount="indefinite"/>
+      </circle>
+      <circle cx="0" cy="140" r="4" fill="#22C55E">
+        <animate attributeName="opacity" values="1;0;1" dur="3s" repeatCount="indefinite"/>
+      </circle>
+    </g>
+  </g>
+  
+  <!-- Progress Flow -->
+  <g transform="translate(300,100)">
+    <path d="M0 0L50 50L0 100" stroke="#F59E0B" stroke-width="2" fill="none" stroke-dasharray="4 4">
+      <animate attributeName="stroke-dashoffset" values="0;100" dur="2s" repeatCount="indefinite"/>
+    </path>
+    <circle cx="0" cy="0" r="4" fill="#F59E0B"/>
+    <circle cx="50" cy="50" r="4" fill="#F59E0B"/>
+    <circle cx="0" cy="100" r="4" fill="#F59E0B"/>
+  </g>
+</svg> 

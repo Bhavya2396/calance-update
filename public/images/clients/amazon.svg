@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="150" height="150" viewBox="0 0 150 150" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <g transform="translate(25,50)">
+    <!-- Smile Arrow -->
+    <path d="M0 25C0 11.2 11.2 0 25 0H75C88.8 0 100 11.2 100 25C100 38.8 88.8 50 75 50H25C11.2 50 0 38.8 0 25Z" fill="currentColor"/>
+    <path d="M20 25C20 18.4 25.4 13 32 13C38.6 13 44 18.4 44 25" stroke="white" stroke-width="4" stroke-linecap="round"/>
+    <path d="M56 25C56 18.4 61.4 13 68 13C74.6 13 80 18.4 80 25" stroke="white" stroke-width="4" stroke-linecap="round"/>
+    <path d="M10 40L90 40" stroke="white" stroke-width="4" stroke-linecap="round"/>
+  </g>
+</svg> 

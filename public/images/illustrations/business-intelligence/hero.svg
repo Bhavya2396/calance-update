@@ -1,0 +1,115 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="800" height="600" viewBox="0 0 800 600" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <!-- Background Grid -->
+  <defs>
+    <pattern id="grid" x="0" y="0" width="40" height="40" patternUnits="userSpaceOnUse">
+      <path d="M 40 0 L 0 0 0 40" fill="none" stroke="#2DD4BF" stroke-width="0.5" stroke-opacity="0.1"/>
+    </pattern>
+  </defs>
+  <rect width="800" height="600" fill="url(#grid)"/>
+
+  <!-- Glowing Gradient -->
+  <circle cx="400" cy="300" r="250" fill="url(#glow)" filter="blur(100px)"/>
+  <defs>
+    <radialGradient id="glow" cx="0.5" cy="0.5" r="0.5">
+      <stop offset="0%" stop-color="#2DD4BF20"/>
+      <stop offset="100%" stop-color="#2DD4BF00"/>
+    </radialGradient>
+  </defs>
+
+  <!-- Dashboard Container -->
+  <rect x="150" y="100" width="500" height="400" rx="20" fill="#1A2B44" stroke="#2DD4BF" stroke-width="2"/>
+
+  <!-- Chart Grid -->
+  <g transform="translate(180, 130)">
+    <!-- Chart 1: Bar Chart -->
+    <g>
+      <rect width="200" height="150" rx="10" fill="#0A1628"/>
+      <text x="20" y="30" fill="#2DD4BF" font-family="sans-serif" font-size="12">Revenue Growth</text>
+      <!-- Bars -->
+      <rect x="30" y="120" width="20" height="-40" fill="#2DD4BF">
+        <animate attributeName="height" from="0" to="-40" dur="1s"/>
+      </rect>
+      <rect x="60" y="120" width="20" height="-80" fill="#2DD4BF">
+        <animate attributeName="height" from="0" to="-80" dur="1s" delay="0.2s"/>
+      </rect>
+      <rect x="90" y="120" width="20" height="-60" fill="#2DD4BF">
+        <animate attributeName="height" from="0" to="-60" dur="1s" delay="0.4s"/>
+      </rect>
+      <rect x="120" y="120" width="20" height="-90" fill="#2DD4BF">
+        <animate attributeName="height" from="0" to="-90" dur="1s" delay="0.6s"/>
+      </rect>
+    </g>
+
+    <!-- Chart 2: Line Chart -->
+    <g transform="translate(240, 0)">
+      <rect width="200" height="150" rx="10" fill="#0A1628"/>
+      <text x="20" y="30" fill="#2DD4BF" font-family="sans-serif" font-size="12">Market Trends</text>
+      <!-- Line -->
+      <path d="M20,120 L70,80 L120,100 L170,60" stroke="#2DD4BF" stroke-width="2" fill="none">
+        <animate attributeName="stroke-dasharray" from="200" to="0" dur="2s"/>
+      </path>
+      <!-- Data Points -->
+      <circle cx="20" cy="120" r="4" fill="#2DD4BF"/>
+      <circle cx="70" cy="80" r="4" fill="#2DD4BF"/>
+      <circle cx="120" cy="100" r="4" fill="#2DD4BF"/>
+      <circle cx="170" cy="60" r="4" fill="#2DD4BF"/>
+    </g>
+    </g>
+    
+    <!-- KPI Cards -->
+  <g transform="translate(180, 300)">
+    <!-- KPI 1 -->
+    <g>
+      <rect width="140" height="80" rx="10" fill="#0A1628"/>
+      <text x="20" y="30" fill="#2DD4BF" font-family="sans-serif" font-size="12">ROI</text>
+      <text x="20" y="60" fill="#2DD4BF" font-family="sans-serif" font-size="24">+45%</text>
+    </g>
+    <!-- KPI 2 -->
+    <g transform="translate(160, 0)">
+      <rect width="140" height="80" rx="10" fill="#0A1628"/>
+      <text x="20" y="30" fill="#2DD4BF" font-family="sans-serif" font-size="12">Growth</text>
+      <text x="20" y="60" fill="#2DD4BF" font-family="sans-serif" font-size="24">+28%</text>
+    </g>
+    <!-- KPI 3 -->
+    <g transform="translate(320, 0)">
+      <rect width="140" height="80" rx="10" fill="#0A1628"/>
+      <text x="20" y="30" fill="#2DD4BF" font-family="sans-serif" font-size="12">Efficiency</text>
+      <text x="20" y="60" fill="#2DD4BF" font-family="sans-serif" font-size="24">92%</text>
+    </g>
+  </g>
+  
+  <!-- Data Flow Lines -->
+  <g stroke="#2DD4BF" stroke-width="2" stroke-dasharray="5,5">
+    <path d="M280,280 L280,300">
+      <animate attributeName="stroke-dashoffset" from="100" to="0" dur="10s" repeatCount="indefinite"/>
+    </path>
+    <path d="M440,280 L440,300">
+      <animate attributeName="stroke-dashoffset" from="100" to="0" dur="10s" repeatCount="indefinite"/>
+    </path>
+  </g>
+
+  <!-- Floating Elements -->
+  <g>
+    <circle cx="120" cy="200" r="30" fill="#2DD4BF10" stroke="#2DD4BF" stroke-width="2">
+      <animate attributeName="r" values="30;35;30" dur="3s" repeatCount="indefinite"/>
+    </circle>
+    <text x="105" y="205" fill="#2DD4BF" font-family="sans-serif" font-size="12">DATA</text>
+  </g>
+  <g>
+    <circle cx="680" cy="400" r="30" fill="#2DD4BF10" stroke="#2DD4BF" stroke-width="2">
+      <animate attributeName="r" values="30;35;30" dur="3s" repeatCount="indefinite"/>
+    </circle>
+    <text x="665" y="405" fill="#2DD4BF" font-family="sans-serif" font-size="12">BI</text>
+  </g>
+
+  <!-- Animated Data Points -->
+  <g>
+    <circle cx="280" cy="290" r="3" fill="#2DD4BF">
+      <animate attributeName="cy" values="280;300;280" dur="2s" repeatCount="indefinite"/>
+    </circle>
+    <circle cx="440" cy="290" r="3" fill="#2DD4BF">
+      <animate attributeName="cy" values="280;300;280" dur="2s" repeatCount="indefinite" begin="1s"/>
+    </circle>
+  </g>
+</svg>

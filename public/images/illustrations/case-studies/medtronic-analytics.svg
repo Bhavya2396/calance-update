@@ -1,0 +1,119 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="800" height="600" viewBox="0 0 800 600" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <!-- Background Grid Pattern -->
+  <defs>
+    <pattern id="grid" x="0" y="0" width="40" height="40" patternUnits="userSpaceOnUse">
+      <path d="M 40 0 L 0 0 0 40" fill="none" stroke="#243B61" stroke-width="0.5" opacity="0.2"/>
+    </pattern>
+    <linearGradient id="glow" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#FF6B2C;stop-opacity:0.2"/>
+      <stop offset="100%" style="stop-color:#3B82F6;stop-opacity:0.2"/>
+    </linearGradient>
+  </defs>
+  
+  <!-- Background -->
+  <rect width="800" height="600" fill="url(#grid)"/>
+  <rect width="800" height="600" fill="url(#glow)"/>
+
+  <!-- Analytics Dashboard -->
+  <g transform="translate(400, 300)">
+    <!-- Main Display -->
+    <rect x="-150" y="-100" width="300" height="200" rx="15" fill="#1A2B44" stroke="#FF6B2C" stroke-width="2"/>
+    
+    <!-- Heart Rate Graph -->
+    <g transform="translate(-100, -60)">
+      <path d="M-30,0 L-20,0 L-10,-20 L0,20 L10,-20 L20,0 L30,0" 
+            stroke="#FF6B2C" stroke-width="2" fill="none">
+        <animate
+          attributeName="d"
+          values="M-30,0 L-20,0 L-10,-20 L0,20 L10,-20 L20,0 L30,0;
+                  M-30,0 L-20,0 L-10,20 L0,-20 L10,20 L20,0 L30,0;
+                  M-30,0 L-20,0 L-10,-20 L0,20 L10,-20 L20,0 L30,0"
+          dur="2s"
+          repeatCount="indefinite"
+        />
+      </path>
+    </g>
+
+    <!-- Analytics Charts -->
+    <g transform="translate(50, -60)">
+      <!-- Bar Chart -->
+      <rect x="-20" y="-20" width="10" height="40" fill="#3B82F6" opacity="0.8">
+        <animate attributeName="height" values="40;20;40" dur="3s" repeatCount="indefinite"/>
+      </rect>
+      <rect x="0" y="-30" width="10" height="50" fill="#3B82F6" opacity="0.9">
+        <animate attributeName="height" values="50;30;50" dur="3s" repeatCount="indefinite"/>
+      </rect>
+      <rect x="20" y="-40" width="10" height="60" fill="#3B82F6">
+        <animate attributeName="height" values="60;40;60" dur="3s" repeatCount="indefinite"/>
+      </rect>
+    </g>
+
+    <!-- Data Points -->
+    <g transform="translate(-100, 20)">
+      <circle cx="0" cy="0" r="5" fill="#FF6B2C">
+        <animate attributeName="r" values="5;7;5" dur="2s" repeatCount="indefinite"/>
+      </circle>
+      <text x="20" y="5" fill="#FF6B2C" font-family="monospace" font-size="12">98.5%</text>
+    </g>
+
+    <g transform="translate(50, 20)">
+      <circle cx="0" cy="0" r="5" fill="#3B82F6">
+        <animate attributeName="r" values="5;7;5" dur="2s" repeatCount="indefinite"/>
+      </circle>
+      <text x="20" y="5" fill="#3B82F6" font-family="monospace" font-size="12">+45%</text>
+    </g>
+
+    <!-- Floating Data Elements -->
+    <g>
+      <g transform="translate(-120, -120)">
+        <rect x="-25" y="-15" width="50" height="30" rx="5" fill="#1A2B44" stroke="#FF6B2C" stroke-width="2"/>
+        <text x="0" y="5" fill="#FF6B2C" font-family="monospace" font-size="12" text-anchor="middle">DATA</text>
+      </g>
+
+      <g transform="translate(120, -120)">
+        <rect x="-25" y="-15" width="50" height="30" rx="5" fill="#1A2B44" stroke="#3B82F6" stroke-width="2"/>
+        <text x="0" y="5" fill="#3B82F6" font-family="monospace" font-size="12" text-anchor="middle">AI</text>
+      </g>
+
+      <g transform="translate(-120, 120)">
+        <rect x="-30" y="-15" width="60" height="30" rx="5" fill="#1A2B44" stroke="#FF6B2C" stroke-width="2"/>
+        <text x="0" y="5" fill="#FF6B2C" font-family="monospace" font-size="12" text-anchor="middle">HEALTH</text>
+      </g>
+
+      <g transform="translate(120, 120)">
+        <rect x="-35" y="-15" width="70" height="30" rx="5" fill="#1A2B44" stroke="#3B82F6" stroke-width="2"/>
+        <text x="0" y="5" fill="#3B82F6" font-family="monospace" font-size="12" text-anchor="middle">METRICS</text>
+      </g>
+    </g>
+
+    <!-- Connection Lines -->
+    <g>
+      <path d="M-120,-120 L-50,-50" stroke="#FF6B2C" stroke-width="2" stroke-dasharray="5,5">
+        <animate attributeName="stroke-dashoffset" values="0;20" dur="2s" repeatCount="indefinite"/>
+      </path>
+      <path d="M120,-120 L50,-50" stroke="#3B82F6" stroke-width="2" stroke-dasharray="5,5">
+        <animate attributeName="stroke-dashoffset" values="0;20" dur="2s" repeatCount="indefinite"/>
+      </path>
+      <path d="M-120,120 L-50,50" stroke="#FF6B2C" stroke-width="2" stroke-dasharray="5,5">
+        <animate attributeName="stroke-dashoffset" values="0;20" dur="2s" repeatCount="indefinite"/>
+      </path>
+      <path d="M120,120 L50,50" stroke="#3B82F6" stroke-width="2" stroke-dasharray="5,5">
+        <animate attributeName="stroke-dashoffset" values="0;20" dur="2s" repeatCount="indefinite"/>
+      </path>
+    </g>
+  </g>
+
+  <!-- Floating Particles -->
+  <g>
+    <circle cx="150" cy="150" r="3" fill="#FF6B2C">
+      <animate attributeName="opacity" values="0;1;0" dur="3s" repeatCount="indefinite"/>
+    </circle>
+    <circle cx="650" cy="450" r="3" fill="#3B82F6">
+      <animate attributeName="opacity" values="0;1;0" dur="4s" repeatCount="indefinite"/>
+    </circle>
+    <circle cx="250" cy="350" r="3" fill="#FF6B2C">
+      <animate attributeName="opacity" values="0;1;0" dur="5s" repeatCount="indefinite"/>
+    </circle>
+  </g>
+</svg> 

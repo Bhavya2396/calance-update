@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="800" height="600" viewBox="0 0 800 600" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <!-- Background Grid -->
+  <path d="M0 0h800v600H0z" fill="#0A1628" fill-opacity=".1"/>
+  <path d="M50 50h700v500H50z" stroke="#7C3AED" stroke-opacity=".1" stroke-width="1" stroke-dasharray="4 4"/>
+  
+  <!-- Neural Network -->
+  <g transform="translate(200,100)">
+    <!-- Input Layer -->
+    <g>
+      <circle cx="0" cy="0" r="20" fill="#1A2B44" stroke="#7C3AED" stroke-width="2"/>
+      <circle cx="0" cy="100" r="20" fill="#1A2B44" stroke="#7C3AED" stroke-width="2"/>
+      <circle cx="0" cy="200" r="20" fill="#1A2B44" stroke="#7C3AED" stroke-width="2"/>
+      <circle cx="0" cy="300" r="20" fill="#1A2B44" stroke="#7C3AED" stroke-width="2"/>
+    </g>
+    
+    <!-- Hidden Layer 1 -->
+    <g transform="translate(150,50)">
+      <circle cx="0" cy="0" r="20" fill="#1A2B44" stroke="#3B82F6" stroke-width="2"/>
+      <circle cx="0" cy="100" r="20" fill="#1A2B44" stroke="#3B82F6" stroke-width="2"/>
+      <circle cx="0" cy="200" r="20" fill="#1A2B44" stroke="#3B82F6" stroke-width="2"/>
+    </g>
+    
+    <!-- Hidden Layer 2 -->
+    <g transform="translate(300,100)">
+      <circle cx="0" cy="0" r="20" fill="#1A2B44" stroke="#7C3AED" stroke-width="2"/>
+      <circle cx="0" cy="100" r="20" fill="#1A2B44" stroke="#7C3AED" stroke-width="2"/>
+    </g>
+    
+    <!-- Output Layer -->
+    <g transform="translate(450,150)">
+      <circle cx="0" cy="0" r="20" fill="#1A2B44" stroke="#3B82F6" stroke-width="2"/>
+    </g>
+    
+    <!-- Connections -->
+    <g stroke-width="2" stroke-dasharray="4 4">
+      <!-- Input to Hidden 1 -->
+      <path d="M20 0L130 50" stroke="#7C3AED" stroke-opacity="0.3"/>
+      <path d="M20 0L130 150" stroke="#7C3AED" stroke-opacity="0.3"/>
+      <path d="M20 100L130 50" stroke="#7C3AED" stroke-opacity="0.3"/>
+      <path d="M20 100L130 150" stroke="#7C3AED" stroke-opacity="0.3"/>
+      <path d="M20 200L130 150" stroke="#7C3AED" stroke-opacity="0.3"/>
+      <path d="M20 200L130 250" stroke="#7C3AED" stroke-opacity="0.3"/>
+      <path d="M20 300L130 250" stroke="#7C3AED" stroke-opacity="0.3"/>
+      
+      <!-- Hidden 1 to Hidden 2 -->
+      <path d="M170 50L280 100" stroke="#3B82F6" stroke-opacity="0.3"/>
+      <path d="M170 150L280 100" stroke="#3B82F6" stroke-opacity="0.3"/>
+      <path d="M170 150L280 200" stroke="#3B82F6" stroke-opacity="0.3"/>
+      <path d="M170 250L280 200" stroke="#3B82F6" stroke-opacity="0.3"/>
+      
+      <!-- Hidden 2 to Output -->
+      <path d="M320 100L430 150" stroke="#7C3AED" stroke-opacity="0.3"/>
+      <path d="M320 200L430 150" stroke="#7C3AED" stroke-opacity="0.3"/>
+    </g>
+  </g>
+  
+  <!-- Data Flow Particles -->
+  <g>
+    <!-- Input Layer Particles -->
+    <circle cx="220" cy="100" r="4" fill="#7C3AED">
+      <animate attributeName="opacity" values="1;0;1" dur="2s" repeatCount="indefinite"/>
+    </circle>
+    <circle cx="220" cy="300" r="4" fill="#7C3AED">
+      <animate attributeName="opacity" values="0;1;0" dur="1.5s" repeatCount="indefinite"/>
+    </circle>
+    
+    <!-- Hidden Layer Particles -->
+    <circle cx="370" cy="150" r="4" fill="#3B82F6">
+      <animate attributeName="opacity" values="1;0;1" dur="3s" repeatCount="indefinite"/>
+    </circle>
+    <circle cx="520" cy="200" r="4" fill="#3B82F6">
+      <animate attributeName="opacity" values="0;1;0" dur="2s" repeatCount="indefinite"/>
+    </circle>
+  </g>
+  
+  <!-- AI Symbols -->
+  <g transform="translate(50,50)">
+    <!-- Binary Data -->
+    <text x="0" y="0" font-family="monospace" font-size="12" fill="#7C3AED" fill-opacity="0.3">
+      <tspan x="0" y="0">10110</tspan>
+      <tspan x="0" y="20">01001</tspan>
+      <tspan x="0" y="40">11010</tspan>
+    </text>
+    
+    <!-- Algorithm Symbols -->
+    <text x="650" y="0" font-family="monospace" font-size="12" fill="#3B82F6" fill-opacity="0.3">
+      <tspan x="650" y="0">f(x) =</tspan>
+      <tspan x="650" y="20">Σ(w·x + b)</tspan>
+      <tspan x="650" y="40">∂L/∂w</tspan>
+    </text>
+  </g>
+  
+  <!-- Animated Elements -->
+  <g>
+    <rect x="100" y="500" width="30" height="30" rx="4" fill="#7C3AED" fill-opacity="0.2">
+      <animate attributeName="y" values="500;510;500" dur="3s" repeatCount="indefinite"/>
+    </rect>
+    <circle cx="700" cy="450" r="20" fill="#3B82F6" fill-opacity="0.2">
+      <animate attributeName="cy" values="450;460;450" dur="4s" repeatCount="indefinite"/>
+    </circle>
+  </g>
+</svg> 

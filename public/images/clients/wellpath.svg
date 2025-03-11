@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="200" height="60" viewBox="0 0 200 60" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <g transform="translate(20,10)">
+    <!-- WELLPATH Letters -->
+    <path d="M0 0L10 40L20 0L30 40L40 0H50L40 40H30L20 20L10 40H0L10 0H0Z" fill="currentColor"/>
+    <path d="M60 0H80V40H60V0Z" fill="currentColor"/>
+    <path d="M90 0H110V40H90V0Z" fill="currentColor"/>
+    <path d="M120 0H140V40H120V0Z" fill="currentColor"/>
+    <path d="M150 0H170C180 0 185 5 185 15V25C185 35 180 40 170 40H150V0ZM165 15H170V25H165V15Z" fill="currentColor"/>
+    <path d="M195 0H215C225 0 230 5 230 15V25C230 35 225 40 215 40H195V0ZM210 15H215V25H210V15Z" fill="currentColor"/>
+    <path d="M240 0H260V40H240V0Z" fill="currentColor"/>
+  </g>
+</svg> 

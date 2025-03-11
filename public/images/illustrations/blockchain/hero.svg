@@ -1,0 +1,124 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="800" height="600" viewBox="0 0 800 600" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <!-- Background Grid -->
+  <defs>
+    <pattern id="grid" x="0" y="0" width="40" height="40" patternUnits="userSpaceOnUse">
+      <path d="M 40 0 L 0 0 0 40" fill="none" stroke="#9333EA" stroke-width="0.5" stroke-opacity="0.1"/>
+    </pattern>
+  </defs>
+  <rect width="800" height="600" fill="url(#grid)"/>
+
+  <!-- Glowing Gradient -->
+  <circle cx="400" cy="300" r="250" fill="url(#glow)" filter="blur(100px)"/>
+  <defs>
+    <radialGradient id="glow" cx="0.5" cy="0.5" r="0.5">
+      <stop offset="0%" stop-color="#9333EA20"/>
+      <stop offset="100%" stop-color="#9333EA00"/>
+    </radialGradient>
+  </defs>
+
+  <!-- Blockchain Network -->
+  <g transform="translate(200,150)">
+    <!-- Nodes -->
+    <g id="nodes">
+      <!-- Center Node -->
+      <circle cx="200" cy="150" r="40" fill="#9333EA20" stroke="#9333EA" stroke-width="2">
+        <animate attributeName="r" values="40;45;40" dur="3s" repeatCount="indefinite"/>
+      </circle>
+      
+      <!-- Surrounding Nodes -->
+      <circle cx="100" cy="100" r="30" fill="#9333EA20" stroke="#9333EA" stroke-width="2"/>
+      <circle cx="300" cy="100" r="30" fill="#9333EA20" stroke="#9333EA" stroke-width="2"/>
+      <circle cx="100" cy="200" r="30" fill="#9333EA20" stroke="#9333EA" stroke-width="2"/>
+      <circle cx="300" cy="200" r="30" fill="#9333EA20" stroke="#9333EA" stroke-width="2"/>
+      <circle cx="200" cy="50" r="30" fill="#9333EA20" stroke="#9333EA" stroke-width="2"/>
+      <circle cx="200" cy="250" r="30" fill="#9333EA20" stroke="#9333EA" stroke-width="2"/>
+    </g>
+
+    <!-- Connections -->
+    <g id="connections" stroke="#9333EA" stroke-width="2" stroke-dasharray="5,5">
+      <line x1="200" y1="150" x2="100" y2="100">
+        <animate attributeName="stroke-dashoffset" from="100" to="0" dur="10s" repeatCount="indefinite"/>
+      </line>
+      <line x1="200" y1="150" x2="300" y2="100">
+        <animate attributeName="stroke-dashoffset" from="100" to="0" dur="10s" repeatCount="indefinite"/>
+      </line>
+      <line x1="200" y1="150" x2="100" y2="200">
+        <animate attributeName="stroke-dashoffset" from="100" to="0" dur="10s" repeatCount="indefinite"/>
+      </line>
+      <line x1="200" y1="150" x2="300" y2="200">
+        <animate attributeName="stroke-dashoffset" from="100" to="0" dur="10s" repeatCount="indefinite"/>
+      </line>
+      <line x1="200" y1="150" x2="200" y2="50">
+        <animate attributeName="stroke-dashoffset" from="100" to="0" dur="10s" repeatCount="indefinite"/>
+      </line>
+      <line x1="200" y1="150" x2="200" y2="250">
+        <animate attributeName="stroke-dashoffset" from="100" to="0" dur="10s" repeatCount="indefinite"/>
+      </line>
+    </g>
+
+    <!-- Data Packets -->
+    <g id="packets">
+      <circle cx="200" cy="150" r="4" fill="#9333EA">
+        <animateMotion 
+          path="M0,0 L-100,-50 M0,0 L100,-50 M0,0 L-100,50 M0,0 L100,50 M0,0 L0,-100 M0,0 L0,100"
+          dur="3s"
+          repeatCount="indefinite"/>
+      </circle>
+      <circle cx="200" cy="150" r="4" fill="#9333EA">
+        <animateMotion 
+          path="M0,0 L-100,-50 M0,0 L100,-50 M0,0 L-100,50 M0,0 L100,50 M0,0 L0,-100 M0,0 L0,100"
+          dur="3s"
+          begin="1s"
+          repeatCount="indefinite"/>
+      </circle>
+    </g>
+
+    <!-- Block Labels -->
+    <g font-family="monospace" font-size="12" fill="#9333EA">
+      <text x="185" y="155">BLOCK</text>
+      <text x="85" y="105">TX</text>
+      <text x="285" y="105">TX</text>
+      <text x="85" y="205">TX</text>
+      <text x="285" y="205">TX</text>
+      <text x="185" y="55">TX</text>
+      <text x="185" y="255">TX</text>
+    </g>
+  </g>
+
+  <!-- Floating Elements -->
+  <g>
+    <circle cx="150" cy="150" r="30" fill="#9333EA10" stroke="#9333EA" stroke-width="2">
+      <animate attributeName="r" values="30;35;30" dur="3s" repeatCount="indefinite"/>
+    </circle>
+    <text x="130" y="155" fill="#9333EA" font-family="monospace" font-size="12">HASH</text>
+  </g>
+  <g>
+    <circle cx="650" cy="450" r="30" fill="#9333EA10" stroke="#9333EA" stroke-width="2">
+      <animate attributeName="r" values="30;35;30" dur="3s" repeatCount="indefinite"/>
+    </circle>
+    <text x="630" y="455" fill="#9333EA" font-family="monospace" font-size="12">NODE</text>
+  </g>
+
+  <!-- Status Indicators -->
+  <g>
+    <circle cx="180" cy="100" r="4" fill="#9333EA">
+      <animate attributeName="opacity" values="0;1;0" dur="2s" repeatCount="indefinite"/>
+    </circle>
+    <circle cx="620" cy="500" r="4" fill="#9333EA">
+      <animate attributeName="opacity" values="0;1;0" dur="2s" repeatCount="indefinite" begin="1s"/>
+    </circle>
+  </g>
+
+  <!-- Metrics -->
+  <g font-family="monospace" font-size="12" fill="#9333EA">
+    <text x="150" y="50">
+      Speed: 500%
+      <animate attributeName="opacity" values="0.5;1;0.5" dur="2s" repeatCount="indefinite"/>
+    </text>
+    <text x="550" y="550">
+      Security: 99.99%
+      <animate attributeName="opacity" values="0.5;1;0.5" dur="2s" repeatCount="indefinite" begin="1s"/>
+    </text>
+  </g>
+</svg> 

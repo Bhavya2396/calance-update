@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="400" height="400" viewBox="0 0 400 400" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <!-- Neural Network Structure -->
+  <g transform="translate(50,50)">
+    <!-- Input Layer -->
+    <g>
+      <circle cx="50" cy="75" r="15" fill="#1A2B44" stroke="#FF6B2C" stroke-width="2"/>
+      <circle cx="50" cy="150" r="15" fill="#1A2B44" stroke="#FF6B2C" stroke-width="2"/>
+      <circle cx="50" cy="225" r="15" fill="#1A2B44" stroke="#FF6B2C" stroke-width="2"/>
+    </g>
+    
+    <!-- Hidden Layer -->
+    <g>
+      <circle cx="150" cy="50" r="15" fill="#1A2B44" stroke="#3B82F6" stroke-width="2"/>
+      <circle cx="150" cy="125" r="15" fill="#1A2B44" stroke="#3B82F6" stroke-width="2"/>
+      <circle cx="150" cy="200" r="15" fill="#1A2B44" stroke="#3B82F6" stroke-width="2"/>
+      <circle cx="150" cy="275" r="15" fill="#1A2B44" stroke="#3B82F6" stroke-width="2"/>
+    </g>
+    
+    <!-- Output Layer -->
+    <g>
+      <circle cx="250" cy="100" r="15" fill="#1A2B44" stroke="#FF6B2C" stroke-width="2"/>
+      <circle cx="250" cy="175" r="15" fill="#1A2B44" stroke="#FF6B2C" stroke-width="2"/>
+      <circle cx="250" cy="250" r="15" fill="#1A2B44" stroke="#FF6B2C" stroke-width="2"/>
+    </g>
+    
+    <!-- Connections -->
+    <g stroke-dasharray="4 4" stroke-width="2">
+      <!-- Input to Hidden -->
+      <path d="M65 75L135 50" stroke="#3B82F6" opacity="0.3"/>
+      <path d="M65 75L135 125" stroke="#3B82F6" opacity="0.3"/>
+      <path d="M65 150L135 125" stroke="#3B82F6" opacity="0.3"/>
+      <path d="M65 150L135 200" stroke="#3B82F6" opacity="0.3"/>
+      <path d="M65 225L135 200" stroke="#3B82F6" opacity="0.3"/>
+      <path d="M65 225L135 275" stroke="#3B82F6" opacity="0.3"/>
+      
+      <!-- Hidden to Output -->
+      <path d="M165 50L235 100" stroke="#FF6B2C" opacity="0.3"/>
+      <path d="M165 125L235 100" stroke="#FF6B2C" opacity="0.3"/>
+      <path d="M165 200L235 175" stroke="#FF6B2C" opacity="0.3"/>
+      <path d="M165 275L235 250" stroke="#FF6B2C" opacity="0.3"/>
+    </g>
+    
+    <!-- Data Flow Particles -->
+    <g>
+      <circle cx="100" cy="100" r="3" fill="#3B82F6">
+        <animate attributeName="opacity" values="1;0;1" dur="2s" repeatCount="indefinite"/>
+        <animateMotion dur="2s" repeatCount="indefinite"
+          path="M0 0L35 -25"/>
+      </circle>
+      <circle cx="100" cy="200" r="3" fill="#FF6B2C">
+        <animate attributeName="opacity" values="0;1;0" dur="2s" repeatCount="indefinite"/>
+        <animateMotion dur="2s" repeatCount="indefinite"
+          path="M0 0L35 -75"/>
+      </circle>
+    </g>
+  </g>
+  
+  <!-- Binary Data Background -->
+  <g fill="#FF6B2C" fill-opacity="0.1">
+    <text x="20" y="380" font-family="monospace" font-size="14">10</text>
+    <text x="60" y="380" font-family="monospace" font-size="14">01</text>
+    <text x="100" y="380" font-family="monospace" font-size="14">11</text>
+  </g>
+  
+  <!-- Decorative Elements -->
+  <g>
+    <rect x="300" y="50" width="30" height="30" rx="6" fill="#1A2B44" stroke="#3B82F6" stroke-width="2">
+      <animate attributeName="opacity" values="0.5;1;0.5" dur="3s" repeatCount="indefinite"/>
+    </rect>
+    <circle cx="315" cy="300" r="15" fill="#1A2B44" stroke="#FF6B2C" stroke-width="2">
+      <animate attributeName="r" values="15;18;15" dur="2s" repeatCount="indefinite"/>
+    </circle>
+  </g>
+</svg> 

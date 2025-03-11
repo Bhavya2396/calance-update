@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="400" height="300" viewBox="0 0 400 300" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <!-- Data Center Building -->
+  <g transform="translate(50,50)">
+    <!-- Building Structure -->
+    <rect x="0" y="0" width="300" height="200" rx="8" fill="#1A2B44" stroke="#3B82F6" stroke-width="2"/>
+    
+    <!-- Server Racks -->
+    <g transform="translate(20,20)">
+      <!-- Rack Row 1 -->
+      <g>
+        <rect x="0" y="0" width="40" height="60" rx="4" fill="#243B61"/>
+        <rect x="60" y="0" width="40" height="60" rx="4" fill="#243B61"/>
+        <rect x="120" y="0" width="40" height="60" rx="4" fill="#243B61"/>
+        <rect x="180" y="0" width="40" height="60" rx="4" fill="#243B61"/>
+      </g>
+      
+      <!-- Rack Row 2 -->
+      <g transform="translate(0,80)">
+        <rect x="0" y="0" width="40" height="60" rx="4" fill="#243B61"/>
+        <rect x="60" y="0" width="40" height="60" rx="4" fill="#243B61"/>
+        <rect x="120" y="0" width="40" height="60" rx="4" fill="#243B61"/>
+        <rect x="180" y="0" width="40" height="60" rx="4" fill="#243B61"/>
+      </g>
+      
+      <!-- Status LEDs -->
+      <g fill="#10B981">
+        <circle cx="35" cy="10" r="2">
+          <animate attributeName="opacity" values="1;0;1" dur="2s" repeatCount="indefinite"/>
+        </circle>
+        <circle cx="95" cy="10" r="2">
+          <animate attributeName="opacity" values="0;1;0" dur="2s" repeatCount="indefinite"/>
+        </circle>
+        <circle cx="155" cy="10" r="2">
+          <animate attributeName="opacity" values="1;0;1" dur="1.5s" repeatCount="indefinite"/>
+        </circle>
+        <circle cx="215" cy="10" r="2">
+          <animate attributeName="opacity" values="0;1;0" dur="1.5s" repeatCount="indefinite"/>
+        </circle>
+      </g>
+    </g>
+    
+    <!-- Cooling System -->
+    <g transform="translate(240,20)">
+      <rect x="0" y="0" width="40" height="120" rx="4" fill="#3B82F6" fill-opacity="0.2"/>
+      <!-- Animated Air Flow -->
+      <path d="M10 20Q20 30 10 40Q0 50 10 60" stroke="#3B82F6" stroke-width="2" fill="none">
+        <animate attributeName="d" 
+                values="M10 20Q20 30 10 40Q0 50 10 60;M10 30Q20 40 10 50Q0 60 10 70;M10 20Q20 30 10 40Q0 50 10 60" 
+                dur="2s" 
+                repeatCount="indefinite"/>
+      </path>
+    </g>
+  </g>
+  
+  <!-- Power Distribution -->
+  <g transform="translate(50,260)">
+    <rect x="0" y="0" width="300" height="20" rx="4" fill="#1A2B44"/>
+    <!-- Power Indicators -->
+    <g transform="translate(10,5)">
+      <rect x="0" y="0" width="60" height="10" rx="2" fill="#243B61"/>
+      <rect x="0" y="0" width="45" height="10" rx="2" fill="#10B981">
+        <animate attributeName="width" values="0;45;0" dur="3s" repeatCount="indefinite"/>
+      </rect>
+    </g>
+    <g transform="translate(120,5)">
+      <rect x="0" y="0" width="60" height="10" rx="2" fill="#243B61"/>
+      <rect x="0" y="0" width="50" height="10" rx="2" fill="#10B981">
+        <animate attributeName="width" values="0;50;0" dur="4s" repeatCount="indefinite"/>
+      </rect>
+    </g>
+    <g transform="translate(230,5)">
+      <rect x="0" y="0" width="60" height="10" rx="2" fill="#243B61"/>
+      <rect x="0" y="0" width="40" height="10" rx="2" fill="#10B981">
+        <animate attributeName="width" values="0;40;0" dur="2.5s" repeatCount="indefinite"/>
+      </rect>
+    </g>
+  </g>
+  
+  <!-- Network Connections -->
+  <g stroke="#3B82F6" stroke-opacity="0.3" stroke-width="2">
+    <path d="M50 250L50 260" stroke-dasharray="4 4"/>
+    <path d="M200 250L200 260" stroke-dasharray="4 4"/>
+    <path d="M350 250L350 260" stroke-dasharray="4 4"/>
+  </g>
+  
+  <!-- Data Flow Indicators -->
+  <g>
+    <circle cx="50" cy="255" r="3" fill="#10B981">
+      <animate attributeName="opacity" values="1;0;1" dur="2s" repeatCount="indefinite"/>
+    </circle>
+    <circle cx="200" cy="255" r="3" fill="#10B981">
+      <animate attributeName="opacity" values="0;1;0" dur="1.5s" repeatCount="indefinite"/>
+    </circle>
+    <circle cx="350" cy="255" r="3" fill="#10B981">
+      <animate attributeName="opacity" values="1;0;1" dur="3s" repeatCount="indefinite"/>
+    </circle>
+  </g>
+</svg> 

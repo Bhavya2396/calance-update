@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="400" height="300" viewBox="0 0 400 300" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <!-- API Gateway -->
+  <g transform="translate(150,50)">
+    <rect x="0" y="0" width="100" height="200" rx="8" fill="#1A2B44" stroke="#8B5CF6" stroke-width="2"/>
+    
+    <!-- API Endpoints -->
+    <g>
+      <rect x="10" y="20" width="80" height="30" rx="4" fill="#243B61"/>
+      <text x="20" y="40" fill="#8B5CF6" font-family="monospace" font-size="12">/api/v1</text>
+      
+      <rect x="10" y="60" width="80" height="30" rx="4" fill="#243B61"/>
+      <text x="20" y="80" fill="#8B5CF6" font-family="monospace" font-size="12">/users</text>
+      
+      <rect x="10" y="100" width="80" height="30" rx="4" fill="#243B61"/>
+      <text x="20" y="120" fill="#8B5CF6" font-family="monospace" font-size="12">/data</text>
+      
+      <rect x="10" y="140" width="80" height="30" rx="4" fill="#243B61"/>
+      <text x="20" y="160" fill="#8B5CF6" font-family="monospace" font-size="12">/auth</text>
+    </g>
+  </g>
+  
+  <!-- Connected Systems -->
+  <g>
+    <!-- System 1 -->
+    <g transform="translate(50,80)">
+      <rect x="0" y="0" width="60" height="60" rx="8" fill="#1A2B44" stroke="#60A5FA" stroke-width="2"/>
+      <path d="M15 30h30M30 15v30" stroke="#60A5FA" stroke-width="2"/>
+    </g>
+    
+    <!-- System 2 -->
+    <g transform="translate(290,80)">
+      <rect x="0" y="0" width="60" height="60" rx="8" fill="#1A2B44" stroke="#60A5FA" stroke-width="2"/>
+      <path d="M15 30h30M15 15l30 30M45 15l-30 30" stroke="#60A5FA" stroke-width="2"/>
+    </g>
+    
+    <!-- System 3 -->
+    <g transform="translate(50,180)">
+      <rect x="0" y="0" width="60" height="60" rx="8" fill="#1A2B44" stroke="#60A5FA" stroke-width="2"/>
+      <circle cx="30" cy="30" r="15" stroke="#60A5FA" stroke-width="2" fill="none"/>
+    </g>
+    
+    <!-- System 4 -->
+    <g transform="translate(290,180)">
+      <rect x="0" y="0" width="60" height="60" rx="8" fill="#1A2B44" stroke="#60A5FA" stroke-width="2"/>
+      <path d="M15 15h30v30h-30z" stroke="#60A5FA" stroke-width="2" fill="none"/>
+    </g>
+  </g>
+  
+  <!-- Connection Lines -->
+  <g stroke="#8B5CF6" stroke-width="2" stroke-dasharray="4 4">
+    <!-- Left Connections -->
+    <path d="M110 110L150 110">
+      <animate attributeName="stroke-dashoffset" values="0;100" dur="2s" repeatCount="indefinite"/>
+    </path>
+    <path d="M110 210L150 210">
+      <animate attributeName="stroke-dashoffset" values="0;100" dur="2s" repeatCount="indefinite"/>
+    </path>
+    
+    <!-- Right Connections -->
+    <path d="M250 110L290 110">
+      <animate attributeName="stroke-dashoffset" values="0;100" dur="2s" repeatCount="indefinite"/>
+    </path>
+    <path d="M250 210L290 210">
+      <animate attributeName="stroke-dashoffset" values="0;100" dur="2s" repeatCount="indefinite"/>
+    </path>
+  </g>
+  
+  <!-- Data Flow Indicators -->
+  <g>
+    <!-- Left Flow -->
+    <circle cx="110" cy="110" r="4" fill="#8B5CF6">
+      <animate attributeName="opacity" values="1;0;1" dur="2s" repeatCount="indefinite"/>
+    </circle>
+    <circle cx="150" cy="110" r="4" fill="#8B5CF6">
+      <animate attributeName="opacity" values="0;1;0" dur="1.5s" repeatCount="indefinite"/>
+    </circle>
+    
+    <!-- Right Flow -->
+    <circle cx="250" cy="210" r="4" fill="#8B5CF6">
+      <animate attributeName="opacity" values="1;0;1" dur="2s" repeatCount="indefinite"/>
+    </circle>
+    <circle cx="290" cy="210" r="4" fill="#8B5CF6">
+      <animate attributeName="opacity" values="0;1;0" dur="1.5s" repeatCount="indefinite"/>
+    </circle>
+  </g>
+</svg> 

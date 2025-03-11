@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="400" height="300" viewBox="0 0 400 300" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <!-- Background Elements -->
+  <path d="M50 150 Q200 50 350 150" stroke="#FF6B2C" stroke-width="2" stroke-dasharray="4 4" opacity="0.2"/>
+  <path d="M50 170 Q200 70 350 170" stroke="#3B82F6" stroke-width="2" stroke-dasharray="4 4" opacity="0.2"/>
+  
+  <!-- Construction Building -->
+  <path d="M100 250 L200 150 L300 250 Z" fill="#1A2B44" stroke="#FF6B2C" stroke-width="2"/>
+  <rect x="150" y="200" width="100" height="50" fill="#243B61" stroke="#FF6B2C" stroke-width="2"/>
+  
+  <!-- Gears representing RPA -->
+  <circle cx="200" cy="120" r="30" fill="none" stroke="#3B82F6" stroke-width="3"/>
+  <path d="M200 90 L200 150 M170 120 L230 120" stroke="#3B82F6" stroke-width="3"/>
+  <circle cx="250" cy="150" r="20" fill="none" stroke="#FF6B2C" stroke-width="3"/>
+  <path d="M250 130 L250 170 M230 150 L270 150" stroke="#FF6B2C" stroke-width="3"/>
+  
+  <!-- Data Flow Lines -->
+  <path d="M150 100 Q200 80 250 100" stroke="#3B82F6" stroke-width="2" stroke-dasharray="4 4"/>
+  <path d="M150 120 Q200 100 250 120" stroke="#FF6B2C" stroke-width="2" stroke-dasharray="4 4"/>
+  
+  <!-- Icons -->
+  <rect x="120" y="80" width="30" height="30" rx="5" fill="#1A2B44" stroke="#3B82F6" stroke-width="2"/>
+  <rect x="250" y="80" width="30" height="30" rx="5" fill="#1A2B44" stroke="#FF6B2C" stroke-width="2"/>
+</svg> 

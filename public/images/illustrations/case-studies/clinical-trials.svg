@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="400" height="300" viewBox="0 0 400 300" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <!-- Background Pattern -->
+  <path d="M0 0 L400 300 M0 300 L400 0" stroke="#243B61" stroke-width="1" opacity="0.1"/>
+  
+  <!-- Document Processing Flow -->
+  <path d="M100 150 C150 150 150 100 200 100 C250 100 250 150 300 150" 
+        stroke="#7C3AED" stroke-width="2" stroke-dasharray="5 5"/>
+  
+  <!-- Clinical Document -->
+  <path d="M100 100 L150 100 L150 200 L100 200 Z" fill="#1A2B44" stroke="#7C3AED" stroke-width="2"/>
+  <path d="M110 120 L140 120 M110 140 L140 140 M110 160 L140 160" 
+        stroke="#7C3AED" stroke-width="2" opacity="0.5"/>
+  
+  <!-- Processing Icons -->
+  <circle cx="200" cy="150" r="30" fill="#1A2B44" stroke="#7C3AED" stroke-width="2"/>
+  <path d="M185 150 L215 150 M200 135 L200 165" stroke="#7C3AED" stroke-width="2"/>
+  
+  <!-- AI Analysis -->
+  <rect x="250" y="120" width="60" height="60" rx="10" fill="#1A2B44" stroke="#7C3AED" stroke-width="2"/>
+  <path d="M260 150 L300 150 M280 130 L280 170" stroke="#7C3AED" stroke-width="2" opacity="0.5"/>
+  
+  <!-- Data Points -->
+  <circle cx="150" cy="100" r="4" fill="#7C3AED"/>
+  <circle cx="200" cy="100" r="4" fill="#7C3AED"/>
+  <circle cx="250" cy="100" r="4" fill="#7C3AED"/>
+  
+  <!-- Accuracy Indicator -->
+  <path d="M320 140 L380 140 M320 160 L380 160" stroke="#7C3AED" stroke-width="2" opacity="0.3"/>
+  <text x="330" y="155" fill="#7C3AED" font-family="Arial" font-size="12">95% Accuracy</text>
+</svg> 

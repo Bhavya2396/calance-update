@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="400" height="300" viewBox="0 0 400 300" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <!-- Background Grid -->
+  <path d="M50 50 h300 v200 h-300 z" stroke="#243B61" stroke-width="1" opacity="0.1"/>
+  <path d="M50 150 h300 M200 50 v200" stroke="#243B61" stroke-width="1" opacity="0.1"/>
+  
+  <!-- Neural Network -->
+  <circle cx="140" cy="100" r="10" fill="#1A2B44" stroke="#8B5CF6" stroke-width="2"/>
+  <circle cx="200" cy="100" r="10" fill="#1A2B44" stroke="#8B5CF6" stroke-width="2"/>
+  <circle cx="260" cy="100" r="10" fill="#1A2B44" stroke="#8B5CF6" stroke-width="2"/>
+  
+  <circle cx="170" cy="150" r="10" fill="#1A2B44" stroke="#8B5CF6" stroke-width="2"/>
+  <circle cx="230" cy="150" r="10" fill="#1A2B44" stroke="#8B5CF6" stroke-width="2"/>
+  
+  <circle cx="200" cy="200" r="10" fill="#1A2B44" stroke="#8B5CF6" stroke-width="2"/>
+  
+  <!-- Network Connections -->
+  <path d="M140 110 L170 140" stroke="#8B5CF6" stroke-width="1" opacity="0.5"/>
+  <path d="M140 110 L230 140" stroke="#8B5CF6" stroke-width="1" opacity="0.5"/>
+  <path d="M200 110 L170 140" stroke="#8B5CF6" stroke-width="1" opacity="0.5"/>
+  <path d="M200 110 L230 140" stroke="#8B5CF6" stroke-width="1" opacity="0.5"/>
+  <path d="M260 110 L170 140" stroke="#8B5CF6" stroke-width="1" opacity="0.5"/>
+  <path d="M260 110 L230 140" stroke="#8B5CF6" stroke-width="1" opacity="0.5"/>
+  
+  <path d="M170 160 L200 190" stroke="#8B5CF6" stroke-width="1" opacity="0.5"/>
+  <path d="M230 160 L200 190" stroke="#8B5CF6" stroke-width="1" opacity="0.5"/>
+  
+  <!-- Financial Data Points -->
+  <rect x="100" y="80" width="30" height="20" rx="5" fill="#1A2B44" stroke="#3B82F6" stroke-width="2"/>
+  <rect x="280" y="80" width="30" height="20" rx="5" fill="#1A2B44" stroke="#3B82F6" stroke-width="2"/>
+  
+  <!-- Analysis Flow -->
+  <path d="M130 90 L140 90" stroke="#3B82F6" stroke-width="2" stroke-dasharray="4 4"/>
+  <path d="M260 90 L280 90" stroke="#3B82F6" stroke-width="2" stroke-dasharray="4 4"/>
+  
+  <!-- AI Brain Icon -->
+  <circle cx="200" cy="150" r="40" fill="none" stroke="#F97316" stroke-width="2" opacity="0.2"/>
+  <path d="M180 150 q20 -20 40 0 q-20 20 -40 0" stroke="#F97316" stroke-width="2" fill="none"/>
+  
+  <!-- Metrics -->
+  <rect x="80" y="220" width="80" height="30" rx="15" fill="#1A2B44" stroke="#2DD4BF" stroke-width="2"/>
+  <text x="95" y="240" fill="#2DD4BF" font-family="Arial" font-size="12">98.5%</text>
+  
+  <rect x="240" y="220" width="80" height="30" rx="15" fill="#1A2B44" stroke="#2DD4BF" stroke-width="2"/>
+  <text x="255" y="240" fill="#2DD4BF" font-family="Arial" font-size="12">+200%</text>
+  
+  <!-- Processing Indicators -->
+  <path d="M320 150 L380 150" stroke="#8B5CF6" stroke-width="2"/>
+  <text x="330" y="145" fill="#8B5CF6" font-family="Arial" font-size="10">ML</text>
+  <text x="330" y="160" fill="#8B5CF6" font-family="Arial" font-size="10">Analytics</text>
+</svg> 

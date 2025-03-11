@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="800" height="600" viewBox="0 0 800 600" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <!-- Background Grid -->
+  <path d="M0 0h800v600H0z" fill="#0A1628" fill-opacity=".1"/>
+  <path d="M50 50h700v500H50z" stroke="#F59E0B" stroke-opacity=".1" stroke-width="1" stroke-dasharray="4 4"/>
+  
+  <!-- Building Under Construction -->
+  <g transform="translate(200,150)">
+    <!-- Building Structure -->
+    <rect x="0" y="0" width="200" height="300" fill="#1A2B44" stroke="#F59E0B" stroke-width="2"/>
+    <rect x="20" y="40" width="40" height="40" fill="#243B61" stroke="#3B82F6" stroke-width="2"/>
+    <rect x="80" y="40" width="40" height="40" fill="#243B61" stroke="#3B82F6" stroke-width="2"/>
+    <rect x="140" y="40" width="40" height="40" fill="#243B61" stroke="#3B82F6" stroke-width="2"/>
+    <rect x="20" y="100" width="40" height="40" fill="#243B61" stroke="#3B82F6" stroke-width="2"/>
+    <rect x="80" y="100" width="40" height="40" fill="#243B61" stroke="#3B82F6" stroke-width="2"/>
+    <rect x="140" y="100" width="40" height="40" fill="#243B61" stroke="#3B82F6" stroke-width="2"/>
+    
+    <!-- Construction Beams -->
+    <path d="M-20 0v300M220 0v300" stroke="#F59E0B" stroke-width="4" stroke-dasharray="8 8"/>
+    <path d="M-20 100h240M-20 200h240" stroke="#F59E0B" stroke-width="4" stroke-dasharray="8 8"/>
+  </g>
+  
+  <!-- Construction Crane -->
+  <g transform="translate(500,100)">
+    <!-- Crane Base -->
+    <rect x="0" y="350" width="60" height="20" fill="#F59E0B"/>
+    <rect x="20" y="50" width="20" height="300" fill="#F59E0B"/>
+    
+    <!-- Crane Arm -->
+    <rect x="-100" y="50" width="300" height="20" fill="#F59E0B"/>
+    <path d="M20 50L120 150" stroke="#F59E0B" stroke-width="4"/>
+    
+    <!-- Crane Cable -->
+    <path d="M50 70v100" stroke="#3B82F6" stroke-width="2" stroke-dasharray="4 4">
+      <animate attributeName="d" values="M50 70v100;M50 70v120;M50 70v100" dur="2s" repeatCount="indefinite"/>
+    </path>
+    <rect x="40" y="170" width="20" height="20" fill="#3B82F6">
+      <animate attributeName="y" values="170;190;170" dur="2s" repeatCount="indefinite"/>
+    </rect>
+  </g>
+  
+  <!-- Project Management Elements -->
+  <g transform="translate(50,150)">
+    <!-- Timeline -->
+    <rect x="0" y="0" width="100" height="60" rx="8" fill="#1A2B44" stroke="#3B82F6" stroke-width="2"/>
+    <path d="M20 30h60" stroke="#3B82F6" stroke-width="2" stroke-dasharray="4 4"/>
+    <circle cx="30" cy="30" r="6" fill="#22C55E"/>
+    <circle cx="50" cy="30" r="6" fill="#F59E0B"/>
+    <circle cx="70" cy="30" r="6" fill="#EF4444"/>
+    
+    <!-- Task List -->
+    <rect x="0" y="80" width="100" height="100" rx="8" fill="#1A2B44" stroke="#3B82F6" stroke-width="2"/>
+    <rect x="10" y="90" width="80" height="10" rx="2" fill="#243B61"/>
+    <rect x="10" y="110" width="80" height="10" rx="2" fill="#243B61"/>
+    <rect x="10" y="130" width="80" height="10" rx="2" fill="#243B61"/>
+    <rect x="10" y="150" width="80" height="10" rx="2" fill="#243B61"/>
+  </g>
+  
+  <!-- Animated Elements -->
+  <g>
+    <!-- Workers -->
+    <circle cx="150" cy="450" r="5" fill="#F59E0B">
+      <animate attributeName="cx" values="150;180;150" dur="3s" repeatCount="indefinite"/>
+    </circle>
+    <circle cx="250" cy="450" r="5" fill="#F59E0B">
+      <animate attributeName="cx" values="250;220;250" dur="4s" repeatCount="indefinite"/>
+    </circle>
+    
+    <!-- Progress Indicators -->
+    <circle cx="400" cy="100" r="4" fill="#22C55E">
+      <animate attributeName="opacity" values="1;0;1" dur="2s" repeatCount="indefinite"/>
+    </circle>
+    <circle cx="400" cy="150" r="4" fill="#F59E0B">
+      <animate attributeName="opacity" values="0;1;0" dur="1.5s" repeatCount="indefinite"/>
+    </circle>
+    <circle cx="400" cy="200" r="4" fill="#3B82F6">
+      <animate attributeName="opacity" values="1;0;1" dur="3s" repeatCount="indefinite"/>
+    </circle>
+  </g>
+</svg>

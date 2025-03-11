@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="400" height="300" viewBox="0 0 400 300" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <!-- Neural Network -->
+  <g transform="translate(50,50)">
+    <!-- Input Layer -->
+    <g>
+      <circle cx="0" cy="0" r="10" fill="#1A2B44" stroke="#8B5CF6" stroke-width="2"/>
+      <circle cx="0" cy="50" r="10" fill="#1A2B44" stroke="#8B5CF6" stroke-width="2"/>
+      <circle cx="0" cy="100" r="10" fill="#1A2B44" stroke="#8B5CF6" stroke-width="2"/>
+      <circle cx="0" cy="150" r="10" fill="#1A2B44" stroke="#8B5CF6" stroke-width="2"/>
+    </g>
+    
+    <!-- Hidden Layer 1 -->
+    <g transform="translate(100,25)">
+      <circle cx="0" cy="0" r="10" fill="#1A2B44" stroke="#8B5CF6" stroke-width="2"/>
+      <circle cx="0" cy="50" r="10" fill="#1A2B44" stroke="#8B5CF6" stroke-width="2"/>
+      <circle cx="0" cy="100" r="10" fill="#1A2B44" stroke="#8B5CF6" stroke-width="2"/>
+    </g>
+    
+    <!-- Hidden Layer 2 -->
+    <g transform="translate(200,50)">
+      <circle cx="0" cy="0" r="10" fill="#1A2B44" stroke="#8B5CF6" stroke-width="2"/>
+      <circle cx="0" cy="50" r="10" fill="#1A2B44" stroke="#8B5CF6" stroke-width="2"/>
+    </g>
+    
+    <!-- Output Layer -->
+    <g transform="translate(300,75)">
+      <circle cx="0" cy="0" r="10" fill="#1A2B44" stroke="#8B5CF6" stroke-width="2"/>
+    </g>
+    
+    <!-- Connections -->
+    <g stroke="#60A5FA" stroke-width="1" stroke-dasharray="4 4">
+      <!-- Input to Hidden 1 -->
+      <path d="M10 0L100 25">
+        <animate attributeName="stroke-dashoffset" values="0;100" dur="2s" repeatCount="indefinite"/>
+      </path>
+      <path d="M10 0L100 75">
+        <animate attributeName="stroke-dashoffset" values="0;100" dur="2s" repeatCount="indefinite"/>
+      </path>
+      <path d="M10 50L100 25">
+        <animate attributeName="stroke-dashoffset" values="0;100" dur="2s" repeatCount="indefinite"/>
+      </path>
+      <path d="M10 50L100 125">
+        <animate attributeName="stroke-dashoffset" values="0;100" dur="2s" repeatCount="indefinite"/>
+      </path>
+      <path d="M10 100L100 75">
+        <animate attributeName="stroke-dashoffset" values="0;100" dur="2s" repeatCount="indefinite"/>
+      </path>
+      <path d="M10 150L100 125">
+        <animate attributeName="stroke-dashoffset" values="0;100" dur="2s" repeatCount="indefinite"/>
+      </path>
+      
+      <!-- Hidden 1 to Hidden 2 -->
+      <path d="M110 25L200 50">
+        <animate attributeName="stroke-dashoffset" values="0;100" dur="2s" repeatCount="indefinite"/>
+      </path>
+      <path d="M110 75L200 100">
+        <animate attributeName="stroke-dashoffset" values="0;100" dur="2s" repeatCount="indefinite"/>
+      </path>
+      <path d="M110 125L200 50">
+        <animate attributeName="stroke-dashoffset" values="0;100" dur="2s" repeatCount="indefinite"/>
+      </path>
+      
+      <!-- Hidden 2 to Output -->
+      <path d="M210 50L300 75">
+        <animate attributeName="stroke-dashoffset" values="0;100" dur="2s" repeatCount="indefinite"/>
+      </path>
+      <path d="M210 100L300 75">
+        <animate attributeName="stroke-dashoffset" values="0;100" dur="2s" repeatCount="indefinite"/>
+      </path>
+    </g>
+  </g>
+  
+  <!-- Data Processing -->
+  <g transform="translate(50,250)">
+    <!-- Input Data -->
+    <rect x="0" y="0" width="60" height="30" rx="4" fill="#1A2B44" stroke="#8B5CF6" stroke-width="2"/>
+    <rect x="10" y="10" width="40" height="4" rx="1" fill="#243B61"/>
+    <rect x="10" y="18" width="30" height="4" rx="1" fill="#243B61"/>
+    
+    <!-- Processing -->
+    <g transform="translate(100,0)">
+      <rect x="0" y="0" width="150" height="30" rx="4" fill="#1A2B44" stroke="#8B5CF6" stroke-width="2"/>
+      <path d="M20 15h110M50 7l10 8l-10 8M90 7l10 8l-10 8" stroke="#60A5FA" stroke-width="2"/>
+    </g>
+    
+    <!-- Output -->
+    <g transform="translate(290,0)">
+      <rect x="0" y="0" width="60" height="30" rx="4" fill="#1A2B44" stroke="#8B5CF6" stroke-width="2"/>
+      <circle cx="30" cy="15" r="8" fill="#243B61" stroke="#60A5FA" stroke-width="2"/>
+    </g>
+    
+    <!-- Flow Indicators -->
+    <g>
+      <circle cx="70" cy="15" r="4" fill="#8B5CF6">
+        <animate attributeName="opacity" values="1;0;1" dur="2s" repeatCount="indefinite"/>
+      </circle>
+      <circle cx="280" cy="15" r="4" fill="#8B5CF6">
+        <animate attributeName="opacity" values="0;1;0" dur="1.5s" repeatCount="indefinite"/>
+      </circle>
+    </g>
+  </g>
+</svg> 

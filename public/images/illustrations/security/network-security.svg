@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="400" height="300" viewBox="0 0 400 300" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <!-- Firewall -->
+  <g transform="translate(50,50)">
+    <rect x="0" y="0" width="100" height="200" rx="8" fill="#1A2B44" stroke="#EF4444" stroke-width="2"/>
+    
+    <!-- Firewall Patterns -->
+    <g stroke="#EF4444" stroke-width="2">
+      <path d="M20 40h60" stroke-dasharray="4 4"/>
+      <path d="M20 80h60" stroke-dasharray="4 4"/>
+      <path d="M20 120h60" stroke-dasharray="4 4"/>
+      <path d="M20 160h60" stroke-dasharray="4 4"/>
+    </g>
+    
+    <!-- Status Lights -->
+    <circle cx="50" cy="20" r="6" fill="#22C55E"/>
+    <circle cx="70" cy="20" r="6" fill="#EF4444"/>
+  </g>
+  
+  <!-- Protected Network -->
+  <g transform="translate(200,50)">
+    <!-- Network Perimeter -->
+    <rect x="0" y="0" width="150" height="200" rx="8" fill="#1A2B44" stroke="#3B82F6" stroke-width="2"/>
+    
+    <!-- Network Nodes -->
+    <g>
+      <circle cx="40" cy="50" r="15" fill="#243B61" stroke="#3B82F6" stroke-width="2"/>
+      <circle cx="110" cy="50" r="15" fill="#243B61" stroke="#3B82F6" stroke-width="2"/>
+      <circle cx="40" cy="150" r="15" fill="#243B61" stroke="#3B82F6" stroke-width="2"/>
+      <circle cx="110" cy="150" r="15" fill="#243B61" stroke="#3B82F6" stroke-width="2"/>
+    </g>
+    
+    <!-- Secure Connections -->
+    <g stroke="#3B82F6" stroke-width="2" stroke-dasharray="4 4">
+      <path d="M40 65L40 135">
+        <animate attributeName="stroke-dashoffset" values="0;100" dur="2s" repeatCount="indefinite"/>
+      </path>
+      <path d="M110 65L110 135">
+        <animate attributeName="stroke-dashoffset" values="0;100" dur="2s" repeatCount="indefinite"/>
+      </path>
+      <path d="M55 50L95 50">
+        <animate attributeName="stroke-dashoffset" values="0;100" dur="2s" repeatCount="indefinite"/>
+      </path>
+      <path d="M55 150L95 150">
+        <animate attributeName="stroke-dashoffset" values="0;100" dur="2s" repeatCount="indefinite"/>
+      </path>
+    </g>
+  </g>
+  
+  <!-- Threat Indicators -->
+  <g transform="translate(20,100)">
+    <circle cx="0" cy="0" r="4" fill="#EF4444">
+      <animate attributeName="opacity" values="1;0;1" dur="1.5s" repeatCount="indefinite"/>
+    </circle>
+    <circle cx="0" cy="50" r="4" fill="#EF4444">
+      <animate attributeName="opacity" values="0;1;0" dur="2s" repeatCount="indefinite"/>
+    </circle>
+    <circle cx="0" cy="100" r="4" fill="#EF4444">
+      <animate attributeName="opacity" values="1;0;1" dur="2.5s" repeatCount="indefinite"/>
+    </circle>
+  </g>
+  
+  <!-- Shield Icon -->
+  <g transform="translate(225,100)">
+    <path d="M50 0L100 25V75L50 100L0 75V25L50 0Z" fill="#243B61" stroke="#3B82F6" stroke-width="2"/>
+    <path d="M50 10L90 30V70L50 90L10 70V30L50 10Z" fill="#1A2B44" stroke="#EF4444" stroke-width="2"/>
+    <circle cx="50" cy="50" r="15" fill="#EF4444"/>
+    <path d="M45 50L55 60L65 40" stroke="#1A2B44" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+  </g>
+</svg> 

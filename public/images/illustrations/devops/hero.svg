@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="800" height="600" viewBox="0 0 800 600" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <!-- Background Pattern -->
+  <defs>
+    <pattern id="grid" width="40" height="40" patternUnits="userSpaceOnUse">
+      <path d="M 40 0 L 0 0 0 40" fill="none" stroke="#F97316" stroke-width="0.5"/>
+    </pattern>
+    <!-- Gradient for Pipeline -->
+    <linearGradient id="pipelineGradient" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%" stop-color="#F97316"/>
+      <stop offset="100%" stop-color="#FB923C"/>
+      <animate attributeName="x1" values="0;1;0" dur="3s" repeatCount="indefinite"/>
+      <animate attributeName="x2" values="1;2;1" dur="3s" repeatCount="indefinite"/>
+    </linearGradient>
+  </defs>
+  <rect width="800" height="600" fill="url(#grid)" opacity="0.1"/>
+
+  <!-- Infinite DevOps Loop -->
+  <g transform="translate(400,300)">
+    <!-- Base Circle -->
+    <circle r="150" stroke="#F97316" stroke-width="2" fill="none" opacity="0.2"/>
+    
+    <!-- Animated Pipeline Path -->
+    <path d="M-150,0 A150,150 0 1,1 150,0" stroke="url(#pipelineGradient)" stroke-width="4" fill="none">
+      <animate attributeName="stroke-dasharray" values="0,942;942,0" dur="3s" repeatCount="indefinite"/>
+    </path>
+    <path d="M150,0 A150,150 0 1,1 -150,0" stroke="url(#pipelineGradient)" stroke-width="4" fill="none">
+      <animate attributeName="stroke-dasharray" values="942,0;0,942" dur="3s" repeatCount="indefinite"/>
+    </path>
+  </g>
+
+  <!-- CI/CD Icon -->
+  <g transform="translate(400,150)">
+    <rect width="120" height="80" rx="10" fill="#F97316" opacity="0.9">
+      <animate attributeName="opacity" values="0.8;1;0.8" dur="3s" repeatCount="indefinite"/>
+    </rect>
+    <text x="60" y="45" text-anchor="middle" fill="white" font-family="Arial" font-size="14">CI/CD</text>
+    <path d="M30 55L90 55" stroke="white" stroke-width="2">
+      <animate attributeName="stroke-dasharray" values="0,60;60,0" dur="2s" repeatCount="indefinite"/>
+    </path>
+  </g>
+
+  <!-- Container Orchestration -->
+  <g transform="translate(600,300)">
+    <g transform="rotate(45)">
+      <rect width="80" height="80" rx="10" fill="#F97316" opacity="0.9">
+        <animate attributeName="opacity" values="0.8;1;0.8" dur="3s" repeatCount="indefinite"/>
+      </rect>
+    </g>
+    <text x="0" y="0" text-anchor="middle" fill="white" font-family="Arial" font-size="14">Containers</text>
+  </g>
+
+  <!-- Infrastructure as Code -->
+  <g transform="translate(400,450)">
+    <rect width="120" height="80" rx="10" fill="#F97316" opacity="0.9">
+      <animate attributeName="opacity" values="0.8;1;0.8" dur="3s" repeatCount="indefinite"/>
+    </rect>
+    <text x="60" y="45" text-anchor="middle" fill="white" font-family="Arial" font-size="14">IaC</text>
+  </g>
+
+  <!-- Monitoring -->
+  <g transform="translate(200,300)">
+    <circle r="40" fill="#F97316" opacity="0.9">
+      <animate attributeName="r" values="38;40;38" dur="3s" repeatCount="indefinite"/>
+    </circle>
+    <text x="0" y="5" text-anchor="middle" fill="white" font-family="Arial" font-size="14">Monitor</text>
+  </g>
+
+  <!-- Connecting Lines -->
+  <g stroke="#F97316" stroke-width="2">
+    <path d="M400 230L400 270">
+      <animate attributeName="stroke-dasharray" values="5,5;10,10;5,5" dur="3s" repeatCount="indefinite"/>
+    </path>
+    <path d="M470 300L520 300">
+      <animate attributeName="stroke-dasharray" values="5,5;10,10;5,5" dur="3s" repeatCount="indefinite"/>
+    </path>
+    <path d="M400 330L400 370">
+      <animate attributeName="stroke-dasharray" values="5,5;10,10;5,5" dur="3s" repeatCount="indefinite"/>
+    </path>
+    <path d="M280 300L330 300">
+      <animate attributeName="stroke-dasharray" values="5,5;10,10;5,5" dur="3s" repeatCount="indefinite"/>
+    </path>
+  </g>
+
+  <!-- Central Pulse -->
+  <circle cx="400" cy="300" r="20" fill="#F97316" opacity="0.3">
+    <animate attributeName="r" values="20;25;20" dur="2s" repeatCount="indefinite"/>
+    <animate attributeName="opacity" values="0.3;0.6;0.3" dur="2s" repeatCount="indefinite"/>
+  </circle>
+</svg>

@@ -1,0 +1,138 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="800" height="600" viewBox="0 0 800 600" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <!-- Dynamic Background -->
+  <defs>
+    <linearGradient id="enterpriseGradient" x1="0" y1="0" x2="800" y2="600" gradientUnits="userSpaceOnUse">
+      <stop offset="0%" stop-color="#FF6B2C" stop-opacity="0.05"/>
+      <stop offset="100%" stop-color="#3B82F6" stop-opacity="0.05"/>
+    </linearGradient>
+    <pattern id="enterpriseGrid" width="40" height="40" patternUnits="userSpaceOnUse">
+      <path d="M 40 0 L 0 0 0 40" fill="none" stroke="url(#enterpriseGradient)" stroke-width="0.5"/>
+    </pattern>
+  </defs>
+
+  <!-- Animated Background -->
+  <rect width="800" height="600" fill="url(#enterpriseGrid)">
+    <animate attributeName="opacity" values="0.3;0.6;0.3" dur="4s" repeatCount="indefinite"/>
+  </rect>
+
+  <!-- Central Enterprise Hub -->
+  <g transform="translate(400,300)">
+    <!-- Central Platform -->
+    <path d="M-100,-100 L100,-100 L100,100 L-100,100 Z" fill="#1A2B44" stroke="#3B82F6" stroke-width="2" rx="20">
+      <animateTransform attributeName="transform" type="rotate" from="0" to="360" dur="60s" repeatCount="indefinite"/>
+    </path>
+    
+    <!-- Rotating Rings -->
+    <g>
+      <circle r="150" fill="none" stroke="#FF6B2C" stroke-width="1" stroke-dasharray="10 5">
+        <animateTransform attributeName="transform" type="rotate" from="0" to="360" dur="30s" repeatCount="indefinite"/>
+      </circle>
+      <circle r="180" fill="none" stroke="#3B82F6" stroke-width="1" stroke-dasharray="10 5">
+        <animateTransform attributeName="transform" type="rotate" from="360" to="0" dur="40s" repeatCount="indefinite"/>
+      </circle>
+    </g>
+  </g>
+
+  <!-- Salesforce Platform -->
+  <g transform="translate(200,200)">
+    <!-- Platform Container -->
+    <path d="M-80,-80 L80,-80 L80,80 L-80,80 Z" fill="#1A2B44" stroke="#FF6B2C" stroke-width="2" rx="20"/>
+    <text x="0" y="-40" fill="#FF6B2C" font-family="monospace" font-size="24" text-anchor="middle">Salesforce</text>
+    
+    <!-- Service Icons -->
+    <g transform="translate(0,20)">
+      <!-- Sales Cloud -->
+      <g transform="translate(-40,0)">
+        <circle cx="0" cy="0" r="20" fill="#FF6B2C" fill-opacity="0.1" stroke="#FF6B2C" stroke-width="2">
+          <animate attributeName="r" values="20;22;20" dur="2s" repeatCount="indefinite"/>
+        </circle>
+        <path d="M-8 0h16M0 -8v16" stroke="#FF6B2C" stroke-width="2"/>
+      </g>
+      
+      <!-- Service Cloud -->
+      <g transform="translate(40,0)">
+        <circle cx="0" cy="0" r="20" fill="#FF6B2C" fill-opacity="0.1" stroke="#FF6B2C" stroke-width="2">
+          <animate attributeName="r" values="20;22;20" dur="2s" repeatCount="indefinite" begin="0.5s"/>
+        </circle>
+        <path d="M-8 -8l16 16M8 -8l-16 16" stroke="#FF6B2C" stroke-width="2"/>
+      </g>
+    </g>
+  </g>
+
+  <!-- SAP Platform -->
+  <g transform="translate(600,400)">
+    <!-- Platform Container -->
+    <path d="M-80,-80 L80,-80 L80,80 L-80,80 Z" fill="#1A2B44" stroke="#3B82F6" stroke-width="2" rx="20"/>
+    <text x="0" y="-40" fill="#3B82F6" font-family="monospace" font-size="24" text-anchor="middle">SAP</text>
+    
+    <!-- Service Icons -->
+    <g transform="translate(0,20)">
+      <!-- S/4HANA -->
+      <g transform="translate(-40,0)">
+        <circle cx="0" cy="0" r="20" fill="#3B82F6" fill-opacity="0.1" stroke="#3B82F6" stroke-width="2">
+          <animate attributeName="r" values="20;22;20" dur="2s" repeatCount="indefinite"/>
+        </circle>
+        <path d="M-8 0h16M0 -8v16" stroke="#3B82F6" stroke-width="2"/>
+      </g>
+      
+      <!-- Business One -->
+      <g transform="translate(40,0)">
+        <circle cx="0" cy="0" r="20" fill="#3B82F6" fill-opacity="0.1" stroke="#3B82F6" stroke-width="2">
+          <animate attributeName="r" values="20;22;20" dur="2s" repeatCount="indefinite" begin="0.5s"/>
+        </circle>
+        <path d="M-8 -8l16 16M8 -8l-16 16" stroke="#3B82F6" stroke-width="2"/>
+      </g>
+    </g>
+  </g>
+
+  <!-- Integration Lines -->
+  <g>
+    <!-- Dynamic Connection Paths -->
+    <path d="M280 200 Q400 300 520 400" stroke="#FF6B2C" stroke-width="2" stroke-dasharray="4 4" fill="none">
+      <animate attributeName="d" 
+             values="M280 200 Q400 300 520 400;M280 200 Q400 200 520 400;M280 200 Q400 300 520 400" 
+             dur="6s" repeatCount="indefinite"/>
+    </path>
+    <path d="M280 200 Q400 200 520 400" stroke="#3B82F6" stroke-width="2" stroke-dasharray="4 4" fill="none">
+      <animate attributeName="d" 
+             values="M280 200 Q400 200 520 400;M280 200 Q400 300 520 400;M280 200 Q400 200 520 400" 
+             dur="6s" repeatCount="indefinite"/>
+    </path>
+  </g>
+
+  <!-- Data Flow Particles -->
+  <g>
+    <!-- Moving Particles -->
+    <circle cx="400" cy="300" r="4" fill="#FF6B2C">
+      <animateMotion 
+        path="M0 0 Q120 100 240 200" 
+        dur="3s" 
+        repeatCount="indefinite">
+        <mpath href="#particle-path"/>
+      </animateMotion>
+      <animate attributeName="opacity" values="0;1;0" dur="3s" repeatCount="indefinite"/>
+    </circle>
+    <circle cx="400" cy="300" r="4" fill="#3B82F6">
+      <animateMotion 
+        path="M240 200 Q120 100 0 0" 
+        dur="3s" 
+        repeatCount="indefinite">
+        <mpath href="#particle-path"/>
+      </animateMotion>
+      <animate attributeName="opacity" values="0;1;0" dur="3s" repeatCount="indefinite"/>
+    </circle>
+  </g>
+
+  <!-- Pulse Effects -->
+  <g>
+    <circle cx="400" cy="300" r="5" fill="#FF6B2C">
+      <animate attributeName="r" values="5;40;5" dur="3s" repeatCount="indefinite"/>
+      <animate attributeName="opacity" values="0.8;0;0.8" dur="3s" repeatCount="indefinite"/>
+    </circle>
+    <circle cx="400" cy="300" r="5" fill="#3B82F6">
+      <animate attributeName="r" values="5;60;5" dur="4s" repeatCount="indefinite"/>
+      <animate attributeName="opacity" values="0.8;0;0.8" dur="4s" repeatCount="indefinite"/>
+    </circle>
+  </g>
+</svg> 

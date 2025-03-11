@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="400" height="300" viewBox="0 0 400 300" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <!-- Chart Grid -->
+  <g transform="translate(50,50)">
+    <!-- Grid Lines -->
+    <path d="M0 0v200M50 0v200M100 0v200M150 0v200M200 0v200M250 0v200M300 0v200" stroke="#7C3AED" stroke-opacity="0.1" stroke-width="1"/>
+    <path d="M0 0h300M0 50h300M0 100h300M0 150h300M0 200h300" stroke="#7C3AED" stroke-opacity="0.1" stroke-width="1"/>
+    
+    <!-- Bar Chart -->
+    <g>
+      <rect x="20" y="80" width="30" height="120" fill="#7C3AED" fill-opacity="0.8">
+        <animate attributeName="height" values="0;120" dur="1s" />
+      </rect>
+      <rect x="70" y="40" width="30" height="160" fill="#7C3AED" fill-opacity="0.6">
+        <animate attributeName="height" values="0;160" dur="1s" delay="0.2s" />
+      </rect>
+      <rect x="120" y="100" width="30" height="100" fill="#7C3AED" fill-opacity="0.4">
+        <animate attributeName="height" values="0;100" dur="1s" delay="0.4s" />
+      </rect>
+    </g>
+    
+    <!-- Line Chart -->
+    <g transform="translate(180,0)">
+      <path d="M0 150L40 80L80 120L120 40" stroke="#3B82F6" stroke-width="3" fill="none">
+        <animate attributeName="stroke-dasharray" values="0,1000;1000,0" dur="2s" />
+      </path>
+      <circle cx="0" cy="150" r="4" fill="#3B82F6"/>
+      <circle cx="40" cy="80" r="4" fill="#3B82F6"/>
+      <circle cx="80" cy="120" r="4" fill="#3B82F6"/>
+      <circle cx="120" cy="40" r="4" fill="#3B82F6"/>
+    </g>
+  </g>
+  
+  <!-- Data Points -->
+  <g>
+    <circle cx="100" cy="100" r="3" fill="#7C3AED">
+      <animate attributeName="opacity" values="1;0;1" dur="2s" repeatCount="indefinite"/>
+    </circle>
+    <circle cx="300" cy="200" r="3" fill="#7C3AED">
+      <animate attributeName="opacity" values="0;1;0" dur="1.5s" repeatCount="indefinite"/>
+    </circle>
+    <circle cx="200" cy="150" r="3" fill="#7C3AED">
+      <animate attributeName="opacity" values="1;0;1" dur="3s" repeatCount="indefinite"/>
+    </circle>
+  </g>
+</svg> 

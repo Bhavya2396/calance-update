@@ -1,0 +1,130 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="800" height="600" viewBox="0 0 800 600" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <!-- Background Grid Pattern -->
+  <defs>
+    <pattern id="grid" x="0" y="0" width="40" height="40" patternUnits="userSpaceOnUse">
+      <path d="M 40 0 L 0 0 0 40" fill="none" stroke="#243B61" stroke-width="0.5" opacity="0.2"/>
+    </pattern>
+    <linearGradient id="glow" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#FF6B2C;stop-opacity:0.2"/>
+      <stop offset="100%" style="stop-color:#3B82F6;stop-opacity:0.2"/>
+    </linearGradient>
+  </defs>
+  
+  <!-- Background -->
+  <rect width="800" height="600" fill="url(#grid)"/>
+  <rect width="800" height="600" fill="url(#glow)"/>
+
+  <!-- Central Platform -->
+  <g transform="translate(400, 300)">
+    <!-- DNA Double Helix -->
+    <g>
+      <!-- First Strand -->
+      <path d="M-100,-100 C-50,-75 50,-125 100,-100 C150,-75 250,-125 300,-100" 
+            stroke="#FF6B2C" stroke-width="2" fill="none">
+        <animate
+          attributeName="d"
+          values="M-100,-100 C-50,-75 50,-125 100,-100 C150,-75 250,-125 300,-100;
+                  M-100,-90 C-50,-115 50,-65 100,-90 C150,-115 250,-65 300,-90;
+                  M-100,-100 C-50,-75 50,-125 100,-100 C150,-75 250,-125 300,-100"
+          dur="3s"
+          repeatCount="indefinite"
+        />
+      </path>
+      <!-- Second Strand -->
+      <path d="M-100,-90 C-50,-115 50,-65 100,-90 C150,-115 250,-65 300,-90" 
+            stroke="#3B82F6" stroke-width="2" fill="none">
+        <animate
+          attributeName="d"
+          values="M-100,-90 C-50,-115 50,-65 100,-90 C150,-115 250,-65 300,-90;
+                  M-100,-100 C-50,-75 50,-125 100,-100 C150,-75 250,-125 300,-100;
+                  M-100,-90 C-50,-115 50,-65 100,-90 C150,-115 250,-65 300,-90"
+          dur="3s"
+          repeatCount="indefinite"
+        />
+      </path>
+
+      <!-- Base Pairs -->
+      <g>
+        <line x1="-80" y1="-95" x2="-80" y2="-85" stroke="#FF6B2C" stroke-width="2">
+          <animate attributeName="y1" values="-95;-85;-95" dur="3s" repeatCount="indefinite"/>
+          <animate attributeName="y2" values="-85;-95;-85" dur="3s" repeatCount="indefinite"/>
+        </line>
+        <line x1="-40" y1="-95" x2="-40" y2="-85" stroke="#3B82F6" stroke-width="2">
+          <animate attributeName="y1" values="-95;-85;-95" dur="3s" repeatCount="indefinite"/>
+          <animate attributeName="y2" values="-85;-95;-85" dur="3s" repeatCount="indefinite"/>
+        </line>
+        <line x1="0" y1="-95" x2="0" y2="-85" stroke="#FF6B2C" stroke-width="2">
+          <animate attributeName="y1" values="-95;-85;-95" dur="3s" repeatCount="indefinite"/>
+          <animate attributeName="y2" values="-85;-95;-85" dur="3s" repeatCount="indefinite"/>
+        </line>
+        <line x1="40" y1="-95" x2="40" y2="-85" stroke="#3B82F6" stroke-width="2">
+          <animate attributeName="y1" values="-95;-85;-95" dur="3s" repeatCount="indefinite"/>
+          <animate attributeName="y2" values="-85;-95;-85" dur="3s" repeatCount="indefinite"/>
+        </line>
+        <line x1="80" y1="-95" x2="80" y2="-85" stroke="#FF6B2C" stroke-width="2">
+          <animate attributeName="y1" values="-95;-85;-95" dur="3s" repeatCount="indefinite"/>
+          <animate attributeName="y2" values="-85;-95;-85" dur="3s" repeatCount="indefinite"/>
+        </line>
+      </g>
+    </g>
+
+    <!-- Data Processing Units -->
+    <g>
+      <!-- Processing Node 1 -->
+      <g transform="translate(-100, 0)">
+        <rect x="-30" y="-30" width="60" height="60" rx="10" fill="#1A2B44" stroke="#FF6B2C" stroke-width="2"/>
+        <text x="0" y="0" fill="#FF6B2C" font-family="monospace" font-size="12" text-anchor="middle" dominant-baseline="middle">
+          ATCG
+        </text>
+        <circle cx="0" cy="0" r="20" stroke="#FF6B2C" stroke-width="2" fill="none" opacity="0.5">
+          <animate attributeName="r" values="20;25;20" dur="2s" repeatCount="indefinite"/>
+          <animate attributeName="opacity" values="0.5;0;0.5" dur="2s" repeatCount="indefinite"/>
+        </circle>
+      </g>
+
+      <!-- Processing Node 2 -->
+      <g transform="translate(100, 0)">
+        <rect x="-30" y="-30" width="60" height="60" rx="10" fill="#1A2B44" stroke="#3B82F6" stroke-width="2"/>
+        <text x="0" y="0" fill="#3B82F6" font-family="monospace" font-size="12" text-anchor="middle" dominant-baseline="middle">
+          GCTA
+        </text>
+        <circle cx="0" cy="0" r="20" stroke="#3B82F6" stroke-width="2" fill="none" opacity="0.5">
+          <animate attributeName="r" values="20;25;20" dur="2s" repeatCount="indefinite"/>
+          <animate attributeName="opacity" values="0.5;0;0.5" dur="2s" repeatCount="indefinite"/>
+        </circle>
+      </g>
+    </g>
+
+    <!-- Security Shield -->
+    <g transform="translate(0, 100)">
+      <path d="M-40,-40 L0,-60 L40,-40 L40,20 L0,40 L-40,20 Z" 
+            fill="#1A2B44" stroke="#FF6B2C" stroke-width="2"/>
+      <path d="M-20,-20 L20,20 M-20,20 L20,-20" 
+            stroke="#FF6B2C" stroke-width="2"/>
+    </g>
+
+    <!-- Connection Lines -->
+    <g>
+      <path d="M-100,0 L0,100" stroke="#FF6B2C" stroke-width="2" stroke-dasharray="5,5">
+        <animate attributeName="stroke-dashoffset" values="0;20" dur="2s" repeatCount="indefinite"/>
+      </path>
+      <path d="M100,0 L0,100" stroke="#3B82F6" stroke-width="2" stroke-dasharray="5,5">
+        <animate attributeName="stroke-dashoffset" values="0;20" dur="2s" repeatCount="indefinite"/>
+      </path>
+    </g>
+  </g>
+
+  <!-- Floating Particles -->
+  <g>
+    <circle cx="150" cy="150" r="3" fill="#FF6B2C">
+      <animate attributeName="opacity" values="0;1;0" dur="3s" repeatCount="indefinite"/>
+    </circle>
+    <circle cx="650" cy="450" r="3" fill="#3B82F6">
+      <animate attributeName="opacity" values="0;1;0" dur="4s" repeatCount="indefinite"/>
+    </circle>
+    <circle cx="250" cy="350" r="3" fill="#FF6B2C">
+      <animate attributeName="opacity" values="0;1;0" dur="5s" repeatCount="indefinite"/>
+    </circle>
+  </g>
+</svg> 

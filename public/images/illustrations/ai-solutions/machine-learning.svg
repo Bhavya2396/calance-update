@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="400" height="300" viewBox="0 0 400 300" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <!-- Data Processing Pipeline -->
+  <g transform="translate(50,50)">
+    <!-- Input Data -->
+    <rect x="0" y="0" width="60" height="80" rx="8" fill="#1A2B44" stroke="#7C3AED" stroke-width="2"/>
+    <rect x="10" y="10" width="40" height="10" rx="2" fill="#243B61"/>
+    <rect x="10" y="30" width="40" height="10" rx="2" fill="#243B61"/>
+    <rect x="10" y="50" width="40" height="10" rx="2" fill="#243B61"/>
+    
+    <!-- Processing Steps -->
+    <g transform="translate(100,20)">
+      <!-- Feature Extraction -->
+      <rect x="0" y="0" width="40" height="40" rx="4" fill="#1A2B44" stroke="#3B82F6" stroke-width="2"/>
+      <path d="M10 20L20 10L30 30" stroke="#3B82F6" stroke-width="2" fill="none"/>
+      
+      <!-- Model Training -->
+      <rect x="80" y="0" width="40" height="40" rx="4" fill="#1A2B44" stroke="#7C3AED" stroke-width="2"/>
+      <circle cx="100" cy="20" r="8" fill="none" stroke="#7C3AED" stroke-width="2">
+        <animate attributeName="stroke-dasharray" values="0,50;50,0" dur="3s" repeatCount="indefinite"/>
+      </circle>
+      
+      <!-- Prediction -->
+      <rect x="160" y="0" width="40" height="40" rx="4" fill="#1A2B44" stroke="#3B82F6" stroke-width="2"/>
+      <path d="M170 20L180 10L190 30" stroke="#3B82F6" stroke-width="2"/>
+    </g>
+    
+    <!-- Connection Lines -->
+    <g stroke-width="2" stroke-dasharray="4 4">
+      <path d="M60 40L100 40" stroke="#7C3AED">
+        <animate attributeName="stroke-dashoffset" values="0;100" dur="2s" repeatCount="indefinite"/>
+      </path>
+      <path d="M140 40L180 40" stroke="#3B82F6">
+        <animate attributeName="stroke-dashoffset" values="0;100" dur="2s" repeatCount="indefinite"/>
+      </path>
+      <path d="M220 40L260 40" stroke="#7C3AED">
+        <animate attributeName="stroke-dashoffset" values="0;100" dur="2s" repeatCount="indefinite"/>
+      </path>
+    </g>
+  </g>
+  
+  <!-- Model Architecture -->
+  <g transform="translate(50,150)">
+    <!-- Layers -->
+    <g>
+      <rect x="0" y="0" width="300" height="60" rx="8" fill="#1A2B44" stroke="#7C3AED" stroke-width="2"/>
+      
+      <!-- Layer Nodes -->
+      <g transform="translate(20,15)">
+        <circle cx="0" cy="0" r="6" fill="#243B61" stroke="#7C3AED" stroke-width="2"/>
+        <circle cx="0" cy="30" r="6" fill="#243B61" stroke="#7C3AED" stroke-width="2"/>
+      </g>
+      
+      <g transform="translate(150,15)">
+        <circle cx="0" cy="0" r="6" fill="#243B61" stroke="#3B82F6" stroke-width="2"/>
+        <circle cx="0" cy="15" r="6" fill="#243B61" stroke="#3B82F6" stroke-width="2"/>
+        <circle cx="0" cy="30" r="6" fill="#243B61" stroke="#3B82F6" stroke-width="2"/>
+      </g>
+      
+      <g transform="translate(280,15)">
+        <circle cx="0" cy="15" r="6" fill="#243B61" stroke="#7C3AED" stroke-width="2"/>
+      </g>
+      
+      <!-- Layer Connections -->
+      <g stroke-width="1" stroke-dasharray="2 2">
+        <path d="M26 15L144 15" stroke="#3B82F6" stroke-opacity="0.3"/>
+        <path d="M26 15L144 30" stroke="#3B82F6" stroke-opacity="0.3"/>
+        <path d="M26 45L144 30" stroke="#3B82F6" stroke-opacity="0.3"/>
+        <path d="M156 15L274 30" stroke="#7C3AED" stroke-opacity="0.3"/>
+        <path d="M156 30L274 30" stroke="#7C3AED" stroke-opacity="0.3"/>
+        <path d="M156 45L274 30" stroke="#7C3AED" stroke-opacity="0.3"/>
+      </g>
+    </g>
+  </g>
+  
+  <!-- Metrics -->
+  <g transform="translate(50,230)">
+    <!-- Accuracy Graph -->
+    <rect x="0" y="0" width="100" height="50" rx="4" fill="#1A2B44" stroke="#7C3AED" stroke-width="2"/>
+    <path d="M10 40L30 20L50 30L70 10L90 5" stroke="#7C3AED" stroke-width="2" fill="none"/>
+    
+    <!-- Loss Graph -->
+    <rect x="120" y="0" width="100" height="50" rx="4" fill="#1A2B44" stroke="#3B82F6" stroke-width="2"/>
+    <path d="M130 5L150 20L170 15L190 25L210 40" stroke="#3B82F6" stroke-width="2" fill="none"/>
+  </g>
+  
+  <!-- Data Flow Particles -->
+  <g>
+    <circle cx="150" cy="70" r="3" fill="#7C3AED">
+      <animate attributeName="opacity" values="1;0;1" dur="2s" repeatCount="indefinite"/>
+    </circle>
+    <circle cx="230" cy="70" r="3" fill="#3B82F6">
+      <animate attributeName="opacity" values="0;1;0" dur="1.5s" repeatCount="indefinite"/>
+    </circle>
+    <circle cx="310" cy="70" r="3" fill="#7C3AED">
+      <animate attributeName="opacity" values="1;0;1" dur="3s" repeatCount="indefinite"/>
+    </circle>
+  </g>
+</svg> 

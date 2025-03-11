@@ -1,0 +1,132 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="400" height="300" viewBox="0 0 400 300" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="teamGradient" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#9333EA"/>
+      <stop offset="100%" stop-color="#C084FC"/>
+    </linearGradient>
+    <filter id="glow" x="-50%" y="-50%" width="200%" height="200%">
+      <feGaussianBlur in="SourceGraphic" stdDeviation="4" result="blur"/>
+      <feMerge>
+        <feMergeNode in="blur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+  </defs>
+
+  <!-- Background Grid -->
+  <pattern id="grid" width="20" height="20" patternUnits="userSpaceOnUse">
+    <path d="M 20 0 L 0 0 0 20" fill="none" stroke="#9333EA" stroke-width="0.5" opacity="0.2"/>
+  </pattern>
+  <rect width="400" height="300" fill="url(#grid)"/>
+
+  <!-- Team Structure -->
+  <g transform="translate(200,150)">
+    <!-- Central Team Hub -->
+    <circle r="60" fill="url(#teamGradient)" filter="url(#glow)">
+      <animate attributeName="r" values="55;60;55" dur="2s" repeatCount="indefinite"/>
+    </circle>
+    <circle r="55" fill="#0A1628"/>
+
+    <!-- Team Members -->
+    <g>
+      <!-- Existing Team -->
+      <g transform="translate(-30,-20)">
+        <circle r="15" fill="url(#teamGradient)"/>
+        <path d="M-7,-7 a15,15 0 1,1 14,0" stroke="#0A1628" stroke-width="2" fill="none"/>
+        <circle cx="0" cy="-12" r="5" fill="#0A1628"/>
+      </g>
+
+      <g transform="translate(30,-20)">
+        <circle r="15" fill="url(#teamGradient)"/>
+        <path d="M-7,-7 a15,15 0 1,1 14,0" stroke="#0A1628" stroke-width="2" fill="none"/>
+        <circle cx="0" cy="-12" r="5" fill="#0A1628"/>
+      </g>
+
+      <g transform="translate(0,20)">
+        <circle r="15" fill="url(#teamGradient)"/>
+        <path d="M-7,-7 a15,15 0 1,1 14,0" stroke="#0A1628" stroke-width="2" fill="none"/>
+        <circle cx="0" cy="-12" r="5" fill="#0A1628"/>
+      </g>
+    </g>
+
+    <!-- New Team Members -->
+    <g>
+      <!-- Position 1 -->
+      <g transform="translate(-100,-60)">
+        <circle r="20" fill="url(#teamGradient)" filter="url(#glow)"/>
+        <circle r="18" fill="#0A1628"/>
+        <path d="M-9,-9 a18,18 0 1,1 18,0" stroke="url(#teamGradient)" stroke-width="2" fill="none"/>
+        <circle cx="0" cy="-14" r="6" fill="url(#teamGradient)"/>
+      </g>
+
+      <!-- Position 2 -->
+      <g transform="translate(100,-60)">
+        <circle r="20" fill="url(#teamGradient)" filter="url(#glow)"/>
+        <circle r="18" fill="#0A1628"/>
+        <path d="M-9,-9 a18,18 0 1,1 18,0" stroke="url(#teamGradient)" stroke-width="2" fill="none"/>
+        <circle cx="0" cy="-14" r="6" fill="url(#teamGradient)"/>
+      </g>
+
+      <!-- Position 3 -->
+      <g transform="translate(-100,60)">
+        <circle r="20" fill="url(#teamGradient)" filter="url(#glow)"/>
+        <circle r="18" fill="#0A1628"/>
+        <path d="M-9,-9 a18,18 0 1,1 18,0" stroke="url(#teamGradient)" stroke-width="2" fill="none"/>
+        <circle cx="0" cy="-14" r="6" fill="url(#teamGradient)"/>
+      </g>
+
+      <!-- Position 4 -->
+      <g transform="translate(100,60)">
+        <circle r="20" fill="url(#teamGradient)" filter="url(#glow)"/>
+        <circle r="18" fill="#0A1628"/>
+        <path d="M-9,-9 a18,18 0 1,1 18,0" stroke="url(#teamGradient)" stroke-width="2" fill="none"/>
+        <circle cx="0" cy="-14" r="6" fill="url(#teamGradient)"/>
+      </g>
+    </g>
+
+    <!-- Connection Lines -->
+    <g stroke="url(#teamGradient)" stroke-width="2">
+      <path d="M-50,-30 L-100,-60">
+        <animate attributeName="stroke-dasharray" values="0,100;100,0" dur="2s" repeatCount="indefinite"/>
+      </path>
+      <path d="M50,-30 L100,-60">
+        <animate attributeName="stroke-dasharray" values="0,100;100,0" dur="2s" repeatCount="indefinite"/>
+      </path>
+      <path d="M-50,30 L-100,60">
+        <animate attributeName="stroke-dasharray" values="0,100;100,0" dur="2s" repeatCount="indefinite"/>
+      </path>
+      <path d="M50,30 L100,60">
+        <animate attributeName="stroke-dasharray" values="0,100;100,0" dur="2s" repeatCount="indefinite"/>
+      </path>
+    </g>
+
+    <!-- Animated Particles -->
+    <g fill="#9333EA">
+      <circle r="2">
+        <animateMotion path="M-50,-30 L-100,-60" dur="1.5s" repeatCount="indefinite"/>
+      </circle>
+      <circle r="2">
+        <animateMotion path="M50,-30 L100,-60" dur="1.5s" repeatCount="indefinite"/>
+      </circle>
+      <circle r="2">
+        <animateMotion path="M-50,30 L-100,60" dur="1.5s" repeatCount="indefinite"/>
+      </circle>
+      <circle r="2">
+        <animateMotion path="M50,30 L100,60" dur="1.5s" repeatCount="indefinite"/>
+      </circle>
+    </g>
+
+    <!-- Plus Symbols -->
+    <g fill="url(#teamGradient)">
+      <g transform="translate(-120,0)">
+        <rect x="-10" y="-2" width="20" height="4" rx="2"/>
+        <rect x="-2" y="-10" width="4" height="20" rx="2"/>
+      </g>
+      <g transform="translate(120,0)">
+        <rect x="-10" y="-2" width="20" height="4" rx="2"/>
+        <rect x="-2" y="-10" width="4" height="20" rx="2"/>
+      </g>
+    </g>
+  </g>
+</svg> 

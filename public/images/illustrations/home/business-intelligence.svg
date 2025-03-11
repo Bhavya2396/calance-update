@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="800" height="600" viewBox="0 0 800 600" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <!-- Background Grid -->
+  <path d="M0 0h800v600H0z" fill="#0A1628" fill-opacity=".1"/>
+  <path d="M50 50h700v500H50z" stroke="#7C3AED" stroke-opacity=".1" stroke-width="1" stroke-dasharray="4 4"/>
+  
+  <!-- Analytics Dashboard -->
+  <g transform="translate(200,100)">
+    <rect x="0" y="0" width="400" height="300" rx="12" fill="#1A2B44"/>
+    
+    <!-- Chart Area -->
+    <g transform="translate(30,40)">
+      <!-- Bar Chart -->
+      <rect x="0" y="100" width="40" height="120" rx="4" fill="#7C3AED" fill-opacity="0.6">
+        <animate attributeName="height" values="0;120" dur="1s" fill="freeze"/>
+      </rect>
+      <rect x="50" y="60" width="40" height="160" rx="4" fill="#7C3AED" fill-opacity="0.8">
+        <animate attributeName="height" values="0;160" dur="1s" delay="0.2s" fill="freeze"/>
+      </rect>
+      <rect x="100" y="140" width="40" height="80" rx="4" fill="#7C3AED" fill-opacity="0.4">
+        <animate attributeName="height" values="0;80" dur="1s" delay="0.4s" fill="freeze"/>
+      </rect>
+      
+      <!-- Line Chart -->
+      <path d="M200 180L240 120L280 160L320 80" stroke="#3B82F6" stroke-width="3" fill="none">
+        <animate attributeName="stroke-dasharray" values="0,1000;1000,0" dur="2s" fill="freeze"/>
+      </path>
+      <circle cx="200" cy="180" r="4" fill="#3B82F6"/>
+      <circle cx="240" cy="120" r="4" fill="#3B82F6"/>
+      <circle cx="280" cy="160" r="4" fill="#3B82F6"/>
+      <circle cx="320" cy="80" r="4" fill="#3B82F6"/>
+      
+      <!-- Grid Lines -->
+      <path d="M0 200h340" stroke="#243B61" stroke-width="1" stroke-dasharray="4 4"/>
+      <path d="M0 150h340" stroke="#243B61" stroke-width="1" stroke-dasharray="4 4"/>
+      <path d="M0 100h340" stroke="#243B61" stroke-width="1" stroke-dasharray="4 4"/>
+      <path d="M0 50h340" stroke="#243B61" stroke-width="1" stroke-dasharray="4 4"/>
+    </g>
+  </g>
+  
+  <!-- Data Flow -->
+  <g transform="translate(100,450)">
+    <!-- Flow Path -->
+    <path d="M0 0C100 0 100 50 200 50C300 50 300 0 400 0C500 0 500 50 600 50" 
+      stroke="#7C3AED" 
+      stroke-width="2" 
+      fill="none"
+      stroke-dasharray="4 4">
+      <animate attributeName="stroke-dashoffset" values="0;100" dur="2s" repeatCount="indefinite"/>
+    </path>
+    
+    <!-- Data Points -->
+    <g>
+      <circle cx="0" cy="0" r="4" fill="#7C3AED">
+        <animate attributeName="opacity" values="1;0;1" dur="2s" repeatCount="indefinite"/>
+      </circle>
+      <circle cx="200" cy="50" r="4" fill="#7C3AED">
+        <animate attributeName="opacity" values="0;1;0" dur="2s" repeatCount="indefinite"/>
+      </circle>
+      <circle cx="400" cy="0" r="4" fill="#7C3AED">
+        <animate attributeName="opacity" values="1;0;1" dur="2s" repeatCount="indefinite"/>
+      </circle>
+      <circle cx="600" cy="50" r="4" fill="#7C3AED">
+        <animate attributeName="opacity" values="0;1;0" dur="2s" repeatCount="indefinite"/>
+      </circle>
+    </g>
+  </g>
+  
+  <!-- AI/ML Elements -->
+  <g>
+    <!-- Neural Network -->
+    <g transform="translate(650,200)">
+      <circle cx="0" cy="0" r="10" fill="#1A2B44" stroke="#7C3AED" stroke-width="2"/>
+      <circle cx="30" cy="30" r="10" fill="#1A2B44" stroke="#7C3AED" stroke-width="2"/>
+      <circle cx="0" cy="60" r="10" fill="#1A2B44" stroke="#7C3AED" stroke-width="2"/>
+      <path d="M0 10L30 20M30 40L0 50" stroke="#7C3AED" stroke-width="2" stroke-dasharray="4 4">
+        <animate attributeName="stroke-dashoffset" values="0;100" dur="2s" repeatCount="indefinite"/>
+      </path>
+    </g>
+  </g>
+  
+  <!-- Floating Elements -->
+  <g>
+    <rect x="100" y="100" width="20" height="20" rx="4" fill="#7C3AED" fill-opacity="0.2">
+      <animate attributeName="y" values="100;80;100" dur="3s" repeatCount="indefinite"/>
+    </rect>
+    <circle cx="700" cy="400" r="15" fill="#3B82F6" fill-opacity="0.2">
+      <animate attributeName="cy" values="400;380;400" dur="4s" repeatCount="indefinite"/>
+    </circle>
+  </g>
+</svg> 

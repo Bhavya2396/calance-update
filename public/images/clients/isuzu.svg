@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="200" height="60" viewBox="0 0 200 60" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <g transform="translate(20,10)">
+    <!-- ISUZU Letters -->
+    <path d="M0 0H20V40H0V0Z" fill="currentColor"/>
+    <path d="M30 0H50C60 0 65 5 65 15V25C65 35 60 40 50 40H30V0ZM45 15H50V25H45V15Z" fill="currentColor"/>
+    <path d="M75 0H95C105 0 110 5 110 15V25C110 35 105 40 95 40H75V0ZM90 15H95V25H90V15Z" fill="currentColor"/>
+    <path d="M120 0H140C150 0 155 5 155 15V25C155 35 150 40 140 40H120V0ZM135 15H140V25H135V15Z" fill="currentColor"/>
+    <path d="M165 0H185V40H165V0Z" fill="currentColor"/>
+  </g>
+</svg> 

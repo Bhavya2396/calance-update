@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="400" height="300" viewBox="0 0 400 300" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <!-- Text Processing -->
+  <g transform="translate(50,50)">
+    <!-- Input Text -->
+    <rect x="0" y="0" width="300" height="60" rx="8" fill="#1A2B44" stroke="#7C3AED" stroke-width="2"/>
+    
+    <!-- Text Lines -->
+    <g fill="#243B61">
+      <rect x="20" y="15" width="60" height="8" rx="2"/>
+      <rect x="90" y="15" width="40" height="8" rx="2"/>
+      <rect x="140" y="15" width="80" height="8" rx="2"/>
+      
+      <rect x="20" y="35" width="40" height="8" rx="2"/>
+      <rect x="70" y="35" width="60" height="8" rx="2"/>
+      <rect x="140" y="35" width="50" height="8" rx="2"/>
+    </g>
+    
+    <!-- Tokenization -->
+    <g transform="translate(0,80)">
+      <rect x="20" y="0" width="40" height="30" rx="4" fill="#1A2B44" stroke="#3B82F6" stroke-width="2"/>
+      <rect x="70" y="0" width="40" height="30" rx="4" fill="#1A2B44" stroke="#3B82F6" stroke-width="2"/>
+      <rect x="120" y="0" width="40" height="30" rx="4" fill="#1A2B44" stroke="#3B82F6" stroke-width="2"/>
+      <rect x="170" y="0" width="40" height="30" rx="4" fill="#1A2B44" stroke="#3B82F6" stroke-width="2"/>
+      
+      <!-- Token Text -->
+      <text x="30" y="20" font-family="monospace" font-size="12" fill="#3B82F6">the</text>
+      <text x="80" y="20" font-family="monospace" font-size="12" fill="#3B82F6">cat</text>
+      <text x="130" y="20" font-family="monospace" font-size="12" fill="#3B82F6">sat</text>
+      <text x="180" y="20" font-family="monospace" font-size="12" fill="#3B82F6">down</text>
+    </g>
+  </g>
+  
+  <!-- Language Understanding -->
+  <g transform="translate(50,180)">
+    <!-- Semantic Analysis -->
+    <rect x="0" y="0" width="300" height="80" rx="8" fill="#1A2B44" stroke="#7C3AED" stroke-width="2"/>
+    
+    <!-- Tree Structure -->
+    <g stroke="#7C3AED" stroke-width="2" fill="none">
+      <circle cx="150" cy="20" r="10"/>
+      <circle cx="100" cy="50" r="10"/>
+      <circle cx="200" cy="50" r="10"/>
+      
+      <path d="M150 30L100 40"/>
+      <path d="M150 30L200 40"/>
+    </g>
+    
+    <!-- Labels -->
+    <g fill="#3B82F6" font-family="monospace" font-size="10">
+      <text x="142" y="24">S</text>
+      <text x="92" y="54">NP</text>
+      <text x="192" y="54">VP</text>
+    </g>
+  </g>
+  
+  <!-- Generation Flow -->
+  <g transform="translate(0,0)">
+    <!-- Flow Lines -->
+    <g stroke="#7C3AED" stroke-width="2" stroke-dasharray="4 4">
+      <path d="M200 110L200 130">
+        <animate attributeName="stroke-dashoffset" values="0;100" dur="2s" repeatCount="indefinite"/>
+      </path>
+      <path d="M200 160L200 180">
+        <animate attributeName="stroke-dashoffset" values="0;100" dur="2s" repeatCount="indefinite"/>
+      </path>
+    </g>
+    
+    <!-- Flow Particles -->
+    <circle cx="200" cy="120" r="3" fill="#7C3AED">
+      <animate attributeName="opacity" values="1;0;1" dur="2s" repeatCount="indefinite"/>
+    </circle>
+    <circle cx="200" cy="170" r="3" fill="#3B82F6">
+      <animate attributeName="opacity" values="0;1;0" dur="1.5s" repeatCount="indefinite"/>
+    </circle>
+  </g>
+  
+  <!-- Decorative Elements -->
+  <g>
+    <!-- Binary Data -->
+    <text x="320" y="80" font-family="monospace" font-size="12" fill="#7C3AED" fill-opacity="0.3">
+      <tspan x="320" y="80">01</tspan>
+      <tspan x="320" y="100">10</tspan>
+      <tspan x="320" y="120">11</tspan>
+    </text>
+    
+    <!-- Embeddings -->
+    <g transform="translate(320,180)">
+      <rect x="0" y="0" width="60" height="60" rx="4" fill="#1A2B44" stroke="#3B82F6" stroke-width="2"/>
+      <path d="M10 30L25 15L40 45L55 20" stroke="#3B82F6" stroke-width="2" fill="none"/>
+    </g>
+  </g>
+</svg> 

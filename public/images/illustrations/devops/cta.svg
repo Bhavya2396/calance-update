@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="400" height="400" viewBox="0 0 400 400" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <!-- Background Elements -->
+  <circle cx="200" cy="200" r="180" fill="#F59E0B" fill-opacity="0.05"/>
+  <circle cx="200" cy="200" r="150" fill="#22C55E" fill-opacity="0.05"/>
+  
+  <!-- DevOps Infinity Loop -->
+  <g transform="translate(100,150)">
+    <!-- Left Loop (Dev) -->
+    <path d="M0 50C0 22.386 22.386 0 50 0H100C127.614 0 150 22.386 150 50C150 77.614 127.614 100 100 100H50C22.386 100 0 77.614 0 50Z" 
+          fill="#1A2B44" stroke="#F59E0B" stroke-width="2"/>
+    
+    <!-- Right Loop (Ops) -->
+    <path d="M200 50C200 77.614 177.614 100 150 100H100C72.386 100 50 77.614 50 50C50 22.386 72.386 0 100 0H150C177.614 0 200 22.386 200 50Z" 
+          fill="#1A2B44" stroke="#22C55E" stroke-width="2"/>
+    
+    <!-- Flow Arrows -->
+    <g>
+      <path d="M30 50C30 35.5 41.5 24 56 24" stroke="#F59E0B" stroke-width="2" stroke-dasharray="4 4">
+        <animate attributeName="stroke-dashoffset" values="0;100" dur="2s" repeatCount="indefinite"/>
+      </path>
+      <path d="M170 50C170 64.5 158.5 76 144 76" stroke="#22C55E" stroke-width="2" stroke-dasharray="4 4">
+        <animate attributeName="stroke-dashoffset" values="0;100" dur="2s" repeatCount="indefinite"/>
+      </path>
+    </g>
+  </g>
+  
+  <!-- Icons -->
+  <g>
+    <!-- Code Icon -->
+    <g transform="translate(140,180)">
+      <rect x="0" y="0" width="40" height="40" rx="8" fill="#243B61"/>
+      <path d="M10 20L20 10L30 20M10 20L20 30L30 20" stroke="#F59E0B" stroke-width="2"/>
+    </g>
+    
+    <!-- Gear Icon -->
+    <g transform="translate(220,180)">
+      <circle cx="20" cy="20" r="15" fill="#243B61"/>
+      <path d="M20 10V30M10 20H30M15 15L25 25M25 15L15 25" stroke="#22C55E" stroke-width="2"/>
+    </g>
+  </g>
+  
+  <!-- Animated Elements -->
+  <g>
+    <!-- Floating Circles -->
+    <circle cx="100" cy="200" r="4" fill="#F59E0B">
+      <animate attributeName="opacity" values="1;0;1" dur="2s" repeatCount="indefinite"/>
+    </circle>
+    <circle cx="300" cy="200" r="4" fill="#22C55E">
+      <animate attributeName="opacity" values="0;1;0" dur="1.5s" repeatCount="indefinite"/>
+    </circle>
+    <circle cx="200" cy="100" r="4" fill="#F59E0B">
+      <animate attributeName="opacity" values="1;0;1" dur="3s" repeatCount="indefinite"/>
+    </circle>
+    <circle cx="200" cy="300" r="4" fill="#22C55E">
+      <animate attributeName="opacity" values="0;1;0" dur="2.5s" repeatCount="indefinite"/>
+    </circle>
+  </g>
+  
+  <!-- Connection Lines -->
+  <g stroke="#F59E0B" stroke-width="2" stroke-dasharray="4 4">
+    <path d="M100 200L140 200" stroke-opacity="0.3">
+      <animate attributeName="stroke-dashoffset" values="0;100" dur="2s" repeatCount="indefinite"/>
+    </path>
+    <path d="M260 200L300 200" stroke-opacity="0.3">
+      <animate attributeName="stroke-dashoffset" values="0;100" dur="2s" repeatCount="indefinite"/>
+    </path>
+    <path d="M200 100L200 160" stroke-opacity="0.3">
+      <animate attributeName="stroke-dashoffset" values="0;100" dur="2s" repeatCount="indefinite"/>
+    </path>
+    <path d="M200 240L200 300" stroke-opacity="0.3">
+      <animate attributeName="stroke-dashoffset" values="0;100" dur="2s" repeatCount="indefinite"/>
+    </path>
+  </g>
+</svg>

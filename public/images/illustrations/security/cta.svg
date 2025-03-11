@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="800" height="600" viewBox="0 0 800 600" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <!-- Background Elements -->
+  <circle cx="400" cy="300" r="250" fill="#EF4444" fill-opacity="0.05"/>
+  <circle cx="400" cy="300" r="200" fill="#3B82F6" fill-opacity="0.05"/>
+  
+  <!-- Main Shield -->
+  <g transform="translate(300,150)">
+    <!-- Shield Base -->
+    <path d="M100 0L200 50V200L100 300L0 200V50L100 0Z" fill="#1A2B44" stroke="#EF4444" stroke-width="3"/>
+    <path d="M100 20L180 60V180L100 260L20 180V60L100 20Z" fill="#243B61" stroke="#3B82F6" stroke-width="2"/>
+    
+    <!-- Security Grid -->
+    <g stroke="#EF4444" stroke-opacity="0.2" stroke-width="1">
+      <path d="M20 60h160M20 100h160M20 140h160M20 180h160"/>
+      <path d="M60 40v160M100 40v160M140 40v160"/>
+    </g>
+    
+    <!-- Central Lock -->
+    <g transform="translate(70,120)">
+      <rect x="0" y="20" width="60" height="60" rx="8" fill="#EF4444"/>
+      <path d="M15 20V10C15 4.477 19.477 0 25 0H35C40.523 0 45 4.477 45 10V20" stroke="#1A2B44" stroke-width="4"/>
+      <circle cx="30" cy="50" r="10" fill="#1A2B44"/>
+    </g>
+  </g>
+  
+  <!-- Protected Elements -->
+  <g>
+    <!-- Database -->
+    <g transform="translate(200,200)">
+      <path d="M0 20C0 8.954 8.954 0 20 0H60C71.046 0 80 8.954 80 20V60C80 71.046 71.046 80 60 80H20C8.954 80 0 71.046 0 60V20Z" 
+            fill="#1A2B44" stroke="#3B82F6" stroke-width="2"/>
+      <rect x="20" y="20" width="40" height="6" rx="2" fill="#243B61"/>
+      <rect x="20" y="32" width="40" height="6" rx="2" fill="#243B61"/>
+      <rect x="20" y="44" width="40" height="6" rx="2" fill="#243B61"/>
+    </g>
+    
+    <!-- Server -->
+    <g transform="translate(520,200)">
+      <rect x="0" y="0" width="80" height="80" rx="8" fill="#1A2B44" stroke="#3B82F6" stroke-width="2"/>
+      <rect x="20" y="15" width="40" height="10" rx="2" fill="#243B61"/>
+      <rect x="20" y="35" width="40" height="10" rx="2" fill="#243B61"/>
+      <rect x="20" y="55" width="40" height="10" rx="2" fill="#243B61"/>
+    </g>
+    
+    <!-- Cloud -->
+    <g transform="translate(200,400)">
+      <path d="M40 0C51.046 0 60 8.954 60 20C71.046 20 80 28.954 80 40C80 51.046 71.046 60 60 60H20C8.954 60 0 51.046 0 40C0 28.954 8.954 20 20 20C20 8.954 28.954 0 40 0Z" 
+            fill="#1A2B44" stroke="#3B82F6" stroke-width="2"/>
+    </g>
+    
+    <!-- Network -->
+    <g transform="translate(520,400)">
+      <rect x="0" y="0" width="80" height="80" rx="8" fill="#1A2B44" stroke="#3B82F6" stroke-width="2"/>
+      <circle cx="40" cy="40" r="20" stroke="#243B61" stroke-width="2" fill="none"/>
+      <circle cx="40" cy="40" r="10" fill="#243B61"/>
+    </g>
+  </g>
+  
+  <!-- Protection Lines -->
+  <g stroke="#EF4444" stroke-width="2" stroke-dasharray="4 4">
+    <!-- Top Left -->
+    <path d="M280 240L350 250">
+      <animate attributeName="stroke-dashoffset" values="0;100" dur="3s" repeatCount="indefinite"/>
+    </path>
+    
+    <!-- Top Right -->
+    <path d="M520 240L450 250">
+      <animate attributeName="stroke-dashoffset" values="0;100" dur="3s" repeatCount="indefinite"/>
+    </path>
+    
+    <!-- Bottom Left -->
+    <path d="M280 430L350 350">
+      <animate attributeName="stroke-dashoffset" values="0;100" dur="3s" repeatCount="indefinite"/>
+    </path>
+    
+    <!-- Bottom Right -->
+    <path d="M520 430L450 350">
+      <animate attributeName="stroke-dashoffset" values="0;100" dur="3s" repeatCount="indefinite"/>
+    </path>
+  </g>
+  
+  <!-- Protection Indicators -->
+  <g>
+    <circle cx="280" cy="240" r="4" fill="#EF4444">
+      <animate attributeName="opacity" values="1;0;1" dur="2s" repeatCount="indefinite"/>
+    </circle>
+    <circle cx="520" cy="240" r="4" fill="#EF4444">
+      <animate attributeName="opacity" values="0;1;0" dur="1.5s" repeatCount="indefinite"/>
+    </circle>
+    <circle cx="280" cy="430" r="4" fill="#EF4444">
+      <animate attributeName="opacity" values="1;0;1" dur="3s" repeatCount="indefinite"/>
+    </circle>
+    <circle cx="520" cy="430" r="4" fill="#EF4444">
+      <animate attributeName="opacity" values="0;1;0" dur="2.5s" repeatCount="indefinite"/>
+    </circle>
+  </g>
+  
+  <!-- Binary Background -->
+  <g fill="#3B82F6" fill-opacity="0.1" font-family="monospace" font-size="12">
+    <text x="100" y="150">01001010</text>
+    <text x="600" y="150">10110101</text>
+    <text x="100" y="450">11100011</text>
+    <text x="600" y="450">00111100</text>
+  </g>
+</svg>

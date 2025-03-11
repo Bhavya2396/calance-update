@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="400" height="300" viewBox="0 0 400 300" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <!-- Background Grid -->
+  <path d="M50 50 h300 v200 h-300 z" stroke="#243B61" stroke-width="1" opacity="0.1"/>
+  <path d="M50 150 h300 M200 50 v200" stroke="#243B61" stroke-width="1" opacity="0.1"/>
+  
+  <!-- DevOps Infinity Loop -->
+  <path d="M150 150 q-30 -30 0 -60 q30 -30 60 0 q30 30 0 60 q-30 30 -60 0" 
+        fill="none" stroke="#8B5CF6" stroke-width="2"/>
+  
+  <!-- Pipeline Stages -->
+  <rect x="80" y="180" width="40" height="30" rx="5" fill="#1A2B44" stroke="#F97316" stroke-width="2"/>
+  <text x="85" y="200" fill="#F97316" font-family="Arial" font-size="10">Code</text>
+  
+  <rect x="140" y="180" width="40" height="30" rx="5" fill="#1A2B44" stroke="#F97316" stroke-width="2"/>
+  <text x="145" y="200" fill="#F97316" font-family="Arial" font-size="10">Build</text>
+  
+  <rect x="200" y="180" width="40" height="30" rx="5" fill="#1A2B44" stroke="#F97316" stroke-width="2"/>
+  <text x="205" y="200" fill="#F97316" font-family="Arial" font-size="10">Test</text>
+  
+  <rect x="260" y="180" width="40" height="30" rx="5" fill="#1A2B44" stroke="#F97316" stroke-width="2"/>
+  <text x="265" y="200" fill="#F97316" font-family="Arial" font-size="10">Deploy</text>
+  
+  <!-- Flow Arrows -->
+  <path d="M120 195 L140 195" stroke="#F97316" stroke-width="2" stroke-dasharray="4 4"/>
+  <path d="M180 195 L200 195" stroke="#F97316" stroke-width="2" stroke-dasharray="4 4"/>
+  <path d="M240 195 L260 195" stroke="#F97316" stroke-width="2" stroke-dasharray="4 4"/>
+  
+  <!-- Automation Icons -->
+  <circle cx="100" cy="100" r="15" fill="#1A2B44" stroke="#2DD4BF" stroke-width="2"/>
+  <path d="M90 100 h20 M100 90 v20" stroke="#2DD4BF" stroke-width="2"/>
+  
+  <circle cx="300" cy="100" r="15" fill="#1A2B44" stroke="#2DD4BF" stroke-width="2"/>
+  <path d="M290 100 h20 M300 90 v20" stroke="#2DD4BF" stroke-width="2"/>
+  
+  <!-- Metrics -->
+  <rect x="80" y="230" width="80" height="30" rx="15" fill="#1A2B44" stroke="#2DD4BF" stroke-width="2"/>
+  <text x="95" y="250" fill="#2DD4BF" font-family="Arial" font-size="12">-85%</text>
+  
+  <rect x="240" y="230" width="80" height="30" rx="15" fill="#1A2B44" stroke="#2DD4BF" stroke-width="2"/>
+  <text x="255" y="250" fill="#2DD4BF" font-family="Arial" font-size="12">+95%</text>
+  
+  <!-- Status Indicators -->
+  <path d="M320 130 L380 130" stroke="#8B5CF6" stroke-width="2"/>
+  <text x="330" y="125" fill="#8B5CF6" font-family="Arial" font-size="10">Continuous</text>
+  <text x="330" y="140" fill="#8B5CF6" font-family="Arial" font-size="10">Delivery</text>
+</svg> 

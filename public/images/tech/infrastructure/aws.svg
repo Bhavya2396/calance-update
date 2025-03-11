@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="48" height="48" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <!-- AWS Logo -->
+  <g transform="translate(4,12)">
+    <!-- Cloud Shape -->
+    <path d="M20 0C31.0457 0 40 8.95431 40 20C40 31.0457 31.0457 40 20 40C8.95431 40 0 31.0457 0 20C0 8.95431 8.95431 0 20 0Z" fill="#3B82F6" fill-opacity="0.1"/>
+    
+    <!-- AWS Letters -->
+    <g transform="translate(8,12)" fill="#3B82F6">
+      <!-- A -->
+      <path d="M0 16L4 0L8 16H6L5 12H3L2 16H0ZM3.5 10H4.5L4 6L3.5 10Z"/>
+      <!-- W -->
+      <path d="M10 0L12 16L14 4L16 16L18 0H20L17 16H15L13 4L11 16H9L6 0H10Z"/>
+      <!-- S -->
+      <path d="M22 0C24 0 25 1 25 3V5H23V3C23 2.5 22.5 2 22 2C21.5 2 21 2.5 21 3C21 4 22 4.5 23 5C24 5.5 25 6.5 25 8C25 10 24 11 22 11C20 11 19 10 19 8V6H21V8C21 8.5 21.5 9 22 9C22.5 9 23 8.5 23 8C23 7 22 6.5 21 6C20 5.5 19 4.5 19 3C19 1 20 0 22 0Z"/>
+    </g>
+  </g>
+</svg> 

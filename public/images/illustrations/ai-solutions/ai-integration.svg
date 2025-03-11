@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="400" height="300" viewBox="0 0 400 300" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <!-- Central AI Hub -->
+  <g transform="translate(170,120)">
+    <circle cx="30" cy="30" r="30" fill="#1A2B44" stroke="#7C3AED" stroke-width="2"/>
+    <path d="M15 30h30M30 15v30" stroke="#7C3AED" stroke-width="2"/>
+    <circle cx="30" cy="30" r="20" fill="none" stroke="#3B82F6" stroke-width="2" stroke-dasharray="4 4">
+      <animateTransform
+        attributeName="transform"
+        type="rotate"
+        from="0 30 30"
+        to="360 30 30"
+        dur="8s"
+        repeatCount="indefinite"
+      />
+    </circle>
+  </g>
+  
+  <!-- Connected Systems -->
+  <g>
+    <!-- Database -->
+    <g transform="translate(50,50)">
+      <path d="M0 20C0 8.954 13.431 0 30 0C46.569 0 60 8.954 60 20V60C60 71.046 46.569 80 30 80C13.431 80 0 71.046 0 60V20Z" fill="#1A2B44" stroke="#7C3AED" stroke-width="2"/>
+      <path d="M0 20C0 31.046 13.431 40 30 40C46.569 40 60 31.046 60 20" stroke="#7C3AED" stroke-width="2" fill="none"/>
+      <path d="M0 40C0 51.046 13.431 60 30 60C46.569 60 60 51.046 60 40" stroke="#7C3AED" stroke-width="2" fill="none"/>
+    </g>
+    
+    <!-- API Gateway -->
+    <g transform="translate(290,50)">
+      <rect x="0" y="0" width="60" height="80" rx="8" fill="#1A2B44" stroke="#3B82F6" stroke-width="2"/>
+      <path d="M15 20h30M15 40h30M15 60h30" stroke="#3B82F6" stroke-width="2"/>
+    </g>
+    
+    <!-- Cloud Services -->
+    <g transform="translate(50,170)">
+      <path d="M60 40C60 51.046 51.046 60 40 60H20C8.954 60 0 51.046 0 40C0 28.954 8.954 20 20 20C20 8.954 28.954 0 40 0C51.046 0 60 8.954 60 20C60 20 60 28.954 60 40Z" fill="#1A2B44" stroke="#7C3AED" stroke-width="2"/>
+    </g>
+    
+    <!-- Web Services -->
+    <g transform="translate(290,170)">
+      <rect x="0" y="0" width="60" height="60" rx="8" fill="#1A2B44" stroke="#3B82F6" stroke-width="2"/>
+      <path d="M10 20L50 20M10 30L30 30M10 40L40 40" stroke="#3B82F6" stroke-width="2" stroke-linecap="round"/>
+    </g>
+  </g>
+  
+  <!-- Connection Lines -->
+  <g stroke-width="2" stroke-dasharray="4 4">
+    <!-- Database to AI -->
+    <path d="M110 90L170 150" stroke="#7C3AED">
+      <animate attributeName="stroke-dashoffset" values="0;100" dur="2s" repeatCount="indefinite"/>
+    </path>
+    
+    <!-- API to AI -->
+    <path d="M290 90L230 150" stroke="#3B82F6">
+      <animate attributeName="stroke-dashoffset" values="0;100" dur="2s" repeatCount="indefinite"/>
+    </path>
+    
+    <!-- Cloud to AI -->
+    <path d="M110 200L170 150" stroke="#7C3AED">
+      <animate attributeName="stroke-dashoffset" values="0;100" dur="2s" repeatCount="indefinite"/>
+    </path>
+    
+    <!-- Web to AI -->
+    <path d="M290 200L230 150" stroke="#3B82F6">
+      <animate attributeName="stroke-dashoffset" values="0;100" dur="2s" repeatCount="indefinite"/>
+    </path>
+  </g>
+  
+  <!-- Data Flow Particles -->
+  <g>
+    <circle cx="140" cy="120" r="3" fill="#7C3AED">
+      <animate attributeName="opacity" values="1;0;1" dur="2s" repeatCount="indefinite"/>
+    </circle>
+    <circle cx="260" cy="120" r="3" fill="#3B82F6">
+      <animate attributeName="opacity" values="0;1;0" dur="1.5s" repeatCount="indefinite"/>
+    </circle>
+    <circle cx="140" cy="180" r="3" fill="#7C3AED">
+      <animate attributeName="opacity" values="1;0;1" dur="3s" repeatCount="indefinite"/>
+    </circle>
+    <circle cx="260" cy="180" r="3" fill="#3B82F6">
+      <animate attributeName="opacity" values="0;1;0" dur="2.5s" repeatCount="indefinite"/>
+    </circle>
+  </g>
+  
+  <!-- Integration Status -->
+  <g transform="translate(170,20)">
+    <rect x="0" y="0" width="60" height="20" rx="4" fill="#1A2B44" stroke="#7C3AED" stroke-width="2"/>
+    <rect x="5" y="5" width="40" height="10" rx="2" fill="#7C3AED">
+      <animate attributeName="width" values="0;40" dur="2s" repeatCount="indefinite"/>
+    </rect>
+  </g>
+</svg> 

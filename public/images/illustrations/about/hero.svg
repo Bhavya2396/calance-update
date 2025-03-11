@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="800" height="600" viewBox="0 0 800 600" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <!-- Background Grid -->
+  <defs>
+    <pattern id="grid" x="0" y="0" width="40" height="40" patternUnits="userSpaceOnUse">
+      <path d="M 40 0 L 0 0 0 40" fill="none" stroke="#243B61" stroke-width="0.5" opacity="0.2"/>
+    </pattern>
+  </defs>
+  <rect width="800" height="600" fill="url(#grid)"/>
+
+  <!-- World Map Base -->
+  <path d="M100,300 Q200,250 300,300 T500,300 T700,300" 
+        stroke="#243B61" fill="none" stroke-width="1" opacity="0.3"/>
+  
+  <!-- Location Markers -->
+  <!-- USA -->
+  <g transform="translate(200,250)">
+    <circle r="8" fill="#FF6B2C" opacity="0.2">
+      <animate attributeName="r" values="8;10;8" dur="3s" repeatCount="indefinite"/>
+    </circle>
+    <circle r="4" fill="#FF6B2C"/>
+    <text x="15" y="5" fill="white" font-size="12">USA</text>
+  </g>
+
+  <!-- India -->
+  <g transform="translate(500,320)">
+    <circle r="8" fill="#3B82F6" opacity="0.2">
+      <animate attributeName="r" values="8;10;8" dur="3s" repeatCount="indefinite"/>
+    </circle>
+    <circle r="4" fill="#3B82F6"/>
+    <text x="15" y="5" fill="white" font-size="12">India</text>
+  </g>
+
+  <!-- Canada -->
+  <g transform="translate(220,200)">
+    <circle r="8" fill="#FF6B2C" opacity="0.2">
+      <animate attributeName="r" values="8;10;8" dur="3s" repeatCount="indefinite"/>
+    </circle>
+    <circle r="4" fill="#FF6B2C"/>
+    <text x="15" y="5" fill="white" font-size="12">Canada</text>
+  </g>
+
+  <!-- Connection Lines -->
+  <g stroke="#243B61" stroke-width="1" stroke-dasharray="4 4">
+    <path d="M200,250 L500,320">
+      <animate attributeName="stroke-dashoffset" values="8;0;8" dur="3s" repeatCount="indefinite"/>
+    </path>
+    <path d="M220,200 L500,320">
+      <animate attributeName="stroke-dashoffset" values="8;0;8" dur="3.5s" repeatCount="indefinite"/>
+    </path>
+    <path d="M200,250 L220,200">
+      <animate attributeName="stroke-dashoffset" values="8;0;8" dur="2.5s" repeatCount="indefinite"/>
+    </path>
+  </g>
+
+  <!-- Timeline Elements -->
+  <g transform="translate(100,450)">
+    <!-- 2003 -->
+    <circle cx="0" cy="0" r="6" fill="#FF6B2C"/>
+    <text x="-20" y="25" fill="white" font-size="12" text-anchor="middle">2003</text>
+    
+    <!-- Growth Line -->
+    <path d="M0,0 C100,-20 200,20 300,0 T600,0" 
+          stroke="url(#timelineGradient)" fill="none" stroke-width="2">
+      <animate attributeName="stroke-dasharray" values="0,1000;1000,0" dur="3s" fill="freeze"/>
+    </path>
+    
+    <!-- 2022 DTS -->
+    <circle cx="600" cy="0" r="6" fill="#3B82F6"/>
+    <text x="620" y="25" fill="white" font-size="12" text-anchor="middle">2022</text>
+  </g>
+
+  <!-- Gradient Definitions -->
+  <defs>
+    <linearGradient id="timelineGradient" x1="0" y1="0" x2="600" y2="0">
+      <stop offset="0%" stop-color="#FF6B2C"/>
+      <stop offset="100%" stop-color="#3B82F6"/>
+    </linearGradient>
+  </defs>
+
+  <!-- Decorative Elements -->
+  <g>
+    <circle cx="400" cy="300" r="180" stroke="url(#timelineGradient)" stroke-width="1" fill="none" opacity="0.1">
+      <animate attributeName="r" values="180;190;180" dur="4s" repeatCount="indefinite"/>
+    </circle>
+  </g>
+</svg> 

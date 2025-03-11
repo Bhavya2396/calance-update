@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="800" height="400" viewBox="0 0 800 400" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <pattern id="grid" width="40" height="40" patternUnits="userSpaceOnUse">
+      <path d="M 40 0 L 0 0 0 40" fill="none" stroke="#2DD4BF" stroke-width="0.5"/>
+    </pattern>
+    <linearGradient id="maintenanceGradient" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#2DD4BF"/>
+      <stop offset="100%" stop-color="#14B8A6"/>
+    </linearGradient>
+  </defs>
+  
+  <!-- Background -->
+  <rect width="800" height="400" fill="#0A1628"/>
+  <rect width="800" height="400" fill="url(#grid)" opacity="0.1"/>
+  
+  <!-- System Uptime Graph -->
+  <g transform="translate(400,200)">
+    <!-- Graph Container -->
+    <rect x="-200" y="-100" width="400" height="200" rx="10" fill="#1A2B44" stroke="#243B61" stroke-width="2"/>
+    
+    <!-- Graph Lines -->
+    <path d="M-180 80l360-160" stroke="#2DD4BF" stroke-width="3">
+      <animate attributeName="stroke-dasharray" values="0,540;540,0" dur="2s" fill="freeze"/>
+    </path>
+    
+    <!-- Data Points -->
+    <g>
+      {[-160, -120, -80, -40, 0, 40, 80, 120, 160].map((x, i) => `
+        <circle
+          cx="${x}"
+          cy="${80 - (i * 20)}"
+          r="4"
+          fill="#2DD4BF"
+        >
+          <animate
+            attributeName="opacity"
+            values="0;1"
+            dur="0.2s"
+            begin="${i * 0.2}s"
+            fill="freeze"
+          />
+        </circle>
+      `).join('')}
+    </g>
+    
+    <!-- Axis Labels -->
+    <text x="-190" y="95" fill="white" font-family="Arial" font-size="12">Jan</text>
+    <text x="170" y="95" fill="white" font-family="Arial" font-size="12">Dec</text>
+    <text x="-190" y="-90" fill="white" font-family="Arial" font-size="12">100%</text>
+    <text x="-190" y="80" fill="white" font-family="Arial" font-size="12">95%</text>
+  </g>
+  
+  <!-- Metrics -->
+  <g transform="translate(400,350)">
+    <!-- System Uptime -->
+    <g transform="translate(-150,0)">
+      <rect x="-60" y="-30" width="120" height="60" rx="10" fill="#1A2B44" stroke="#243B61" stroke-width="2"/>
+      <text x="0" y="-10" text-anchor="middle" fill="white" font-family="Arial" font-size="14">System Uptime</text>
+      <text x="0" y="20" text-anchor="middle" fill="#2DD4BF" font-family="Arial" font-size="24">99.9%</text>
+    </g>
+    
+    <!-- Issues Prevented -->
+    <g transform="translate(150,0)">
+      <rect x="-60" y="-30" width="120" height="60" rx="10" fill="#1A2B44" stroke="#243B61" stroke-width="2"/>
+      <text x="0" y="-10" text-anchor="middle" fill="white" font-family="Arial" font-size="14">Issues Prevented</text>
+      <text x="0" y="20" text-anchor="middle" fill="#2DD4BF" font-family="Arial" font-size="24">+85%</text>
+    </g>
+  </g>
+  
+  <!-- Server Icons -->
+  <g transform="translate(400,80)">
+    <!-- Server 1 -->
+    <g transform="translate(-160,0)">
+      <rect width="60" height="60" rx="10" fill="url(#maintenanceGradient)"/>
+      <rect x="10" y="15" width="40" height="8" rx="2" fill="white"/>
+      <rect x="10" y="27" width="40" height="8" rx="2" fill="white"/>
+      <rect x="10" y="39" width="40" height="8" rx="2" fill="white"/>
+      <circle cx="15" cy="19" r="2" fill="#2DD4BF"/>
+      <circle cx="15" cy="31" r="2" fill="#2DD4BF"/>
+      <circle cx="15" cy="43" r="2" fill="#2DD4BF"/>
+    </g>
+    
+    <!-- Server 2 -->
+    <g transform="translate(0,0)">
+      <rect width="60" height="60" rx="10" fill="url(#maintenanceGradient)"/>
+      <rect x="10" y="15" width="40" height="8" rx="2" fill="white"/>
+      <rect x="10" y="27" width="40" height="8" rx="2" fill="white"/>
+      <rect x="10" y="39" width="40" height="8" rx="2" fill="white"/>
+      <circle cx="15" cy="19" r="2" fill="#2DD4BF"/>
+      <circle cx="15" cy="31" r="2" fill="#2DD4BF"/>
+      <circle cx="15" cy="43" r="2" fill="#2DD4BF"/>
+    </g>
+    
+    <!-- Server 3 -->
+    <g transform="translate(160,0)">
+      <rect width="60" height="60" rx="10" fill="url(#maintenanceGradient)"/>
+      <rect x="10" y="15" width="40" height="8" rx="2" fill="white"/>
+      <rect x="10" y="27" width="40" height="8" rx="2" fill="white"/>
+      <rect x="10" y="39" width="40" height="8" rx="2" fill="white"/>
+      <circle cx="15" cy="19" r="2" fill="#2DD4BF"/>
+      <circle cx="15" cy="31" r="2" fill="#2DD4BF"/>
+      <circle cx="15" cy="43" r="2" fill="#2DD4BF"/>
+    </g>
+  </g>
+</svg> 

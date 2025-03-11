@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="400" height="300" viewBox="0 0 400 300" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <!-- Background Grid -->
+  <path d="M50 50 h300 v200 h-300 z" stroke="#243B61" stroke-width="1" opacity="0.1"/>
+  <path d="M50 150 h300 M200 50 v200" stroke="#243B61" stroke-width="1" opacity="0.1"/>
+  
+  <!-- SharePoint Logo -->
+  <rect x="160" y="80" width="80" height="80" rx="10" fill="#1A2B44" stroke="#3B82F6" stroke-width="2"/>
+  <text x="170" y="125" fill="#3B82F6" font-family="Arial" font-size="12">SharePoint</text>
+  
+  <!-- Document Icons -->
+  <rect x="100" y="100" width="30" height="40" rx="5" fill="#1A2B44" stroke="#F97316" stroke-width="2"/>
+  <path d="M110 110 h10 M110 120 h10 M110 130 h10" stroke="#F97316" stroke-width="2"/>
+  
+  <rect x="270" y="100" width="30" height="40" rx="5" fill="#1A2B44" stroke="#F97316" stroke-width="2"/>
+  <path d="M280 110 h10 M280 120 h10 M280 130 h10" stroke="#F97316" stroke-width="2"/>
+  
+  <!-- Collaboration Flow -->
+  <path d="M130 120 L160 120" stroke="#2DD4BF" stroke-width="2" stroke-dasharray="4 4"/>
+  <path d="M240 120 L270 120" stroke="#2DD4BF" stroke-width="2" stroke-dasharray="4 4"/>
+  
+  <!-- User Access -->
+  <circle cx="140" cy="200" r="15" fill="#1A2B44" stroke="#8B5CF6" stroke-width="2"/>
+  <path d="M135 200 h10 M140 195 v10" stroke="#8B5CF6" stroke-width="2"/>
+  
+  <circle cx="200" cy="200" r="15" fill="#1A2B44" stroke="#8B5CF6" stroke-width="2"/>
+  <path d="M195 200 h10 M200 195 v10" stroke="#8B5CF6" stroke-width="2"/>
+  
+  <circle cx="260" cy="200" r="15" fill="#1A2B44" stroke="#8B5CF6" stroke-width="2"/>
+  <path d="M255 200 h10 M260 195 v10" stroke="#8B5CF6" stroke-width="2"/>
+  
+  <!-- Access Lines -->
+  <path d="M140 185 L180 160" stroke="#8B5CF6" stroke-width="2" stroke-dasharray="4 4"/>
+  <path d="M200 185 L200 160" stroke="#8B5CF6" stroke-width="2" stroke-dasharray="4 4"/>
+  <path d="M260 185 L220 160" stroke="#8B5CF6" stroke-width="2" stroke-dasharray="4 4"/>
+  
+  <!-- Metrics -->
+  <rect x="80" y="230" width="80" height="30" rx="15" fill="#1A2B44" stroke="#2DD4BF" stroke-width="2"/>
+  <text x="95" y="250" fill="#2DD4BF" font-family="Arial" font-size="12">+150%</text>
+  
+  <rect x="240" y="230" width="80" height="30" rx="15" fill="#1A2B44" stroke="#2DD4BF" stroke-width="2"/>
+  <text x="255" y="250" fill="#2DD4BF" font-family="Arial" font-size="12">98%</text>
+  
+  <!-- Status Indicators -->
+  <path d="M320 130 L380 130" stroke="#3B82F6" stroke-width="2"/>
+  <text x="330" y="125" fill="#3B82F6" font-family="Arial" font-size="10">Modern</text>
+  <text x="330" y="140" fill="#3B82F6" font-family="Arial" font-size="10">Workspace</text>
+</svg> 

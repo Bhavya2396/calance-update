@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="800" height="600" viewBox="0 0 800 600" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <!-- Background Grid -->
+  <path d="M0 0h800v600H0z" fill="#0A1628" fill-opacity=".1"/>
+  <path d="M50 50h700v500H50z" stroke="#EF4444" stroke-opacity=".1" stroke-width="1" stroke-dasharray="4 4"/>
+  
+  <!-- Main Shield -->
+  <g transform="translate(300,150)">
+    <path d="M100 0L200 50V150L100 200L0 150V50L100 0Z" fill="#1A2B44" stroke="#EF4444" stroke-width="3"/>
+    <path d="M100 20L180 60V140L100 180L20 140V60L100 20Z" fill="#243B61" stroke="#3B82F6" stroke-width="2"/>
+    
+    <!-- Lock Symbol -->
+    <g transform="translate(70,70)">
+      <rect x="0" y="20" width="60" height="50" rx="8" fill="#EF4444"/>
+      <path d="M10 20V10C10 4.477 14.477 0 20 0H40C45.523 0 50 4.477 50 10V20" stroke="#1A2B44" stroke-width="4"/>
+      <circle cx="30" cy="45" r="8" fill="#1A2B44"/>
+    </g>
+  </g>
+  
+  <!-- Network Nodes -->
+  <g>
+    <!-- Node 1 -->
+    <circle cx="200" cy="200" r="30" fill="#1A2B44" stroke="#3B82F6" stroke-width="2"/>
+    <circle cx="200" cy="200" r="15" fill="#3B82F6" fill-opacity="0.3"/>
+    
+    <!-- Node 2 -->
+    <circle cx="600" cy="200" r="30" fill="#1A2B44" stroke="#3B82F6" stroke-width="2"/>
+    <circle cx="600" cy="200" r="15" fill="#3B82F6" fill-opacity="0.3"/>
+    
+    <!-- Node 3 -->
+    <circle cx="200" cy="400" r="30" fill="#1A2B44" stroke="#3B82F6" stroke-width="2"/>
+    <circle cx="200" cy="400" r="15" fill="#3B82F6" fill-opacity="0.3"/>
+    
+    <!-- Node 4 -->
+    <circle cx="600" cy="400" r="30" fill="#1A2B44" stroke="#3B82F6" stroke-width="2"/>
+    <circle cx="600" cy="400" r="15" fill="#3B82F6" fill-opacity="0.3"/>
+  </g>
+  
+  <!-- Secure Connections -->
+  <g stroke="#EF4444" stroke-width="2" stroke-dasharray="4 4">
+    <path d="M230 200L370 200">
+      <animate attributeName="stroke-dashoffset" values="0;100" dur="2s" repeatCount="indefinite"/>
+    </path>
+    <path d="M530 200L370 200">
+      <animate attributeName="stroke-dashoffset" values="0;100" dur="2s" repeatCount="indefinite"/>
+    </path>
+    <path d="M230 400L370 350">
+      <animate attributeName="stroke-dashoffset" values="0;100" dur="2s" repeatCount="indefinite"/>
+    </path>
+    <path d="M530 400L370 350">
+      <animate attributeName="stroke-dashoffset" values="0;100" dur="2s" repeatCount="indefinite"/>
+    </path>
+  </g>
+  
+  <!-- Data Flow -->
+  <g>
+    <circle cx="300" cy="200" r="4" fill="#EF4444">
+      <animate attributeName="opacity" values="1;0;1" dur="2s" repeatCount="indefinite"/>
+    </circle>
+    <circle cx="500" cy="200" r="4" fill="#EF4444">
+      <animate attributeName="opacity" values="0;1;0" dur="1.5s" repeatCount="indefinite"/>
+    </circle>
+    <circle cx="300" cy="375" r="4" fill="#EF4444">
+      <animate attributeName="opacity" values="1;0;1" dur="3s" repeatCount="indefinite"/>
+    </circle>
+    <circle cx="500" cy="375" r="4" fill="#EF4444">
+      <animate attributeName="opacity" values="0;1;0" dur="2.5s" repeatCount="indefinite"/>
+    </circle>
+  </g>
+  
+  <!-- Binary Data -->
+  <g fill="#3B82F6" fill-opacity="0.3" transform="translate(100,150)">
+    <text x="0" y="0" font-family="monospace" font-size="12">01001010</text>
+    <text x="500" y="0" font-family="monospace" font-size="12">10110101</text>
+    <text x="0" y="300" font-family="monospace" font-size="12">11100011</text>
+    <text x="500" y="300" font-family="monospace" font-size="12">00111100</text>
+  </g>
+</svg>

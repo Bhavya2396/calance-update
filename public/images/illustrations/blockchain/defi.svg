@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="400" height="300" viewBox="0 0 400 300" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <!-- Background -->
+  <rect width="400" height="300" fill="#0A1628"/>
+  
+  <!-- DeFi Network -->
+  <g transform="translate(50,50)">
+    <!-- Central Exchange -->
+    <circle cx="150" cy="100" r="40" fill="#9333EA20" stroke="#9333EA" stroke-width="2">
+      <animate attributeName="r" values="40;45;40" dur="3s" repeatCount="indefinite"/>
+    </circle>
+    <text x="130" y="105" fill="#9333EA" font-family="monospace" font-size="14">DEX</text>
+
+    <!-- Tokens -->
+    <g>
+      <circle cx="50" cy="50" r="25" fill="#9333EA20" stroke="#9333EA" stroke-width="2"/>
+      <text x="35" y="55" fill="#9333EA" font-family="monospace" font-size="12">ETH</text>
+      
+      <circle cx="250" cy="50" r="25" fill="#9333EA20" stroke="#9333EA" stroke-width="2"/>
+      <text x="235" y="55" fill="#9333EA" font-family="monospace" font-size="12">BTC</text>
+      
+      <circle cx="50" cy="150" r="25" fill="#9333EA20" stroke="#9333EA" stroke-width="2"/>
+      <text x="35" y="155" fill="#9333EA" font-family="monospace" font-size="12">DAI</text>
+      
+      <circle cx="250" cy="150" r="25" fill="#9333EA20" stroke="#9333EA" stroke-width="2"/>
+      <text x="235" y="155" fill="#9333EA" font-family="monospace" font-size="12">USD</text>
+    </g>
+
+    <!-- Connection Lines -->
+    <g stroke="#9333EA" stroke-width="2" stroke-dasharray="5,5">
+      <line x1="75" y1="50" x2="110" y2="100">
+        <animate attributeName="stroke-dashoffset" from="100" to="0" dur="3s" repeatCount="indefinite"/>
+      </line>
+      <line x1="225" y1="50" x2="190" y2="100">
+        <animate attributeName="stroke-dashoffset" from="100" to="0" dur="3s" repeatCount="indefinite"/>
+      </line>
+      <line x1="75" y1="150" x2="110" y2="100">
+        <animate attributeName="stroke-dashoffset" from="100" to="0" dur="3s" repeatCount="indefinite"/>
+      </line>
+      <line x1="225" y1="150" x2="190" y2="100">
+        <animate attributeName="stroke-dashoffset" from="100" to="0" dur="3s" repeatCount="indefinite"/>
+      </line>
+    </g>
+
+    <!-- Moving Tokens -->
+    <g>
+      <circle cx="0" cy="0" r="4" fill="#9333EA">
+        <animateMotion
+          path="M75,50 L110,100 L190,100 L225,150"
+          dur="3s"
+          repeatCount="indefinite"/>
+      </circle>
+      <circle cx="0" cy="0" r="4" fill="#9333EA">
+        <animateMotion
+          path="M225,50 L190,100 L110,100 L75,150"
+          dur="3s"
+          begin="1.5s"
+          repeatCount="indefinite"/>
+      </circle>
+    </g>
+  </g>
+
+  <!-- Stats -->
+  <g transform="translate(50,220)">
+    <!-- Transaction Speed -->
+    <rect x="0" y="0" width="140" height="40" rx="5" fill="#9333EA20" stroke="#9333EA" stroke-width="2"/>
+    <text x="20" y="25" fill="#9333EA" font-family="monospace" font-size="12">Speed: +500%</text>
+    
+    <!-- Security Level -->
+    <rect x="160" y="0" width="140" height="40" rx="5" fill="#9333EA20" stroke="#9333EA" stroke-width="2"/>
+    <text x="180" y="25" fill="#9333EA" font-family="monospace" font-size="12">Security: 99.99%</text>
+  </g>
+
+  <!-- Floating Elements -->
+  <g>
+    <circle cx="20" cy="150" r="3" fill="#9333EA">
+      <animate attributeName="opacity" values="0;1;0" dur="2s" repeatCount="indefinite"/>
+    </circle>
+    <circle cx="380" cy="150" r="3" fill="#9333EA">
+      <animate attributeName="opacity" values="0;1;0" dur="2s" repeatCount="indefinite" begin="1s"/>
+    </circle>
+  </g>
+</svg> 

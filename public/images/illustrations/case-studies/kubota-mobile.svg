@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="400" height="300" viewBox="0 0 400 300" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <!-- Background Grid -->
+  <path d="M50 50 h300 v200 h-300 z" stroke="#243B61" stroke-width="1" opacity="0.1"/>
+  <path d="M50 150 h300 M200 50 v200" stroke="#243B61" stroke-width="1" opacity="0.1"/>
+  
+  <!-- Mobile Devices -->
+  <rect x="120" y="100" width="70" height="120" rx="10" fill="#1A2B44" stroke="#8B5CF6" stroke-width="2"/>
+  <rect x="130" y="110" width="50" height="80" rx="5" fill="#243B61" stroke="#8B5CF6" stroke-width="1"/>
+  <circle cx="155" cy="205" r="7" fill="#1A2B44" stroke="#8B5CF6" stroke-width="2"/>
+  
+  <rect x="210" y="80" width="70" height="120" rx="10" fill="#1A2B44" stroke="#8B5CF6" stroke-width="2"/>
+  <rect x="220" y="90" width="50" height="80" rx="5" fill="#243B61" stroke="#8B5CF6" stroke-width="1"/>
+  <circle cx="245" cy="185" r="7" fill="#1A2B44" stroke="#8B5CF6" stroke-width="2"/>
+  
+  <!-- Field Operations Icons -->
+  <path d="M100 240 L300 240" stroke="#F97316" stroke-width="2"/>
+  <path d="M150 220 L150 260 M200 220 L200 260 M250 220 L250 260" 
+        stroke="#F97316" stroke-width="2" opacity="0.5"/>
+  
+  <!-- Customer Engagement -->
+  <circle cx="155" cy="150" r="15" fill="#1A2B44" stroke="#2DD4BF" stroke-width="2"/>
+  <path d="M145 150 h20 M155 140 v20" stroke="#2DD4BF" stroke-width="2"/>
+  
+  <circle cx="245" cy="130" r="15" fill="#1A2B44" stroke="#2DD4BF" stroke-width="2"/>
+  <path d="M235 130 h20 M245 120 v20" stroke="#2DD4BF" stroke-width="2"/>
+  
+  <!-- Connection Lines -->
+  <path d="M170 150 L210 130" stroke="#2DD4BF" stroke-width="2" stroke-dasharray="4 4"/>
+  
+  <!-- Metrics -->
+  <rect x="80" y="60" width="80" height="30" rx="15" fill="#1A2B44" stroke="#F97316" stroke-width="2"/>
+  <text x="95" y="80" fill="#F97316" font-family="Arial" font-size="12">Operations</text>
+  
+  <rect x="240" y="60" width="80" height="30" rx="15" fill="#1A2B44" stroke="#2DD4BF" stroke-width="2"/>
+  <text x="255" y="80" fill="#2DD4BF" font-family="Arial" font-size="12">+75%</text>
+  
+  <!-- App Interface Elements -->
+  <rect x="135" y="120" width="40" height="8" rx="2" fill="#8B5CF6" opacity="0.5"/>
+  <rect x="135" y="135" width="40" height="8" rx="2" fill="#8B5CF6" opacity="0.5"/>
+  <rect x="135" y="150" width="40" height="8" rx="2" fill="#8B5CF6" opacity="0.5"/>
+  
+  <rect x="225" y="100" width="40" height="8" rx="2" fill="#8B5CF6" opacity="0.5"/>
+  <rect x="225" y="115" width="40" height="8" rx="2" fill="#8B5CF6" opacity="0.5"/>
+  <rect x="225" y="130" width="40" height="8" rx="2" fill="#8B5CF6" opacity="0.5"/>
+</svg> 

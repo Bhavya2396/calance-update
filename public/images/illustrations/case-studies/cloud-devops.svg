@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="400" height="300" viewBox="0 0 400 300" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <!-- Background Grid -->
+  <path d="M50 50 h300 v200 h-300 z" stroke="#243B61" stroke-width="1" opacity="0.1"/>
+  <path d="M50 150 h300 M200 50 v200" stroke="#243B61" stroke-width="1" opacity="0.1"/>
+  
+  <!-- Cloud Platform -->
+  <path d="M150 100 q50 -20 100 0 q20 -30 50 -20 q30 10 30 40 q10 20 0 40 q-30 30 -80 20 q-50 20 -100 0 q-40 10 -70 -20 q-10 -20 0 -40 q20 -30 70 -20" 
+        fill="#1A2B44" stroke="#3B82F6" stroke-width="2"/>
+  
+  <!-- Server Icons -->
+  <rect x="120" y="180" width="40" height="40" rx="5" fill="#1A2B44" stroke="#F97316" stroke-width="2"/>
+  <path d="M130 190 h20 M130 200 h20 M130 210 h20" stroke="#F97316" stroke-width="2"/>
+  
+  <rect x="180" y="180" width="40" height="40" rx="5" fill="#1A2B44" stroke="#F97316" stroke-width="2"/>
+  <path d="M190 190 h20 M190 200 h20 M190 210 h20" stroke="#F97316" stroke-width="2"/>
+  
+  <rect x="240" y="180" width="40" height="40" rx="5" fill="#1A2B44" stroke="#F97316" stroke-width="2"/>
+  <path d="M250 190 h20 M250 200 h20 M250 210 h20" stroke="#F97316" stroke-width="2"/>
+  
+  <!-- Migration Arrows -->
+  <path d="M140 180 L180 120" stroke="#3B82F6" stroke-width="2" stroke-dasharray="4 4"/>
+  <path d="M200 180 L200 120" stroke="#3B82F6" stroke-width="2" stroke-dasharray="4 4"/>
+  <path d="M260 180 L220 120" stroke="#3B82F6" stroke-width="2" stroke-dasharray="4 4"/>
+  
+  <!-- DevOps Icons -->
+  <circle cx="160" cy="120" r="15" fill="#1A2B44" stroke="#F97316" stroke-width="2"/>
+  <circle cx="200" cy="120" r="15" fill="#1A2B44" stroke="#F97316" stroke-width="2"/>
+  <circle cx="240" cy="120" r="15" fill="#1A2B44" stroke="#F97316" stroke-width="2"/>
+  
+  <!-- Automation Indicators -->
+  <path d="M320 120 L380 120" stroke="#3B82F6" stroke-width="2"/>
+  <text x="330" y="115" fill="#3B82F6" font-family="Arial" font-size="10">Zero</text>
+  <text x="330" y="130" fill="#3B82F6" font-family="Arial" font-size="10">Downtime</text>
+  
+  <!-- Success Metrics -->
+  <path d="M320 180 L380 180" stroke="#F97316" stroke-width="2"/>
+  <text x="330" y="175" fill="#F97316" font-family="Arial" font-size="10">Automated</text>
+  <text x="330" y="190" fill="#F97316" font-family="Arial" font-size="10">Operations</text>
+</svg> 

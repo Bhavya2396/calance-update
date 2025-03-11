@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="150" height="150" viewBox="0 0 150 150" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <g transform="translate(25,50)">
+    <!-- Google G -->
+    <path d="M50,0 C22.4,0 0,22.4 0,50 C0,77.6 22.4,100 50,100 C63.9,100 76.3,94.9 85.7,86.5 L71.6,72.4 C66.3,77.1 58.7,80 50,80 C32.4,80 18,65.6 18,48 C18,30.4 32.4,16 50,16 C61.6,16 71.7,22.5 76.5,32 L60,32 L60,52 L100,52 L100,48 C100,21.5 77.6,0 50,0 Z" fill="currentColor"/>
+  </g>
+</svg> 

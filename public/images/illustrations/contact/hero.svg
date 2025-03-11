@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="800" height="800" viewBox="0 0 800 800" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <!-- Background Grid -->
+  <defs>
+    <pattern id="grid" x="0" y="0" width="40" height="40" patternUnits="userSpaceOnUse">
+      <path d="M 40 0 L 0 0 0 40" fill="none" stroke="#243B61" stroke-width="0.5" opacity="0.2"/>
+    </pattern>
+  </defs>
+  <rect width="800" height="800" fill="url(#grid)"/>
+
+  <!-- Central Circle -->
+  <circle cx="400" cy="400" r="150" fill="#1A2B44" stroke="#3B82F6" stroke-width="2">
+    <animate attributeName="r" values="150;155;150" dur="4s" repeatCount="indefinite"/>
+  </circle>
+
+  <!-- Floating Elements -->
+  <g id="floating-elements">
+    <!-- Email Icon -->
+    <g transform="translate(300,300)">
+      <rect x="-30" y="-20" width="60" height="40" rx="8" fill="#FF6B2C" opacity="0.2"/>
+      <path d="M -20 -10 L 0 5 L 20 -10 M -20 10 L 0 -5 L 20 10" stroke="#FF6B2C" stroke-width="2"/>
+      <animateTransform attributeName="transform" type="translate" values="300,300;310,290;300,300" dur="3s" repeatCount="indefinite"/>
+    </g>
+
+    <!-- Phone Icon -->
+    <g transform="translate(500,300)">
+      <rect x="-15" y="-25" width="30" height="50" rx="8" fill="#3B82F6" opacity="0.2"/>
+      <circle cx="0" cy="15" r="5" fill="#3B82F6"/>
+      <animateTransform attributeName="transform" type="translate" values="500,300;490,310;500,300" dur="4s" repeatCount="indefinite"/>
+    </g>
+
+    <!-- Chat Bubble -->
+    <g transform="translate(400,250)">
+      <path d="M -25 -20 H 25 Q 35 -20 35 -10 V 10 Q 35 20 25 20 H -15 L -25 30 L -25 20 Q -35 20 -35 10 V -10 Q -35 -20 -25 -20 Z" fill="#FF6B2C" opacity="0.2" stroke="#FF6B2C" stroke-width="2"/>
+      <animateTransform attributeName="transform" type="translate" values="400,250;400,240;400,250" dur="3.5s" repeatCount="indefinite"/>
+    </g>
+
+    <!-- Calendar -->
+    <g transform="translate(400,550)">
+      <rect x="-20" y="-25" width="40" height="50" rx="8" fill="#3B82F6" opacity="0.2" stroke="#3B82F6" stroke-width="2"/>
+      <line x1="-15" y1="-10" x2="15" y2="-10" stroke="#3B82F6" stroke-width="2"/>
+      <animateTransform attributeName="transform" type="translate" values="400,550;400,540;400,550" dur="4s" repeatCount="indefinite"/>
+    </g>
+  </g>
+
+  <!-- Connection Lines -->
+  <g stroke="#243B61" stroke-width="1" opacity="0.5">
+    <line x1="300" y1="300" x2="400" y2="400">
+      <animate attributeName="opacity" values="0.5;1;0.5" dur="2s" repeatCount="indefinite"/>
+    </line>
+    <line x1="500" y1="300" x2="400" y2="400">
+      <animate attributeName="opacity" values="0.5;1;0.5" dur="2.5s" repeatCount="indefinite"/>
+    </line>
+    <line x1="400" y1="250" x2="400" y2="400">
+      <animate attributeName="opacity" values="0.5;1;0.5" dur="3s" repeatCount="indefinite"/>
+    </line>
+    <line x1="400" y1="550" x2="400" y2="400">
+      <animate attributeName="opacity" values="0.5;1;0.5" dur="3.5s" repeatCount="indefinite"/>
+    </line>
+  </g>
+
+  <!-- Pulse Effect -->
+  <circle cx="400" cy="400" r="20" fill="#3B82F6" opacity="0.2">
+    <animate attributeName="r" values="20;150;20" dur="3s" repeatCount="indefinite"/>
+    <animate attributeName="opacity" values="0.2;0;0.2" dur="3s" repeatCount="indefinite"/>
+  </circle>
+</svg> 

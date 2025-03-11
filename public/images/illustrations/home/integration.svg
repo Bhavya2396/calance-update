@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="800" height="600" viewBox="0 0 800 600" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <!-- Background Grid -->
+  <path d="M0 0h800v600H0z" fill="#0A1628" fill-opacity=".1"/>
+  <path d="M50 50h700v500H50z" stroke="#FF6B2C" stroke-opacity=".1" stroke-width="1" stroke-dasharray="4 4"/>
+  
+  <!-- Central Integration Hub -->
+  <g transform="translate(350,250)">
+    <circle cx="50" cy="50" r="40" fill="#1A2B44" stroke="#FF6B2C" stroke-width="2"/>
+    <circle cx="50" cy="50" r="30" fill="#243B61" stroke="#FF6B2C" stroke-width="2" stroke-dasharray="4 4"/>
+    <path d="M35 50L65 50M50 35L50 65" stroke="#FF6B2C" stroke-width="3"/>
+  </g>
+  
+  <!-- Integration Platforms -->
+  <g>
+    <!-- AWS -->
+    <g transform="translate(150,150)">
+      <rect x="0" y="0" width="80" height="80" rx="8" fill="#1A2B44" stroke="#3B82F6" stroke-width="2"/>
+      <path d="M20 40h40M20 20h40M20 60h40" stroke="#3B82F6" stroke-width="2"/>
+    </g>
+    
+    <!-- Azure -->
+    <g transform="translate(550,150)">
+      <rect x="0" y="0" width="80" height="80" rx="8" fill="#1A2B44" stroke="#3B82F6" stroke-width="2"/>
+      <path d="M20 20L60 60M60 20L20 60" stroke="#3B82F6" stroke-width="2"/>
+    </g>
+    
+    <!-- Salesforce -->
+    <g transform="translate(150,400)">
+      <rect x="0" y="0" width="80" height="80" rx="8" fill="#1A2B44" stroke="#FF6B2C" stroke-width="2"/>
+      <circle cx="40" cy="40" r="20" fill="none" stroke="#FF6B2C" stroke-width="2"/>
+      <path d="M30 40h20M40 30v20" stroke="#FF6B2C" stroke-width="2"/>
+    </g>
+    
+    <!-- SAP -->
+    <g transform="translate(550,400)">
+      <rect x="0" y="0" width="80" height="80" rx="8" fill="#1A2B44" stroke="#FF6B2C" stroke-width="2"/>
+      <path d="M20 20h40v40H20z" fill="none" stroke="#FF6B2C" stroke-width="2"/>
+      <path d="M30 30L50 50M50 30L30 50" stroke="#FF6B2C" stroke-width="2"/>
+    </g>
+  </g>
+  
+  <!-- Connection Lines -->
+  <g stroke-width="2" stroke-dasharray="4 4">
+    <path d="M230 190L350 300" stroke="#3B82F6">
+      <animate attributeName="stroke-dashoffset" values="0;100" dur="2s" repeatCount="indefinite"/>
+    </path>
+    <path d="M550 190L450 300" stroke="#3B82F6">
+      <animate attributeName="stroke-dashoffset" values="0;100" dur="2s" repeatCount="indefinite"/>
+    </path>
+    <path d="M230 440L350 300" stroke="#FF6B2C">
+      <animate attributeName="stroke-dashoffset" values="0;100" dur="2s" repeatCount="indefinite"/>
+    </path>
+    <path d="M550 440L450 300" stroke="#FF6B2C">
+      <animate attributeName="stroke-dashoffset" values="0;100" dur="2s" repeatCount="indefinite"/>
+    </path>
+  </g>
+  
+  <!-- Data Flow -->
+  <g>
+    <circle cx="290" cy="245" r="4" fill="#3B82F6">
+      <animate attributeName="opacity" values="1;0;1" dur="2s" repeatCount="indefinite"/>
+    </circle>
+    <circle cx="500" cy="245" r="4" fill="#3B82F6">
+      <animate attributeName="opacity" values="0;1;0" dur="1.5s" repeatCount="indefinite"/>
+    </circle>
+    <circle cx="290" cy="370" r="4" fill="#FF6B2C">
+      <animate attributeName="opacity" values="1;0;1" dur="3s" repeatCount="indefinite"/>
+    </circle>
+    <circle cx="500" cy="370" r="4" fill="#FF6B2C">
+      <animate attributeName="opacity" values="0;1;0" dur="2.5s" repeatCount="indefinite"/>
+    </circle>
+  </g>
+  
+  <!-- Platform Icons -->
+  <g>
+    <circle cx="190" cy="190" r="15" fill="#3B82F6" fill-opacity="0.2"/>
+    <circle cx="590" cy="190" r="15" fill="#3B82F6" fill-opacity="0.2"/>
+    <circle cx="190" cy="440" r="15" fill="#FF6B2C" fill-opacity="0.2"/>
+    <circle cx="590" cy="440" r="15" fill="#FF6B2C" fill-opacity="0.2"/>
+  </g>
+</svg> 

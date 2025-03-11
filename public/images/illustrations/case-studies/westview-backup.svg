@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="400" height="300" viewBox="0 0 400 300" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <!-- Background Grid -->
+  <path d="M50 50 h300 v200 h-300 z" stroke="#243B61" stroke-width="1" opacity="0.1"/>
+  <path d="M50 150 h300 M200 50 v200" stroke="#243B61" stroke-width="1" opacity="0.1"/>
+  
+  <!-- Cloud Storage -->
+  <path d="M150 100 q50 -20 100 0 q20 -30 50 -20 q30 10 30 40 q10 20 0 40 q-30 30 -80 20 q-50 20 -100 0 q-40 10 -70 -20 q-10 -20 0 -40 q20 -30 70 -20" 
+        fill="#1A2B44" stroke="#3B82F6" stroke-width="2"/>
+  
+  <!-- Data Backup Icons -->
+  <rect x="120" y="180" width="50" height="50" rx="5" fill="#1A2B44" stroke="#2DD4BF" stroke-width="2"/>
+  <path d="M130 195 h30 M130 205 h30 M130 215 h30" stroke="#2DD4BF" stroke-width="2"/>
+  
+  <rect x="230" y="180" width="50" height="50" rx="5" fill="#1A2B44" stroke="#2DD4BF" stroke-width="2"/>
+  <path d="M240 195 h30 M240 205 h30 M240 215 h30" stroke="#2DD4BF" stroke-width="2"/>
+  
+  <!-- Backup Arrows -->
+  <path d="M145 180 L185 120" stroke="#3B82F6" stroke-width="2" stroke-dasharray="4 4"/>
+  <path d="M255 180 L215 120" stroke="#3B82F6" stroke-width="2" stroke-dasharray="4 4"/>
+  
+  <!-- Security Shield -->
+  <path d="M185 110 h30 l15 -20 l15 20 h30 v40 q-45 40 -45 40 q0 0 -45 -40 v-40" 
+        fill="none" stroke="#F97316" stroke-width="2"/>
+  
+  <!-- Metrics -->
+  <rect x="80" y="80" width="60" height="30" rx="15" fill="#1A2B44" stroke="#2DD4BF" stroke-width="2"/>
+  <text x="90" y="100" fill="#2DD4BF" font-family="Arial" font-size="12">Rapid</text>
+  
+  <rect x="260" y="80" width="60" height="30" rx="15" fill="#1A2B44" stroke="#2DD4BF" stroke-width="2"/>
+  <text x="270" y="100" fill="#2DD4BF" font-family="Arial" font-size="12">99.99%</text>
+  
+  <!-- Recovery Indicators -->
+  <path d="M320 150 L380 150" stroke="#3B82F6" stroke-width="2"/>
+  <text x="330" y="145" fill="#3B82F6" font-family="Arial" font-size="10">Enhanced</text>
+  <text x="330" y="160" fill="#3B82F6" font-family="Arial" font-size="10">Security</text>
+</svg> 

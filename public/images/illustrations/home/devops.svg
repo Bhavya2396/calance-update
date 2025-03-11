@@ -1,0 +1,115 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="800" height="600" viewBox="0 0 800 600" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <!-- Background Grid -->
+  <path d="M0 0h800v600H0z" fill="#0A1628" fill-opacity=".1"/>
+  <path d="M50 50h700v500H50z" stroke="#F59E0B" stroke-opacity=".1" stroke-width="1" stroke-dasharray="4 4"/>
+  
+  <!-- CI/CD Pipeline -->
+  <g transform="translate(100,150)">
+    <!-- Pipeline Stages -->
+    <g>
+      <!-- Code -->
+      <rect x="0" y="0" width="100" height="80" rx="8" fill="#1A2B44" stroke="#F59E0B" stroke-width="2"/>
+      <rect x="20" y="20" width="60" height="8" rx="2" fill="#243B61"/>
+      <rect x="20" y="35" width="40" height="8" rx="2" fill="#243B61"/>
+      <rect x="20" y="50" width="50" height="8" rx="2" fill="#243B61"/>
+      
+      <!-- Build -->
+      <rect x="150" y="0" width="100" height="80" rx="8" fill="#1A2B44" stroke="#F59E0B" stroke-width="2"/>
+      <path d="M180 20h40M180 40h40M180 60h40" stroke="#22C55E" stroke-width="2"/>
+      
+      <!-- Test -->
+      <rect x="300" y="0" width="100" height="80" rx="8" fill="#1A2B44" stroke="#F59E0B" stroke-width="2"/>
+      <path d="M330 20L350 40L370 20M330 50L350 70L370 50" stroke="#22C55E" stroke-width="2"/>
+      
+      <!-- Deploy -->
+      <rect x="450" y="0" width="100" height="80" rx="8" fill="#1A2B44" stroke="#F59E0B" stroke-width="2"/>
+      <path d="M480 40l20-20l20 20M500 25v35" stroke="#22C55E" stroke-width="2"/>
+    </g>
+    
+    <!-- Connection Lines -->
+    <g stroke="#F59E0B" stroke-width="2" stroke-dasharray="4 4">
+      <path d="M100 40h50">
+        <animate attributeName="stroke-dashoffset" values="0;100" dur="2s" repeatCount="indefinite"/>
+      </path>
+      <path d="M250 40h50">
+        <animate attributeName="stroke-dashoffset" values="0;100" dur="2s" repeatCount="indefinite"/>
+      </path>
+      <path d="M400 40h50">
+        <animate attributeName="stroke-dashoffset" values="0;100" dur="2s" repeatCount="indefinite"/>
+      </path>
+    </g>
+  </g>
+  
+  <!-- Container Orchestration -->
+  <g transform="translate(100,300)">
+    <!-- Kubernetes Cluster -->
+    <g>
+      <!-- Master Node -->
+      <rect x="0" y="0" width="120" height="80" rx="8" fill="#1A2B44" stroke="#F59E0B" stroke-width="2"/>
+      <circle cx="30" cy="40" r="15" fill="#243B61" stroke="#F59E0B" stroke-width="2"/>
+      <path d="M60 30h40M60 50h40" stroke="#F59E0B" stroke-width="2"/>
+      
+      <!-- Worker Nodes -->
+      <g transform="translate(150,0)">
+        <!-- Node 1 -->
+        <rect x="0" y="0" width="100" height="60" rx="6" fill="#1A2B44" stroke="#F59E0B" stroke-width="2"/>
+        <rect x="15" y="15" width="30" height="30" rx="4" fill="#243B61" stroke="#22C55E" stroke-width="2"/>
+        <rect x="55" y="15" width="30" height="30" rx="4" fill="#243B61" stroke="#22C55E" stroke-width="2"/>
+        
+        <!-- Node 2 -->
+        <rect x="120" y="0" width="100" height="60" rx="6" fill="#1A2B44" stroke="#F59E0B" stroke-width="2"/>
+        <rect x="135" y="15" width="30" height="30" rx="4" fill="#243B61" stroke="#22C55E" stroke-width="2"/>
+        <rect x="175" y="15" width="30" height="30" rx="4" fill="#243B61" stroke="#22C55E" stroke-width="2"/>
+        
+        <!-- Node 3 -->
+        <rect x="240" y="0" width="100" height="60" rx="6" fill="#1A2B44" stroke="#F59E0B" stroke-width="2"/>
+        <rect x="255" y="15" width="30" height="30" rx="4" fill="#243B61" stroke="#22C55E" stroke-width="2"/>
+        <rect x="295" y="15" width="30" height="30" rx="4" fill="#243B61" stroke="#22C55E" stroke-width="2"/>
+      </g>
+    </g>
+  </g>
+  
+  <!-- Monitoring -->
+  <g transform="translate(100,450)">
+    <!-- Metrics Dashboard -->
+    <rect x="0" y="0" width="550" height="100" rx="8" fill="#1A2B44" stroke="#F59E0B" stroke-width="2"/>
+    
+    <!-- Charts -->
+    <g transform="translate(20,20)">
+      <!-- CPU -->
+      <rect x="0" y="0" width="120" height="60" rx="4" fill="#243B61"/>
+      <path d="M10 30h100" stroke="#F59E0B" stroke-width="2"/>
+      <rect x="10" y="25" width="80" height="10" rx="2" fill="#22C55E">
+        <animate attributeName="width" values="0;80" dur="2s" repeatCount="indefinite"/>
+      </rect>
+      
+      <!-- Memory -->
+      <rect x="140" y="0" width="120" height="60" rx="4" fill="#243B61"/>
+      <path d="M150 30h100" stroke="#F59E0B" stroke-width="2"/>
+      <rect x="150" y="25" width="60" height="10" rx="2" fill="#22C55E">
+        <animate attributeName="width" values="0;60" dur="3s" repeatCount="indefinite"/>
+      </rect>
+      
+      <!-- Network -->
+      <rect x="280" y="0" width="120" height="60" rx="4" fill="#243B61"/>
+      <path d="M290 30h100" stroke="#F59E0B" stroke-width="2"/>
+      <rect x="290" y="25" width="70" height="10" rx="2" fill="#22C55E">
+        <animate attributeName="width" values="0;70" dur="1.5s" repeatCount="indefinite"/>
+      </rect>
+    </g>
+  </g>
+  
+  <!-- Moving Elements -->
+  <g>
+    <circle cx="150" cy="190" r="4" fill="#22C55E">
+      <animate attributeName="opacity" values="1;0;1" dur="2s" repeatCount="indefinite"/>
+    </circle>
+    <circle cx="300" cy="190" r="4" fill="#22C55E">
+      <animate attributeName="opacity" values="0;1;0" dur="1.5s" repeatCount="indefinite"/>
+    </circle>
+    <circle cx="450" cy="190" r="4" fill="#22C55E">
+      <animate attributeName="opacity" values="1;0;1" dur="3s" repeatCount="indefinite"/>
+    </circle>
+  </g>
+</svg> 

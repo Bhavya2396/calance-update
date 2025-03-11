@@ -1,0 +1,113 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="400" height="300" viewBox="0 0 400 300" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="ctaGradient" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#2DD4BF"/>
+      <stop offset="100%" stop-color="#14B8A6"/>
+    </linearGradient>
+    <filter id="glow" x="-50%" y="-50%" width="200%" height="200%">
+      <feGaussianBlur in="SourceGraphic" stdDeviation="4" result="blur"/>
+      <feMerge>
+        <feMergeNode in="blur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+  </defs>
+
+  <!-- Background Grid -->
+  <pattern id="grid" width="20" height="20" patternUnits="userSpaceOnUse">
+    <path d="M 20 0 L 0 0 0 20" fill="none" stroke="#2DD4BF" stroke-width="0.5" opacity="0.2"/>
+  </pattern>
+  <rect width="400" height="300" fill="url(#grid)"/>
+
+  <!-- Central Hub -->
+  <g transform="translate(200,150)">
+    <!-- Connection Ring -->
+    <circle r="100" stroke="url(#ctaGradient)" stroke-width="4" fill="none" filter="url(#glow)">
+      <animate attributeName="r" values="95;100;95" dur="3s" repeatCount="indefinite"/>
+      <animate attributeName="stroke-dasharray" values="0,50;50,0" dur="2s" repeatCount="indefinite"/>
+    </circle>
+
+    <!-- Central Icon -->
+    <circle r="40" fill="url(#ctaGradient)" filter="url(#glow)"/>
+    <circle r="35" fill="#0A1628"/>
+    <path d="M-20,-20 h40 v40 h-40z" stroke="url(#ctaGradient)" stroke-width="2" fill="none"/>
+    <path d="M-10,-10 h20 v20 h-20z" fill="url(#ctaGradient)"/>
+
+    <!-- Orbiting Elements -->
+    <g>
+      <!-- Support -->
+      <g transform="translate(0,-80)">
+        <circle r="25" fill="url(#ctaGradient)" filter="url(#glow)"/>
+        <path d="M-15,-5 a15,15 0 1,1 30,0 v10 h-30z" fill="#0A1628"/>
+        <circle cx="0" cy="-10" r="8" fill="#0A1628"/>
+      </g>
+
+      <!-- Security -->
+      <g transform="translate(70,40)">
+        <circle r="25" fill="url(#ctaGradient)" filter="url(#glow)"/>
+        <path d="M0,-15 L15,0 L0,15 L-15,0 Z" fill="#0A1628"/>
+        <circle r="8" fill="#0A1628"/>
+      </g>
+
+      <!-- Performance -->
+      <g transform="translate(-70,40)">
+        <circle r="25" fill="url(#ctaGradient)" filter="url(#glow)"/>
+        <path d="M-15,-15 L15,15 M-15,15 L15,-15" stroke="#0A1628" stroke-width="4"/>
+      </g>
+    </g>
+
+    <!-- Connection Lines -->
+    <g stroke="url(#ctaGradient)" stroke-width="2">
+      <path d="M0,-40 L0,-80">
+        <animate attributeName="stroke-dasharray" values="0,50;50,0" dur="2s" repeatCount="indefinite"/>
+      </path>
+      <path d="M35,20 L70,40">
+        <animate attributeName="stroke-dasharray" values="0,50;50,0" dur="2s" repeatCount="indefinite"/>
+      </path>
+      <path d="M-35,20 L-70,40">
+        <animate attributeName="stroke-dasharray" values="0,50;50,0" dur="2s" repeatCount="indefinite"/>
+      </path>
+    </g>
+
+    <!-- Animated Particles -->
+    <g fill="#2DD4BF">
+      <circle r="2">
+        <animateMotion path="M0,-40 L0,-80" dur="1.5s" repeatCount="indefinite"/>
+      </circle>
+      <circle r="2">
+        <animateMotion path="M35,20 L70,40" dur="1.5s" repeatCount="indefinite"/>
+      </circle>
+      <circle r="2">
+        <animateMotion path="M-35,20 L-70,40" dur="1.5s" repeatCount="indefinite"/>
+      </circle>
+    </g>
+
+    <!-- Pulse Effects -->
+    <g>
+      <circle r="45" stroke="url(#ctaGradient)" stroke-width="2" fill="none">
+        <animate attributeName="r" values="40;50;40" dur="2s" repeatCount="indefinite"/>
+        <animate attributeName="opacity" values="1;0;1" dur="2s" repeatCount="indefinite"/>
+      </circle>
+    </g>
+
+    <!-- Success Metrics -->
+    <g transform="translate(-120,-120)">
+      <rect x="-40" y="-20" width="80" height="40" rx="5" fill="#1A2B44" filter="url(#glow)"/>
+      <text x="0" y="0" text-anchor="middle" fill="url(#ctaGradient)" font-family="Arial" font-size="16">99.9%</text>
+      <text x="0" y="15" text-anchor="middle" fill="#ffffff" font-family="Arial" font-size="10">Uptime</text>
+    </g>
+
+    <g transform="translate(120,-120)">
+      <rect x="-40" y="-20" width="80" height="40" rx="5" fill="#1A2B44" filter="url(#glow)"/>
+      <text x="0" y="0" text-anchor="middle" fill="url(#ctaGradient)" font-family="Arial" font-size="16">-70%</text>
+      <text x="0" y="15" text-anchor="middle" fill="#ffffff" font-family="Arial" font-size="10">Response</text>
+    </g>
+
+    <g transform="translate(0,120)">
+      <rect x="-40" y="-20" width="80" height="40" rx="5" fill="#1A2B44" filter="url(#glow)"/>
+      <text x="0" y="0" text-anchor="middle" fill="url(#ctaGradient)" font-family="Arial" font-size="16">98%</text>
+      <text x="0" y="15" text-anchor="middle" fill="#ffffff" font-family="Arial" font-size="10">Satisfied</text>
+    </g>
+  </g>
+</svg> 

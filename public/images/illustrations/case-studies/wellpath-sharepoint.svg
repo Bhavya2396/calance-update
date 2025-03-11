@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="400" height="300" viewBox="0 0 400 300" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <!-- Background Pattern -->
+  <path d="M50 50 h300 v200 h-300 z" stroke="#243B61" stroke-width="1" opacity="0.1"/>
+  <path d="M50 100 h300 M50 150 h300 M50 200 h300" stroke="#243B61" stroke-width="1" opacity="0.1"/>
+  
+  <!-- SharePoint Environment -->
+  <rect x="100" y="100" width="200" height="120" rx="10" fill="#1A2B44" stroke="#00A4EF" stroke-width="2"/>
+  
+  <!-- Support Icons -->
+  <circle cx="150" cy="140" r="20" fill="#1A2B44" stroke="#2DD4BF" stroke-width="2"/>
+  <path d="M140 140 L160 140 M150 130 L150 150" stroke="#2DD4BF" stroke-width="2"/>
+  
+  <circle cx="200" cy="140" r="20" fill="#1A2B44" stroke="#00A4EF" stroke-width="2"/>
+  <path d="M190 140 h20 M200 130 v20" stroke="#00A4EF" stroke-width="2"/>
+  
+  <circle cx="250" cy="140" r="20" fill="#1A2B44" stroke="#F97316" stroke-width="2"/>
+  <path d="M240 140 h20 M250 130 v20" stroke="#F97316" stroke-width="2"/>
+  
+  <!-- Support Flow Lines -->
+  <path d="M100 250 Q200 230 300 250" stroke="#2DD4BF" stroke-width="2" stroke-dasharray="5 5"/>
+  <path d="M100 260 Q200 240 300 260" stroke="#00A4EF" stroke-width="2" stroke-dasharray="5 5"/>
+  
+  <!-- 24/7 Support Indicator -->
+  <circle cx="200" cy="80" r="25" fill="#1A2B44" stroke="#2DD4BF" stroke-width="2"/>
+  <text x="185" y="85" fill="#2DD4BF" font-family="Arial" font-size="12">24/7</text>
+  
+  <!-- User Satisfaction -->
+  <path d="M320 120 L380 120" stroke="#00A4EF" stroke-width="2"/>
+  <text x="330" y="115" fill="#00A4EF" font-family="Arial" font-size="10">User</text>
+  <text x="330" y="130" fill="#00A4EF" font-family="Arial" font-size="10">+85%</text>
+</svg> 

@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="400" height="300" viewBox="0 0 400 300" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <!-- Background Grid -->
+  <path d="M0 150 h400 M200 0 v300" stroke="#243B61" stroke-width="1" opacity="0.1"/>
+  <path d="M50 50 h300 v200 h-300 z" stroke="#243B61" stroke-width="1" opacity="0.1"/>
+  
+  <!-- Migration Flow -->
+  <path d="M100 150 Q200 50 300 150" stroke="#00A4EF" stroke-width="3" stroke-dasharray="10 5"/>
+  <path d="M100 150 Q200 250 300 150" stroke="#00A4EF" stroke-width="3" stroke-dasharray="10 5"/>
+  
+  <!-- SharePoint 2013 Server -->
+  <rect x="70" y="120" width="60" height="60" rx="5" fill="#1A2B44" stroke="#00A4EF" stroke-width="2"/>
+  <text x="85" y="155" fill="#00A4EF" font-family="Arial" font-size="10">2013</text>
+  
+  <!-- SharePoint 2019 Server -->
+  <rect x="270" y="120" width="60" height="60" rx="5" fill="#1A2B44" stroke="#00A4EF" stroke-width="2"/>
+  <text x="285" y="155" fill="#00A4EF" font-family="Arial" font-size="10">2019</text>
+  
+  <!-- Migration Icons -->
+  <circle cx="200" cy="150" r="25" fill="#1A2B44" stroke="#00A4EF" stroke-width="2"/>
+  <path d="M185 150 L215 150 M200 135 L215 150 L200 165" stroke="#00A4EF" stroke-width="2"/>
+  
+  <!-- Data Elements -->
+  <rect x="90" y="100" width="20" height="10" rx="2" fill="#00A4EF" opacity="0.3"/>
+  <rect x="90" y="190" width="20" height="10" rx="2" fill="#00A4EF" opacity="0.3"/>
+  <rect x="290" y="100" width="20" height="10" rx="2" fill="#00A4EF" opacity="0.3"/>
+  <rect x="290" y="190" width="20" height="10" rx="2" fill="#00A4EF" opacity="0.3"/>
+</svg> 

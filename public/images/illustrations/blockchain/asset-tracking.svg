@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="400" height="300" viewBox="0 0 400 300" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <!-- Background -->
+  <rect width="400" height="300" fill="#0A1628"/>
+  
+  <!-- Asset Grid -->
+  <g transform="translate(50,50)">
+    <!-- Grid Container -->
+    <rect x="0" y="0" width="300" height="200" rx="10" fill="#9333EA10" stroke="#9333EA" stroke-width="2"/>
+    
+    <!-- Grid Lines -->
+    <g stroke="#9333EA" stroke-width="1" stroke-opacity="0.2">
+      <line x1="0" y1="50" x2="300" y2="50"/>
+      <line x1="0" y1="100" x2="300" y2="100"/>
+      <line x1="0" y1="150" x2="300" y2="150"/>
+      <line x1="75" y1="0" x2="75" y2="200"/>
+      <line x1="150" y1="0" x2="150" y2="200"/>
+      <line x1="225" y1="0" x2="225" y2="200"/>
+    </g>
+
+    <!-- Asset Items -->
+    <g>
+      <!-- Asset 1 -->
+      <rect x="15" y="15" width="45" height="20" rx="5" fill="#9333EA20" stroke="#9333EA" stroke-width="2">
+        <animate attributeName="opacity" values="0.5;1;0.5" dur="2s" repeatCount="indefinite"/>
+      </rect>
+      <text x="25" y="30" fill="#9333EA" font-family="monospace" font-size="10">NFT</text>
+
+      <!-- Asset 2 -->
+      <rect x="90" y="65" width="45" height="20" rx="5" fill="#9333EA20" stroke="#9333EA" stroke-width="2">
+        <animate attributeName="opacity" values="0.5;1;0.5" dur="2s" repeatCount="indefinite" begin="0.5s"/>
+      </rect>
+      <text x="95" y="80" fill="#9333EA" font-family="monospace" font-size="10">DEED</text>
+
+      <!-- Asset 3 -->
+      <rect x="165" y="115" width="45" height="20" rx="5" fill="#9333EA20" stroke="#9333EA" stroke-width="2">
+        <animate attributeName="opacity" values="0.5;1;0.5" dur="2s" repeatCount="indefinite" begin="1s"/>
+      </rect>
+      <text x="170" y="130" fill="#9333EA" font-family="monospace" font-size="10">CERT</text>
+
+      <!-- Asset 4 -->
+      <rect x="240" y="165" width="45" height="20" rx="5" fill="#9333EA20" stroke="#9333EA" stroke-width="2">
+        <animate attributeName="opacity" values="0.5;1;0.5" dur="2s" repeatCount="indefinite" begin="1.5s"/>
+      </rect>
+      <text x="245" y="180" fill="#9333EA" font-family="monospace" font-size="10">TOKEN</text>
+    </g>
+
+    <!-- Verification Lines -->
+    <g stroke="#9333EA" stroke-width="2" stroke-dasharray="5,5">
+      <path d="M37,35 L37,200">
+        <animate attributeName="stroke-dashoffset" from="100" to="0" dur="3s" repeatCount="indefinite"/>
+      </path>
+      <path d="M112,85 L112,200">
+        <animate attributeName="stroke-dashoffset" from="100" to="0" dur="3s" repeatCount="indefinite"/>
+      </path>
+      <path d="M187,135 L187,200">
+        <animate attributeName="stroke-dashoffset" from="100" to="0" dur="3s" repeatCount="indefinite"/>
+      </path>
+      <path d="M262,185 L262,200">
+        <animate attributeName="stroke-dashoffset" from="100" to="0" dur="3s" repeatCount="indefinite"/>
+      </path>
+    </g>
+  </g>
+
+  <!-- Stats -->
+  <g transform="translate(50,270)">
+    <!-- Accuracy -->
+    <rect x="0" y="0" width="140" height="20" rx="5" fill="#9333EA20" stroke="#9333EA" stroke-width="2"/>
+    <text x="20" y="15" fill="#9333EA" font-family="monospace" font-size="12">Accuracy: 99.9%</text>
+    
+    <!-- Transparency -->
+    <rect x="160" y="0" width="140" height="20" rx="5" fill="#9333EA20" stroke="#9333EA" stroke-width="2"/>
+    <text x="180" y="15" fill="#9333EA" font-family="monospace" font-size="12">Transparency: 100%</text>
+  </g>
+
+  <!-- Moving Verification Points -->
+  <g>
+    <circle cx="87" cy="250" r="3" fill="#9333EA">
+      <animate attributeName="cy" values="250;85;250" dur="3s" repeatCount="indefinite"/>
+      <animate attributeName="opacity" values="0;1;0" dur="3s" repeatCount="indefinite"/>
+    </circle>
+    <circle cx="162" cy="250" r="3" fill="#9333EA">
+      <animate attributeName="cy" values="250;135;250" dur="3s" repeatCount="indefinite" begin="1s"/>
+      <animate attributeName="opacity" values="0;1;0" dur="3s" repeatCount="indefinite" begin="1s"/>
+    </circle>
+    <circle cx="237" cy="250" r="3" fill="#9333EA">
+      <animate attributeName="cy" values="250;185;250" dur="3s" repeatCount="indefinite" begin="2s"/>
+      <animate attributeName="opacity" values="0;1;0" dur="3s" repeatCount="indefinite" begin="2s"/>
+    </circle>
+  </g>
+</svg> 

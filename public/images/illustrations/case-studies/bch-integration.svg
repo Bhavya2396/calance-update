@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="400" height="300" viewBox="0 0 400 300" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <!-- Background Pattern -->
+  <path d="M0 150 h400 M200 0 v300" stroke="#243B61" stroke-width="1" opacity="0.1"/>
+  
+  <!-- Hospital Building -->
+  <path d="M150 100 h100 v150 h-100 z" fill="#1A2B44" stroke="#F97316" stroke-width="2"/>
+  <rect x="180" y="120" width="40" height="60" fill="#1A2B44" stroke="#F97316" stroke-width="2"/>
+  <path d="M150 100 L200 50 L250 100" fill="#1A2B44" stroke="#F97316" stroke-width="2"/>
+  
+  <!-- Medical Cross -->
+  <rect x="190" y="140" width="20" height="20" fill="none" stroke="#3B82F6" stroke-width="2"/>
+  <path d="M195 150 h10 M200 145 v10" stroke="#3B82F6" stroke-width="2"/>
+  
+  <!-- Integration Systems -->
+  <rect x="80" y="180" width="60" height="40" rx="5" fill="#1A2B44" stroke="#F97316" stroke-width="2"/>
+  <text x="85" y="205" fill="#F97316" font-family="Arial" font-size="10">Procore</text>
+  
+  <rect x="260" y="180" width="60" height="40" rx="5" fill="#1A2B44" stroke="#3B82F6" stroke-width="2"/>
+  <text x="265" y="205" fill="#3B82F6" font-family="Arial" font-size="10">PeopleSoft</text>
+  
+  <!-- Data Flow -->
+  <path d="M140 200 Q200 180 260 200" stroke="#2DD4BF" stroke-width="2" stroke-dasharray="4 4"/>
+  <path d="M140 200 Q200 220 260 200" stroke="#2DD4BF" stroke-width="2" stroke-dasharray="4 4"/>
+  
+  <!-- Real-time Indicators -->
+  <circle cx="200" cy="190" r="5" fill="#2DD4BF"/>
+  <circle cx="200" cy="210" r="5" fill="#2DD4BF"/>
+  
+  <!-- Financial Data -->
+  <path d="M320 180 L380 180" stroke="#3B82F6" stroke-width="2"/>
+  <text x="330" y="175" fill="#3B82F6" font-family="Arial" font-size="10">Financial</text>
+  <text x="330" y="190" fill="#3B82F6" font-family="Arial" font-size="10">Real-time</text>
+</svg> 
