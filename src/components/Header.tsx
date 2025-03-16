@@ -63,14 +63,14 @@ export default function Header() {
   return (
     <>
       <header 
-        className={`fixed top-0 left-0 right-0 z-50 bg-[#0A1628]/80 backdrop-blur-sm border-b border-[#243B61] transition-all duration-300 ${
+        className={`fixed top-0 left-0 right-0 z-[100] bg-[#0A1628]/80 backdrop-blur-sm border-b border-[#243B61] transition-all duration-300 ${
           visible ? 'translate-y-0' : '-translate-y-full'
         }`}
       >
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex items-center justify-between h-20">
             {/* Logo */}
-            <a href="/" className="flex items-center">
+            <a href="/" className="flex items-center relative z-[101]">
               <Image
                 src="/images/illustrations/Screenshot_2025-01-16_at_4.36.53_AM-removebg-preview.png"
                 alt="Calance"
@@ -104,7 +104,7 @@ export default function Header() {
             {/* Mobile Menu Button */}
             <button 
               onClick={toggleMobileMenu}
-              className="md:hidden relative z-50 p-2 rounded-lg bg-[#1A2B44] text-gray-300 hover:text-white transition-colors"
+              className="md:hidden relative z-[101] p-2 rounded-lg bg-[#1A2B44] text-gray-300 hover:text-white transition-colors"
               aria-label="Toggle mobile menu"
               aria-expanded={isMobileMenuOpen}
             >
@@ -145,14 +145,14 @@ export default function Header() {
       {/* Mobile Menu */}
       <AnimatePresence>
         {isMobileMenuOpen && (
-          <>
+          <div className="fixed inset-0 z-[99] md:hidden">
             {/* Backdrop */}
             <motion.div
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
               exit={{ opacity: 0 }}
               transition={{ duration: 0.2 }}
-              className="fixed inset-0 bg-black/50 backdrop-blur-sm z-40 md:hidden"
+              className="fixed inset-0 bg-black/50 backdrop-blur-sm"
               onClick={toggleMobileMenu}
             />
             
@@ -167,7 +167,7 @@ export default function Header() {
                 damping: 30,
                 duration: 0.3
               }}
-              className="fixed top-20 right-0 bottom-0 w-full max-w-sm bg-[#0A1628] border-l border-[#243B61] z-50 md:hidden"
+              className="fixed top-20 right-0 bottom-0 w-full max-w-sm bg-[#0A1628] border-l border-[#243B61]"
             >
               <motion.div 
                 className="h-full px-4 py-6 overflow-y-auto"
@@ -209,7 +209,7 @@ export default function Header() {
                 </div>
               </motion.div>
             </motion.nav>
-          </>
+          </div>
         )}
       </AnimatePresence>
     </>
