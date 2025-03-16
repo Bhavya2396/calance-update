@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="800" height="600" viewBox="0 0 800 600" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <!-- Background Circles -->
+  <circle cx="400" cy="300" r="280" fill="url(#heroGradient)" opacity="0.1"/>
+  <circle cx="400" cy="300" r="200" fill="url(#heroGradient)" opacity="0.15"/>
+  
+  <!-- Gradients -->
+  <defs>
+    <linearGradient id="heroGradient" x1="0" y1="0" x2="800" y2="600" gradientUnits="userSpaceOnUse">
+      <stop offset="0%" stop-color="#3B82F6"/>
+      <stop offset="100%" stop-color="#10B981"/>
+    </linearGradient>
+    <linearGradient id="buildingGradient" x1="0" y1="0" x2="1" y2="1" gradientUnits="objectBoundingBox">
+      <stop offset="0%" stop-color="#6366F1"/>
+      <stop offset="100%" stop-color="#4F46E5"/>
+    </linearGradient>
+  </defs>
+
+  <!-- Construction Building -->
+  <g transform="translate(300,150)">
+    <!-- Building Structure -->
+    <path d="M0 300 L100 200 L200 300 Z" fill="#1F2937"/>
+    <rect x="20" y="150" width="160" height="150" fill="#1F2937"/>
+    
+    <!-- Windows -->
+    <rect x="40" y="170" width="30" height="30" fill="#3B82F6" opacity="0.6"/>
+    <rect x="90" y="170" width="30" height="30" fill="#3B82F6" opacity="0.6"/>
+    <rect x="140" y="170" width="30" height="30" fill="#3B82F6" opacity="0.6"/>
+    
+    <rect x="40" y="220" width="30" height="30" fill="#3B82F6" opacity="0.6"/>
+    <rect x="90" y="220" width="30" height="30" fill="#3B82F6" opacity="0.6"/>
+    <rect x="140" y="220" width="30" height="30" fill="#3B82F6" opacity="0.6"/>
+  </g>
+
+  <!-- Data Flow -->
+  <g transform="translate(200,200)">
+    <!-- Data Points -->
+    <circle cx="0" cy="0" r="5" fill="#10B981"/>
+    <circle cx="50" cy="20" r="5" fill="#10B981"/>
+    <circle cx="100" cy="0" r="5" fill="#10B981"/>
+    <circle cx="150" cy="20" r="5" fill="#10B981"/>
+    
+    <!-- Flow Lines -->
+    <path d="M5 0 C25 0 25 20 45 20 M55 20 C75 20 75 0 95 0 M105 0 C125 0 125 20 145 20" 
+          stroke="url(#heroGradient)" stroke-width="2" stroke-dasharray="4 4"/>
+  </g>
+
+  <!-- RPA Robots -->
+  <g transform="translate(500,250)">
+    <!-- Robot Body -->
+    <rect x="0" y="0" width="60" height="80" rx="10" fill="url(#buildingGradient)"/>
+    <circle cx="30" cy="20" r="15" fill="#1F2937"/>
+    <rect x="15" y="50" width="30" height="20" fill="#1F2937"/>
+    
+    <!-- Processing Indicators -->
+    <circle cx="30" cy="20" r="5" fill="#10B981" opacity="0.8">
+      <animate attributeName="opacity" values="0.8;0.2;0.8" dur="2s" repeatCount="indefinite"/>
+    </circle>
+  </g>
+
+  <!-- Integration Hub -->
+  <g transform="translate(400,400)">
+    <!-- Central Hub -->
+    <circle cx="0" cy="0" r="40" fill="#1F2937"/>
+    <circle cx="0" cy="0" r="30" fill="url(#buildingGradient)"/>
+    
+    <!-- Connection Points -->
+    <circle cx="40" cy="0" r="5" fill="#10B981"/>
+    <circle cx="-40" cy="0" r="5" fill="#10B981"/>
+    <circle cx="0" cy="40" r="5" fill="#10B981"/>
+    <circle cx="0" cy="-40" r="5" fill="#10B981"/>
+    
+    <!-- Connection Lines -->
+    <path d="M5 0 L35 0 M-35 0 L-5 0 M0 5 L0 35 M0 -35 L0 -5" 
+          stroke="#10B981" stroke-width="2"/>
+  </g>
+
+  <!-- Real-time Data -->
+  <g transform="translate(600,300)">
+    <!-- Charts -->
+    <rect x="0" y="0" width="100" height="60" rx="5" fill="#1F2937"/>
+    <path d="M10 50 L30 20 L50 40 L70 10 L90 30" 
+          stroke="#10B981" stroke-width="2" fill="none"/>
+    
+    <!-- Live Indicator -->
+    <circle cx="90" cy="10" r="5" fill="#10B981">
+      <animate attributeName="opacity" values="1;0.2;1" dur="1.5s" repeatCount="indefinite"/>
+    </circle>
+  </g>
+
+  <!-- Processing Status -->
+  <g transform="translate(200,500)">
+    <!-- Progress Bar -->
+    <rect x="0" y="0" width="400" height="20" rx="10" fill="#1F2937"/>
+    <rect x="0" y="0" width="300" height="20" rx="10" fill="url(#heroGradient)">
+      <animate attributeName="width" values="0;400" dur="3s" repeatCount="indefinite"/>
+    </rect>
+  </g>
+</svg> 

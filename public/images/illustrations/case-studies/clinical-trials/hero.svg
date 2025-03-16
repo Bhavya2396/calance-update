@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="800" height="600" viewBox="0 0 800 600" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <!-- Background -->
+    <rect width="800" height="600" fill="#1A2B44"/>
+    
+    <!-- Gradients -->
+    <defs>
+        <linearGradient id="blueGradient" x1="0%" y1="0%" x2="100%" y2="0%">
+            <stop offset="0%" style="stop-color:#3B82F6;stop-opacity:1" />
+            <stop offset="100%" style="stop-color:#60A5FA;stop-opacity:1" />
+        </linearGradient>
+        <linearGradient id="greenGradient" x1="0%" y1="0%" x2="100%" y2="0%">
+            <stop offset="0%" style="stop-color:#10B981;stop-opacity:1" />
+            <stop offset="100%" style="stop-color:#34D399;stop-opacity:1" />
+        </linearGradient>
+    </defs>
+
+    <!-- Grid Background -->
+    <path d="M0 50 H800 M0 150 H800 M0 250 H800 M0 350 H800 M0 450 H800 M0 550 H800" 
+          stroke="#2A3B54" stroke-width="1" stroke-dasharray="4 4"/>
+    <path d="M100 0 V600 M300 0 V600 M500 0 V600 M700 0 V600" 
+          stroke="#2A3B54" stroke-width="1" stroke-dasharray="4 4"/>
+
+    <!-- Data Dashboard -->
+    <g transform="translate(50, 50)">
+        <rect x="0" y="0" width="300" height="200" rx="8" fill="#243B55"/>
+        <text x="20" y="40" fill="#60A5FA" font-family="Arial" font-size="18" font-weight="bold">Clinical Data</text>
+        
+        <!-- Chart Lines -->
+        <path d="M40 100 L120 140 L200 80 L280 120" 
+              stroke="url(#blueGradient)" 
+              stroke-width="2"
+              fill="none"/>
+        
+        <!-- Data Points -->
+        <circle cx="40" cy="100" r="4" fill="#3B82F6"/>
+        <circle cx="120" cy="140" r="4" fill="#3B82F6"/>
+        <circle cx="200" cy="80" r="4" fill="#3B82F6"/>
+        <circle cx="280" cy="120" r="4" fill="#3B82F6"/>
+        
+        <!-- Labels -->
+        <text x="20" y="180" fill="#E5E7EB" font-family="Arial" font-size="12">Trial Progress</text>
+    </g>
+
+    <!-- Research Elements -->
+    <g transform="translate(450, 50)">
+        <!-- DNA Helix -->
+        <path d="M100,0 C150,50 50,100 100,150 C150,200 50,250 100,300" 
+              stroke="url(#greenGradient)" 
+              stroke-width="2"
+              fill="none"/>
+        <path d="M100,0 C50,50 150,100 100,150 C50,200 150,250 100,300" 
+              stroke="url(#greenGradient)" 
+              stroke-width="2"
+              fill="none"/>
+              
+        <!-- Connection Points -->
+        <circle cx="100" cy="75" r="4" fill="#34D399"/>
+        <circle cx="100" cy="150" r="4" fill="#34D399"/>
+        <circle cx="100" cy="225" r="4" fill="#34D399"/>
+    </g>
+
+    <!-- Analysis Section -->
+    <g transform="translate(100, 300)">
+        <!-- Data Grid -->
+        <rect x="0" y="0" width="600" height="250" rx="8" fill="#243B55"/>
+        
+        <!-- Column Headers -->
+        <text x="20" y="40" fill="#E5E7EB" font-family="Arial" font-size="14">Patient ID</text>
+        <text x="150" y="40" fill="#E5E7EB" font-family="Arial" font-size="14">Treatment</text>
+        <text x="300" y="40" fill="#E5E7EB" font-family="Arial" font-size="14">Response</text>
+        <text x="450" y="40" fill="#E5E7EB" font-family="Arial" font-size="14">Status</text>
+        
+        <!-- Data Rows -->
+        <g transform="translate(0, 60)">
+            <rect x="15" y="0" width="570" height="1" fill="#2A3B54"/>
+            <text x="20" y="20" fill="#60A5FA" font-family="Arial" font-size="14">001</text>
+            <text x="150" y="20" fill="#60A5FA" font-family="Arial" font-size="14">Group A</text>
+            <text x="300" y="20" fill="#34D399" font-family="Arial" font-size="14">Positive</text>
+            <text x="450" y="20" fill="#60A5FA" font-family="Arial" font-size="14">Complete</text>
+        </g>
+        
+        <g transform="translate(0, 100)">
+            <rect x="15" y="0" width="570" height="1" fill="#2A3B54"/>
+            <text x="20" y="20" fill="#60A5FA" font-family="Arial" font-size="14">002</text>
+            <text x="150" y="20" fill="#60A5FA" font-family="Arial" font-size="14">Group B</text>
+            <text x="300" y="20" fill="#34D399" font-family="Arial" font-size="14">Positive</text>
+            <text x="450" y="20" fill="#60A5FA" font-family="Arial" font-size="14">Ongoing</text>
+        </g>
+    </g>
+</svg> 

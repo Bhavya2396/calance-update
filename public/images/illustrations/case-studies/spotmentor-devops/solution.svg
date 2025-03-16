@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="800" height="600" viewBox="0 0 800 600" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <!-- Background Elements -->
+  <circle cx="400" cy="300" r="250" fill="url(#gradient1)" opacity="0.1"/>
+  
+  <!-- Cloud Platform -->
+  <g transform="translate(300, 100)">
+    <path d="M100 50 C100 22.4 122.4 0 150 0 C177.6 0 200 22.4 200 50 C200 77.6 177.6 100 150 100 H50 C22.4 100 0 77.6 0 50 C0 22.4 22.4 0 50 0 H150" fill="none" stroke="#3B82F6" stroke-width="2"/>
+  </g>
+  
+  <!-- Automated Pipeline -->
+  <g transform="translate(250, 250)">
+    <!-- Pipeline Flow -->
+    <path d="M0 0 L300 0" stroke="#3B82F6" stroke-width="2"/>
+    
+    <!-- Stage 1: Code -->
+    <g transform="translate(0, -25)">
+      <rect width="50" height="50" rx="8" fill="#1A2B44" stroke="#3B82F6" stroke-width="2"/>
+      <text x="25" y="30" text-anchor="middle" fill="#3B82F6" font-family="monospace">&lt;/&gt;</text>
+    </g>
+    
+    <!-- Stage 2: Build -->
+    <g transform="translate(75, -25)">
+      <rect width="50" height="50" rx="8" fill="#1A2B44" stroke="#3B82F6" stroke-width="2"/>
+      <path d="M15 25 h20 M25 15 v20" stroke="#3B82F6" stroke-width="2"/>
+    </g>
+    
+    <!-- Stage 3: Test -->
+    <g transform="translate(150, -25)">
+      <rect width="50" height="50" rx="8" fill="#1A2B44" stroke="#3B82F6" stroke-width="2"/>
+      <path d="M15 35 l10 -20 l10 20" stroke="#3B82F6" stroke-width="2" fill="none"/>
+    </g>
+    
+    <!-- Stage 4: Deploy -->
+    <g transform="translate(225, -25)">
+      <rect width="50" height="50" rx="8" fill="#1A2B44" stroke="#3B82F6" stroke-width="2"/>
+      <path d="M25 15 l0 20 l-10 -10 m10 10 l10 -10" stroke="#3B82F6" stroke-width="2"/>
+    </g>
+  </g>
+  
+  <!-- Infrastructure Components -->
+  <g transform="translate(250, 350)">
+    <!-- Kubernetes Cluster -->
+    <g transform="translate(0, 0)">
+      <path d="M25 0 L75 0 L100 43.3 L75 86.6 L25 86.6 L0 43.3 Z" fill="#1A2B44" stroke="#3B82F6" stroke-width="2"/>
+      <circle cx="50" cy="43.3" r="20" fill="none" stroke="#3B82F6" stroke-width="2"/>
+    </g>
+    
+    <!-- Monitoring -->
+    <g transform="translate(120, 0)">
+      <rect width="80" height="80" rx="8" fill="#1A2B44" stroke="#3B82F6" stroke-width="2"/>
+      <path d="M20 60 L40 30 L60 45 L80 20" stroke="#10B981" stroke-width="2" fill="none"/>
+    </g>
+    
+    <!-- Database -->
+    <g transform="translate(220, 0)">
+      <path d="M40 20 C40 8.954 31.046 0 20 0 C8.954 0 0 8.954 0 20 C0 31.046 8.954 40 20 40 C31.046 40 40 31.046 40 20" fill="#1A2B44" stroke="#3B82F6" stroke-width="2"/>
+      <path d="M10 20 h20 M20 10 v20" stroke="#3B82F6" stroke-width="2"/>
+    </g>
+  </g>
+  
+  <!-- Automation Lines -->
+  <g transform="translate(250, 150)">
+    <path d="M25 75 v-25 M100 75 v-25 M175 75 v-25 M250 75 v-25" stroke="#3B82F6" stroke-width="2" stroke-dasharray="4 4"/>
+  </g>
+
+  <!-- Gradients -->
+  <defs>
+    <linearGradient id="gradient1" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#3B82F6;stop-opacity:0.1"/>
+      <stop offset="100%" style="stop-color:#10B981;stop-opacity:0.1"/>
+    </linearGradient>
+  </defs>
+</svg>

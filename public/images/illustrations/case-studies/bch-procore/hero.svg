@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="800" height="600" viewBox="0 0 800 600" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <!-- Background -->
+    <rect width="800" height="600" fill="#1A2B44"/>
+    
+    <!-- Gradients -->
+    <defs>
+        <linearGradient id="blueGradient" x1="0%" y1="0%" x2="100%" y2="0%">
+            <stop offset="0%" style="stop-color:#3B82F6;stop-opacity:1" />
+            <stop offset="100%" style="stop-color:#60A5FA;stop-opacity:1" />
+        </linearGradient>
+        <linearGradient id="greenGradient" x1="0%" y1="0%" x2="100%" y2="0%">
+            <stop offset="0%" style="stop-color:#10B981;stop-opacity:1" />
+            <stop offset="100%" style="stop-color:#34D399;stop-opacity:1" />
+        </linearGradient>
+    </defs>
+
+    <!-- Grid Background -->
+    <path d="M0 50 H800 M0 150 H800 M0 250 H800 M0 350 H800 M0 450 H800 M0 550 H800" 
+          stroke="#2A3B54" stroke-width="1" stroke-dasharray="4 4"/>
+    <path d="M100 0 V600 M300 0 V600 M500 0 V600 M700 0 V600" 
+          stroke="#2A3B54" stroke-width="1" stroke-dasharray="4 4"/>
+
+    <!-- Procore System -->
+    <g transform="translate(50, 50)">
+        <!-- System Box -->
+        <rect x="0" y="0" width="300" height="200" rx="8" fill="#243B55"/>
+        <text x="20" y="40" fill="#60A5FA" font-family="Arial" font-size="18" font-weight="bold">Procore</text>
+        <text x="20" y="70" fill="#E5E7EB" font-family="Arial" font-size="14">Construction Management</text>
+        
+        <!-- Project Data -->
+        <g transform="translate(20, 100)">
+            <rect width="260" height="80" rx="4" fill="#1A2B44"/>
+            <text x="15" y="30" fill="#E5E7EB" font-family="Arial" font-size="12">Project Budget: $24.5M</text>
+            <text x="15" y="55" fill="#E5E7EB" font-family="Arial" font-size="12">Timeline: 18 months</text>
+        </g>
+    </g>
+
+    <!-- PeopleSoft System -->
+    <g transform="translate(450, 50)">
+        <!-- System Box -->
+        <rect x="0" y="0" width="300" height="200" rx="8" fill="#243B55"/>
+        <text x="20" y="40" fill="#60A5FA" font-family="Arial" font-size="18" font-weight="bold">PeopleSoft</text>
+        <text x="20" y="70" fill="#E5E7EB" font-family="Arial" font-size="14">Financial Management</text>
+        
+        <!-- Financial Data -->
+        <g transform="translate(20, 100)">
+            <rect width="260" height="80" rx="4" fill="#1A2B44"/>
+            <text x="15" y="30" fill="#E5E7EB" font-family="Arial" font-size="12">Invoices Processed: 250+</text>
+            <text x="15" y="55" fill="#E5E7EB" font-family="Arial" font-size="12">Payment Cycle: 30 days</text>
+        </g>
+    </g>
+
+    <!-- Integration Flow -->
+    <g transform="translate(200, 300)">
+        <!-- Central Integration Hub -->
+        <rect x="0" y="0" width="400" height="250" rx="8" fill="#243B55"/>
+        <text x="20" y="40" fill="#60A5FA" font-family="Arial" font-size="18" font-weight="bold">Integration Hub</text>
+        
+        <!-- Data Flow Diagram -->
+        <g transform="translate(50, 80)">
+            <!-- Flow Lines -->
+            <path d="M0 50 L300 50" stroke="url(#greenGradient)" stroke-width="2" stroke-dasharray="4 4"/>
+            <path d="M150 0 L150 100" stroke="url(#blueGradient)" stroke-width="2" stroke-dasharray="4 4"/>
+            
+            <!-- Data Points -->
+            <circle cx="0" cy="50" r="6" fill="#34D399"/>
+            <circle cx="300" cy="50" r="6" fill="#34D399"/>
+            <circle cx="150" cy="0" r="6" fill="#3B82F6"/>
+            <circle cx="150" cy="100" r="6" fill="#3B82F6"/>
+        </g>
+        
+        <!-- Metrics -->
+        <g transform="translate(20, 160)">
+            <text x="0" y="0" fill="#34D399" font-family="Arial" font-size="14">● Real-time Sync</text>
+            <text x="0" y="30" fill="#34D399" font-family="Arial" font-size="14">● 100% Accuracy</text>
+            <text x="0" y="60" fill="#34D399" font-family="Arial" font-size="14">● Automated Validation</text>
+        </g>
+        
+        <!-- Status -->
+        <g transform="translate(200, 160)">
+            <rect width="180" height="70" rx="4" fill="#1A2B44"/>
+            <text x="15" y="30" fill="#60A5FA" font-family="Arial" font-size="14">Status: Active</text>
+            <text x="15" y="55" fill="#E5E7EB" font-family="Arial" font-size="12">Last Sync: 2 min ago</text>
+        </g>
+    </g>
+
+    <!-- Connection Lines -->
+    <path d="M200 150 L450 150" stroke="url(#greenGradient)" stroke-width="2" stroke-dasharray="4 4"/>
+    <path d="M350 250 L350 300" stroke="url(#blueGradient)" stroke-width="2" stroke-dasharray="4 4"/>
+    
+    <!-- Flow Indicators -->
+    <circle cx="300" cy="150" r="4" fill="#34D399"/>
+    <circle cx="350" cy="275" r="4" fill="#3B82F6"/>
+</svg> 

@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="800" height="600" viewBox="0 0 800 600" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <!-- Background Elements -->
+  <circle cx="400" cy="300" r="250" fill="#1A2B44" opacity="0.1"/>
+  <circle cx="400" cy="300" r="200" fill="#3B82F6" opacity="0.05"/>
+  
+  <!-- Cloud Platform -->
+  <path d="M350 200 C350 180 370 160 400 160 C430 160 450 180 450 200 C470 200 490 220 490 250 C490 280 470 300 450 300 L350 300 C330 300 310 280 310 250 C310 220 330 200 350 200Z" fill="#3B82F6" opacity="0.2"/>
+  
+  <!-- Integration Points -->
+  <circle cx="400" cy="250" r="60" fill="#243B61"/>
+  
+  <!-- Integration Icons -->
+  <text x="400" y="230" text-anchor="middle" fill="white" font-family="sans-serif" font-size="12">Vendors</text>
+  <text x="360" y="250" text-anchor="middle" fill="white" font-family="sans-serif" font-size="12">Projects</text>
+  <text x="440" y="250" text-anchor="middle" fill="white" font-family="sans-serif" font-size="12">Costs</text>
+  <text x="370" y="270" text-anchor="middle" fill="white" font-family="sans-serif" font-size="12">Billing</text>
+  <text x="430" y="270" text-anchor="middle" fill="white" font-family="sans-serif" font-size="12">Payments</text>
+  
+  <!-- Connected Systems -->
+  <rect x="150" y="350" width="150" height="100" rx="10" fill="#3B82F6"/>
+  <text x="225" y="400" text-anchor="middle" fill="white" font-family="sans-serif" font-size="16">PMWeb</text>
+  <text x="225" y="420" text-anchor="middle" fill="white" font-family="sans-serif" font-size="12">Project Data</text>
+  
+  <rect x="500" y="350" width="150" height="100" rx="10" fill="#10B981"/>
+  <text x="575" y="400" text-anchor="middle" fill="white" font-family="sans-serif" font-size="16">PeopleSoft</text>
+  <text x="575" y="420" text-anchor="middle" fill="white" font-family="sans-serif" font-size="12">Financial Data</text>
+  
+  <!-- Connection Lines -->
+  <path d="M225 350 L350 300" stroke="#3B82F6" stroke-width="2" stroke-dasharray="5 5"/>
+  <path d="M575 350 L450 300" stroke="#10B981" stroke-width="2" stroke-dasharray="5 5"/>
+  
+  <!-- Title -->
+  <text x="400" y="120" text-anchor="middle" fill="#1A2B44" font-family="sans-serif" font-size="24" font-weight="bold">Cloud-Based Integration</text>
+  
+  <!-- Success Indicators -->
+  <circle cx="300" cy="300" r="15" fill="#10B981"/>
+  <path d="M292 300 L298 306 L308 296" stroke="white" stroke-width="3"/>
+  
+  <circle cx="500" cy="300" r="15" fill="#10B981"/>
+  <path d="M492 300 L498 306 L508 296" stroke="white" stroke-width="3"/>
+  
+  <!-- Decorative Elements -->
+  <circle cx="200" cy="200" r="8" fill="#3B82F6" opacity="0.3"/>
+  <circle cx="600" cy="200" r="8" fill="#10B981" opacity="0.3"/>
+</svg>

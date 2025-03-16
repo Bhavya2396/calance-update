@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="800" height="600" viewBox="0 0 800 600" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <!-- Background -->
+    <rect width="800" height="600" fill="#1A2B44"/>
+    
+    <!-- Gradients -->
+    <defs>
+        <linearGradient id="blueGradient" x1="0%" y1="0%" x2="100%" y2="0%">
+            <stop offset="0%" style="stop-color:#3B82F6;stop-opacity:1" />
+            <stop offset="100%" style="stop-color:#60A5FA;stop-opacity:1" />
+        </linearGradient>
+        <linearGradient id="greenGradient" x1="0%" y1="0%" x2="100%" y2="0%">
+            <stop offset="0%" style="stop-color:#10B981;stop-opacity:1" />
+            <stop offset="100%" style="stop-color:#34D399;stop-opacity:1" />
+        </linearGradient>
+    </defs>
+
+    <!-- Grid Background -->
+    <path d="M0 50 H800 M0 150 H800 M0 250 H800 M0 350 H800 M0 450 H800 M0 550 H800" 
+          stroke="#2A3B54" stroke-width="1" stroke-dasharray="4 4"/>
+    <path d="M100 0 V600 M300 0 V600 M500 0 V600 M700 0 V600" 
+          stroke="#2A3B54" stroke-width="1" stroke-dasharray="4 4"/>
+
+    <!-- AWS Services -->
+    <g transform="translate(50, 50)">
+        <!-- S3 -->
+        <rect x="0" y="0" width="200" height="100" rx="8" fill="#243B55"/>
+        <text x="20" y="35" fill="#60A5FA" font-family="Arial" font-size="18" font-weight="bold">S3</text>
+        <text x="20" y="60" fill="#E5E7EB" font-family="Arial" font-size="14">Primary Storage</text>
+        <path d="M160 30 h20 M160 40 h30 M160 50 h25" stroke="url(#blueGradient)" stroke-width="2" stroke-linecap="round"/>
+    </g>
+
+    <g transform="translate(550, 50)">
+        <!-- Glacier -->
+        <rect x="0" y="0" width="200" height="100" rx="8" fill="#243B55"/>
+        <text x="20" y="35" fill="#60A5FA" font-family="Arial" font-size="18" font-weight="bold">Glacier</text>
+        <text x="20" y="60" fill="#E5E7EB" font-family="Arial" font-size="14">Archive Storage</text>
+        <path d="M160 30 h20 M160 40 h30 M160 50 h25" stroke="url(#blueGradient)" stroke-width="2" stroke-linecap="round"/>
+    </g>
+
+    <!-- Monitoring & Security -->
+    <g transform="translate(300, 200)">
+        <!-- CloudWatch -->
+        <rect x="0" y="0" width="200" height="100" rx="8" fill="#243B55"/>
+        <text x="20" y="35" fill="#34D399" font-family="Arial" font-size="18" font-weight="bold">CloudWatch</text>
+        <text x="20" y="60" fill="#E5E7EB" font-family="Arial" font-size="14">Monitoring</text>
+        <path d="M160 30 h20 M160 40 h30 M160 50 h25" stroke="url(#greenGradient)" stroke-width="2" stroke-linecap="round"/>
+    </g>
+
+    <!-- Lambda Functions -->
+    <g transform="translate(50, 350)">
+        <!-- Backup Function -->
+        <rect x="0" y="0" width="200" height="100" rx="8" fill="#243B55"/>
+        <text x="20" y="35" fill="#60A5FA" font-family="Arial" font-size="18" font-weight="bold">Lambda</text>
+        <text x="20" y="60" fill="#E5E7EB" font-family="Arial" font-size="14">Backup Automation</text>
+        <path d="M160 30 h20 M160 40 h30 M160 50 h25" stroke="url(#blueGradient)" stroke-width="2" stroke-linecap="round"/>
+    </g>
+
+    <g transform="translate(550, 350)">
+        <!-- Recovery Function -->
+        <rect x="0" y="0" width="200" height="100" rx="8" fill="#243B55"/>
+        <text x="20" y="35" fill="#60A5FA" font-family="Arial" font-size="18" font-weight="bold">Lambda</text>
+        <text x="20" y="60" fill="#E5E7EB" font-family="Arial" font-size="14">Recovery Process</text>
+        <path d="M160 30 h20 M160 40 h30 M160 50 h25" stroke="url(#blueGradient)" stroke-width="2" stroke-linecap="round"/>
+    </g>
+
+    <!-- Connection Lines -->
+    <g>
+        <!-- S3 to CloudWatch -->
+        <path d="M250 100 C300 100, 350 150, 400 200" 
+              stroke="url(#greenGradient)" stroke-width="2" 
+              stroke-dasharray="4 4"/>
+        
+        <!-- Glacier to CloudWatch -->
+        <path d="M550 100 C500 100, 450 150, 400 200" 
+              stroke="url(#greenGradient)" stroke-width="2" 
+              stroke-dasharray="4 4"/>
+
+        <!-- Lambda to S3 -->
+        <path d="M150 350 C150 300, 150 200, 150 150" 
+              stroke="url(#blueGradient)" stroke-width="2" 
+              stroke-dasharray="4 4"/>
+
+        <!-- Lambda to Glacier -->
+        <path d="M650 350 C650 300, 650 200, 650 150" 
+              stroke="url(#blueGradient)" stroke-width="2" 
+              stroke-dasharray="4 4"/>
+    </g>
+
+    <!-- Flow Indicators -->
+    <circle cx="300" cy="150" r="4" fill="#34D399"/>
+    <circle cx="500" cy="150" r="4" fill="#34D399"/>
+    <circle cx="150" cy="250" r="4" fill="#3B82F6"/>
+    <circle cx="650" cy="250" r="4" fill="#3B82F6"/>
+
+    <!-- Legend -->
+    <g transform="translate(300, 500)">
+        <rect width="200" height="60" rx="8" fill="#243B55"/>
+        <circle cx="30" cy="20" r="4" fill="#3B82F6"/>
+        <text x="50" y="25" fill="#E5E7EB" font-family="Arial" font-size="14">Data Flow</text>
+        <circle cx="30" cy="45" r="4" fill="#34D399"/>
+        <text x="50" y="50" fill="#E5E7EB" font-family="Arial" font-size="14">Monitoring</text>
+    </g>
+</svg> 

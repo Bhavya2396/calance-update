@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="800" height="600" viewBox="0 0 800 600" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <!-- Background Elements -->
+  <circle cx="400" cy="300" r="250" fill="#1A2B44" opacity="0.1"/>
+  <circle cx="400" cy="300" r="200" fill="#EF4444" opacity="0.05"/>
+  
+  <!-- Manual Data Entry Icons -->
+  <rect x="200" y="150" width="120" height="150" rx="10" fill="#3B82F6" opacity="0.7"/>
+  <rect x="500" y="150" width="120" height="150" rx="10" fill="#10B981" opacity="0.7"/>
+  
+  <!-- Error Symbols -->
+  <circle cx="400" cy="225" r="40" fill="#EF4444" opacity="0.2"/>
+  <path d="M380 225 L420 225 M400 205 L400 245" stroke="#EF4444" stroke-width="4"/>
+  
+  <!-- Data Inconsistency Visualization -->
+  <rect x="250" y="350" width="300" height="30" rx="5" fill="#EF4444" opacity="0.1"/>
+  <text x="270" y="370" fill="#EF4444" font-family="sans-serif" font-size="14">Project A Cost: $100,000</text>
+  <rect x="250" y="390" width="300" height="30" rx="5" fill="#EF4444" opacity="0.1"/>
+  <text x="270" y="410" fill="#EF4444" font-family="sans-serif" font-size="14">Project A Cost: $95,000</text>
+  <rect x="250" y="430" width="300" height="30" rx="5" fill="#EF4444" opacity="0.1"/>
+  <text x="270" y="450" fill="#EF4444" font-family="sans-serif" font-size="14">Data Mismatch!</text>
+  
+  <!-- System Labels -->
+  <text x="260" y="200" text-anchor="middle" fill="white" font-family="sans-serif" font-size="16">PMWeb</text>
+  <text x="260" y="220" text-anchor="middle" fill="white" font-family="sans-serif" font-size="12">Manual Entry</text>
+  
+  <text x="560" y="200" text-anchor="middle" fill="white" font-family="sans-serif" font-size="16">PeopleSoft</text>
+  <text x="560" y="220" text-anchor="middle" fill="white" font-family="sans-serif" font-size="12">Manual Entry</text>
+  
+  <!-- Warning Icons -->
+  <path d="M380 150 L420 150 L400 120 Z" fill="#EF4444"/>
+  <circle cx="400" cy="145" r="2" fill="white"/>
+  <rect x="398" y="135" width="4" height="8" fill="white"/>
+  
+  <!-- Title -->
+  <text x="400" y="80" text-anchor="middle" fill="#EF4444" font-family="sans-serif" font-size="24" font-weight="bold">Data Entry Challenges</text>
+  
+  <!-- Decorative Elements -->
+  <circle cx="200" cy="300" r="8" fill="#EF4444" opacity="0.3"/>
+  <circle cx="600" cy="300" r="8" fill="#EF4444" opacity="0.3"/>
+</svg>

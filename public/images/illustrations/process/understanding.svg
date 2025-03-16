@@ -1,0 +1,45 @@
+<svg width="400" height="300" viewBox="0 0 400 300" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <!-- Background Grid -->
+  <defs>
+    <pattern id="grid" x="0" y="0" width="40" height="40" patternUnits="userSpaceOnUse">
+      <path d="M 40 0 L 0 0 0 40" fill="none" stroke="#243B61" stroke-width="0.5" stroke-dasharray="4 4"/>
+    </pattern>
+  </defs>
+  <rect width="400" height="300" fill="url(#grid)" opacity="0.1"/>
+
+  <!-- Main Elements -->
+  <g transform="translate(50, 30)">
+    <!-- Document with Analysis -->
+    <rect x="20" y="40" width="120" height="160" rx="8" fill="#1A2B44" stroke="#FF6B2C" stroke-width="2"/>
+    <rect x="40" y="60" width="80" height="8" rx="4" fill="#FF6B2C" opacity="0.6"/>
+    <rect x="40" y="80" width="60" height="8" rx="4" fill="#FF6B2C" opacity="0.4"/>
+    <rect x="40" y="100" width="70" height="8" rx="4" fill="#FF6B2C" opacity="0.6"/>
+    <rect x="40" y="140" width="80" height="40" rx="4" fill="#FF6B2C" opacity="0.2"/>
+    <path d="M50 150 L70 170 L90 130" stroke="#FF6B2C" stroke-width="2" fill="none"/>
+
+    <!-- Connection Lines -->
+    <path d="M150 120 C 180 120, 180 120, 210 120" stroke="#FF6B2C" stroke-width="2" stroke-dasharray="4 4"/>
+
+    <!-- Analysis Circle -->
+    <circle cx="250" cy="120" r="60" fill="#1A2B44" stroke="#FF6B2C" stroke-width="2"/>
+    <path d="M220 120 L280 120 M250 90 L250 150" stroke="#FF6B2C" stroke-width="2" opacity="0.6"/>
+    <circle cx="250" cy="120" r="30" fill="none" stroke="#FF6B2C" stroke-width="2" stroke-dasharray="4 4"/>
+    <circle cx="250" cy="120" r="15" fill="#FF6B2C" opacity="0.4"/>
+
+    <!-- Floating Elements -->
+    <g transform="translate(180, 40)">
+      <rect width="30" height="30" rx="6" fill="#FF6B2C" opacity="0.2"/>
+      <path d="M10 15 L20 15 M15 10 L15 20" stroke="#FF6B2C" stroke-width="2"/>
+    </g>
+    <g transform="translate(280, 180)">
+      <rect width="30" height="30" rx="6" fill="#FF6B2C" opacity="0.2"/>
+      <circle cx="15" cy="15" r="8" fill="none" stroke="#FF6B2C" stroke-width="2"/>
+    </g>
+  </g>
+
+  <!-- Animated Pulse Effect -->
+  <circle cx="250" cy="150" r="5" fill="#FF6B2C" opacity="0.6">
+    <animate attributeName="r" values="5;10;5" dur="2s" repeatCount="indefinite"/>
+    <animate attributeName="opacity" values="0.6;0.2;0.6" dur="2s" repeatCount="indefinite"/>
+  </circle>
+</svg> 

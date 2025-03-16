@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="500" height="400" viewBox="0 0 500 400" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="redGradient" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#EF4444"/>
+      <stop offset="100%" stop-color="#DC2626"/>
+    </linearGradient>
+    <linearGradient id="yellowGradient" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#F59E0B"/>
+      <stop offset="100%" stop-color="#D97706"/>
+    </linearGradient>
+  </defs>
+
+  <!-- Background -->
+  <rect width="500" height="400" fill="#1A2B44"/>
+
+  <!-- Communication Loss -->
+  <g transform="translate(50,50)">
+    <rect width="180" height="120" rx="8" fill="#243B61"/>
+    <text x="20" y="30" fill="#EF4444" font-size="14" font-family="system-ui">Communication Loss</text>
+    
+    <!-- Device Icon -->
+    <g transform="translate(20,50)">
+      <rect width="40" height="50" rx="4" fill="#243B61" stroke="#EF4444" stroke-width="2"/>
+      <line x1="10" y1="15" x2="30" y2="15" stroke="#EF4444" stroke-width="2"/>
+      <line x1="10" y1="25" x2="30" y2="25" stroke="#EF4444" stroke-width="2"/>
+    </g>
+    
+    <!-- Broken Connection -->
+    <g transform="translate(80,75)">
+      <path d="M0 0 L80 0" stroke="#EF4444" stroke-width="2" stroke-dasharray="4"/>
+      <path d="M35 -10 L45 10 M45 -10 L35 10" stroke="#EF4444" stroke-width="2"/>
+    </g>
+  </g>
+
+  <!-- Data Inconsistency -->
+  <g transform="translate(270,50)">
+    <rect width="180" height="120" rx="8" fill="#243B61"/>
+    <text x="20" y="30" fill="#F59E0B" font-size="14" font-family="system-ui">Data Inconsistency</text>
+    
+    <!-- Data Icons -->
+    <g transform="translate(20,50)">
+      <rect width="40" height="40" rx="4" fill="#243B61" stroke="#F59E0B" stroke-width="2"/>
+      <text x="12" y="25" fill="#F59E0B" font-size="12" font-family="system-ui">?</text>
+    </g>
+    
+    <g transform="translate(70,50)">
+      <rect width="40" height="40" rx="4" fill="#243B61" stroke="#F59E0B" stroke-width="2"/>
+      <text x="12" y="25" fill="#F59E0B" font-size="12" font-family="system-ui">!</text>
+    </g>
+    
+    <g transform="translate(120,50)">
+      <rect width="40" height="40" rx="4" fill="#243B61" stroke="#F59E0B" stroke-width="2"/>
+      <text x="12" y="25" fill="#F59E0B" font-size="12" font-family="system-ui">?</text>
+    </g>
+  </g>
+
+  <!-- Infrastructure Gap -->
+  <g transform="translate(50,200)">
+    <rect width="180" height="120" rx="8" fill="#243B61"/>
+    <text x="20" y="30" fill="#EF4444" font-size="14" font-family="system-ui">No Infrastructure</text>
+    
+    <!-- Server Icon -->
+    <g transform="translate(20,50)">
+      <rect width="50" height="60" rx="4" fill="#243B61" stroke="#EF4444" stroke-width="2"/>
+      <line x1="10" y1="15" x2="40" y2="15" stroke="#EF4444" stroke-width="2"/>
+      <line x1="10" y1="25" x2="40" y2="25" stroke="#EF4444" stroke-width="2"/>
+      <line x1="10" y1="35" x2="40" y2="35" stroke="#EF4444" stroke-width="2"/>
+    </g>
+    
+    <!-- Cross -->
+    <g transform="translate(90,70)">
+      <path d="M0 0 L40 40 M40 0 L0 40" stroke="#EF4444" stroke-width="2"/>
+    </g>
+  </g>
+
+  <!-- Real-time Monitoring -->
+  <g transform="translate(270,200)">
+    <rect width="180" height="120" rx="8" fill="#243B61"/>
+    <text x="20" y="30" fill="#F59E0B" font-size="14" font-family="system-ui">Monitoring Gaps</text>
+    
+    <!-- Chart -->
+    <g transform="translate(20,50)">
+      <path d="M0 50 L140 50" stroke="#F59E0B" stroke-width="2"/>
+      <path d="M0 0 L0 50" stroke="#F59E0B" stroke-width="2"/>
+      
+      <!-- Broken Line -->
+      <path d="M0 40 L30 20 L60 35" stroke="#F59E0B" stroke-width="2"/>
+      <path d="M90 15 L120 30 L140 10" stroke="#F59E0B" stroke-width="2" stroke-dasharray="4"/>
+      
+      <!-- Gap Indicator -->
+      <path d="M65 25 L85 25" stroke="#F59E0B" stroke-width="2"/>
+      <text x="60" y="15" fill="#F59E0B" font-size="12" font-family="system-ui">?</text>
+    </g>
+  </g>
+
+  <!-- Connecting Lines -->
+  <g stroke="#243B61" stroke-width="1" stroke-dasharray="4">
+    <path d="M140 170 L140 200"/>
+    <path d="M360 170 L360 200"/>
+    <path d="M230 110 L270 110"/>
+    <path d="M230 260 L270 260"/>
+  </g>
+</svg> 

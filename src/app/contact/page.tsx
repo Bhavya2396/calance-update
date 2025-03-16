@@ -9,7 +9,10 @@ import {
   ChatBubbleLeftRightIcon,
   CalendarDaysIcon,
   ArrowRightIcon,
-  SparklesIcon
+  SparklesIcon,
+  ClockIcon,
+  GlobeAltIcon,
+  CheckCircleIcon
 } from '@heroicons/react/24/solid'
 import Image from 'next/image'
 import Header from '@/components/Header'
@@ -23,19 +26,82 @@ export default function Contact() {
     message: ''
   })
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const [isSubmitting, setIsSubmitting] = useState(false)
+  const [isSubmitted, setIsSubmitted] = useState(false)
+
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault()
-    // Handle form submission
-    console.log(formData)
+    setIsSubmitting(true)
+    
+    // Simulate form submission
+    await new Promise(resolve => setTimeout(resolve, 1000))
+    
+    setIsSubmitting(false)
+    setIsSubmitted(true)
+    
+    // Reset form after 3 seconds
+    setTimeout(() => {
+      setIsSubmitted(false)
+      setFormData({
+        name: '',
+        email: '',
+        phone: '',
+        company: '',
+        message: ''
+      })
+    }, 3000)
   }
+
+  const contactMethods = [
+    {
+      icon: EnvelopeIcon,
+      title: 'Email Us',
+      value: 'info@calanceus.com',
+      href: 'mailto:info@calanceus.com',
+      color: 'text-[#FF6B2C]',
+      bgColor: 'bg-[#FF6B2C]/10',
+      hoverBgColor: 'group-hover:bg-[#FF6B2C]/20',
+      isExternal: false
+    },
+    {
+      icon: PhoneIcon,
+      title: 'Call Us',
+      value: '+1 (858) 243-0824',
+      href: 'tel:+18582430824',
+      color: 'text-[#3B82F6]',
+      bgColor: 'bg-[#3B82F6]/10',
+      hoverBgColor: 'group-hover:bg-[#3B82F6]/20',
+      isExternal: false
+    },
+    {
+      icon: MapPinIcon,
+      title: 'Visit Us',
+      value: '11622 El Camino Real, Suite 100',
+      subValue: 'San Diego, CA 92130',
+      href: 'https://maps.google.com/?q=11622+El+Camino+Real+Suite+100+San+Diego+CA+92130',
+      color: 'text-[#10B981]',
+      bgColor: 'bg-[#10B981]/10',
+      hoverBgColor: 'group-hover:bg-[#10B981]/20',
+      isExternal: true
+    },
+    {
+      icon: ClockIcon,
+      title: 'Business Hours',
+      value: 'Monday - Friday',
+      subValue: '9:00 AM - 6:00 PM PST',
+      color: 'text-[#8B5CF6]',
+      bgColor: 'bg-[#8B5CF6]/10',
+      hoverBgColor: 'group-hover:bg-[#8B5CF6]/20'
+    }
+  ]
 
   return (
     <main className="bg-[#0A1628] min-h-screen">
       <Header />
       
-      <div className="pt-16">
+      <div className="pt-20">
         {/* Hero Section */}
-        <section id="contact-methods" className="relative py-16 overflow-hidden">
+        <section className="relative py-16 overflow-hidden">
           <div className="absolute inset-0">
             <div className="absolute inset-0 bg-gradient-to-br from-[#FF6B2C]/10 to-[#3B82F6]/10" />
             <motion.div 
@@ -50,276 +116,233 @@ export default function Contact() {
               }}
               transition={{ duration: 10, repeat: Infinity }}
             />
-            <div className="absolute inset-0 bg-[url('/images/noise.png')] opacity-5" />
-          </div>
-
-          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative">
-            <div className="grid lg:grid-cols-5 gap-8 items-center">
-              {/* Content */}
-              <motion.div 
-                initial={{ opacity: 0, x: -20 }}
-                animate={{ opacity: 1, x: 0 }}
-                transition={{ duration: 0.5 }}
-                className="relative z-10 lg:col-span-3"
-              >
-                <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-[#1A2B44] text-[#FF6B2C] mb-4">
-                  <SparklesIcon className="w-5 h-5" />
-                  <span className="text-sm font-medium">Get in Touch</span>
-                </div>
-                
-                <h1 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-white mb-4">
-                  Let's Start Your{' '}
-                  <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#FF6B2C] to-[#3B82F6]">
-                    Digital Journey
-                  </span>
-                </h1>
-                
-                <p className="text-lg text-gray-400 mb-6 max-w-xl">
-                  Ready to transform your business? Our team is here to help you navigate your digital transformation journey.
-                </p>
-
-                {/* Contact Methods Grid */}
-                <div className="grid sm:grid-cols-2 gap-3 mb-6">
-                  {/* Email */}
-                  <motion.div 
-                    whileHover={{ scale: 1.02 }}
-                    className="group cursor-pointer"
-                  >
-                    <div className="bg-[#1A2B44]/50 backdrop-blur-sm rounded-xl p-4 border border-[#243B61] group-hover:border-[#FF6B2C] transition-all duration-300">
-                      <div className="flex items-center gap-3">
-                        <div className="p-2.5 rounded-lg bg-[#FF6B2C]/10 group-hover:bg-[#FF6B2C]/20 transition-colors">
-                          <EnvelopeIcon className="w-5 h-5 text-[#FF6B2C]" />
-                        </div>
-                        <div>
-                          <h3 className="text-white font-semibold text-sm mb-0.5">Email Us</h3>
-                          <a href="mailto:contact@calance.com" className="text-[#FF6B2C] hover:text-[#FF6B2C]/80 transition-colors text-sm">
-                            contact@calance.com
-                          </a>
-                        </div>
-                      </div>
-                    </div>
-                  </motion.div>
-
-                  {/* Phone */}
-                  <motion.div 
-                    whileHover={{ scale: 1.02 }}
-                    className="group cursor-pointer"
-                  >
-                    <div className="bg-[#1A2B44]/50 backdrop-blur-sm rounded-xl p-4 border border-[#243B61] group-hover:border-[#3B82F6] transition-all duration-300">
-                      <div className="flex items-center gap-3">
-                        <div className="p-2.5 rounded-lg bg-[#3B82F6]/10 group-hover:bg-[#3B82F6]/20 transition-colors">
-                          <PhoneIcon className="w-5 h-5 text-[#3B82F6]" />
-                        </div>
-                        <div>
-                          <h3 className="text-white font-semibold text-sm mb-0.5">Call Us</h3>
-                          <a href="tel:+1234567890" className="text-[#3B82F6] hover:text-[#3B82F6]/80 transition-colors text-sm">
-                            +1 (234) 567-890
-                          </a>
-                        </div>
-                      </div>
-                    </div>
-                  </motion.div>
-
-                  {/* Location */}
-                  <motion.div 
-                    whileHover={{ scale: 1.02 }}
-                    className="group cursor-pointer"
-                  >
-                    <div className="bg-[#1A2B44]/50 backdrop-blur-sm rounded-xl p-4 border border-[#243B61] group-hover:border-[#FF6B2C] transition-all duration-300">
-                      <div className="flex items-center gap-3">
-                        <div className="p-2.5 rounded-lg bg-[#FF6B2C]/10 group-hover:bg-[#FF6B2C]/20 transition-colors">
-                          <MapPinIcon className="w-5 h-5 text-[#FF6B2C]" />
-                        </div>
-                        <div>
-                          <h3 className="text-white font-semibold text-sm mb-0.5">Visit Us</h3>
-                          <p className="text-gray-400 text-sm">
-                            123 Business Ave, Suite 100<br />
-                            San Francisco, CA 94107
-                          </p>
-                        </div>
-                      </div>
-                    </div>
-                  </motion.div>
-
-                  {/* Chat */}
-                  <motion.div 
-                    whileHover={{ scale: 1.02 }}
-                    className="group cursor-pointer"
-                  >
-                    <div className="bg-[#1A2B44]/50 backdrop-blur-sm rounded-xl p-4 border border-[#243B61] group-hover:border-[#3B82F6] transition-all duration-300">
-                      <div className="flex items-center gap-3">
-                        <div className="p-2.5 rounded-lg bg-[#3B82F6]/10 group-hover:bg-[#3B82F6]/20 transition-colors">
-                          <ChatBubbleLeftRightIcon className="w-5 h-5 text-[#3B82F6]" />
-                        </div>
-                        <div>
-                          <h3 className="text-white font-semibold text-sm mb-0.5">Live Chat</h3>
-                          <button className="text-[#3B82F6] hover:text-[#3B82F6]/80 transition-colors text-sm">
-                            Start a conversation
-                          </button>
-                        </div>
-                      </div>
-                    </div>
-                  </motion.div>
-                </div>
-
-                {/* Schedule Meeting Button */}
-                <motion.a 
-                  href="#send-message"
-                  whileHover={{ scale: 1.02 }}
-                  className="inline-flex items-center gap-2 px-5 py-2.5 rounded-lg bg-gradient-to-r from-[#FF6B2C] to-[#3B82F6] text-white font-medium hover:opacity-90 transition-all text-sm"
-                >
-                  <CalendarDaysIcon className="w-4 h-4" />
-                  Schedule a Meeting
-                  <ArrowRightIcon className="w-3.5 h-3.5" />
-                </motion.a>
-              </motion.div>
-
-              {/* Hero Illustration */}
-              <motion.div 
-                className="relative lg:h-[500px] lg:col-span-2"
-                initial={{ opacity: 0, scale: 0.95 }}
-                animate={{ opacity: 1, scale: 1 }}
-                transition={{ duration: 0.5 }}
-              >
-                <Image
-                  src="/images/illustrations/contact/hero.svg"
-                  alt="Contact Us"
-                  fill
-                  className="object-contain"
-                  priority
-                />
-              </motion.div>
-            </div>
-          </div>
-        </section>
-
-        {/* Contact Form Section */}
-        <section id="send-message" className="py-16 relative overflow-hidden">
-          <div className="absolute inset-0">
-            <div className="absolute inset-0 bg-gradient-to-b from-[#0A1628] via-[#1A2B44] to-[#0A1628]" />
             <div className="absolute inset-0 bg-[url('/images/grid.svg')] bg-center [mask-image:linear-gradient(180deg,white,rgba(255,255,255,0))]" />
-            <motion.div 
-              className="absolute inset-0"
-              animate={{ 
-                background: [
-                  "radial-gradient(600px circle at 0% 0%, rgba(255, 107, 44, 0.1), transparent 70%)",
-                  "radial-gradient(600px circle at 100% 100%, rgba(59, 130, 246, 0.1), transparent 70%)",
-                ]
-              }}
-              transition={{ duration: 8, repeat: Infinity, repeatType: "reverse" }}
-            />
           </div>
 
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative">
-            <div className="grid lg:grid-cols-5 gap-8 items-start">
-              {/* Form Section */}
+            <div className="text-center mb-12">
+              <motion.div 
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.5 }}
+                className="relative z-10 inline-flex items-center gap-2 px-4 py-2 rounded-full bg-[#1A2B44] text-[#FF6B2C] mb-4"
+              >
+                <SparklesIcon className="w-5 h-5" />
+                <span className="text-sm font-medium">Get in Touch</span>
+              </motion.div>
+              
+              <motion.h1 
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.5, delay: 0.1 }}
+                className="text-3xl sm:text-4xl lg:text-5xl font-bold text-white mb-4"
+              >
+                Let's Start Your{' '}
+                <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#FF6B2C] to-[#3B82F6]">
+                  Digital Journey
+                </span>
+              </motion.h1>
+              
+              <motion.p 
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.5, delay: 0.2 }}
+                className="text-lg text-gray-400 max-w-2xl mx-auto"
+              >
+                Ready to transform your business? Our team is here to help you navigate your digital transformation journey with innovative solutions tailored to your needs.
+              </motion.p>
+            </div>
+
+            <div className="grid lg:grid-cols-2 gap-12 items-start">
+              {/* Left Column */}
+              <motion.div 
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.5, delay: 0.3 }}
+                className="relative z-10"
+              >
+                {/* Contact Methods Grid */}
+                <div className="grid sm:grid-cols-2 gap-4 mb-8">
+                  {contactMethods.map((method, index) => (
+                    <motion.div
+                      key={method.title}
+                      initial={{ opacity: 0, y: 20 }}
+                      animate={{ opacity: 1, y: 0 }}
+                      transition={{ duration: 0.5, delay: index * 0.1 }}
+                      className="group"
+                    >
+                      {method.href ? (
+                        <a
+                          href={method.href}
+                          target={method.isExternal ? '_blank' : undefined}
+                          rel={method.isExternal ? 'noopener noreferrer' : undefined}
+                          className="block h-full"
+                        >
+                          <div className="bg-[#1A2B44]/50 backdrop-blur-sm rounded-xl p-4 border border-[#243B61] hover:border-[#3B82F6] transition-all duration-300 h-full">
+                            <div className="flex gap-4">
+                              <div className={`p-2.5 rounded-lg ${method.bgColor} ${method.hoverBgColor} transition-colors`}>
+                                <method.icon className={`w-5 h-5 ${method.color}`} />
+                              </div>
+                              <div>
+                                <h3 className="text-white font-semibold text-sm mb-1">{method.title}</h3>
+                                <p className={`${method.color} text-sm mb-0.5`}>{method.value}</p>
+                                {method.subValue && (
+                                  <p className="text-gray-400 text-sm">{method.subValue}</p>
+                                )}
+                              </div>
+                            </div>
+                          </div>
+                        </a>
+                      ) : (
+                        <div className="bg-[#1A2B44]/50 backdrop-blur-sm rounded-xl p-4 border border-[#243B61] transition-all duration-300 h-full">
+                          <div className="flex gap-4">
+                            <div className={`p-2.5 rounded-lg ${method.bgColor} ${method.hoverBgColor} transition-colors`}>
+                              <method.icon className={`w-5 h-5 ${method.color}`} />
+                            </div>
+                            <div>
+                              <h3 className="text-white font-semibold text-sm mb-1">{method.title}</h3>
+                              <p className={`${method.color} text-sm mb-0.5`}>{method.value}</p>
+                              {method.subValue && (
+                                <p className="text-gray-400 text-sm">{method.subValue}</p>
+                              )}
+                            </div>
+                          </div>
+                        </div>
+                      )}
+                    </motion.div>
+                  ))}
+                </div>
+
+                {/* Illustration */}
+                <div className="relative h-64 lg:h-80">
+                  <Image
+                    src="/images/illustrations/contact/contact-illustration.svg"
+                    alt="Contact Illustration"
+                    fill
+                    className="object-contain"
+                  />
+                </div>
+              </motion.div>
+
+              {/* Contact Form */}
               <motion.div
                 initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                className="lg:col-span-3"
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.5, delay: 0.4 }}
+                className="relative z-10"
               >
-                <div className="text-left mb-6">
-                  <h2 className="text-2xl sm:text-3xl font-bold text-white mb-3">
-                    Send Us a Message
-                  </h2>
-                  <p className="text-base text-gray-400">
-                    Fill out the form below and we'll get back to you as soon as possible
-                  </p>
+                <div className="bg-[#1A2B44]/50 backdrop-blur-sm rounded-2xl p-6 sm:p-8 border border-[#243B61]">
+                  <h2 className="text-2xl font-bold text-white mb-6">Send us a Message</h2>
+                  <form onSubmit={handleSubmit} className="space-y-4">
+                    <div className="grid sm:grid-cols-2 gap-4">
+                      <div>
+                        <label htmlFor="name" className="block text-sm font-medium text-gray-400 mb-1">
+                          Name
+                        </label>
+                        <input
+                          type="text"
+                          id="name"
+                          name="name"
+                          value={formData.name}
+                          onChange={(e) => setFormData({ ...formData, name: e.target.value })}
+                          className="w-full px-4 py-2.5 bg-[#0A1628] border border-[#243B61] rounded-lg text-white placeholder-gray-500 focus:outline-none focus:border-[#3B82F6] transition-colors"
+                          placeholder="Your name"
+                          required
+                          disabled={isSubmitting || isSubmitted}
+                        />
+                      </div>
+                      <div>
+                        <label htmlFor="email" className="block text-sm font-medium text-gray-400 mb-1">
+                          Email
+                        </label>
+                        <input
+                          type="email"
+                          id="email"
+                          name="email"
+                          value={formData.email}
+                          onChange={(e) => setFormData({ ...formData, email: e.target.value })}
+                          className="w-full px-4 py-2.5 bg-[#0A1628] border border-[#243B61] rounded-lg text-white placeholder-gray-500 focus:outline-none focus:border-[#3B82F6] transition-colors"
+                          placeholder="your@email.com"
+                          required
+                          disabled={isSubmitting || isSubmitted}
+                        />
+                      </div>
+                    </div>
+                    <div className="grid sm:grid-cols-2 gap-4">
+                      <div>
+                        <label htmlFor="phone" className="block text-sm font-medium text-gray-400 mb-1">
+                          Phone
+                        </label>
+                        <input
+                          type="tel"
+                          id="phone"
+                          name="phone"
+                          value={formData.phone}
+                          onChange={(e) => setFormData({ ...formData, phone: e.target.value })}
+                          className="w-full px-4 py-2.5 bg-[#0A1628] border border-[#243B61] rounded-lg text-white placeholder-gray-500 focus:outline-none focus:border-[#3B82F6] transition-colors"
+                          placeholder="Your phone number"
+                          disabled={isSubmitting || isSubmitted}
+                        />
+                      </div>
+                      <div>
+                        <label htmlFor="company" className="block text-sm font-medium text-gray-400 mb-1">
+                          Company
+                        </label>
+                        <input
+                          type="text"
+                          id="company"
+                          name="company"
+                          value={formData.company}
+                          onChange={(e) => setFormData({ ...formData, company: e.target.value })}
+                          className="w-full px-4 py-2.5 bg-[#0A1628] border border-[#243B61] rounded-lg text-white placeholder-gray-500 focus:outline-none focus:border-[#3B82F6] transition-colors"
+                          placeholder="Your company name"
+                          disabled={isSubmitting || isSubmitted}
+                        />
+                      </div>
+                    </div>
+                    <div>
+                      <label htmlFor="message" className="block text-sm font-medium text-gray-400 mb-1">
+                        Message
+                      </label>
+                      <textarea
+                        id="message"
+                        name="message"
+                        value={formData.message}
+                        onChange={(e) => setFormData({ ...formData, message: e.target.value })}
+                        rows={4}
+                        className="w-full px-4 py-2.5 bg-[#0A1628] border border-[#243B61] rounded-lg text-white placeholder-gray-500 focus:outline-none focus:border-[#3B82F6] transition-colors resize-none"
+                        placeholder="How can we help you?"
+                        required
+                        disabled={isSubmitting || isSubmitted}
+                      />
+                    </div>
+                    <motion.button
+                      type="submit"
+                      className={`w-full px-6 py-3 bg-gradient-to-r from-[#FF6B2C] to-[#FF6B2C] hover:to-[#FF8F2C] text-white font-medium rounded-lg transition-all duration-300 flex items-center justify-center group ${
+                        (isSubmitting || isSubmitted) ? 'opacity-75 cursor-not-allowed' : ''
+                      }`}
+                      disabled={isSubmitting || isSubmitted}
+                      whileHover={{ scale: isSubmitting || isSubmitted ? 1 : 1.02 }}
+                    >
+                      {isSubmitting ? (
+                        <svg className="animate-spin h-5 w-5 text-white" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
+                          <circle className="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" strokeWidth="4"></circle>
+                          <path className="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path>
+                        </svg>
+                      ) : isSubmitted ? (
+                        <>
+                          <CheckCircleIcon className="w-5 h-5 mr-2" />
+                          Message Sent!
+                        </>
+                      ) : (
+                        <>
+                          Send Message
+                          <ArrowRightIcon className="w-4 h-4 ml-2 group-hover:translate-x-1 transition-transform" />
+                        </>
+                      )}
+                    </motion.button>
+                  </form>
                 </div>
-
-                <form
-                  onSubmit={handleSubmit}
-                  className="bg-[#1A2B44]/50 backdrop-blur-sm rounded-xl p-6 border border-[#243B61]"
-                >
-                  <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 mb-4">
-                    <div>
-                      <label htmlFor="name" className="block text-white font-medium mb-1.5 text-sm">Name</label>
-                      <input
-                        type="text"
-                        id="name"
-                        value={formData.name}
-                        onChange={(e) => setFormData({ ...formData, name: e.target.value })}
-                        className="w-full bg-[#0A1628] border border-[#243B61] rounded-lg px-3 py-2.5 text-sm text-white placeholder-gray-400 focus:outline-none focus:border-[#FF6B2C] transition-colors"
-                        placeholder="John Doe"
-                        required
-                      />
-                    </div>
-                    <div>
-                      <label htmlFor="email" className="block text-white font-medium mb-1.5 text-sm">Email</label>
-                      <input
-                        type="email"
-                        id="email"
-                        value={formData.email}
-                        onChange={(e) => setFormData({ ...formData, email: e.target.value })}
-                        className="w-full bg-[#0A1628] border border-[#243B61] rounded-lg px-3 py-2.5 text-sm text-white placeholder-gray-400 focus:outline-none focus:border-[#FF6B2C] transition-colors"
-                        placeholder="john@example.com"
-                        required
-                      />
-                    </div>
-                  </div>
-
-                  <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 mb-4">
-                    <div>
-                      <label htmlFor="phone" className="block text-white font-medium mb-1.5 text-sm">Phone</label>
-                      <input
-                        type="tel"
-                        id="phone"
-                        value={formData.phone}
-                        onChange={(e) => setFormData({ ...formData, phone: e.target.value })}
-                        className="w-full bg-[#0A1628] border border-[#243B61] rounded-lg px-3 py-2.5 text-sm text-white placeholder-gray-400 focus:outline-none focus:border-[#FF6B2C] transition-colors"
-                        placeholder="+1 (234) 567-890"
-                      />
-                    </div>
-                    <div>
-                      <label htmlFor="company" className="block text-white font-medium mb-1.5 text-sm">Company</label>
-                      <input
-                        type="text"
-                        id="company"
-                        value={formData.company}
-                        onChange={(e) => setFormData({ ...formData, company: e.target.value })}
-                        className="w-full bg-[#0A1628] border border-[#243B61] rounded-lg px-3 py-2.5 text-sm text-white placeholder-gray-400 focus:outline-none focus:border-[#FF6B2C] transition-colors"
-                        placeholder="Company Name"
-                      />
-                    </div>
-                  </div>
-
-                  <div className="mb-4">
-                    <label htmlFor="message" className="block text-white font-medium mb-1.5 text-sm">Message</label>
-                    <textarea
-                      id="message"
-                      value={formData.message}
-                      onChange={(e) => setFormData({ ...formData, message: e.target.value })}
-                      className="w-full h-28 bg-[#0A1628] border border-[#243B61] rounded-lg px-3 py-2.5 text-sm text-white placeholder-gray-400 focus:outline-none focus:border-[#FF6B2C] transition-colors resize-none"
-                      placeholder="How can we help you?"
-                      required
-                    />
-                  </div>
-
-                  <motion.button
-                    whileHover={{ scale: 1.02 }}
-                    type="submit"
-                    className="w-full sm:w-auto px-6 py-2.5 rounded-lg bg-gradient-to-r from-[#FF6B2C] to-[#3B82F6] text-white font-medium hover:opacity-90 transition-all flex items-center justify-center gap-2 text-sm"
-                  >
-                    Send Message
-                    <ArrowRightIcon className="w-3.5 h-3.5" />
-                  </motion.button>
-                </form>
-              </motion.div>
-
-              {/* Form Illustration */}
-              <motion.div 
-                className="relative lg:h-[500px] hidden lg:block lg:col-span-2"
-                initial={{ opacity: 0, scale: 0.95 }}
-                whileInView={{ opacity: 1, scale: 1 }}
-                viewport={{ once: true }}
-              >
-                <Image
-                  src="/images/illustrations/contact/form.svg"
-                  alt="Contact Form"
-                  fill
-                  className="object-contain"
-                />
               </motion.div>
             </div>
           </div>

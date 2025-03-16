@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="800" height="400" viewBox="0 0 800 400" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <!-- Background Grid -->
+    <defs>
+        <pattern id="grid" x="0" y="0" width="40" height="40" patternUnits="userSpaceOnUse">
+            <path d="M 40 0 L 0 0 0 40" fill="none" stroke="#1D2B3B" stroke-width="0.5"/>
+        </pattern>
+        <linearGradient id="glow" x1="0%" y1="0%" x2="100%" y2="100%">
+            <stop offset="0%" style="stop-color:#3B82F6;stop-opacity:0.1"/>
+            <stop offset="100%" style="stop-color:#10B981;stop-opacity:0.1"/>
+        </linearGradient>
+    </defs>
+    <rect width="800" height="400" fill="#0A1628"/>
+    <rect width="800" height="400" fill="url(#grid)"/>
+    <rect width="800" height="400" fill="url(#glow)"/>
+
+    <!-- Procore System (Left) -->
+    <g transform="translate(100, 100)">
+        <rect width="200" height="160" rx="12" fill="#1A2B44" stroke="#3B82F6" stroke-width="2"/>
+        <text x="100" y="40" fill="#fff" font-size="16" text-anchor="middle">Procore</text>
+        <!-- Project Data -->
+        <g transform="translate(20, 60)">
+            <rect width="160" height="80" rx="8" fill="#243B61"/>
+            <text x="80" y="30" fill="#fff" font-size="12" text-anchor="middle">Project Financials</text>
+            <path d="M20 45h120M20 60h80" stroke="#3B82F6" stroke-width="1" opacity="0.5"/>
+        </g>
+    </g>
+
+    <!-- RPA System (Center) -->
+    <g transform="translate(350, 150)">
+        <circle r="60" fill="#1A2B44" stroke="#10B981" stroke-width="2"/>
+        <text x="0" y="0" fill="#fff" font-size="14" text-anchor="middle">RPA</text>
+        <text x="0" y="20" fill="#fff" font-size="14" text-anchor="middle">Automation</text>
+        <!-- Rotating Gear Animation -->
+        <path d="M0,0 L30,0 A30,30 0 0,1 15,25 Z" fill="#10B981" opacity="0.3" transform-origin="0 0">
+            <animateTransform
+                attributeName="transform"
+                type="rotate"
+                from="0"
+                to="360"
+                dur="4s"
+                repeatCount="indefinite"/>
+        </path>
+    </g>
+
+    <!-- ERP System (Right) -->
+    <g transform="translate(500, 100)">
+        <rect width="200" height="160" rx="12" fill="#1A2B44" stroke="#3B82F6" stroke-width="2"/>
+        <text x="100" y="40" fill="#fff" font-size="16" text-anchor="middle">ERP System</text>
+        <!-- Financial Data -->
+        <g transform="translate(20, 60)">
+            <rect width="160" height="80" rx="8" fill="#243B61"/>
+            <text x="80" y="30" fill="#fff" font-size="12" text-anchor="middle">Financial Data</text>
+            <path d="M20 45h120M20 60h80" stroke="#3B82F6" stroke-width="1" opacity="0.5"/>
+        </g>
+    </g>
+
+    <!-- Data Flow Lines -->
+    <g>
+        <!-- Procore to RPA -->
+        <path d="M300 180L350 180" stroke="#3B82F6" stroke-width="2" stroke-dasharray="4 4">
+            <animate attributeName="stroke-dashoffset" from="0" to="8" dur="2s" repeatCount="indefinite"/>
+        </path>
+        <!-- RPA to ERP -->
+        <path d="M410 180L500 180" stroke="#10B981" stroke-width="2" stroke-dasharray="4 4">
+            <animate attributeName="stroke-dashoffset" from="0" to="8" dur="2s" repeatCount="indefinite"/>
+        </path>
+    </g>
+
+    <!-- Metrics -->
+    <g transform="translate(100, 300)">
+        <rect width="600" height="60" rx="8" fill="#1A2B44" stroke="#3B82F6" stroke-width="1"/>
+        <g transform="translate(50, 35)">
+            <text fill="#fff" font-size="14" text-anchor="middle">Manual Time</text>
+            <text x="0" y="20" fill="#10B981" font-size="14" text-anchor="middle">-75%</text>
+        </g>
+        <g transform="translate(200, 35)">
+            <text fill="#fff" font-size="14" text-anchor="middle">Data Accuracy</text>
+            <text x="0" y="20" fill="#10B981" font-size="14" text-anchor="middle">100%</text>
+        </g>
+        <g transform="translate(350, 35)">
+            <text fill="#fff" font-size="14" text-anchor="middle">Real-time Sync</text>
+            <text x="0" y="20" fill="#10B981" font-size="14" text-anchor="middle">✓</text>
+        </g>
+        <g transform="translate(500, 35)">
+            <text fill="#fff" font-size="14" text-anchor="middle">ROI</text>
+            <text x="0" y="20" fill="#10B981" font-size="14" text-anchor="middle">+60%</text>
+        </g>
+    </g>
+
+    <!-- Animated Particles -->
+    <g>
+        <circle cx="350" cy="180" r="2" fill="#3B82F6">
+            <animate attributeName="r" values="2;4;2" dur="2s" repeatCount="indefinite"/>
+            <animate attributeName="opacity" values="1;0.5;1" dur="2s" repeatCount="indefinite"/>
+        </circle>
+        <circle cx="410" cy="180" r="2" fill="#10B981">
+            <animate attributeName="r" values="2;4;2" dur="2s" repeatCount="indefinite" begin="0.5s"/>
+            <animate attributeName="opacity" values="1;0.5;1" dur="2s" repeatCount="indefinite" begin="0.5s"/>
+        </circle>
+    </g>
+</svg> 

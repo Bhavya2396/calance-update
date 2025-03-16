@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="800" height="600" viewBox="0 0 800 600" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <!-- Background Circles -->
+  <circle cx="400" cy="300" r="280" fill="url(#heroGradient)" opacity="0.1"/>
+  <circle cx="400" cy="300" r="200" fill="url(#heroGradient)" opacity="0.15"/>
+  
+  <!-- Gradients -->
+  <defs>
+    <linearGradient id="heroGradient" x1="0" y1="0" x2="800" y2="600" gradientUnits="userSpaceOnUse">
+      <stop offset="0%" stop-color="#3B82F6"/>
+      <stop offset="100%" stop-color="#10B981"/>
+    </linearGradient>
+    <linearGradient id="aiGradient" x1="0" y1="0" x2="1" y2="1" gradientUnits="objectBoundingBox">
+      <stop offset="0%" stop-color="#6366F1"/>
+      <stop offset="100%" stop-color="#4F46E5"/>
+    </linearGradient>
+  </defs>
+
+  <!-- AI Brain Network -->
+  <g transform="translate(400,250)">
+    <!-- Neural Network -->
+    <circle cx="0" cy="0" r="60" fill="url(#aiGradient)" opacity="0.8"/>
+    
+    <!-- Nodes -->
+    <circle cx="-40" cy="-40" r="8" fill="#3B82F6"/>
+    <circle cx="40" cy="-40" r="8" fill="#3B82F6"/>
+    <circle cx="-40" cy="40" r="8" fill="#3B82F6"/>
+    <circle cx="40" cy="40" r="8" fill="#3B82F6"/>
+    <circle cx="0" cy="0" r="12" fill="#10B981"/>
+    
+    <!-- Connections -->
+    <line x1="-40" y1="-40" x2="0" y2="0" stroke="#3B82F6" stroke-width="2"/>
+    <line x1="40" y1="-40" x2="0" y2="0" stroke="#3B82F6" stroke-width="2"/>
+    <line x1="-40" y1="40" x2="0" y2="0" stroke="#3B82F6" stroke-width="2"/>
+    <line x1="40" y1="40" x2="0" y2="0" stroke="#3B82F6" stroke-width="2"/>
+    
+    <!-- Pulse Animation -->
+    <circle cx="0" cy="0" r="70" stroke="#10B981" stroke-width="2" fill="none">
+      <animate attributeName="r" values="60;80;60" dur="2s" repeatCount="indefinite"/>
+      <animate attributeName="opacity" values="0.6;0;0.6" dur="2s" repeatCount="indefinite"/>
+    </circle>
+  </g>
+
+  <!-- Research Documents -->
+  <g transform="translate(200,200)">
+    <!-- Document Stack -->
+    <g transform="rotate(-15)">
+      <rect x="0" y="0" width="120" height="160" fill="#1F2937" rx="10"/>
+      <rect x="20" y="30" width="80" height="10" fill="#374151"/>
+      <rect x="20" y="50" width="60" height="10" fill="#374151"/>
+      <rect x="20" y="70" width="70" height="10" fill="#374151"/>
+    </g>
+    
+    <!-- Analysis Lines -->
+    <path d="M140 80 L180 80" stroke="#10B981" stroke-width="2" stroke-dasharray="4 4">
+      <animate attributeName="stroke-dashoffset" values="8;0" dur="1s" repeatCount="indefinite"/>
+    </path>
+  </g>
+
+  <!-- Impact Pathways -->
+  <g transform="translate(500,400)">
+    <!-- Flow Chart -->
+    <rect x="0" y="0" width="60" height="40" rx="5" fill="#1F2937"/>
+    <rect x="100" y="0" width="60" height="40" rx="5" fill="#1F2937"/>
+    <rect x="200" y="0" width="60" height="40" rx="5" fill="#1F2937"/>
+    
+    <!-- Connecting Arrows -->
+    <path d="M60 20 L100 20" stroke="#10B981" stroke-width="2" marker-end="url(#arrow)"/>
+    <path d="M160 20 L200 20" stroke="#10B981" stroke-width="2" marker-end="url(#arrow)"/>
+    
+    <!-- Arrow Marker -->
+    <defs>
+      <marker id="arrow" viewBox="0 0 10 10" refX="9" refY="5"
+              markerWidth="6" markerHeight="6" orient="auto">
+        <path d="M 0 0 L 10 5 L 0 10 z" fill="#10B981"/>
+      </marker>
+    </defs>
+  </g>
+
+  <!-- Data Analysis -->
+  <g transform="translate(200,400)">
+    <!-- Chart -->
+    <rect x="0" y="0" width="160" height="100" rx="10" fill="#1F2937"/>
+    <path d="M20 80 L50 40 L80 60 L110 30 L140 50" 
+          stroke="#3B82F6" stroke-width="2" fill="none"/>
+    
+    <!-- Data Points -->
+    <circle cx="50" cy="40" r="4" fill="#3B82F6"/>
+    <circle cx="80" cy="60" r="4" fill="#3B82F6"/>
+    <circle cx="110" cy="30" r="4" fill="#3B82F6"/>
+  </g>
+
+  <!-- Processing Status -->
+  <g transform="translate(600,200)">
+    <!-- Progress Circles -->
+    <circle cx="0" cy="0" r="20" fill="none" stroke="#1F2937" stroke-width="4"/>
+    <circle cx="0" cy="0" r="20" fill="none" stroke="#10B981" stroke-width="4" stroke-dasharray="100">
+      <animate attributeName="stroke-dashoffset" from="100" to="0" dur="2s" repeatCount="indefinite"/>
+    </circle>
+    
+    <circle cx="0" cy="60" r="20" fill="none" stroke="#1F2937" stroke-width="4"/>
+    <circle cx="0" cy="60" r="20" fill="none" stroke="#3B82F6" stroke-width="4" stroke-dasharray="100">
+      <animate attributeName="stroke-dashoffset" from="100" to="0" dur="2s" begin="0.5s" repeatCount="indefinite"/>
+    </circle>
+  </g>
+</svg> 

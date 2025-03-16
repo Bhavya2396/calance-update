@@ -3,43 +3,30 @@
 import { motion } from 'framer-motion'
 import { 
   ArrowRightIcon,
-  ArrowPathIcon,
-  CpuChipIcon,
-  CircleStackIcon,
-  ChartBarIcon
+  LightBulbIcon,
+  PuzzlePieceIcon,
+  RocketLaunchIcon
 } from '@heroicons/react/24/solid'
 import Image from 'next/image'
 
 const steps = [
   {
-    title: "Data Collection",
-    description: "Seamlessly gather data from multiple sources with our intelligent collection systems",
-    icon: <CircleStackIcon className="w-6 h-6" />,
-    metrics: {
-      "Data Sources": "50+",
-      "Real-time": "Yes",
-      "Accuracy": "99.9%"
-    }
+    title: "Understanding Your Needs",
+    description: "We take time to deeply understand your business challenges and objectives through comprehensive analysis and consultation",
+    icon: <LightBulbIcon className="w-6 h-6" />,
+    illustration: "/images/illustrations/process/understanding.svg"
   },
   {
-    title: "Processing & Analysis",
-    description: "Process and analyze data using advanced AI and machine learning algorithms",
-    icon: <CpuChipIcon className="w-6 h-6" />,
-    metrics: {
-      "Processing Speed": "10ms",
-      "Scalability": "∞",
-      "Automation": "100%"
-    }
+    title: "Creative Solutions",
+    description: "Our experts design innovative, tailored solutions that perfectly align with your unique requirements and industry standards",
+    icon: <PuzzlePieceIcon className="w-6 h-6" />,
+    illustration: "/images/illustrations/process/solutions.svg"
   },
   {
-    title: "Insights & Actions",
-    description: "Generate actionable insights and automate responses based on analysis",
-    icon: <ChartBarIcon className="w-6 h-6" />,
-    metrics: {
-      "Success Rate": "95%",
-      "Response Time": "<1s",
-      "ROI": "+300%"
-    }
+    title: "Seamless Delivery",
+    description: "We implement solutions efficiently and provide ongoing support to ensure your continued success and growth",
+    icon: <RocketLaunchIcon className="w-6 h-6" />,
+    illustration: "/images/illustrations/process/delivery.svg"
   }
 ]
 
@@ -50,6 +37,16 @@ export default function EndToEndSolution() {
       <div className="absolute inset-0">
         <div className="absolute inset-0 bg-[#FF6B2C]/5" />
         <div className="absolute inset-0 bg-[url('/images/noise.png')] opacity-5" />
+        <motion.div 
+          className="absolute inset-0"
+          animate={{ 
+            background: [
+              "radial-gradient(600px circle at 0% 0%, rgba(255, 107, 44, 0.1), transparent 70%)",
+              "radial-gradient(600px circle at 100% 100%, rgba(255, 107, 44, 0.1), transparent 70%)",
+            ]
+          }}
+          transition={{ duration: 8, repeat: Infinity, repeatType: "reverse" }}
+        />
       </div>
       
       <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -60,11 +57,11 @@ export default function EndToEndSolution() {
           viewport={{ once: true }}
           className="text-center mb-16"
         >
-          <h2 className="text-3xl sm:text-4xl font-bold mb-4 text-white">
-            End-to-End Solution
+          <h2 className="text-3xl sm:text-4xl font-bold mb-4 text-transparent bg-clip-text bg-gradient-to-r from-[#FF6B2C] to-[#FF8F59]">
+            Our Approach
           </h2>
           <p className="text-gray-400 max-w-2xl mx-auto">
-            Our comprehensive solution covers every aspect of your business needs, from data collection to actionable insights
+            We believe in understanding your challenges deeply and delivering innovative solutions that drive real business value
           </p>
         </motion.div>
         
@@ -85,7 +82,7 @@ export default function EndToEndSolution() {
               )}
               
               {/* Step Card */}
-              <div className="bg-[#1A2B44]/50 backdrop-blur-sm rounded-2xl p-8 border border-[#243B61] hover:border-[#FF6B2C] transition-colors">
+              <div className="bg-[#1A2B44]/50 backdrop-blur-sm rounded-2xl p-8 border border-[#243B61] hover:border-[#FF6B2C] transition-colors h-full flex flex-col">
                 {/* Header */}
                 <div className="flex items-center gap-4 mb-6">
                   <div className="p-3 rounded-xl bg-[#FF6B2C]/10 text-white">
@@ -94,27 +91,28 @@ export default function EndToEndSolution() {
                   <h3 className="text-xl font-bold text-white">{step.title}</h3>
                 </div>
                 
-                {/* Description */}
-                <p className="text-gray-400 mb-6">
-                  {step.description}
-                </p>
-                
                 {/* Illustration */}
-                <div className="relative h-40">
+                <div className="relative h-48 mb-6 rounded-xl overflow-hidden bg-[#0A1628]/50 group-hover:bg-[#0A1628]/70 transition-colors">
+                  <div className="absolute inset-0 bg-gradient-to-br from-[#FF6B2C]/10 to-transparent" />
                   <Image
-                    src={`/images/illustrations/end-to-end/step-${index + 1}.svg`}
+                    src={step.illustration}
                     alt={step.title}
                     fill
-                    className="object-contain"
+                    className="object-contain p-6 group-hover:scale-105 transition-transform duration-300"
                   />
                 </div>
+                
+                {/* Description */}
+                <p className="text-gray-400 flex-grow">
+                  {step.description}
+                </p>
               </div>
             </motion.div>
           ))}
         </div>
         
         {/* CTA Section */}
-        <div className="bg-[#FF6B2C]/10 rounded-3xl p-12">
+        <div className="bg-gradient-to-br from-[#FF6B2C]/10 to-[#FF8F59]/5 rounded-3xl p-12 border border-[#243B61]">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
             <div>
               <motion.h2
@@ -123,9 +121,9 @@ export default function EndToEndSolution() {
                 viewport={{ once: true }}
                 className="text-3xl sm:text-4xl font-bold mb-6"
               >
-                Ready to Start Your{" "}
-                <span className="text-white">
-                  Digital Transformation
+                Ready to Transform Your{" "}
+                <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#FF6B2C] to-[#FF8F59]">
+                  Business
                 </span>
                 ?
               </motion.h2>
@@ -136,7 +134,7 @@ export default function EndToEndSolution() {
                 viewport={{ once: true }}
                 className="text-xl text-gray-400 mb-8"
               >
-                Let's discuss how our end-to-end solution can help transform your business operations.
+                Let's discuss how our approach can help solve your business challenges and drive growth.
               </motion.p>
               
               <motion.a
@@ -144,7 +142,7 @@ export default function EndToEndSolution() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 href="#contact"
-                className="inline-flex items-center px-6 py-3 rounded-lg bg-[#FF6B2C] text-white font-medium hover:opacity-90 transition-opacity"
+                className="inline-flex items-center px-6 py-3 rounded-lg bg-gradient-to-r from-[#FF6B2C] to-[#FF8F59] text-white font-medium hover:opacity-90 transition-opacity"
               >
                 Get Started
                 <ArrowRightIcon className="w-5 h-5 ml-2" />
@@ -159,8 +157,8 @@ export default function EndToEndSolution() {
               className="relative h-[400px] hidden lg:block"
             >
               <Image
-                src="/images/illustrations/end-to-end.svg"
-                alt="End-to-End Solution"
+                src="/images/illustrations/process/overview.svg"
+                alt="Our Solution Process"
                 fill
                 className="object-contain"
               />

@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="800" height="600" viewBox="0 0 800 600" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <!-- Background Circle -->
+  <circle cx="400" cy="300" r="250" fill="url(#challengeGradient)" opacity="0.1"/>
+  
+  <!-- Gradients -->
+  <defs>
+    <linearGradient id="challengeGradient" x1="0" y1="0" x2="800" y2="600" gradientUnits="userSpaceOnUse">
+      <stop offset="0%" stop-color="#EF4444"/>
+      <stop offset="100%" stop-color="#B91C1C"/>
+    </linearGradient>
+    <linearGradient id="warningGradient" x1="0" y1="0" x2="1" y2="1" gradientUnits="objectBoundingBox">
+      <stop offset="0%" stop-color="#F59E0B"/>
+      <stop offset="100%" stop-color="#D97706"/>
+    </linearGradient>
+  </defs>
+
+  <!-- Document Stack -->
+  <g transform="translate(300,200)">
+    <!-- Multiple Documents -->
+    <rect x="20" y="20" width="100" height="140" rx="5" fill="#4B5563"/>
+    <rect x="10" y="10" width="100" height="140" rx="5" fill="#6B7280"/>
+    <rect x="0" y="0" width="100" height="140" rx="5" fill="#9CA3AF"/>
+    
+    <!-- Error Indicators -->
+    <path d="M40 60 L80 60 M40 80 L80 80" stroke="#EF4444" stroke-width="2"/>
+    <path d="M30 70 L70 70 M30 90 L70 90" stroke="#EF4444" stroke-width="2"/>
+    <path d="M20 80 L60 80 M20 100 L60 100" stroke="#EF4444" stroke-width="2"/>
+  </g>
+
+  <!-- Manual Processing -->
+  <g transform="translate(500,200)">
+    <!-- Person Icon -->
+    <circle cx="25" cy="25" r="20" fill="#6B7280"/>
+    <path d="M0 70 L50 70 L50 120 L0 120 Z" fill="#6B7280"/>
+    
+    <!-- Document -->
+    <rect x="60" y="30" width="60" height="80" rx="5" fill="#4B5563"/>
+    
+    <!-- Clock -->
+    <circle cx="150" cy="50" r="30" fill="none" stroke="#EF4444" stroke-width="2"/>
+    <path d="M150 30 L150 50 L170 50" stroke="#EF4444" stroke-width="2"/>
+  </g>
+
+  <!-- Data Inconsistency -->
+  <g transform="translate(250,400)">
+    <!-- Charts with Errors -->
+    <rect x="0" y="0" width="80" height="60" rx="5" fill="#4B5563"/>
+    <path d="M10 50 L30 20 L50 40 L70 10" stroke="#EF4444" stroke-width="2" stroke-dasharray="4 4"/>
+    
+    <rect x="100" y="0" width="80" height="60" rx="5" fill="#4B5563"/>
+    <path d="M110 10 L130 40 L150 20 L170 50" stroke="#EF4444" stroke-width="2" stroke-dasharray="4 4"/>
+  </g>
+
+  <!-- Warning Signs -->
+  <g transform="translate(450,350)">
+    <!-- Warning Triangle -->
+    <path d="M25 0 L50 50 L0 50 Z" fill="url(#warningGradient)"/>
+    <text x="25" y="40" text-anchor="middle" fill="white" font-size="30" font-weight="bold">!</text>
+  </g>
+
+  <!-- Complexity Indicators -->
+  <g transform="translate(500,400)">
+    <!-- Complex Process Flow -->
+    <path d="M0 0 C20 20 40 -20 60 0 C80 20 100 -20 120 0" 
+          stroke="#EF4444" stroke-width="2" fill="none"/>
+    <circle cx="0" cy="0" r="5" fill="#EF4444"/>
+    <circle cx="60" cy="0" r="5" fill="#EF4444"/>
+    <circle cx="120" cy="0" r="5" fill="#EF4444"/>
+  </g>
+
+  <!-- Error Messages -->
+  <g transform="translate(200,300)">
+    <rect x="0" y="0" width="120" height="40" rx="5" fill="#EF4444" opacity="0.2"/>
+    <text x="60" y="25" text-anchor="middle" fill="#EF4444" font-size="12">Error: Invalid Data</text>
+  </g>
+</svg> 

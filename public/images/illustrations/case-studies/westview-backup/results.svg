@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="800" height="600" viewBox="0 0 800 600" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <!-- Background -->
+    <rect width="800" height="600" fill="#1A2B44"/>
+    
+    <!-- Gradients -->
+    <defs>
+        <linearGradient id="blueGradient" x1="0%" y1="0%" x2="100%" y2="0%">
+            <stop offset="0%" style="stop-color:#3B82F6;stop-opacity:1" />
+            <stop offset="100%" style="stop-color:#60A5FA;stop-opacity:1" />
+        </linearGradient>
+        <linearGradient id="greenGradient" x1="0%" y1="0%" x2="100%" y2="0%">
+            <stop offset="0%" style="stop-color:#10B981;stop-opacity:1" />
+            <stop offset="100%" style="stop-color:#34D399;stop-opacity:1" />
+        </linearGradient>
+    </defs>
+
+    <!-- Grid Background -->
+    <path d="M0 50 H800 M0 150 H800 M0 250 H800 M0 350 H800 M0 450 H800 M0 550 H800" 
+          stroke="#2A3B54" stroke-width="1" stroke-dasharray="4 4"/>
+    <path d="M100 0 V600 M300 0 V600 M500 0 V600 M700 0 V600" 
+          stroke="#2A3B54" stroke-width="1" stroke-dasharray="4 4"/>
+
+    <!-- Main Metrics Grid -->
+    <g transform="translate(50, 50)">
+        <!-- Uptime Card -->
+        <g transform="translate(0, 0)">
+            <rect x="0" y="0" width="200" height="120" rx="8" fill="#243B55"/>
+            <text x="20" y="40" fill="#60A5FA" font-family="Arial" font-size="32" font-weight="bold">99.99%</text>
+            <text x="20" y="70" fill="#E5E7EB" font-family="Arial" font-size="16">System Uptime</text>
+            <path d="M160 30 h20 M160 40 h30 M160 50 h25" stroke="url(#blueGradient)" stroke-width="3" stroke-linecap="round"/>
+        </g>
+
+        <!-- Recovery Time Card -->
+        <g transform="translate(250, 0)">
+            <rect x="0" y="0" width="200" height="120" rx="8" fill="#243B55"/>
+            <text x="20" y="40" fill="#34D399" font-family="Arial" font-size="32" font-weight="bold">&lt; 15min</text>
+            <text x="20" y="70" fill="#E5E7EB" font-family="Arial" font-size="16">Recovery Time</text>
+            <path d="M160 30 h20 M160 40 h30 M160 50 h25" stroke="url(#greenGradient)" stroke-width="3" stroke-linecap="round"/>
+        </g>
+
+        <!-- Data Security Card -->
+        <g transform="translate(500, 0)">
+            <rect x="0" y="0" width="200" height="120" rx="8" fill="#243B55"/>
+            <text x="20" y="40" fill="#60A5FA" font-family="Arial" font-size="32" font-weight="bold">100%</text>
+            <text x="20" y="70" fill="#E5E7EB" font-family="Arial" font-size="16">Data Security</text>
+            <path d="M160 30 h20 M160 40 h30 M160 50 h25" stroke="url(#blueGradient)" stroke-width="3" stroke-linecap="round"/>
+        </g>
+    </g>
+
+    <!-- Performance Chart -->
+    <g transform="translate(50, 220)">
+        <rect x="0" y="0" width="700" height="300" rx="8" fill="#243B55"/>
+        <text x="20" y="40" fill="#E5E7EB" font-family="Arial" font-size="20" font-weight="bold">Backup Performance</text>
+        
+        <!-- Chart Grid -->
+        <g transform="translate(40, 70)">
+            <path d="M0 0 V200 H620" stroke="#2A3B54" stroke-width="2"/>
+            <path d="M0 0 H620" stroke="#2A3B54" stroke-width="1" stroke-dasharray="4 4"/>
+            <path d="M0 50 H620" stroke="#2A3B54" stroke-width="1" stroke-dasharray="4 4"/>
+            <path d="M0 100 H620" stroke="#2A3B54" stroke-width="1" stroke-dasharray="4 4"/>
+            <path d="M0 150 H620" stroke="#2A3B54" stroke-width="1" stroke-dasharray="4 4"/>
+        </g>
+
+        <!-- Data Line -->
+        <path d="M40 270 L160 150 L280 180 L400 120 L520 90 L640 70" 
+              stroke="url(#blueGradient)" 
+              stroke-width="3"
+              fill="none"/>
+
+        <!-- Data Points -->
+        <circle cx="160" cy="150" r="6" fill="#3B82F6"/>
+        <circle cx="280" cy="180" r="6" fill="#3B82F6"/>
+        <circle cx="400" cy="120" r="6" fill="#3B82F6"/>
+        <circle cx="520" cy="90" r="6" fill="#3B82F6"/>
+        <circle cx="640" cy="70" r="6" fill="#3B82F6"/>
+    </g>
+</svg> 

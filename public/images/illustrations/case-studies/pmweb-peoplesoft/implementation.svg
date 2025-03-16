@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="800" height="600" viewBox="0 0 800 600" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <!-- Background Elements -->
+  <circle cx="400" cy="300" r="250" fill="#1A2B44" opacity="0.1"/>
+  <circle cx="400" cy="300" r="200" fill="#3B82F6" opacity="0.05"/>
+  
+  <!-- Central Integration Hub -->
+  <circle cx="400" cy="300" r="100" fill="#243B61" opacity="0.1"/>
+  <circle cx="400" cy="300" r="80" fill="#243B61" opacity="0.2"/>
+  
+  <!-- Integration Points -->
+  <!-- Vendors -->
+  <circle cx="400" cy="200" r="30" fill="#3B82F6"/>
+  <text x="400" y="205" text-anchor="middle" fill="white" font-family="sans-serif" font-size="12">Vendors</text>
+  
+  <!-- Projects -->
+  <circle cx="300" cy="300" r="30" fill="#3B82F6"/>
+  <text x="300" y="305" text-anchor="middle" fill="white" font-family="sans-serif" font-size="12">Projects</text>
+  
+  <!-- Cost Codes -->
+  <circle cx="500" cy="300" r="30" fill="#3B82F6"/>
+  <text x="500" y="305" text-anchor="middle" fill="white" font-family="sans-serif" font-size="12">Costs</text>
+  
+  <!-- Billing -->
+  <circle cx="350" cy="400" r="30" fill="#10B981"/>
+  <text x="350" y="405" text-anchor="middle" fill="white" font-family="sans-serif" font-size="12">Billing</text>
+  
+  <!-- Payments -->
+  <circle cx="450" cy="400" r="30" fill="#10B981"/>
+  <text x="450" y="405" text-anchor="middle" fill="white" font-family="sans-serif" font-size="12">Payments</text>
+  
+  <!-- Connection Lines -->
+  <path d="M400 230 L400 270" stroke="#3B82F6" stroke-width="2"/>
+  <path d="M330 300 L370 300" stroke="#3B82F6" stroke-width="2"/>
+  <path d="M430 300 L470 300" stroke="#3B82F6" stroke-width="2"/>
+  <path d="M350 370 L350 330" stroke="#10B981" stroke-width="2"/>
+  <path d="M450 370 L450 330" stroke="#10B981" stroke-width="2"/>
+  
+  <!-- Integration Flow Arrows -->
+  <path d="M380 280 C400 290 420 290 440 280" stroke="#3B82F6" stroke-width="2" marker-end="url(#arrowhead)"/>
+  <path d="M380 320 C400 310 420 310 440 320" stroke="#10B981" stroke-width="2" marker-end="url(#arrowhead)"/>
+  
+  <!-- Title -->
+  <text x="400" y="120" text-anchor="middle" fill="#1A2B44" font-family="sans-serif" font-size="24" font-weight="bold">Integration Points</text>
+  
+  <!-- Legend -->
+  <circle cx="200" cy="500" r="10" fill="#3B82F6"/>
+  <text x="220" y="505" fill="#1A2B44" font-family="sans-serif" font-size="14">PMWeb Data</text>
+  
+  <circle cx="400" cy="500" r="10" fill="#10B981"/>
+  <text x="420" y="505" fill="#1A2B44" font-family="sans-serif" font-size="14">Financial Data</text>
+  
+  <!-- Arrow Marker Definition -->
+  <defs>
+    <marker id="arrowhead" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto">
+      <polygon points="0 0, 10 3.5, 0 7" fill="#3B82F6"/>
+    </marker>
+  </defs>
+</svg>

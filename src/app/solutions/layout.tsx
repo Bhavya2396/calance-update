@@ -10,5 +10,9 @@ export default function SolutionsLayout({
 }: {
   children: React.ReactNode
 }) {
-  return children
+  return (
+    <div className="min-h-screen bg-[#0A1628]">
+      {children}
+    </div>
+  )
 } 

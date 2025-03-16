@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="800" height="600" viewBox="0 0 800 600" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <!-- Background Circles -->
+  <circle cx="400" cy="300" r="280" fill="url(#heroGradient)" opacity="0.1"/>
+  <circle cx="400" cy="300" r="200" fill="url(#heroGradient)" opacity="0.15"/>
+  
+  <!-- Gradients -->
+  <defs>
+    <linearGradient id="heroGradient" x1="0" y1="0" x2="800" y2="600" gradientUnits="userSpaceOnUse">
+      <stop offset="0%" stop-color="#3B82F6"/>
+      <stop offset="100%" stop-color="#10B981"/>
+    </linearGradient>
+    <linearGradient id="serverGradient" x1="0" y1="0" x2="1" y2="1" gradientUnits="objectBoundingBox">
+      <stop offset="0%" stop-color="#6366F1"/>
+      <stop offset="100%" stop-color="#4F46E5"/>
+    </linearGradient>
+  </defs>
+
+  <!-- SharePoint 2013 Server (Left) -->
+  <g transform="translate(200,250)">
+    <!-- Server Rack -->
+    <rect x="0" y="0" width="120" height="160" rx="10" fill="#1F2937"/>
+    <rect x="10" y="20" width="100" height="20" fill="#374151"/>
+    <rect x="10" y="50" width="100" height="20" fill="#374151"/>
+    <rect x="10" y="80" width="100" height="20" fill="#374151"/>
+    
+    <!-- Server Label -->
+    <text x="60" y="180" text-anchor="middle" fill="#6B7280" font-size="14">SharePoint 2013</text>
+  </g>
+
+  <!-- Migration Flow -->
+  <g transform="translate(350,300)">
+    <!-- Flow Path -->
+    <path d="M0 0 C50 0 50 0 100 0" stroke="url(#heroGradient)" stroke-width="4" stroke-dasharray="8 8">
+      <animate attributeName="stroke-dashoffset" values="16;0" dur="1s" repeatCount="indefinite"/>
+    </path>
+    
+    <!-- Data Packets -->
+    <g>
+      <rect x="20" y="-10" width="20" height="20" rx="4" fill="#3B82F6" opacity="0.6">
+        <animate attributeName="x" values="0;100" dur="2s" repeatCount="indefinite"/>
+      </rect>
+      <rect x="50" y="-10" width="20" height="20" rx="4" fill="#10B981" opacity="0.6">
+        <animate attributeName="x" values="0;100" dur="2s" begin="0.5s" repeatCount="indefinite"/>
+      </rect>
+    </g>
+  </g>
+
+  <!-- Modern SharePoint (Right) -->
+  <g transform="translate(480,200)">
+    <!-- Cloud Platform -->
+    <path d="M60 40 C60 20 80 0 100 0 C120 0 140 20 140 40 C140 60 120 80 100 80 C80 80 60 60 60 40" 
+          fill="url(#serverGradient)"/>
+    
+    <!-- SharePoint Online -->
+    <rect x="80" y="100" width="120" height="160" rx="10" fill="#1F2937"/>
+    <text x="140" y="280" text-anchor="middle" fill="#6B7280" font-size="14">SharePoint Online</text>
+    
+    <!-- Modern UI Elements -->
+    <rect x="90" y="120" width="100" height="15" rx="4" fill="#374151"/>
+    <rect x="90" y="145" width="100" height="15" rx="4" fill="#374151"/>
+    <rect x="90" y="170" width="100" height="15" rx="4" fill="#374151"/>
+  </g>
+
+  <!-- Document Icons -->
+  <g transform="translate(300,150)">
+    <!-- Document Stack -->
+    <g transform="rotate(-15)">
+      <rect x="0" y="0" width="40" height="50" fill="#3B82F6" opacity="0.8"/>
+      <rect x="5" y="5" width="40" height="50" fill="#4F46E5" opacity="0.8"/>
+      <rect x="10" y="10" width="40" height="50" fill="#6366F1" opacity="0.8"/>
+    </g>
+  </g>
+
+  <!-- Workflow Icons -->
+  <g transform="translate(500,400)">
+    <!-- Workflow Steps -->
+    <circle cx="0" cy="0" r="10" fill="#10B981"/>
+    <circle cx="40" cy="0" r="10" fill="#10B981"/>
+    <circle cx="80" cy="0" r="10" fill="#10B981"/>
+    
+    <!-- Connecting Lines -->
+    <line x1="10" y1="0" x2="30" y2="0" stroke="#10B981" stroke-width="2"/>
+    <line x1="50" y1="0" x2="70" y2="0" stroke="#10B981" stroke-width="2"/>
+  </g>
+
+  <!-- Progress Indicators -->
+  <g transform="translate(350,500)">
+    <!-- Progress Bar -->
+    <rect x="0" y="0" width="200" height="10" rx="5" fill="#1F2937"/>
+    <rect x="0" y="0" width="160" height="10" rx="5" fill="url(#heroGradient)">
+      <animate attributeName="width" values="0;200" dur="3s" repeatCount="indefinite"/>
+    </rect>
+  </g>
+
+  <!-- Success Checkmarks -->
+  <g transform="translate(600,300)">
+    <circle cx="0" cy="0" r="15" fill="#10B981" opacity="0.8"/>
+    <path d="M-6 0 L-2 4 L6 -4" stroke="white" stroke-width="2"/>
+  </g>
+</svg> 

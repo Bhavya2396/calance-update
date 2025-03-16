@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="800" height="600" viewBox="0 0 800 600" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <!-- Background Circle -->
+  <circle cx="400" cy="300" r="250" fill="url(#challengeGradient)" opacity="0.1"/>
+  
+  <!-- Gradients -->
+  <defs>
+    <linearGradient id="challengeGradient" x1="0" y1="0" x2="800" y2="600" gradientUnits="userSpaceOnUse">
+      <stop offset="0%" stop-color="#EF4444"/>
+      <stop offset="100%" stop-color="#B91C1C"/>
+    </linearGradient>
+    <linearGradient id="warningGradient" x1="0" y1="0" x2="1" y2="1" gradientUnits="objectBoundingBox">
+      <stop offset="0%" stop-color="#F59E0B"/>
+      <stop offset="100%" stop-color="#D97706"/>
+    </linearGradient>
+  </defs>
+
+  <!-- Disconnected Systems -->
+  <g transform="translate(300,200)">
+    <!-- System Boxes -->
+    <rect x="0" y="0" width="80" height="80" rx="5" fill="#4B5563"/>
+    <rect x="120" y="0" width="80" height="80" rx="5" fill="#4B5563"/>
+    <rect x="240" y="0" width="80" height="80" rx="5" fill="#4B5563"/>
+    
+    <!-- Broken Connections -->
+    <path d="M80 40 L95 40 M105 40 L120 40" stroke="#EF4444" stroke-width="2" stroke-dasharray="4 4"/>
+    <path d="M200 40 L215 40 M225 40 L240 40" stroke="#EF4444" stroke-width="2" stroke-dasharray="4 4"/>
+  </g>
+
+  <!-- Manual Data Entry -->
+  <g transform="translate(200,350)">
+    <!-- Person Icon -->
+    <circle cx="25" cy="25" r="20" fill="#6B7280"/>
+    <path d="M0 70 L50 70 L50 120 L0 120 Z" fill="#6B7280"/>
+    
+    <!-- Paper Stack -->
+    <g transform="translate(60,20)">
+      <rect x="0" y="0" width="60" height="80" rx="5" fill="#4B5563"/>
+      <rect x="5" y="5" width="60" height="80" rx="5" fill="#6B7280"/>
+      <rect x="10" y="10" width="60" height="80" rx="5" fill="#9CA3AF"/>
+    </g>
+    
+    <!-- Error Indicators -->
+    <path d="M70 40 L110 40 M70 60 L110 60" stroke="#EF4444" stroke-width="2"/>
+  </g>
+
+  <!-- Data Inconsistency -->
+  <g transform="translate(400,350)">
+    <!-- Different Format Icons -->
+    <rect x="0" y="0" width="60" height="40" rx="5" fill="#4B5563"/>
+    <text x="30" y="25" text-anchor="middle" fill="#EF4444" font-size="12">CSV</text>
+    
+    <rect x="80" y="0" width="60" height="40" rx="5" fill="#4B5563"/>
+    <text x="110" y="25" text-anchor="middle" fill="#EF4444" font-size="12">XLS</text>
+    
+    <rect x="160" y="0" width="60" height="40" rx="5" fill="#4B5563"/>
+    <text x="190" y="25" text-anchor="middle" fill="#EF4444" font-size="12">PDF</text>
+  </g>
+
+  <!-- Time Delay -->
+  <g transform="translate(600,250)">
+    <!-- Clock -->
+    <circle cx="40" cy="40" r="35" fill="none" stroke="#EF4444" stroke-width="2"/>
+    <path d="M40 20 L40 40 L60 40" stroke="#EF4444" stroke-width="2"/>
+    
+    <!-- Delay Indicator -->
+    <path d="M85 40 C105 40 125 60 145 40" stroke="#EF4444" stroke-width="2" stroke-dasharray="4 4"/>
+  </g>
+
+  <!-- Warning Signs -->
+  <g transform="translate(500,150)">
+    <!-- Warning Triangle -->
+    <path d="M25 0 L50 50 L0 50 Z" fill="url(#warningGradient)"/>
+    <text x="25" y="35" text-anchor="middle" fill="white" font-size="24" font-weight="bold">!</text>
+  </g>
+
+  <!-- Error Messages -->
+  <g transform="translate(350,500)">
+    <rect x="0" y="0" width="120" height="40" rx="5" fill="#EF4444" opacity="0.2"/>
+    <text x="60" y="25" text-anchor="middle" fill="#EF4444" font-size="12">Data Mismatch</text>
+  </g>
+</svg> 

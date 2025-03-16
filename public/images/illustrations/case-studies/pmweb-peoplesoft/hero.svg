@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="800" height="600" viewBox="0 0 800 600" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <!-- Background Elements -->
+  <circle cx="400" cy="300" r="250" fill="#1A2B44" opacity="0.1"/>
+  <circle cx="400" cy="300" r="200" fill="#3B82F6" opacity="0.05"/>
+  
+  <!-- PMWeb System (Left) -->
+  <rect x="150" y="200" width="200" height="200" rx="20" fill="#3B82F6"/>
+  <text x="250" y="270" text-anchor="middle" fill="white" font-family="sans-serif" font-size="24" font-weight="bold">PMWeb</text>
+  <text x="250" y="300" text-anchor="middle" fill="white" font-family="sans-serif" font-size="14">Project Management</text>
+  <path d="M180 330 L320 330" stroke="white" stroke-width="2"/>
+  <text x="250" y="360" text-anchor="middle" fill="white" font-family="sans-serif" font-size="12">150+ Projects</text>
+  
+  <!-- PeopleSoft System (Right) -->
+  <rect x="450" y="200" width="200" height="200" rx="20" fill="#10B981"/>
+  <text x="550" y="270" text-anchor="middle" fill="white" font-family="sans-serif" font-size="24" font-weight="bold">PeopleSoft</text>
+  <text x="550" y="300" text-anchor="middle" fill="white" font-family="sans-serif" font-size="14">Financial Management</text>
+  <path d="M480 330 L620 330" stroke="white" stroke-width="2"/>
+  <text x="550" y="360" text-anchor="middle" fill="white" font-family="sans-serif" font-size="12">Real-time Sync</text>
+  
+  <!-- Integration Lines -->
+  <path d="M350 250 C375 250 425 250 450 250" stroke="#3B82F6" stroke-width="3" stroke-dasharray="8 8"/>
+  <path d="M350 300 C375 300 425 300 450 300" stroke="#10B981" stroke-width="3" stroke-dasharray="8 8"/>
+  <path d="M350 350 C375 350 425 350 450 350" stroke="#3B82F6" stroke-width="3" stroke-dasharray="8 8"/>
+  
+  <!-- Integration Icons -->
+  <circle cx="400" cy="250" r="15" fill="#243B61"/>
+  <circle cx="400" cy="300" r="15" fill="#243B61"/>
+  <circle cx="400" cy="350" r="15" fill="#243B61"/>
+  <text x="400" y="255" text-anchor="middle" fill="white" font-family="sans-serif" font-size="12">$</text>
+  <text x="400" y="305" text-anchor="middle" fill="white" font-family="sans-serif" font-size="12">↔</text>
+  <text x="400" y="355" text-anchor="middle" fill="white" font-family="sans-serif" font-size="12">✓</text>
+  
+  <!-- Title -->
+  <text x="400" y="120" text-anchor="middle" fill="#1A2B44" font-family="sans-serif" font-size="32" font-weight="bold">Seamless Integration</text>
+  
+  <!-- Decorative Elements -->
+  <circle cx="200" cy="150" r="8" fill="#3B82F6" opacity="0.3"/>
+  <circle cx="600" cy="450" r="8" fill="#10B981" opacity="0.3"/>
+</svg>

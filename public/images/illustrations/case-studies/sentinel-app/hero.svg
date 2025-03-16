@@ -1,0 +1,108 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="800" height="600" viewBox="0 0 800 600" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <!-- Background -->
+    <rect width="800" height="600" fill="#1A2B44"/>
+    
+    <!-- Gradients -->
+    <defs>
+        <linearGradient id="blueGradient" x1="0%" y1="0%" x2="100%" y2="0%">
+            <stop offset="0%" style="stop-color:#3B82F6;stop-opacity:1" />
+            <stop offset="100%" style="stop-color:#60A5FA;stop-opacity:1" />
+        </linearGradient>
+        <linearGradient id="greenGradient" x1="0%" y1="0%" x2="100%" y2="0%">
+            <stop offset="0%" style="stop-color:#10B981;stop-opacity:1" />
+            <stop offset="100%" style="stop-color:#34D399;stop-opacity:1" />
+        </linearGradient>
+    </defs>
+
+    <!-- Grid Background -->
+    <path d="M0 50 H800 M0 150 H800 M0 250 H800 M0 350 H800 M0 450 H800 M0 550 H800" 
+          stroke="#2A3B54" stroke-width="1" stroke-dasharray="4 4"/>
+    <path d="M100 0 V600 M300 0 V600 M500 0 V600 M700 0 V600" 
+          stroke="#2A3B54" stroke-width="1" stroke-dasharray="4 4"/>
+
+    <!-- Mobile App Interface -->
+    <g transform="translate(50, 50)">
+        <!-- Phone Frame -->
+        <rect x="0" y="0" width="300" height="500" rx="20" fill="#243B55"/>
+        <rect x="20" y="20" width="260" height="460" rx="12" fill="#1A2B44"/>
+        
+        <!-- App Header -->
+        <g transform="translate(40, 40)">
+            <text x="0" y="20" fill="#60A5FA" font-family="Arial" font-size="18" font-weight="bold">Sentinel Water</text>
+            <text x="0" y="45" fill="#E5E7EB" font-family="Arial" font-size="14">System Overview</text>
+        </g>
+        
+        <!-- Water Metrics -->
+        <g transform="translate(40, 100)">
+            <rect width="220" height="80" rx="8" fill="#243B55"/>
+            <text x="20" y="30" fill="#34D399" font-family="Arial" font-size="24" font-weight="bold">98.5%</text>
+            <text x="20" y="55" fill="#E5E7EB" font-family="Arial" font-size="14">System Efficiency</text>
+        </g>
+        
+        <!-- Flow Chart -->
+        <g transform="translate(40, 200)">
+            <rect width="220" height="120" rx="8" fill="#243B55"/>
+            <path d="M20 60 L70 40 L120 70 L170 30 L200 50" 
+                  stroke="url(#blueGradient)" 
+                  stroke-width="2"
+                  fill="none"/>
+            <text x="20" y="100" fill="#E5E7EB" font-family="Arial" font-size="12">Water Flow Rate</text>
+        </g>
+        
+        <!-- Controls -->
+        <g transform="translate(40, 340)">
+            <rect width="220" height="120" rx="8" fill="#243B55"/>
+            <text x="20" y="30" fill="#E5E7EB" font-family="Arial" font-size="14">System Controls</text>
+            <rect x="20" y="50" width="80" height="30" rx="4" fill="#3B82F6"/>
+            <text x="35" y="70" fill="white" font-family="Arial" font-size="12">ON</text>
+            <rect x="120" y="50" width="80" height="30" rx="4" fill="#1A2B44"/>
+            <text x="135" y="70" fill="#E5E7EB" font-family="Arial" font-size="12">OFF</text>
+        </g>
+    </g>
+
+    <!-- IoT Network -->
+    <g transform="translate(400, 50)">
+        <!-- Central Hub -->
+        <circle cx="200" cy="200" r="60" fill="#243B55" stroke="url(#blueGradient)" stroke-width="2"/>
+        <text x="170" y="205" fill="#E5E7EB" font-family="Arial" font-size="14">Hub</text>
+        
+        <!-- Sensors -->
+        <g>
+            <!-- Sensor 1 -->
+            <circle cx="100" cy="100" r="30" fill="#243B55" stroke="url(#greenGradient)" stroke-width="2"/>
+            <text x="80" y="105" fill="#E5E7EB" font-family="Arial" font-size="12">S1</text>
+            <path d="M100 130 L160 160" stroke="url(#greenGradient)" stroke-width="2" stroke-dasharray="4 4"/>
+            
+            <!-- Sensor 2 -->
+            <circle cx="300" cy="100" r="30" fill="#243B55" stroke="url(#greenGradient)" stroke-width="2"/>
+            <text x="280" y="105" fill="#E5E7EB" font-family="Arial" font-size="12">S2</text>
+            <path d="M300 130 L240 160" stroke="url(#greenGradient)" stroke-width="2" stroke-dasharray="4 4"/>
+            
+            <!-- Sensor 3 -->
+            <circle cx="100" cy="300" r="30" fill="#243B55" stroke="url(#greenGradient)" stroke-width="2"/>
+            <text x="80" y="305" fill="#E5E7EB" font-family="Arial" font-size="12">S3</text>
+            <path d="M100 270 L160 240" stroke="url(#greenGradient)" stroke-width="2" stroke-dasharray="4 4"/>
+            
+            <!-- Sensor 4 -->
+            <circle cx="300" cy="300" r="30" fill="#243B55" stroke="url(#greenGradient)" stroke-width="2"/>
+            <text x="280" y="305" fill="#E5E7EB" font-family="Arial" font-size="12">S4</text>
+            <path d="M300 270 L240 240" stroke="url(#greenGradient)" stroke-width="2" stroke-dasharray="4 4"/>
+        </g>
+        
+        <!-- Data Flow Indicators -->
+        <circle cx="160" cy="160" r="4" fill="#34D399"/>
+        <circle cx="240" cy="160" r="4" fill="#34D399"/>
+        <circle cx="160" cy="240" r="4" fill="#34D399"/>
+        <circle cx="240" cy="240" r="4" fill="#34D399"/>
+    </g>
+
+    <!-- System Status -->
+    <g transform="translate(400, 400)">
+        <rect width="350" height="150" rx="8" fill="#243B55"/>
+        <text x="20" y="40" fill="#60A5FA" font-family="Arial" font-size="18" font-weight="bold">System Status</text>
+        <text x="20" y="80" fill="#34D399" font-family="Arial" font-size="14">● All Sensors Online</text>
+        <text x="20" y="110" fill="#34D399" font-family="Arial" font-size="14">● Data Transmission: Active</text>
+        <text x="20" y="140" fill="#34D399" font-family="Arial" font-size="14">● Remote Control: Enabled</text>
+    </g>
+</svg> 

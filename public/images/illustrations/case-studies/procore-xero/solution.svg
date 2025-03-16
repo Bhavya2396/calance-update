@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="800" height="600" viewBox="0 0 800 600" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <!-- Background Elements -->
+  <circle cx="400" cy="300" r="250" fill="#1A2B44" opacity="0.1"/>
+  <circle cx="400" cy="300" r="200" fill="#3B82F6" opacity="0.05"/>
+  
+  <!-- Cloud Platform -->
+  <path d="M350 200 C350 180 370 160 400 160 C430 160 450 180 450 200 C470 200 490 220 490 250 C490 280 470 300 450 300 L350 300 C330 300 310 280 310 250 C310 220 330 200 350 200Z" fill="#3B82F6" opacity="0.2"/>
+  
+  <!-- Connected Systems -->
+  <rect x="150" y="250" width="120" height="80" rx="10" fill="#3B82F6"/>
+  <rect x="530" y="250" width="120" height="80" rx="10" fill="#10B981"/>
+  
+  <!-- Data Flow Arrows -->
+  <path d="M270 290 C300 290 310 290 340 290" stroke="#3B82F6" stroke-width="4" marker-end="url(#arrowhead)"/>
+  <path d="M460 290 C490 290 500 290 530 290" stroke="#10B981" stroke-width="4" marker-end="url(#arrowhead)"/>
+  
+  <!-- Integration Platform -->
+  <rect x="340" y="260" width="120" height="60" rx="10" fill="#243B61"/>
+  <text x="400" y="295" text-anchor="middle" fill="white" font-family="sans-serif" font-size="14">Integration</text>
+  
+  <!-- Success Indicators -->
+  <circle cx="400" cy="200" r="15" fill="#10B981"/>
+  <path d="M392 200 L398 206 L408 196" stroke="white" stroke-width="3"/>
+  
+  <!-- Labels -->
+  <text x="210" y="290" text-anchor="middle" fill="white" font-family="sans-serif" font-size="14">Procore</text>
+  <text x="590" y="290" text-anchor="middle" fill="white" font-family="sans-serif" font-size="14">Xero</text>
+  
+  <!-- Decorative Elements -->
+  <circle cx="300" cy="400" r="8" fill="#3B82F6" opacity="0.3"/>
+  <circle cx="500" cy="400" r="8" fill="#10B981" opacity="0.3"/>
+  
+  <!-- Arrow Marker Definition -->
+  <defs>
+    <marker id="arrowhead" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto">
+      <polygon points="0 0, 10 3.5, 0 7" fill="#3B82F6"/>
+    </marker>
+  </defs>
+</svg>

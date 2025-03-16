@@ -1,15 +1,14 @@
-import type { Metadata } from "next";
-import { Inter } from "next/font/google";
-import "./globals.css";
-import Header from "@/components/Header";
-import Footer from "@/components/Footer";
+import './globals.css'
+import { Inter } from 'next/font/google'
+import Header from '@/components/Header'
+import Footer from '@/components/Footer'
 
-const inter = Inter({ subsets: ["latin"] });
+const inter = Inter({ subsets: ['latin'] })
 
-export const metadata: Metadata = {
-  title: "Calance - Next-Gen IT Solutions",
-  description: "Transform your business with innovative IT solutions. 20+ years of excellence in IT services, automation, and digital transformation.",
-};
+export const metadata = {
+  title: 'Calanceus - Enterprise Technology Solutions',
+  description: 'Empowering enterprises with innovative technology solutions for digital transformation.',
+}
 
 export default function RootLayout({
   children,
@@ -17,12 +16,14 @@ export default function RootLayout({
   children: React.ReactNode
 }) {
   return (
-    <html lang="en" className="scroll-smooth">
+    <html lang="en">
       <body className={inter.className}>
         <Header />
-        {children}
+        <div className="pt-20">
+          {children}
+        </div>
         <Footer />
       </body>
     </html>
-  );
+  )
 }

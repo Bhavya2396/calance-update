@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="800" height="600" viewBox="0 0 800 600" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="heroGradient" x1="0" y1="0" x2="800" y2="600" gradientUnits="userSpaceOnUse">
+      <stop offset="0%" stop-color="#3B82F6" stop-opacity="0.1"/>
+      <stop offset="100%" stop-color="#10B981" stop-opacity="0.1"/>
+    </linearGradient>
+    <linearGradient id="procoreGradient" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#3B82F6"/>
+      <stop offset="100%" stop-color="#2563EB"/>
+    </linearGradient>
+    <linearGradient id="peoplesoftGradient" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#10B981"/>
+      <stop offset="100%" stop-color="#059669"/>
+    </linearGradient>
+    <linearGradient id="dataFlowGradient" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%" stop-color="#3B82F6"/>
+      <stop offset="100%" stop-color="#10B981"/>
+    </linearGradient>
+  </defs>
+
+  <!-- Background -->
+  <circle cx="400" cy="300" r="280" fill="url(#heroGradient)" opacity="0.5"/>
+  
+  <!-- Procore System (Left) -->
+  <g transform="translate(100, 200)">
+    <rect x="0" y="0" width="200" height="200" rx="12" fill="#1F2937" stroke="url(#procoreGradient)" stroke-width="2"/>
+    <text x="100" y="50" text-anchor="middle" fill="white" font-size="24" font-weight="bold">Procore</text>
+    
+    <!-- Project Data -->
+    <g transform="translate(20, 80)">
+      <rect x="0" y="0" width="160" height="30" rx="4" fill="#374151"/>
+      <text x="80" y="20" text-anchor="middle" fill="#9CA3AF" font-size="14">Project Data</text>
+    </g>
+    
+    <!-- Cost Data -->
+    <g transform="translate(20, 120)">
+      <rect x="0" y="0" width="160" height="30" rx="4" fill="#374151"/>
+      <text x="80" y="20" text-anchor="middle" fill="#9CA3AF" font-size="14">Cost Data</text>
+    </g>
+    
+    <!-- Documents -->
+    <g transform="translate(20, 160)">
+      <rect x="0" y="0" width="160" height="30" rx="4" fill="#374151"/>
+      <text x="80" y="20" text-anchor="middle" fill="#9CA3AF" font-size="14">Documents</text>
+    </g>
+  </g>
+
+  <!-- Integration Flow (Center) -->
+  <g transform="translate(350, 250)">
+    <circle cx="50" cy="50" r="40" fill="#1F2937" stroke="url(#dataFlowGradient)" stroke-width="2"/>
+    <path d="M30 50 L70 50 M60 40 L70 50 L60 60" fill="none" stroke="url(#dataFlowGradient)" stroke-width="2"/>
+    
+    <!-- Data Packets -->
+    <g>
+      <circle cx="20" cy="50" r="4" fill="#3B82F6">
+        <animate attributeName="cx" values="20;80;20" dur="2s" repeatCount="indefinite"/>
+      </circle>
+      <circle cx="50" cy="50" r="4" fill="#10B981">
+        <animate attributeName="cx" values="50;110;50" dur="2s" repeatCount="indefinite"/>
+      </circle>
+    </g>
+    
+    <!-- Integration Label -->
+    <text x="50" y="110" text-anchor="middle" fill="white" font-size="14">Real-time Sync</text>
+  </g>
+
+  <!-- PeopleSoft System (Right) -->
+  <g transform="translate(500, 200)">
+    <rect x="0" y="0" width="200" height="200" rx="12" fill="#1F2937" stroke="url(#peoplesoftGradient)" stroke-width="2"/>
+    <text x="100" y="50" text-anchor="middle" fill="white" font-size="24" font-weight="bold">PeopleSoft</text>
+    
+    <!-- Financial Data -->
+    <g transform="translate(20, 80)">
+      <rect x="0" y="0" width="160" height="30" rx="4" fill="#374151"/>
+      <text x="80" y="20" text-anchor="middle" fill="#9CA3AF" font-size="14">Financial Data</text>
+    </g>
+    
+    <!-- Reports -->
+    <g transform="translate(20, 120)">
+      <rect x="0" y="0" width="160" height="30" rx="4" fill="#374151"/>
+      <text x="80" y="20" text-anchor="middle" fill="#9CA3AF" font-size="14">Reports</text>
+    </g>
+    
+    <!-- Analytics -->
+    <g transform="translate(20, 160)">
+      <rect x="0" y="0" width="160" height="30" rx="4" fill="#374151"/>
+      <text x="80" y="20" text-anchor="middle" fill="#9CA3AF" font-size="14">Analytics</text>
+    </g>
+  </g>
+
+  <!-- Connection Lines -->
+  <g stroke="url(#dataFlowGradient)" stroke-width="2" stroke-dasharray="4 4">
+    <path d="M300 300 L350 300"/>
+    <path d="M450 300 L500 300"/>
+  </g>
+
+  <!-- Success Indicators -->
+  <g>
+    <circle cx="400" cy="150" r="8" fill="#10B981"/>
+    <path d="M395 150 L398 153 L405 146" stroke="white" stroke-width="2"/>
+  </g>
+  <g>
+    <circle cx="400" cy="450" r="8" fill="#10B981"/>
+    <path d="M395 450 L398 453 L405 446" stroke="white" stroke-width="2"/>
+  </g>
+</svg> 

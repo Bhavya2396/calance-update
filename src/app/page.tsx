@@ -40,7 +40,7 @@ export default function Home() {
       <MainHeader />
       
       {/* Main Content */}
-      <div className="pt-12">
+      <div className="pt-0">
       {/* Hero Section */}
       <section className="relative py-8 flex items-center overflow-hidden">
         {/* Background Effects */}
@@ -226,100 +226,77 @@ export default function Home() {
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
             {[
               {
-                  title: 'Isuzu Digital Transformation',
-                  description: 'Revolutionizing automotive operations with cloud-based solutions and process automation.',
-                  image: '/images/illustrations/case-studies/isuzu-transform.svg',
-                  metrics: {
-                    efficiency: '45%',
-                    cost: '32%',
-                    satisfaction: '98%'
-                  },
-                  tags: ['Cloud Migration', 'Process Automation', 'Digital Transformation']
-                },
-                {
-                  title: 'Crown Poly Manufacturing',
-                  description: 'Implementing smart manufacturing solutions to optimize production and reduce waste.',
-                  image: '/images/illustrations/case-studies/crownpoly-manufacturing.svg',
-                  metrics: {
-                    productivity: '60%',
-                    waste: '40%',
-                    roi: '280%'
-                  },
-                  tags: ['Smart Manufacturing', 'IoT', 'Analytics']
-                },
-                {
-                  title: 'Wellpath Healthcare',
-                  description: 'Transforming healthcare delivery with integrated digital solutions and data analytics.',
-                  image: '/images/illustrations/case-studies/wellpath-healthcare.svg',
-                  metrics: {
-                    efficiency: '55%',
-                    accuracy: '99.9%',
-                    satisfaction: '96%'
-                  },
-                  tags: ['Healthcare Tech', 'Data Analytics', 'Integration']
-                }
-              ].map((study, index) => (
-                              <motion.div
-                  key={study.title}
-                  initial={{ opacity: 0, y: 20 }}
-                  whileInView={{ opacity: 1, y: 0 }}
+                title: 'AI-Enhanced Clinical Trials Platform',
+                description: 'Implementation of an intelligent platform for automated complexity scoring and management of clinical trials, improving efficiency and accuracy.',
+                image: '/images/illustrations/case-studies/clinical-trials/hero.svg',
+                tags: ['Healthcare', 'AI/ML', 'Clinical Trials', 'Automation']
+              },
+              {
+                title: 'DevOps Transformation for Spotmentor',
+                description: 'Comprehensive DevOps implementation featuring automated CI/CD pipelines and infrastructure as code for enhanced development efficiency.',
+                image: '/images/illustrations/case-studies/spotmentor-devops/hero.svg',
+                tags: ['DevOps', 'AWS', 'Kubernetes', 'CI/CD']
+              },
+              {
+                title: 'Secure FinTech Infrastructure',
+                description: 'Implementation of a zero-trust architecture and GitOps pipeline for a leading fintech company, ensuring security compliance and automated deployments.',
+                image: '/images/illustrations/case-studies/alpha-fortress/hero.svg',
+                tags: ['FinTech', 'DevOps', 'Security', 'AWS']
+              }
+            ].map((study, index) => (
+              <motion.div
+                key={study.title}
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ delay: index * 0.1 }}
                 className="group relative"
               >
-                  <div className="h-full rounded-2xl bg-[#1A2B44]/50 backdrop-blur-sm border border-[#243B61] p-8 hover:border-[#3B82F6]/50 transition-colors duration-300">
-                    {/* Case Study Image */}
-                  <div className="relative h-48 mb-6 rounded-xl overflow-hidden bg-[#0A1628]/50">
+                <div className="bg-[#1A2B44]/50 backdrop-blur-sm rounded-2xl p-8 border border-[#243B61] hover:border-[#3B82F6] transition-colors h-full">
+                  {/* Illustration */}
+                  <div className="relative h-48 mb-6 rounded-xl overflow-hidden bg-[#0A1628]/50 group-hover:bg-[#0A1628]/70 transition-colors">
+                    <div className="absolute inset-0 bg-gradient-to-br from-[#3B82F6]/10 to-transparent" />
                     <Image
-                        src={study.image}
-                        alt={study.title}
+                      src={study.image}
+                      alt={study.title}
                       fill
-                      className="object-contain p-4 group-hover:scale-105 transition-transform duration-300"
+                      className="object-contain p-6 group-hover:scale-105 transition-transform duration-300"
                     />
-                        </div>
+                  </div>
 
                   {/* Content */}
-                    <h3 className="text-xl font-bold text-white mb-3 group-hover:text-[#3B82F6] transition-colors">
-                      {study.title}
+                  <h3 className="text-xl font-bold text-white mb-4">
+                    {study.title}
                   </h3>
+                  
                   <p className="text-gray-400 mb-6">
-                      {study.description}
-                    </p>
+                    {study.description}
+                  </p>
 
-                    {/* Tags */}
-                    <div className="flex flex-wrap gap-2 mb-6">
-                      {study.tags.map((tag) => (
-                        <span
-                          key={tag}
-                          className="px-3 py-1 rounded-full text-sm bg-[#3B82F6]/10 text-[#3B82F6] border border-[#3B82F6]/20"
-                        >
-                          {tag}
-                        </span>
-                      ))}
-                    </div>
+                  {/* Tags */}
+                  <div className="flex flex-wrap gap-2 mb-6">
+                    {study.tags.map((tag, i) => (
+                      <span
+                        key={i}
+                        className="px-3 py-1 text-sm rounded-full bg-[#0A1628] text-gray-400 group-hover:text-gray-300 transition-colors"
+                      >
+                        {tag}
+                      </span>
+                    ))}
+                  </div>
 
-                    {/* Metrics */}
-                    <div className="grid grid-cols-3 gap-4 mb-6">
-                      {Object.entries(study.metrics).map(([key, value]) => (
-                        <div key={key} className="text-center">
-                          <div className="text-2xl font-bold text-[#3B82F6]">+{value}</div>
-                          <div className="text-sm text-gray-400 capitalize">{key}</div>
-                        </div>
-                      ))}
-                    </div>
-
-                    {/* Learn More Link */}
+                  {/* Learn More Link */}
                   <div className="absolute bottom-8 right-8">
-                      <Link
-                        href={`/case-studies`}
+                    <Link
+                      href={`/case-studies`}
                       className="flex items-center text-sm font-medium text-[#3B82F6] hover:text-[#60A5FA] transition-colors"
                     >
                       Learn More
                       <ArrowRightIcon className="w-4 h-4 ml-2 group-hover:translate-x-1 transition-transform" />
-                      </Link>
-                                  </div>
-                                  </div>
-                          </motion.div>
+                    </Link>
+                  </div>
+                </div>
+              </motion.div>
             ))}
           </div>
 

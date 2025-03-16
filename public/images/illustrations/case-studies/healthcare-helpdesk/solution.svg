@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="800" height="400" viewBox="0 0 800 400" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <!-- Background -->
+  <rect width="800" height="400" fill="#1A2B44"/>
+  
+  <!-- Gradients -->
+  <defs>
+    <linearGradient id="blueGrad" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#3B82F6"/>
+      <stop offset="100%" stop-color="#1E40AF"/>
+    </linearGradient>
+    <linearGradient id="greenGrad" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#10B981"/>
+      <stop offset="100%" stop-color="#047857"/>
+    </linearGradient>
+  </defs>
+
+  <!-- Support Tiers -->
+  <!-- Tier 1 -->
+  <g transform="translate(150, 50)">
+    <rect width="500" height="80" rx="8" fill="#243B61" stroke="#3B82F6" stroke-width="2"/>
+    <text x="20" y="35" fill="white" font-family="Arial" font-weight="bold" font-size="18">Tier 1: 24/7 Front-Line Support</text>
+    <text x="20" y="60" fill="#E5E7EB" font-family="Arial" font-size="14">First Response &amp; Basic Issue Resolution</text>
+  </g>
+
+  <!-- Tier 2 -->
+  <g transform="translate(150, 160)">
+    <rect width="500" height="80" rx="8" fill="#243B61" stroke="#10B981" stroke-width="2"/>
+    <text x="20" y="35" fill="white" font-family="Arial" font-weight="bold" font-size="18">Tier 2: Specialized Healthcare IT</text>
+    <text x="20" y="60" fill="#E5E7EB" font-family="Arial" font-size="14">Clinical Applications &amp; EHR Support</text>
+  </g>
+
+  <!-- Tier 3 -->
+  <g transform="translate(150, 270)">
+    <rect width="500" height="80" rx="8" fill="#243B61" stroke="#3B82F6" stroke-width="2"/>
+    <text x="20" y="35" fill="white" font-family="Arial" font-weight="bold" font-size="18">Tier 3: Advanced Technical Support</text>
+    <text x="20" y="60" fill="#E5E7EB" font-family="Arial" font-size="14">Infrastructure &amp; System Integration</text>
+  </g>
+
+  <!-- Connecting Lines -->
+  <path d="M400 130 L400 160" stroke="#3B82F6" stroke-width="2" stroke-dasharray="4"/>
+  <path d="M400 240 L400 270" stroke="#3B82F6" stroke-width="2" stroke-dasharray="4"/>
+
+  <!-- Flow Indicators -->
+  <circle cx="400" cy="145" r="4" fill="#3B82F6">
+    <animate attributeName="opacity" values="1;0.3;1" dur="2s" repeatCount="indefinite"/>
+  </circle>
+  <circle cx="400" cy="255" r="4" fill="#3B82F6">
+    <animate attributeName="opacity" values="1;0.3;1" dur="2s" repeatCount="indefinite"/>
+  </circle>
+</svg> 

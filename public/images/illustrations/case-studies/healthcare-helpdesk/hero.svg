@@ -1,0 +1,115 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="800" height="600" viewBox="0 0 800 600" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <!-- Background -->
+    <rect width="800" height="600" fill="#1A2B44"/>
+    
+    <!-- Gradients -->
+    <defs>
+        <linearGradient id="blueGradient" x1="0%" y1="0%" x2="100%" y2="0%">
+            <stop offset="0%" style="stop-color:#3B82F6;stop-opacity:1" />
+            <stop offset="100%" style="stop-color:#60A5FA;stop-opacity:1" />
+        </linearGradient>
+        <linearGradient id="greenGradient" x1="0%" y1="0%" x2="100%" y2="0%">
+            <stop offset="0%" style="stop-color:#10B981;stop-opacity:1" />
+            <stop offset="100%" style="stop-color:#34D399;stop-opacity:1" />
+        </linearGradient>
+    </defs>
+
+    <!-- Grid Background -->
+    <path d="M0 50 H800 M0 150 H800 M0 250 H800 M0 350 H800 M0 450 H800 M0 550 H800" 
+          stroke="#2A3B54" stroke-width="1" stroke-dasharray="4 4"/>
+    <path d="M100 0 V600 M300 0 V600 M500 0 V600 M700 0 V600" 
+          stroke="#2A3B54" stroke-width="1" stroke-dasharray="4 4"/>
+
+    <!-- Support Dashboard -->
+    <g transform="translate(50, 50)">
+        <!-- Main Panel -->
+        <rect x="0" y="0" width="700" height="200" rx="8" fill="#243B55"/>
+        
+        <!-- Status Indicators -->
+        <g transform="translate(20, 20)">
+            <circle cx="10" cy="10" r="6" fill="#34D399"/>
+            <text x="30" y="15" fill="#E5E7EB" font-family="Arial" font-size="14">System Status: Online</text>
+        </g>
+        
+        <!-- Response Time -->
+        <g transform="translate(200, 20)">
+            <text x="0" y="15" fill="#60A5FA" font-family="Arial" font-size="14">Avg. Response: &lt; 5min</text>
+        </g>
+        
+        <!-- Active Tickets -->
+        <g transform="translate(400, 20)">
+            <text x="0" y="15" fill="#60A5FA" font-family="Arial" font-size="14">Active Tickets: 12</text>
+        </g>
+        
+        <!-- Support Queue -->
+        <g transform="translate(20, 60)">
+            <rect x="0" y="0" width="660" height="120" rx="4" fill="#1A2B44"/>
+            <text x="10" y="30" fill="#E5E7EB" font-family="Arial" font-size="14">Latest Tickets</text>
+            
+            <!-- Ticket Items -->
+            <g transform="translate(10, 50)">
+                <circle cx="10" cy="10" r="4" fill="#3B82F6"/>
+                <text x="30" y="15" fill="#E5E7EB" font-family="Arial" font-size="12">EMR System Access Issue - Priority: High</text>
+            </g>
+            
+            <g transform="translate(10, 80)">
+                <circle cx="10" cy="10" r="4" fill="#34D399"/>
+                <text x="30" y="15" fill="#E5E7EB" font-family="Arial" font-size="12">Network Connectivity - Priority: Medium</text>
+            </g>
+        </g>
+    </g>
+
+    <!-- Support Team -->
+    <g transform="translate(50, 280)">
+        <!-- Team Status -->
+        <rect x="0" y="0" width="300" height="270" rx="8" fill="#243B55"/>
+        <text x="20" y="40" fill="#60A5FA" font-family="Arial" font-size="18" font-weight="bold">Support Team</text>
+        
+        <!-- Team Members -->
+        <g transform="translate(20, 70)">
+            <circle cx="15" cy="15" r="8" fill="#3B82F6"/>
+            <text x="40" y="20" fill="#E5E7EB" font-family="Arial" font-size="14">Tech Lead - Active</text>
+        </g>
+        
+        <g transform="translate(20, 110)">
+            <circle cx="15" cy="15" r="8" fill="#34D399"/>
+            <text x="40" y="20" fill="#E5E7EB" font-family="Arial" font-size="14">Support Engineer - Active</text>
+        </g>
+        
+        <g transform="translate(20, 150)">
+            <circle cx="15" cy="15" r="8" fill="#34D399"/>
+            <text x="40" y="20" fill="#E5E7EB" font-family="Arial" font-size="14">System Specialist - Active</text>
+        </g>
+    </g>
+
+    <!-- Performance Metrics -->
+    <g transform="translate(400, 280)">
+        <!-- Metrics Panel -->
+        <rect x="0" y="0" width="350" height="270" rx="8" fill="#243B55"/>
+        <text x="20" y="40" fill="#60A5FA" font-family="Arial" font-size="18" font-weight="bold">Performance</text>
+        
+        <!-- Chart -->
+        <g transform="translate(20, 70)">
+            <path d="M0 150 L310 150" stroke="#2A3B54" stroke-width="1"/>
+            <path d="M0 100 L310 100" stroke="#2A3B54" stroke-width="1"/>
+            <path d="M0 50 L310 50" stroke="#2A3B54" stroke-width="1"/>
+            
+            <!-- Performance Line -->
+            <path d="M10 120 L80 90 L150 100 L220 70 L290 50" 
+                  stroke="url(#greenGradient)" 
+                  stroke-width="2"
+                  fill="none"/>
+                  
+            <!-- Data Points -->
+            <circle cx="10" cy="120" r="4" fill="#34D399"/>
+            <circle cx="80" cy="90" r="4" fill="#34D399"/>
+            <circle cx="150" cy="100" r="4" fill="#34D399"/>
+            <circle cx="220" cy="70" r="4" fill="#34D399"/>
+            <circle cx="290" cy="50" r="4" fill="#34D399"/>
+        </g>
+        
+        <!-- Labels -->
+        <text x="20" y="240" fill="#E5E7EB" font-family="Arial" font-size="12">Response Time Trend</text>
+    </g>
+</svg> 
