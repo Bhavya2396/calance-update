@@ -103,7 +103,7 @@ export default function AISolutions() {
   return (
     <div className="min-h-screen bg-[#0F172A]">
       {/* Hero Section */}
-      <section className="relative pt-32 pb-20 overflow-hidden">
+      <section className="relative pt-28 sm:pt-32 pb-16 sm:pb-20 overflow-hidden">
         <div className="absolute inset-0">
           <div className="absolute inset-0 bg-gradient-to-r from-[#7C3AED]/20 to-[#3B82F6]/20" />
         </div>
