@@ -102,7 +102,7 @@ export default function BusinessIntelligence() {
   return (
     <main className="bg-[#0A1628] text-white min-h-screen">
       {/* Hero Section */}
-      <section className="relative pt-28 sm:pt-32 pb-16 sm:pb-20 overflow-hidden">
+      <section className="relative pt-36 sm:pt-32 pb-16 sm:pb-20 overflow-hidden">
         <div className="absolute inset-0">
           <div className="absolute inset-0 bg-gradient-to-br from-[#7C3AED]/10 to-[#3B82F6]/10" />
           <div className="absolute inset-0 bg-[url('/images/noise.png')] opacity-5" />

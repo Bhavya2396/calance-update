@@ -40,9 +40,9 @@ export default function Home() {
       <MainHeader />
       
       {/* Main Content */}
-      <div className="pt-16 sm:pt-20">
+      <div className="pt-24 sm:pt-20">
       {/* Hero Section */}
-      <section className="relative py-12 sm:py-16 flex items-center overflow-hidden">
+      <section className="relative py-16 sm:py-16 flex items-center overflow-hidden">
         {/* Background Effects */}
         <div className="absolute inset-0">
           <div className="absolute inset-0 bg-gradient-to-br from-[#FF6B2C]/10 to-[#3B82F6]/10" />

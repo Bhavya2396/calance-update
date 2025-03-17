@@ -389,9 +389,9 @@ export default function CaseStudies() {
     <main className="bg-[#0A1628] min-h-screen">
       <Header />
       
-      <div className="pt-16 sm:pt-20">
+      <div className="pt-24 sm:pt-20">
         {/* Hero Section */}
-        <section className="relative py-12 sm:py-16 overflow-hidden">
+        <section className="relative py-16 sm:py-16 overflow-hidden">
           <div className="absolute inset-0">
             <div className="absolute inset-0 bg-gradient-to-br from-[#FF6B2C]/10 to-[#3B82F6]/10" />
             <motion.div 
