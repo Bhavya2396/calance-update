@@ -101,7 +101,7 @@ export default function Construction() {
   return (
     <main className="bg-[#0A1628] text-white min-h-screen">
       {/* Hero Section */}
-      <section className="relative py-20 overflow-hidden">
+      <section className="relative pt-32 pb-20 overflow-hidden">
         <div className="absolute inset-0">
           <div className="absolute inset-0 bg-gradient-to-br from-[#F59E0B]/10 to-[#3B82F6]/10" />
           <div className="absolute inset-0 bg-[url('/images/noise.png')] opacity-5" />

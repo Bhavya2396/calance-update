@@ -47,7 +47,7 @@ export default function Hero() {
   return (
     <div 
       ref={containerRef}
-      className="relative min-h-[80vh] flex flex-col justify-start overflow-hidden bg-[#0A1628] pt-24 lg:pt-32"
+      className="relative min-h-[80vh] flex flex-col justify-start overflow-hidden bg-[#0A1628] pt-32 lg:pt-40"
     >
       {/* Background Elements */}
       <div className="absolute inset-0 overflow-hidden">
