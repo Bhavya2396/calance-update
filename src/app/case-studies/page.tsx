@@ -63,6 +63,8 @@ interface CaseStudy {
   tags: Tag[]
   category: string
   featured: boolean
+  duration?: string
+  teamSize?: string
 }
 
 const caseStudies: CaseStudy[] = [
@@ -77,7 +79,9 @@ const caseStudies: CaseStudy[] = [
       { label: 'AI/ML', color: 'blue' }
     ],
     category: 'ai',
-    featured: true
+    featured: true,
+    duration: '6 months',
+    teamSize: '8 specialists'
   },
   {
     id: 'spotmentor-devops',
@@ -90,7 +94,9 @@ const caseStudies: CaseStudy[] = [
       { label: 'AWS', color: 'blue' }
     ],
     category: 'devops',
-    featured: true
+    featured: true,
+    duration: '4 months',
+    teamSize: '5 specialists'
   },
   {
     id: 'alpha-fortress',
@@ -103,18 +109,210 @@ const caseStudies: CaseStudy[] = [
       { label: 'Security', color: 'blue' }
     ],
     category: 'security',
-    featured: true
+    featured: true,
+    duration: '5 months',
+    teamSize: '6 specialists'
+  },
+  {
+    id: 'pmweb-peoplesoft',
+    title: 'PeopleSoft Integration for PMWeb',
+    description: 'Seamless integration between PMWeb construction management and PeopleSoft ERP systems.',
+    image: '/images/illustrations/case-studies/pmweb-peoplesoft/hero.svg',
+    href: '/case-studies/pmweb-peoplesoft',
+    tags: [
+      { label: 'Construction', color: 'orange' },
+      { label: 'Integration', color: 'blue' }
+    ],
+    category: 'integration',
+    featured: false,
+    duration: '3 months',
+    teamSize: '4 specialists'
+  },
+  {
+    id: 'procore-xero',
+    title: 'Procore-Xero Integration',
+    description: 'Automating financial data flow between Procore construction management and Xero accounting.',
+    image: '/images/illustrations/case-studies/procore-xero/hero.svg',
+    href: '/case-studies/procore-xero',
+    tags: [
+      { label: 'Construction', color: 'orange' },
+      { label: 'Integration', color: 'blue' }
+    ],
+    category: 'integration',
+    featured: false,
+    duration: '3 months',
+    teamSize: '4 specialists'
+  },
+  {
+    id: 'finca-aura',
+    title: 'Finca Aura Digital Transformation',
+    description: 'Modernizing agricultural operations with IoT sensors and real-time analytics dashboard.',
+    image: '/images/illustrations/case-studies/finca-aura/hero.svg',
+    href: '/case-studies/finca-aura',
+    tags: [
+      { label: 'Agriculture', color: 'orange' },
+      { label: 'IoT', color: 'blue' }
+    ],
+    category: 'app-dev',
+    featured: false,
+    duration: '3 months',
+    teamSize: '4 specialists'
+  },
+  {
+    id: 'isuzu-sharepoint',
+    title: 'Isuzu SharePoint Modernization',
+    description: 'Upgrading legacy SharePoint environment to modern SharePoint Online with enhanced collaboration features.',
+    image: '/images/illustrations/case-studies/isuzu-sharepoint/hero.svg',
+    href: '/case-studies/isuzu-sharepoint',
+    tags: [
+      { label: 'Automotive', color: 'orange' },
+      { label: 'SharePoint', color: 'blue' }
+    ],
+    category: 'sharepoint',
+    featured: false,
+    duration: '3 months',
+    teamSize: '4 specialists'
+  },
+  {
+    id: 'construction-rpa',
+    title: 'Construction RPA Implementation',
+    description: 'Automating repetitive construction documentation processes with Robotic Process Automation.',
+    image: '/images/illustrations/case-studies/construction-rpa/hero.svg',
+    href: '/case-studies/construction-rpa',
+    tags: [
+      { label: 'Construction', color: 'orange' },
+      { label: 'Automation', color: 'blue' }
+    ],
+    category: 'devops',
+    featured: false,
+    duration: '3 months',
+    teamSize: '4 specialists'
+  },
+  {
+    id: 'wellpath-sharepoint',
+    title: 'Wellpath SharePoint Intranet',
+    description: 'Creating a modern healthcare intranet with SharePoint Online for improved internal communications.',
+    image: '/images/illustrations/case-studies/wellpath-sharepoint/hero.svg',
+    href: '/case-studies/wellpath-sharepoint',
+    tags: [
+      { label: 'Healthcare', color: 'orange' },
+      { label: 'SharePoint', color: 'blue' }
+    ],
+    category: 'sharepoint',
+    featured: false,
+    duration: '3 months',
+    teamSize: '4 specialists'
+  },
+  {
+    id: 'bch-procore',
+    title: 'BCH Procore Implementation',
+    description: 'Streamlining construction project management with Procore implementation and custom integrations.',
+    image: '/images/illustrations/case-studies/bch-procore/hero.svg',
+    href: '/case-studies/bch-procore',
+    tags: [
+      { label: 'Construction', color: 'orange' },
+      { label: 'Project Management', color: 'blue' }
+    ],
+    category: 'app-dev',
+    featured: false,
+    duration: '3 months',
+    teamSize: '4 specialists'
+  },
+  {
+    id: 'harkins-procore',
+    title: 'Harkins Procore Integration',
+    description: 'Custom integration between Procore and enterprise systems for streamlined construction workflows.',
+    image: '/images/illustrations/case-studies/harkins-procore/hero.svg',
+    href: '/case-studies/harkins-procore',
+    tags: [
+      { label: 'Construction', color: 'orange' },
+      { label: 'Integration', color: 'blue' }
+    ],
+    category: 'integration',
+    featured: false,
+    duration: '3 months',
+    teamSize: '4 specialists'
+  },
+  {
+    id: 'bank-sharepoint',
+    title: 'Banking SharePoint Portal',
+    description: 'Secure document management and collaboration portal for financial services compliance.',
+    image: '/images/illustrations/case-studies/bank-sharepoint/hero.svg',
+    href: '/case-studies/bank-sharepoint',
+    tags: [
+      { label: 'Finance', color: 'orange' },
+      { label: 'SharePoint', color: 'blue' }
+    ],
+    category: 'sharepoint',
+    featured: false,
+    duration: '3 months',
+    teamSize: '4 specialists'
+  },
+  {
+    id: 'sentinel-app',
+    title: 'Sentinel Security App',
+    description: 'Mobile application for real-time security monitoring and incident response management.',
+    image: '/images/illustrations/case-studies/sentinel-app/hero.svg',
+    href: '/case-studies/sentinel-app',
+    tags: [
+      { label: 'Security', color: 'orange' },
+      { label: 'Mobile', color: 'blue' }
+    ],
+    category: 'app-dev',
+    featured: false,
+    duration: '3 months',
+    teamSize: '4 specialists'
+  },
+  {
+    id: 'kubota-mobile',
+    title: 'Kubota Mobile Field Service',
+    description: 'Mobile application for field service technicians with offline capabilities and real-time synchronization.',
+    image: '/images/illustrations/case-studies/kubota-mobile/hero.svg',
+    href: '/case-studies/kubota-mobile',
+    tags: [
+      { label: 'Manufacturing', color: 'orange' },
+      { label: 'Mobile', color: 'blue' }
+    ],
+    category: 'app-dev',
+    featured: false,
+    duration: '3 months',
+    teamSize: '4 specialists'
+  },
+  {
+    id: 'healthcare-helpdesk',
+    title: 'Healthcare IT Helpdesk',
+    description: 'Implementing a modern IT service management solution for a large healthcare provider.',
+    image: '/images/illustrations/case-studies/healthcare-helpdesk/hero.svg',
+    href: '/case-studies/healthcare-helpdesk',
+    tags: [
+      { label: 'Healthcare', color: 'orange' },
+      { label: 'IT Services', color: 'blue' }
+    ],
+    category: 'cloud',
+    featured: false,
+    duration: '3 months',
+    teamSize: '4 specialists'
+  },
+  {
+    id: 'westview-backup',
+    title: 'Westview Cloud Backup Solution',
+    description: 'Implementing a robust cloud backup and disaster recovery solution for critical business data.',
+    image: '/images/illustrations/case-studies/westview-backup/hero.svg',
+    href: '/case-studies/westview-backup',
+    tags: [
+      { label: 'Infrastructure', color: 'orange' },
+      { label: 'Cloud', color: 'blue' }
+    ],
+    category: 'cloud',
+    featured: false,
+    duration: '3 months',
+    teamSize: '4 specialists'
   }
 ]
 
 const CaseStudyCard = ({ study }: { study: typeof caseStudies[0] }) => {
   const getStudyUrl = (id: string) => {
-    const urlMap: { [key: string]: string } = {
-      'clinical-trials': '/case-studies/clinical-trials',
-      'spotmentor-devops': '/case-studies/spotmentor-devops',
-      'alpha-fortress': '/case-studies/alpha-fortress'
-    }
-    return urlMap[id] || '#'
+    return `/case-studies/${id}`
   }
 
   return (
