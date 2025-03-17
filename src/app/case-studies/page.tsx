@@ -63,8 +63,6 @@ interface CaseStudy {
   tags: Tag[]
   category: string
   featured: boolean
-  duration?: string
-  teamSize?: string
 }
 
 const caseStudies: CaseStudy[] = [
