@@ -389,7 +389,7 @@ export default function CaseStudies() {
     <main className="bg-[#0A1628] min-h-screen">
       <Header />
       
-      <div className="pt-20">
+      <div className="page-content">
         {/* Hero Section */}
         <section className="relative py-16 overflow-hidden">
           <div className="absolute inset-0">
