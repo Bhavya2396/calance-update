@@ -168,7 +168,7 @@ export default function Contact() {
     <main className="bg-[#0A1628] min-h-screen">
       <Header />
       
-      <div className="page-content">
+      <div className="pt-20">
         {/* Hero Section */}
         <section className="relative py-24 overflow-hidden">
           <div className="absolute inset-0">
