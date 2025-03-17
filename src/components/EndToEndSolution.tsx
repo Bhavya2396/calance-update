@@ -14,19 +14,19 @@ const steps = [
     title: "Understanding Your Needs",
     description: "We take time to deeply understand your business challenges and objectives through comprehensive analysis and consultation",
     icon: <LightBulbIcon className="w-6 h-6" />,
-    illustration: "/images/illustrations/process/understanding.svg"
+    illustration: "/images/illustrations/end-to-end/step-1.svg"
   },
   {
     title: "Creative Solutions",
     description: "Our experts design innovative, tailored solutions that perfectly align with your unique requirements and industry standards",
     icon: <PuzzlePieceIcon className="w-6 h-6" />,
-    illustration: "/images/illustrations/process/solutions.svg"
+    illustration: "/images/illustrations/end-to-end/step-2.svg"
   },
   {
     title: "Seamless Delivery",
     description: "We implement solutions efficiently and provide ongoing support to ensure your continued success and growth",
     icon: <RocketLaunchIcon className="w-6 h-6" />,
-    illustration: "/images/illustrations/process/delivery.svg"
+    illustration: "/images/illustrations/end-to-end/step-3.svg"
   }
 ]
 
@@ -82,7 +82,7 @@ export default function EndToEndSolution() {
               )}
               
               {/* Step Card */}
-              <div className="bg-[#1A2B44]/50 backdrop-blur-sm rounded-2xl p-8 border border-[#243B61] hover:border-[#FF6B2C] transition-colors h-full flex flex-col">
+              <div className="bg-[#1A2B44]/50 backdrop-blur-sm rounded-2xl p-8 border border-[#243B61] hover:border-[#FF6B2C] transition-colors h-full">
                 {/* Header */}
                 <div className="flex items-center gap-4 mb-6">
                   <div className="p-3 rounded-xl bg-[#FF6B2C]/10 text-white">
@@ -99,11 +99,12 @@ export default function EndToEndSolution() {
                     alt={step.title}
                     fill
                     className="object-contain p-6 group-hover:scale-105 transition-transform duration-300"
+                    priority
                   />
                 </div>
                 
                 {/* Description */}
-                <p className="text-gray-400 flex-grow">
+                <p className="text-gray-400">
                   {step.description}
                 </p>
               </div>
@@ -157,10 +158,11 @@ export default function EndToEndSolution() {
               className="relative h-[400px] hidden lg:block"
             >
               <Image
-                src="/images/illustrations/process/overview.svg"
+                src="/images/illustrations/end-to-end.svg"
                 alt="Our Solution Process"
                 fill
                 className="object-contain"
+                priority
               />
             </motion.div>
           </div>

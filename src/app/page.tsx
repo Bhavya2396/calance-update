@@ -40,7 +40,7 @@ export default function Home() {
       <MainHeader />
       
       {/* Main Content */}
-      <div className="pt-0">
+      <div className="pt-12">
       {/* Hero Section */}
       <section className="relative py-8 flex items-center overflow-hidden">
         {/* Background Effects */}

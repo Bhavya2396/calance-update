@@ -11,7 +11,6 @@ import {
   HeartIcon,
   BuildingOffice2Icon,
   ArrowRightIcon,
-  BriefcaseIcon,
   RocketLaunchIcon,
   CloudIcon,
   ShieldCheckIcon
@@ -54,6 +53,13 @@ export default function About() {
     }
   ]
 
+  const stats = [
+    { value: '20+', label: 'Years of Excellence' },
+    { value: '1000+', label: 'Team Members' },
+    { value: '16', label: 'Global Offices' },
+    { value: '500+', label: 'Clients Worldwide' }
+  ]
+
   const values = [
     {
       title: 'Innovation',
@@ -85,66 +91,33 @@ export default function About() {
     }
   ]
 
-  const stats = [
-    { value: '20+', label: 'Years of Excellence' },
-    { value: '1000+', label: 'Team Members' },
-    { value: '16', label: 'Global Offices' },
-    { value: '500+', label: 'Clients Worldwide' }
-  ]
-
-  const services = [
-    {
-      title: 'AI & Analytics',
-      description: 'Generative AI, Business Intelligence, and Data Science solutions',
-      icon: BriefcaseIcon,
-      color: 'text-[#FF6B2C]'
-    },
-    {
-      title: 'Cloud & Infrastructure',
-      description: 'Modern cloud solutions and infrastructure management',
-      icon: CloudIcon,
-      color: 'text-[#3B82F6]'
-    },
-    {
-      title: 'Security & Compliance',
-      description: 'Comprehensive cybersecurity and compliance services',
-      icon: ShieldCheckIcon,
-      color: 'text-[#FF6B2C]'
-    },
-    {
-      title: 'Digital Transformation',
-      description: 'End-to-end digital transformation and modernization',
-      icon: RocketLaunchIcon,
-      color: 'text-[#3B82F6]'
-    }
-  ]
-
   return (
     <main className="bg-[#0A1628] min-h-screen">
       <Header />
       
       <div className="pt-16">
         {/* Hero Section */}
-        <section className="relative py-16 overflow-hidden">
+        <section className="relative py-24 overflow-hidden">
           <div className="absolute inset-0">
-            <div className="absolute inset-0 bg-gradient-to-br from-[#FF6B2C]/10 to-[#3B82F6]/10" />
+            <div className="absolute inset-0 bg-gradient-to-br from-[#FF6B2C]/10 via-[#1A2B44] to-[#3B82F6]/10" />
             <motion.div 
               className="absolute inset-0"
               animate={{ 
                 background: [
-                  "radial-gradient(600px circle at 30% 30%, rgba(255, 107, 44, 0.15), transparent 70%)",
-                  "radial-gradient(600px circle at 70% 70%, rgba(59, 130, 246, 0.15), transparent 70%)",
-                  "radial-gradient(600px circle at 30% 70%, rgba(255, 107, 44, 0.15), transparent 70%)",
-                  "radial-gradient(600px circle at 70% 30%, rgba(59, 130, 246, 0.15), transparent 70%)"
+                  "radial-gradient(800px circle at 30% 30%, rgba(255, 107, 44, 0.15), transparent 70%)",
+                  "radial-gradient(800px circle at 70% 70%, rgba(59, 130, 246, 0.15), transparent 70%)",
+                  "radial-gradient(800px circle at 30% 70%, rgba(255, 107, 44, 0.15), transparent 70%)",
+                  "radial-gradient(800px circle at 70% 30%, rgba(59, 130, 246, 0.15), transparent 70%)"
                 ]
               }}
               transition={{ duration: 10, repeat: Infinity }}
             />
             <div className="absolute inset-0 bg-[url('/images/noise.png')] opacity-5" />
+            <div className="absolute inset-0 bg-[url('/grid.svg')] bg-center opacity-20 [mask-image:radial-gradient(ellipse_at_center,white,transparent)]" />
           </div>
 
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative">
-            <div className="grid lg:grid-cols-2 gap-12 items-center">
+            <div className="grid lg:grid-cols-2 gap-16 items-center">
               {/* Content */}
               <motion.div 
                 initial={{ opacity: 0, x: -20 }}
@@ -152,162 +125,122 @@ export default function About() {
                 transition={{ duration: 0.5 }}
                 className="relative z-10"
               >
-                <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-[#1A2B44] text-[#FF6B2C] mb-6">
+                <motion.div 
+                  initial={{ opacity: 0, y: 20 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  transition={{ duration: 0.5 }}
+                  className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-[#1A2B44] text-[#FF6B2C] mb-6"
+                >
                   <SparklesIcon className="w-5 h-5" />
                   <span className="text-sm font-medium">Our Story</span>
-                </div>
+                </motion.div>
                 
-                <h1 className="text-4xl sm:text-5xl font-bold text-white mb-6">
+                <motion.h1 
+                  initial={{ opacity: 0, y: 20 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  transition={{ duration: 0.5, delay: 0.1 }}
+                  className="text-4xl sm:text-5xl lg:text-6xl font-bold text-white mb-6 leading-tight"
+                >
                   Transforming Businesses Through{' '}
                   <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#FF6B2C] to-[#3B82F6]">
-                    Technology
+                    Digital Innovation
                   </span>
-                </h1>
+                </motion.h1>
                 
-                <p className="text-lg text-gray-400 mb-6">
+                <motion.p 
+                  initial={{ opacity: 0, y: 20 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  transition={{ duration: 0.5, delay: 0.2 }}
+                  className="text-lg text-gray-400 mb-6 leading-relaxed"
+                >
                   The name Calance, derived from "Customer Alliance," reflects our foundational belief in building strong partnerships for mutual success. Since 2003, we've been at the forefront of digital transformation, helping businesses adapt and thrive in an ever-evolving technological landscape.
-                </p>
+                </motion.p>
 
-                <p className="text-lg text-gray-400 mb-8">
+                <motion.p 
+                  initial={{ opacity: 0, y: 20 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  transition={{ duration: 0.5, delay: 0.3 }}
+                  className="text-lg text-gray-400 mb-8 leading-relaxed"
+                >
                   Today, as part of the DTS Group, we continue to empower organizations with innovative solutions in AI, Cloud, Security, and Digital Transformation across the United States, Canada, and India.
-                </p>
+                </motion.p>
 
-                <div className="grid sm:grid-cols-2 gap-4 mb-8">
+                <motion.div 
+                  initial={{ opacity: 0, y: 20 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  transition={{ duration: 0.5, delay: 0.4 }}
+                  className="grid sm:grid-cols-2 gap-4 mb-8"
+                >
                   {stats.map((stat, index) => (
                     <motion.div
                       key={stat.label}
                       initial={{ opacity: 0, y: 20 }}
                       animate={{ opacity: 1, y: 0 }}
                       transition={{ delay: index * 0.1 }}
-                      className="bg-[#1A2B44]/50 backdrop-blur-sm rounded-xl p-6 border border-[#243B61] hover:border-[#3B82F6]/50 transition-all duration-300"
+                      className="bg-[#1A2B44]/50 backdrop-blur-sm rounded-xl p-6 border border-[#243B61] hover:border-[#3B82F6]/50 transition-all duration-300 group"
                     >
-                      <div className="text-2xl font-bold text-white mb-1">{stat.value}</div>
+                      <div className="text-3xl font-bold bg-gradient-to-r from-[#FF6B2C] to-[#3B82F6] bg-clip-text text-transparent group-hover:from-[#3B82F6] group-hover:to-[#FF6B2C] transition-all duration-300 mb-1">
+                        {stat.value}
+                      </div>
                       <div className="text-sm text-gray-400">{stat.label}</div>
                     </motion.div>
                   ))}
-                </div>
+                </motion.div>
               </motion.div>
 
               {/* Hero Illustration */}
               <motion.div 
-                className="relative lg:h-[600px]"
+                className="relative lg:h-[700px]"
                 initial={{ opacity: 0, scale: 0.95 }}
                 animate={{ opacity: 1, scale: 1 }}
                 transition={{ duration: 0.5 }}
               >
+                <div className="absolute inset-0">
+                  <motion.div
+                    className="absolute inset-0 bg-gradient-to-br from-[#FF6B2C]/20 to-[#3B82F6]/20 rounded-3xl blur-3xl"
+                    animate={{
+                      scale: [1, 1.1, 1],
+                      opacity: [0.5, 0.8, 0.5]
+                    }}
+                    transition={{
+                      duration: 4,
+                      repeat: Infinity,
+                      repeatType: "reverse"
+                    }}
+                  />
+                </div>
                 <Image
-                  src="/images/illustrations/about/hero.svg"
+                  src="/images/illustrations/about/hero-new.svg"
                   alt="Global Presence"
                   fill
-                  className="object-contain"
+                  className="object-contain z-10 relative transform hover:scale-105 transition-transform duration-500"
                   priority
                 />
-              </motion.div>
-            </div>
-          </div>
-        </section>
-
-        {/* Services Overview */}
-        <section className="py-24 relative overflow-hidden">
-          <div className="absolute inset-0">
-            <div className="absolute inset-0 bg-gradient-to-b from-[#0A1628] via-[#1A2B44] to-[#0A1628]" />
-            <div className="absolute inset-0 bg-[url('/images/grid.svg')] bg-center [mask-image:linear-gradient(180deg,white,rgba(255,255,255,0))]" />
-          </div>
-
-          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative">
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              className="text-center mb-16"
-            >
-              <h2 className="text-3xl sm:text-4xl font-bold text-white mb-6">
-                Comprehensive Solutions
-              </h2>
-              <p className="text-lg text-gray-400 max-w-2xl mx-auto">
-                We offer a wide range of services designed to help businesses navigate their digital transformation journey.
-              </p>
-            </motion.div>
-
-            <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
-              {services.map((service, index) => (
+                
+                {/* Floating Elements */}
                 <motion.div
-                  key={service.title}
-                  initial={{ opacity: 0, y: 20 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  viewport={{ once: true }}
-                  transition={{ delay: index * 0.1 }}
-                  className="bg-[#1A2B44]/50 backdrop-blur-sm rounded-xl p-6 border border-[#243B61] hover:border-[#3B82F6]/50 transition-all duration-300"
-                >
-                  <div className={`w-12 h-12 rounded-lg bg-gradient-to-br from-${service.color}/10 to-transparent flex items-center justify-center mb-4`}>
-                    <service.icon className={`w-6 h-6 ${service.color}`} />
-                  </div>
-                  <h3 className="text-white font-semibold mb-2">{service.title}</h3>
-                  <p className="text-gray-400 text-sm">{service.description}</p>
-                </motion.div>
-              ))}
-            </div>
-          </div>
-        </section>
-
-        {/* Values Section */}
-        <section className="py-24 relative overflow-hidden">
-          <div className="absolute inset-0">
-            <div className="absolute inset-0 bg-gradient-to-b from-[#0A1628] via-[#1A2B44] to-[#0A1628]" />
-            <div className="absolute inset-0 bg-[url('/images/grid.svg')] bg-center [mask-image:linear-gradient(180deg,white,rgba(255,255,255,0))]" />
-          </div>
-
-          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative">
-            <div className="grid lg:grid-cols-2 gap-12 items-center">
-              {/* Content */}
-              <motion.div
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-              >
-                <h2 className="text-3xl sm:text-4xl font-bold text-white mb-6">
-                  Our Core Values
-                </h2>
-                <p className="text-lg text-gray-400 mb-8">
-                  Our values shape everything we do, from how we develop solutions to how we serve our clients and support our team members.
-                </p>
-
-                <div className="grid gap-6">
-                  {values.map((value, index) => (
-                    <motion.div
-                      key={value.title}
-                      initial={{ opacity: 0, x: -20 }}
-                      whileInView={{ opacity: 1, x: 0 }}
-                      viewport={{ once: true }}
-                      transition={{ delay: index * 0.1 }}
-                      className="bg-[#1A2B44]/50 backdrop-blur-sm rounded-xl p-6 border border-[#243B61]"
-                    >
-                      <div className="flex items-start gap-4">
-                        <div className={`p-3 rounded-lg bg-gradient-to-br ${value.gradient}`}>
-                          <value.icon className={`w-6 h-6 ${value.color}`} />
-                        </div>
-                        <div>
-                          <h3 className="text-white font-semibold mb-2">{value.title}</h3>
-                          <p className="text-gray-400">{value.description}</p>
-                        </div>
-                      </div>
-                    </motion.div>
-                  ))}
-                </div>
-              </motion.div>
-
-              {/* Values Illustration */}
-              <motion.div 
-                className="relative lg:h-[600px] hidden lg:block"
-                initial={{ opacity: 0, scale: 0.95 }}
-                whileInView={{ opacity: 1, scale: 1 }}
-                viewport={{ once: true }}
-              >
-                <Image
-                  src="/images/illustrations/about/values.svg"
-                  alt="Our Values"
-                  fill
-                  className="object-contain"
+                  className="absolute top-1/4 -left-8 w-16 h-16 bg-[#FF6B2C]/10 rounded-full blur-xl"
+                  animate={{
+                    y: [0, 20, 0],
+                    opacity: [0.5, 1, 0.5]
+                  }}
+                  transition={{
+                    duration: 3,
+                    repeat: Infinity,
+                    repeatType: "reverse"
+                  }}
+                />
+                <motion.div
+                  className="absolute bottom-1/4 -right-8 w-16 h-16 bg-[#3B82F6]/10 rounded-full blur-xl"
+                  animate={{
+                    y: [0, -20, 0],
+                    opacity: [0.5, 1, 0.5]
+                  }}
+                  transition={{
+                    duration: 4,
+                    repeat: Infinity,
+                    repeatType: "reverse"
+                  }}
                 />
               </motion.div>
             </div>
@@ -377,6 +310,134 @@ export default function About() {
                   </motion.div>
                 ))}
               </div>
+            </div>
+          </div>
+        </section>
+
+        {/* Values Section */}
+        <section className="py-24 relative overflow-hidden">
+          <div className="absolute inset-0">
+            <div className="absolute inset-0 bg-gradient-to-br from-[#FF6B2C]/10 via-[#1A2B44] to-[#3B82F6]/10" />
+            <motion.div 
+              className="absolute inset-0"
+              animate={{ 
+                background: [
+                  "radial-gradient(800px circle at 70% 30%, rgba(255, 107, 44, 0.15), transparent 70%)",
+                  "radial-gradient(800px circle at 30% 70%, rgba(59, 130, 246, 0.15), transparent 70%)"
+                ]
+              }}
+              transition={{ duration: 8, repeat: Infinity, repeatType: "reverse" }}
+            />
+            <div className="absolute inset-0 bg-[url('/grid.svg')] bg-center opacity-20 [mask-image:radial-gradient(ellipse_at_center,white,transparent)]" />
+          </div>
+
+          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative">
+            <div className="grid lg:grid-cols-2 gap-16 items-center">
+              {/* Content */}
+              <motion.div
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+              >
+                <motion.h2 
+                  initial={{ opacity: 0, y: 20 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true }}
+                  className="text-3xl sm:text-4xl lg:text-5xl font-bold text-white mb-6"
+                >
+                  Our Core{' '}
+                  <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#FF6B2C] to-[#3B82F6]">
+                    Values
+                  </span>
+                </motion.h2>
+                <motion.p 
+                  initial={{ opacity: 0, y: 20 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true }}
+                  transition={{ delay: 0.1 }}
+                  className="text-lg text-gray-400 mb-12 leading-relaxed"
+                >
+                  Our values shape everything we do, from how we develop solutions to how we serve our clients and support our team members.
+                </motion.p>
+
+                <div className="grid gap-8">
+                  {values.map((value, index) => (
+                    <motion.div
+                      key={value.title}
+                      initial={{ opacity: 0, x: -20 }}
+                      whileInView={{ opacity: 1, x: 0 }}
+                      viewport={{ once: true }}
+                      transition={{ delay: index * 0.1 }}
+                      className="bg-[#1A2B44]/50 backdrop-blur-sm rounded-xl p-6 border border-[#243B61] hover:border-[#3B82F6] transition-all duration-300 group"
+                    >
+                      <div className="flex items-start gap-6">
+                        <div className={`p-4 rounded-xl bg-gradient-to-br ${value.gradient} group-hover:scale-110 transition-transform duration-300`}>
+                          <value.icon className={`w-8 h-8 ${value.color}`} />
+                        </div>
+                        <div>
+                          <h3 className="text-xl font-bold text-white mb-2 group-hover:text-[#FF6B2C] transition-colors">{value.title}</h3>
+                          <p className="text-gray-400 leading-relaxed">{value.description}</p>
+                        </div>
+                      </div>
+                    </motion.div>
+                  ))}
+                </div>
+              </motion.div>
+
+              {/* Values Illustration */}
+              <motion.div 
+                className="relative lg:h-[700px] hidden lg:block"
+                initial={{ opacity: 0, scale: 0.95 }}
+                whileInView={{ opacity: 1, scale: 1 }}
+                viewport={{ once: true }}
+              >
+                <div className="absolute inset-0">
+                  <motion.div
+                    className="absolute inset-0 bg-gradient-to-br from-[#FF6B2C]/20 to-[#3B82F6]/20 rounded-3xl blur-3xl"
+                    animate={{
+                      scale: [1, 1.1, 1],
+                      opacity: [0.5, 0.8, 0.5]
+                    }}
+                    transition={{
+                      duration: 4,
+                      repeat: Infinity,
+                      repeatType: "reverse"
+                    }}
+                  />
+                </div>
+                <Image
+                  src="/images/illustrations/about/values.svg"
+                  alt="Our Values"
+                  fill
+                  className="object-contain z-10 relative transform hover:scale-105 transition-transform duration-500"
+                />
+                
+                {/* Floating Elements */}
+                <motion.div
+                  className="absolute top-1/4 -right-8 w-16 h-16 bg-[#FF6B2C]/10 rounded-full blur-xl"
+                  animate={{
+                    y: [0, 20, 0],
+                    opacity: [0.5, 1, 0.5]
+                  }}
+                  transition={{
+                    duration: 3,
+                    repeat: Infinity,
+                    repeatType: "reverse"
+                  }}
+                />
+                <motion.div
+                  className="absolute bottom-1/4 -left-8 w-16 h-16 bg-[#3B82F6]/10 rounded-full blur-xl"
+                  animate={{
+                    y: [0, -20, 0],
+                    opacity: [0.5, 1, 0.5]
+                  }}
+                  transition={{
+                    duration: 4,
+                    repeat: Infinity,
+                    repeatType: "reverse"
+                  }}
+                />
+              </motion.div>
             </div>
           </div>
         </section>

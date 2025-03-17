@@ -1,71 +1,127 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<svg width="600" height="400" viewBox="0 0 600 400" fill="none" xmlns="http://www.w3.org/2000/svg">
+<svg width="800" height="600" viewBox="0 0 800 600" fill="none" xmlns="http://www.w3.org/2000/svg">
   <!-- Background Elements -->
   <defs>
-    <linearGradient id="valueGradient" x1="0" y1="0" x2="600" y2="400">
-      <stop offset="0%" stop-color="#FF6B2C" stop-opacity="0.1"/>
+    <pattern id="grid" x="0" y="0" width="40" height="40" patternUnits="userSpaceOnUse">
+      <path d="M 40 0 L 0 0 0 40" fill="none" stroke="rgba(59, 130, 246, 0.1)" stroke-width="0.5"/>
+    </pattern>
+    <filter id="glow" x="-50%" y="-50%" width="200%" height="200%">
+      <feGaussianBlur in="SourceGraphic" stdDeviation="5"/>
+    </filter>
+  </defs>
+  <rect width="800" height="600" fill="url(#grid)"/>
+
+  <!-- Central Hub -->
+  <circle cx="400" cy="300" r="80" fill="url(#hub-gradient)" filter="url(#glow)"/>
+  
+  <!-- Value Nodes -->
+  <g>
+    <!-- Innovation -->
+    <circle cx="200" cy="200" r="60" fill="url(#innovation-gradient)" filter="url(#glow)"/>
+    <path d="M 270 240 L 330 270" stroke="url(#line-gradient)" stroke-width="2"/>
+    
+    <!-- Excellence -->
+    <circle cx="600" cy="200" r="60" fill="url(#excellence-gradient)" filter="url(#glow)"/>
+    <path d="M 530 270 L 470 240" stroke="url(#line-gradient)" stroke-width="2"/>
+    
+    <!-- Integrity -->
+    <circle cx="200" cy="400" r="60" fill="url(#integrity-gradient)" filter="url(#glow)"/>
+    <path d="M 270 360 L 330 330" stroke="url(#line-gradient)" stroke-width="2"/>
+    
+    <!-- Partnership -->
+    <circle cx="600" cy="400" r="60" fill="url(#partnership-gradient)" filter="url(#glow)"/>
+    <path d="M 530 330 L 470 360" stroke="url(#line-gradient)" stroke-width="2"/>
+  </g>
+
+  <!-- Gradient Definitions -->
+  <defs>
+    <radialGradient id="hub-gradient" cx="0.5" cy="0.5" r="0.5">
+      <stop offset="0%" stop-color="#FF6B2C" stop-opacity="0.3"/>
       <stop offset="100%" stop-color="#3B82F6" stop-opacity="0.1"/>
+    </radialGradient>
+    
+    <radialGradient id="innovation-gradient" cx="0.5" cy="0.5" r="0.5">
+      <stop offset="0%" stop-color="#FF6B2C" stop-opacity="0.2"/>
+      <stop offset="100%" stop-color="#FF6B2C" stop-opacity="0.1"/>
+    </radialGradient>
+    
+    <radialGradient id="excellence-gradient" cx="0.5" cy="0.5" r="0.5">
+      <stop offset="0%" stop-color="#3B82F6" stop-opacity="0.2"/>
+      <stop offset="100%" stop-color="#3B82F6" stop-opacity="0.1"/>
+    </radialGradient>
+    
+    <radialGradient id="integrity-gradient" cx="0.5" cy="0.5" r="0.5">
+      <stop offset="0%" stop-color="#FF6B2C" stop-opacity="0.2"/>
+      <stop offset="100%" stop-color="#FF6B2C" stop-opacity="0.1"/>
+    </radialGradient>
+    
+    <radialGradient id="partnership-gradient" cx="0.5" cy="0.5" r="0.5">
+      <stop offset="0%" stop-color="#3B82F6" stop-opacity="0.2"/>
+      <stop offset="100%" stop-color="#3B82F6" stop-opacity="0.1"/>
+    </radialGradient>
+    
+    <linearGradient id="line-gradient" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%" stop-color="#FF6B2C"/>
+      <stop offset="100%" stop-color="#3B82F6"/>
     </linearGradient>
   </defs>
 
-  <!-- Central Hub -->
-  <circle cx="300" cy="200" r="60" fill="#1A2B44" stroke="#243B61" stroke-width="2"/>
-  <text x="300" y="205" text-anchor="middle" fill="white" font-size="14">Values</text>
-
-  <!-- Value Nodes -->
-  <g id="value-nodes">
-    <!-- Innovation -->
-    <g transform="translate(200,100)">
-      <circle r="40" fill="#1A2B44" stroke="#FF6B2C" stroke-width="2">
-        <animate attributeName="r" values="40;42;40" dur="3s" repeatCount="indefinite"/>
-      </circle>
-      <text x="0" y="5" text-anchor="middle" fill="white" font-size="12">Innovation</text>
-    </g>
-
-    <!-- Excellence -->
-    <g transform="translate(400,100)">
-      <circle r="40" fill="#1A2B44" stroke="#3B82F6" stroke-width="2">
-        <animate attributeName="r" values="40;42;40" dur="3.5s" repeatCount="indefinite"/>
-      </circle>
-      <text x="0" y="5" text-anchor="middle" fill="white" font-size="12">Excellence</text>
-    </g>
-
-    <!-- Integrity -->
-    <g transform="translate(200,300)">
-      <circle r="40" fill="#1A2B44" stroke="#FF6B2C" stroke-width="2">
-        <animate attributeName="r" values="40;42;40" dur="4s" repeatCount="indefinite"/>
-      </circle>
-      <text x="0" y="5" text-anchor="middle" fill="white" font-size="12">Integrity</text>
-    </g>
-
-    <!-- Partnership -->
-    <g transform="translate(400,300)">
-      <circle r="40" fill="#1A2B44" stroke="#3B82F6" stroke-width="2">
-        <animate attributeName="r" values="40;42;40" dur="3.2s" repeatCount="indefinite"/>
-      </circle>
-      <text x="0" y="5" text-anchor="middle" fill="white" font-size="12">Partnership</text>
-    </g>
+  <!-- Animated Particles -->
+  <g>
+    <!-- Innovation to Hub -->
+    <circle cx="0" cy="0" r="3" fill="#FF6B2C">
+      <animateMotion
+        path="M 270 240 L 330 270"
+        dur="2s"
+        repeatCount="indefinite"/>
+    </circle>
+    
+    <!-- Excellence to Hub -->
+    <circle cx="0" cy="0" r="3" fill="#3B82F6">
+      <animateMotion
+        path="M 530 270 L 470 240"
+        dur="2s"
+        repeatCount="indefinite"/>
+    </circle>
+    
+    <!-- Integrity to Hub -->
+    <circle cx="0" cy="0" r="3" fill="#FF6B2C">
+      <animateMotion
+        path="M 270 360 L 330 330"
+        dur="2s"
+        repeatCount="indefinite"/>
+    </circle>
+    
+    <!-- Partnership to Hub -->
+    <circle cx="0" cy="0" r="3" fill="#3B82F6">
+      <animateMotion
+        path="M 530 330 L 470 360"
+        dur="2s"
+        repeatCount="indefinite"/>
+    </circle>
   </g>
 
-  <!-- Connection Lines -->
-  <g stroke="#243B61" stroke-width="1" stroke-dasharray="4 4">
-    <path d="M300,200 L200,100">
-      <animate attributeName="stroke-dashoffset" values="8;0;8" dur="3s" repeatCount="indefinite"/>
-    </path>
-    <path d="M300,200 L400,100">
-      <animate attributeName="stroke-dashoffset" values="8;0;8" dur="3.5s" repeatCount="indefinite"/>
-    </path>
-    <path d="M300,200 L200,300">
-      <animate attributeName="stroke-dashoffset" values="8;0;8" dur="4s" repeatCount="indefinite"/>
-    </path>
-    <path d="M300,200 L400,300">
-      <animate attributeName="stroke-dashoffset" values="8;0;8" dur="3.2s" repeatCount="indefinite"/>
-    </path>
+  <!-- Floating Elements -->
+  <g>
+    <circle cx="100" cy="300" r="4" fill="#FF6B2C" opacity="0.5">
+      <animate attributeName="cy" values="300;280;300" dur="3s" repeatCount="indefinite"/>
+      <animate attributeName="opacity" values="0.5;1;0.5" dur="3s" repeatCount="indefinite"/>
+    </circle>
+    <circle cx="700" cy="300" r="4" fill="#3B82F6" opacity="0.5">
+      <animate attributeName="cy" values="300;320;300" dur="4s" repeatCount="indefinite"/>
+      <animate attributeName="opacity" values="0.5;1;0.5" dur="4s" repeatCount="indefinite"/>
+    </circle>
   </g>
 
-  <!-- Pulse Effect -->
-  <circle cx="300" cy="200" r="20" fill="url(#valueGradient)">
-    <animate attributeName="r" values="20;100;20" dur="3s" repeatCount="indefinite"/>
-    <animate attributeName="opacity" values="0.3;0;0.3" dur="3s" repeatCount="indefinite"/>
-  </circle>
+  <!-- Value Icons -->
+  <g fill="#FFFFFF" opacity="0.8">
+    <!-- Innovation Icon -->
+    <path d="M 180 190 h 40 v 20 h -40 z" />
+    <!-- Excellence Icon -->
+    <path d="M 580 190 h 40 v 20 h -40 z" />
+    <!-- Integrity Icon -->
+    <path d="M 180 390 h 40 v 20 h -40 z" />
+    <!-- Partnership Icon -->
+    <path d="M 580 390 h 40 v 20 h -40 z" />
+  </g>
 </svg> 

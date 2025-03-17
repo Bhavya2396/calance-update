@@ -2,7 +2,6 @@
 
 import React from 'react'
 import Link from 'next/link'
-import Image from 'next/image'
 import { EnvelopeIcon, PhoneIcon, MapPinIcon } from '@heroicons/react/24/outline'
 
 const Footer = () => {
@@ -36,17 +35,7 @@ const Footer = () => {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
           {/* Company Info */}
           <div>
-            <Link href="/" className="inline-block">
-              <Image
-                src="/images/illustrations/Screenshot_2025-01-16_at_4.36.53_AM-removebg-preview.png"
-                alt="Calance"
-                width={180}
-                height={40}
-                className="h-10 w-auto"
-                priority
-              />
-            </Link>
-            <p className="mt-4 text-gray-400 text-sm">
+            <p className="text-gray-400 text-sm">
               Empowering enterprises with innovative technology solutions for digital transformation.
             </p>
           </div>
