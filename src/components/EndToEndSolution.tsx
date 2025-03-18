@@ -57,7 +57,7 @@ export default function EndToEndSolution() {
           viewport={{ once: true }}
           className="text-center mb-16"
         >
-          <h2 className="text-3xl sm:text-4xl font-bold mb-4 text-transparent bg-clip-text bg-gradient-to-r from-[#FF6B2C] to-[#FF8F59]">
+          <h2 className="text-3xl sm:text-4xl font-bold mb-4 text-white">
             Our Approach
           </h2>
           <p className="text-gray-400 max-w-2xl mx-auto">
@@ -123,7 +123,7 @@ export default function EndToEndSolution() {
                 className="text-3xl sm:text-4xl font-bold mb-6"
               >
                 Ready to Transform Your{" "}
-                <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#FF6B2C] to-[#FF8F59]">
+                <span className="text-[#FF6B2C]">
                   Business
                 </span>
                 ?
@@ -143,7 +143,7 @@ export default function EndToEndSolution() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 href="#contact"
-                className="inline-flex items-center px-6 py-3 rounded-lg bg-gradient-to-r from-[#FF6B2C] to-[#FF8F59] text-white font-medium hover:opacity-90 transition-opacity"
+                className="inline-flex items-center px-6 py-3 rounded-lg bg-[#FF6B2C] text-white font-medium hover:opacity-90 transition-opacity"
               >
                 Get Started
                 <ArrowRightIcon className="w-5 h-5 ml-2" />

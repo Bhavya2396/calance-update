@@ -10,42 +10,42 @@ const solutions = [
     title: "Infrastructure",
     description: "Build a robust and scalable foundation with our cutting-edge infrastructure solutions.",
     image: "/images/illustrations/home/infrastructure.svg",
-    color: "from-[#3B82F6] to-[#10B981]",
+    color: "#3B82F6",
     href: "/solutions/infrastructure"
   },
   {
     title: "Security",
     description: "Protect your digital assets with our comprehensive security solutions and best practices.",
     image: "/images/illustrations/home/security.svg",
-    color: "from-[#EF4444] to-[#F59E0B]",
+    color: "#EF4444",
     href: "/solutions/security"
   },
   {
     title: "Apps & Automation",
     description: "Streamline operations with custom applications and intelligent automation solutions.",
     image: "/images/illustrations/home/apps-automation.svg",
-    color: "from-[#8B5CF6] to-[#60A5FA]",
+    color: "#8B5CF6",
     href: "/solutions/apps-automation"
   },
   {
     title: "Business Intelligence",
     description: "Make data-driven decisions with advanced analytics and visualization tools.",
     image: "/images/illustrations/home/business-intelligence.svg",
-    color: "from-[#7C3AED] to-[#EC4899]",
+    color: "#7C3AED",
     href: "/solutions/business-intelligence"
   },
   {
     title: "DevOps",
     description: "Accelerate delivery with modern DevOps practices and tools integration.",
     image: "/images/illustrations/home/devops.svg",
-    color: "from-[#F59E0B] to-[#22C55E]",
+    color: "#F59E0B",
     href: "/solutions/devops"
   },
   {
     title: "Construction",
     description: "Digital solutions for modern construction project management and execution.",
     image: "/images/illustrations/home/construction.svg",
-    color: "from-[#EF4444] to-[#F59E0B]",
+    color: "#EF4444",
     href: "/solutions/construction"
   }
 ]
@@ -65,7 +65,7 @@ export default function SolutionsOverview() {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
         >
-          <h2 className="text-3xl sm:text-4xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-[#3B82F6] to-[#7C3AED] mb-4">
+          <h2 className="text-3xl sm:text-4xl font-bold text-white mb-4">
             Enterprise Solutions
           </h2>
           <p className="text-lg text-gray-400">
@@ -86,9 +86,9 @@ export default function SolutionsOverview() {
               <div className="h-full rounded-2xl bg-[#1A2B44]/50 backdrop-blur-sm border border-[#243B61] p-8 hover:border-transparent transition-colors duration-300 overflow-hidden">
                 {/* Hover Effect Background */}
                 <div 
-                  className="absolute inset-0 bg-gradient-to-r opacity-0 group-hover:opacity-10 transition-opacity duration-300 rounded-2xl" 
+                  className="absolute inset-0 opacity-0 group-hover:opacity-10 transition-opacity duration-300 rounded-2xl" 
                   style={{ 
-                    backgroundImage: `linear-gradient(to right, ${solution.color.split(' ')[1]}, ${solution.color.split(' ')[3]})` 
+                    backgroundColor: solution.color
                   }} 
                 />
                 
@@ -103,7 +103,7 @@ export default function SolutionsOverview() {
                 </div>
 
                 {/* Content */}
-                <h3 className={`text-xl font-bold mb-3 bg-clip-text text-transparent bg-gradient-to-r ${solution.color}`}>
+                <h3 className="text-xl font-bold mb-3" style={{ color: solution.color }}>
                   {solution.title}
                 </h3>
                 <p className="text-gray-400 mb-6">
@@ -114,7 +114,7 @@ export default function SolutionsOverview() {
                 <div className="absolute bottom-8 right-8">
                   <a 
                     href={solution.href}
-                    className="flex items-center text-sm font-medium text-[#3B82F6] hover:text-[#60A5FA] transition-colors"
+                    className="flex items-center text-sm font-medium text-[#FF6B2C] hover:text-[#FF8F59] transition-colors"
                   >
                     Learn More
                     <ArrowRightIcon className="w-4 h-4 ml-2 group-hover:translate-x-1 transition-transform" />

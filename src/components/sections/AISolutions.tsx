@@ -31,7 +31,7 @@ export default function AISolutions() {
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
-              className="text-3xl sm:text-4xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-[#FF6B2C] to-[#3B82F6] mb-6"
+              className="text-3xl sm:text-4xl font-bold text-white mb-6"
             >
               AI-Powered Solutions
             </motion.h2>
@@ -53,7 +53,7 @@ export default function AISolutions() {
             >
               <a 
                 href="/solutions/ai-solutions"
-                className="inline-flex items-center px-6 py-3 rounded-lg bg-gradient-to-r from-[#FF6B2C] to-[#3B82F6] text-white font-medium hover:opacity-90 transition-opacity"
+                className="inline-flex items-center px-6 py-3 rounded-lg bg-[#FF6B2C] text-white font-medium hover:opacity-90 transition-opacity"
               >
                 Explore AI Solutions
                 <ArrowRightIcon className="w-4 h-4 ml-2" />
