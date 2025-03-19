@@ -63,11 +63,11 @@ const Footer = () => {
             <ul className="space-y-3">
               <li>
                 <a
-                  href="mailto:info@calanceus.com"
+                  href="mailto:connect@calance.com"
                   className="flex items-center text-gray-400 hover:text-white transition-colors text-sm"
                 >
                   <EnvelopeIcon className="h-5 w-5 mr-2" />
-                  info@calanceus.com
+                  connect@calance.com
                 </a>
               </li>
               <li>
@@ -82,8 +82,9 @@ const Footer = () => {
               <li className="flex items-start text-gray-400 text-sm">
                 <MapPinIcon className="h-5 w-5 mr-2 mt-0.5 flex-shrink-0" />
                 <span>
-                  11622 El Camino Real, Suite 100<br />
-                  San Diego, CA 92130<br />
+                  888 S. Disneyland Drive<br />
+                  Suite 500<br />
+                  Anaheim, CA 92802<br />
                   United States
                 </span>
               </li>
