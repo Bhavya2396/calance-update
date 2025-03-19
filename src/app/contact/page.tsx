@@ -203,7 +203,7 @@ export default function Contact() {
                 <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold text-white mb-6">
                   Connect With Our{' '}
                   <span className="relative">
-                    <span className="relative z-10 text-transparent bg-clip-text bg-gradient-to-r from-[#FF6B2C] to-[#3B82F6]">
+                    <span className="relative z-10 text-white">
                       Global Offices
                     </span>
                     <span className="absolute inset-0 bg-gradient-to-r from-[#FF6B2C]/20 to-[#3B82F6]/20 blur-xl" />

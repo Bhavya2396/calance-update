@@ -167,7 +167,7 @@ export default function Solutions() {
               className="text-4xl sm:text-5xl lg:text-6xl font-bold mb-8"
             >
               Transform Your{' '}
-              <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#3B82F6] to-[#10B981]">
+              <span className="text-white">
                 Business
               </span>
             </motion.h1>
@@ -284,9 +284,9 @@ export default function Solutions() {
             viewport={{ once: true }}
             className="text-center"
           >
-            <h2 className="text-3xl sm:text-4xl font-bold mb-4 text-white">
+            <h2 className="text-3xl sm:text-4xl font-bold mb-4">
               Ready to{' '}
-              <span className="text-[#FF6B2C]">
+              <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#3B82F6] to-[#10B981]">
                 Transform
               </span>
               {' '}Your Business?
@@ -296,7 +296,7 @@ export default function Solutions() {
             </p>
             <Link
               href="/contact"
-              className="inline-flex items-center px-6 py-3 rounded-full bg-[#FF6B2C] text-white font-semibold hover:shadow-lg hover:shadow-[#FF6B2C]/20 transition-all duration-300 hover:scale-105"
+              className="inline-flex items-center px-6 py-3 rounded-full bg-gradient-to-r from-[#3B82F6] to-[#10B981] text-white font-semibold hover:shadow-lg hover:shadow-[#3B82F6]/20 transition-all duration-300 hover:scale-105"
             >
               Get Started
               <ArrowRightIcon className="w-5 h-5 ml-2" />

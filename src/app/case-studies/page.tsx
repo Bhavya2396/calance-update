@@ -428,7 +428,7 @@ export default function CaseStudies() {
                 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-white mb-4"
               >
                 Discover Our{' '}
-                <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#FF6B2C] to-[#3B82F6]">
+                <span className="text-white">
                   Client Success Stories
                 </span>
               </motion.h1>
