@@ -253,7 +253,7 @@ export default function BlockchainSolution() {
             viewport={{ once: true }}
             className="text-center"
           >
-            <h2 className="text-3xl sm:text-4xl font-bold mb-4">
+            <h2 className="text-3xl sm:text-4xl font-bold mb-4 text-white">
               Ready to Get Started?
             </h2>
             <p className="text-xl text-gray-400 mb-8 max-w-2xl mx-auto">

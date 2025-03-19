@@ -236,7 +236,7 @@ export default function DevOps() {
             viewport={{ once: true }}
             className="text-center mb-12"
           >
-            <h2 className="text-3xl sm:text-4xl font-bold mb-4">DevOps Technology Stack</h2>
+            <h2 className="text-3xl sm:text-4xl font-bold mb-4 text-white">DevOps Technology Stack</h2>
             <p className="text-gray-400">Industry-leading DevOps tools and platforms</p>
           </motion.div>
           
@@ -267,7 +267,7 @@ export default function DevOps() {
             viewport={{ once: true }}
             className="text-center mb-16"
           >
-            <h2 className="text-3xl sm:text-4xl font-bold mb-4">DevOps Metrics</h2>
+            <h2 className="text-3xl sm:text-4xl font-bold mb-4 text-white">DevOps Metrics</h2>
             <p className="text-gray-400">Real results from our DevOps implementations</p>
           </motion.div>
           
@@ -304,7 +304,7 @@ export default function DevOps() {
                   initial={{ opacity: 0, y: 20 }}
                   whileInView={{ opacity: 1, y: 0 }}
                   viewport={{ once: true }}
-                  className="text-3xl sm:text-4xl font-bold mb-6"
+                  className="text-3xl sm:text-4xl font-bold mb-4 text-white"
                 >
                   Ready to Transform Your Development Pipeline?
                 </motion.h2>

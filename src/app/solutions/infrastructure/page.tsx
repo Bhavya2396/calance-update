@@ -213,7 +213,7 @@ export default function Infrastructure() {
             viewport={{ once: true }}
             className="text-center mb-16"
           >
-            <h2 className="text-3xl sm:text-4xl font-bold mb-4">
+            <h2 className="text-3xl sm:text-4xl font-bold mb-4 text-white">
               Infrastructure
               <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#3B82F6] to-[#10B981]">
                 {" "}Features
@@ -291,7 +291,7 @@ export default function Infrastructure() {
             viewport={{ once: true }}
             className="text-center mb-12"
           >
-            <h2 className="text-3xl sm:text-4xl font-bold mb-4">
+            <h2 className="text-3xl sm:text-4xl font-bold mb-4 text-white">
               Infrastructure
               <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#3B82F6] to-[#10B981]">
                 {" "}Technology Stack
@@ -330,7 +330,7 @@ export default function Infrastructure() {
             viewport={{ once: true }}
             className="text-center mb-16"
           >
-            <h2 className="text-3xl sm:text-4xl font-bold mb-4">Success Metrics</h2>
+            <h2 className="text-3xl sm:text-4xl font-bold mb-4 text-white">Success Metrics</h2>
             <p className="text-gray-400">Real results from our infrastructure implementations</p>
           </motion.div>
           
@@ -407,7 +407,7 @@ export default function Infrastructure() {
                   initial={{ opacity: 0, y: 20 }}
                   whileInView={{ opacity: 1, y: 0 }}
                   viewport={{ once: true }}
-                  className="text-3xl sm:text-4xl font-bold mb-6"
+                  className="text-3xl sm:text-4xl font-bold mb-4 text-white"
                 >
                   Ready to Modernize Your Infrastructure?
                 </motion.h2>

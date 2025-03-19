@@ -271,7 +271,7 @@ export default function MicrosoftSolutions() {
             viewport={{ once: true }}
             className="text-center"
           >
-            <h2 className="text-3xl sm:text-4xl font-bold mb-4">
+            <h2 className="text-3xl sm:text-4xl font-bold mb-4 text-white">
               Ready to{' '}
               <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#00A4EF] to-[#0078D4]">
                 Transform

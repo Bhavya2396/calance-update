@@ -236,7 +236,7 @@ export default function AppsAutomation() {
             viewport={{ once: true }}
             className="text-center mb-12"
           >
-            <h2 className="text-3xl sm:text-4xl font-bold mb-4">Technology Stack</h2>
+            <h2 className="text-3xl sm:text-4xl font-bold mb-4 text-white">Technology Stack</h2>
             <p className="text-gray-400">Cutting-edge technologies for modern solutions</p>
           </motion.div>
           
@@ -267,7 +267,7 @@ export default function AppsAutomation() {
             viewport={{ once: true }}
             className="text-center mb-16"
           >
-            <h2 className="text-3xl sm:text-4xl font-bold mb-4">Success Metrics</h2>
+            <h2 className="text-3xl sm:text-4xl font-bold mb-4 text-white">Success Metrics</h2>
             <p className="text-gray-400">Real results from our automation solutions</p>
           </motion.div>
           
@@ -304,7 +304,7 @@ export default function AppsAutomation() {
                   initial={{ opacity: 0, y: 20 }}
                   whileInView={{ opacity: 1, y: 0 }}
                   viewport={{ once: true }}
-                  className="text-3xl sm:text-4xl font-bold mb-6"
+                  className="text-3xl sm:text-4xl font-bold mb-4 text-white"
                 >
                   Ready to Automate Your Business?
                 </motion.h2>
