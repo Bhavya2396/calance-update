@@ -1,0 +1,59 @@
+<svg width="400" height="300" viewBox="0 0 400 300" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="orangeGradient" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#FF6B2C" />
+      <stop offset="100%" stop-color="#FF8F59" />
+    </linearGradient>
+    <filter id="glow" x="-30%" y="-30%" width="160%" height="160%">
+      <feGaussianBlur stdDeviation="5" result="blur" />
+      <feComposite in="SourceGraphic" in2="blur" operator="over" />
+    </filter>
+  </defs>
+  
+  <!-- Background Grid -->
+  <rect width="400" height="300" fill="#0A1628" />
+  <rect width="400" height="300" fill="url(#grid)" opacity="0.2" />
+  
+  <!-- Procore Box -->
+  <rect x="50" y="70" width="120" height="160" rx="10" fill="#0A1628" stroke="#FF6B2C" stroke-width="2" />
+  <rect x="70" y="90" width="80" height="40" rx="5" fill="url(#orangeGradient)" />
+  <text x="110" y="115" font-family="Arial" font-size="14" font-weight="bold" fill="white" text-anchor="middle">PROCORE</text>
+  
+  <!-- Document Icons in Procore -->
+  <rect x="70" y="150" width="20" height="25" fill="#FFFFFF" opacity="0.7" />
+  <rect x="100" y="150" width="20" height="25" fill="#FFFFFF" opacity="0.7" />
+  <rect x="130" y="150" width="20" height="25" fill="#FFFFFF" opacity="0.7" />
+  
+  <!-- IFS Box -->
+  <rect x="230" y="70" width="120" height="160" rx="10" fill="#0A1628" stroke="#FF6B2C" stroke-width="2" />
+  <rect x="250" y="90" width="80" height="40" rx="5" fill="url(#orangeGradient)" />
+  <text x="290" y="115" font-family="Arial" font-size="14" font-weight="bold" fill="white" text-anchor="middle">IFS</text>
+  
+  <!-- Database Icon in IFS -->
+  <ellipse cx="290" cy="150" rx="30" ry="10" fill="#FFFFFF" opacity="0.7" />
+  <rect x="260" y="150" width="60" height="30" fill="#FFFFFF" opacity="0.7" />
+  <ellipse cx="290" cy="180" rx="30" ry="10" fill="#FFFFFF" opacity="0.7" />
+  
+  <!-- Integration Arrows -->
+  <g filter="url(#glow)">
+    <!-- Left to Right Arrow -->
+    <path d="M175 120 L225 120" stroke="#FF6B2C" stroke-width="2" />
+    <path d="M215 110 L225 120 L215 130" stroke="#FF6B2C" stroke-width="2" fill="none" />
+    
+    <!-- Right to Left Arrow -->
+    <path d="M225 180 L175 180" stroke="#FF6B2C" stroke-width="2" />
+    <path d="M185 170 L175 180 L185 190" stroke="#FF6B2C" stroke-width="2" fill="none" />
+  </g>
+  
+  <!-- Data Particles -->
+  <circle cx="0" cy="0" r="3" fill="#FF6B2C">
+    <animateMotion path="M175 120 L225 120" begin="0s" dur="1.5s" repeatCount="indefinite" />
+  </circle>
+  <circle cx="0" cy="0" r="3" fill="#FF6B2C">
+    <animateMotion path="M225 180 L175 180" begin="0.7s" dur="1.5s" repeatCount="indefinite" />
+  </circle>
+  
+  <!-- Labels -->
+  <text x="200" y="105" font-family="Arial" font-size="10" fill="white" text-anchor="middle">Project Data</text>
+  <text x="200" y="200" font-family="Arial" font-size="10" fill="white" text-anchor="middle">Financial Data</text>
+</svg> 

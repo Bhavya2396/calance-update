@@ -43,6 +43,18 @@ const solutions = [
     features: ['Project Planning', 'Site Monitoring', 'Resource Management', 'Safety Compliance'],
   },
   {
+    id: 'procore',
+    title: 'Procore Integrations',
+    description: 'Enterprise-grade integrations for the Procore construction management platform.',
+    image: '/images/illustrations/procore/hero.svg',
+    color: '#FF6B2C',
+    metrics: [
+      { label: 'Data Accuracy', value: '+90%' },
+      { label: 'Processing Time', value: '-70%' },
+    ],
+    features: ['ERP Integration', 'Financial Sync', 'Custom Workflows', 'Automated Reporting'],
+  },
+  {
     id: 'infrastructure',
     title: 'Cloud Infrastructure',
     description: 'Build scalable and secure cloud infrastructure for your enterprise needs.',
