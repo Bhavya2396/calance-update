@@ -22,6 +22,7 @@ const procoreTools = [
     title: 'IFS by Calance',
     description: 'Seamlessly integrate IFS ERP with Procore, enabling real-time data synchronization for enhanced project management and financial oversight.',
     image: '/images/illustrations/procore-tools/ifs.svg',
+    logo: '/images/logos/procore-tools/ifs.png',
     link: 'https://marketplace.procore.com/apps/ifs-by-calance',
     color: '#4F46E5',
     icon: <ArrowPathIcon className="w-6 h-6" />,
@@ -37,6 +38,7 @@ const procoreTools = [
     title: 'NetSuite by Calance',
     description: 'Unify your NetSuite financial data with Procore project information to streamline operations and improve decision-making.',
     image: '/images/illustrations/procore-tools/netsuite.svg',
+    logo: '/images/logos/procore-tools/netsuite.png',
     link: 'https://marketplace.procore.com/apps/netsuite-by-calance',
     color: '#0891B2',
     icon: <ChartBarIcon className="w-6 h-6" />,
@@ -52,6 +54,7 @@ const procoreTools = [
     title: 'Nexus by Calance',
     description: 'Connect Procore with your Nexus systems for streamlined accounts payable processes and improved vendor management.',
     image: '/images/illustrations/procore-tools/nexus.svg',
+    logo: '/images/logos/procore-tools/nexus.png',
     link: 'https://marketplace.procore.com/apps/nexus-by-calance',
     color: '#10B981',
     icon: <DocumentArrowDownIcon className="w-6 h-6" />,
@@ -67,6 +70,7 @@ const procoreTools = [
     title: 'PeopleSoft by Calance',
     description: 'Integrate PeopleSoft with Procore to unify HR, finance, and project management data for complete operational visibility.',
     image: '/images/illustrations/procore-tools/peoplesoft.svg',
+    logo: '/images/logos/procore-tools/peoplesoft.png',
     link: 'https://marketplace.procore.com/apps/peoplesoft-by-calance-1776b1d5-8767-4dd6-83ca-b3a4d16b5a28',
     color: '#F97316',
     icon: <BuildingOffice2Icon className="w-6 h-6" />,
@@ -82,6 +86,7 @@ const procoreTools = [
     title: 'COINS Financials by Calance',
     description: 'Connect COINS financial systems with Procore for seamless data flow between your construction projects and accounting.',
     image: '/images/illustrations/procore-tools/coins.svg',
+    logo: '/images/logos/procore-tools/coins.png',
     link: 'https://marketplace.procore.com/apps/coins-financials-by-calance',
     color: '#EC4899',
     icon: <CubeIcon className="w-6 h-6" />,
@@ -97,6 +102,7 @@ const procoreTools = [
     title: 'JD Edwards Integrations',
     description: 'Integrate JD Edwards ERP with Procore to eliminate double entry and ensure data accuracy across systems.',
     image: '/images/illustrations/procore-tools/jd-edwards.svg',
+    logo: '/images/logos/procore-tools/jdedwards.png',
     link: 'https://marketplace.procore.com/apps/jd-edwards-integrations-by-calance',
     color: '#8B5CF6',
     icon: <CodeBracketIcon className="w-6 h-6" />,
@@ -112,6 +118,7 @@ const procoreTools = [
     title: 'Sage 300 Insurance',
     description: 'Connect Sage 300 with Procore to streamline insurance certificate management and compliance tracking.',
     image: '/images/illustrations/procore-tools/sage-300.svg',
+    logo: '/images/logos/procore-tools/sage300.png',
     link: 'https://marketplace.procore.com/apps/sage-300-insurance-by-calance-0ba2b2ea-4eb2-4af6-89cc-1d7d480f5c53',
     color: '#0EA5E9',
     icon: <DocumentArrowDownIcon className="w-6 h-6" />,
@@ -127,6 +134,7 @@ const procoreTools = [
     title: 'CMiC Financials by Calance',
     description: 'Integrate CMiC with Procore for comprehensive financial management and project control in one unified system.',
     image: '/images/illustrations/procore-tools/cmic.svg',
+    logo: '/images/logos/procore-tools/cmic.png',
     link: 'https://marketplace.procore.com/apps/cmic-financials-by-calance',
     color: '#F59E0B',
     icon: <ChartBarIcon className="w-6 h-6" />,
@@ -328,18 +336,16 @@ export default function ProcoreTools() {
                 transition={{ delay: index * 0.1 }}
                 className="bg-[#1A2B44]/50 backdrop-blur-sm rounded-2xl overflow-hidden border border-[#243B61] hover:border-opacity-50 transition-all group h-full"
               >
-                {/* Tool Illustration */}
-                <div className="relative h-48 bg-gradient-to-br from-[#1A2B44] to-[#0A1628] overflow-hidden">
-                  <div className="absolute inset-0 opacity-30" style={{ backgroundColor: tool.color }} />
-                  <div className="absolute inset-0 flex items-center justify-center p-6">
-                    <Image
-                      src={tool.image}
-                      alt={tool.title}
-                      width={200}
-                      height={150}
-                      className="object-contain transform group-hover:scale-105 transition-transform duration-300"
-                    />
-                  </div>
+                {/* Logo Container */}
+                <div className="relative h-48 bg-white overflow-hidden flex items-center justify-center p-4">
+                  <div className="absolute inset-0 bg-gradient-to-br from-white to-gray-100"></div>
+                  <Image
+                    src={tool.logo}
+                    alt={tool.title}
+                    width={240}
+                    height={120}
+                    className="object-contain relative z-10 p-4"
+                  />
                 </div>
                 
                 {/* Content */}
