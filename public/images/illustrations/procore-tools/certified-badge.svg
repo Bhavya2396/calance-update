@@ -1,0 +1,96 @@
+<svg width="600" height="400" viewBox="0 0 600 400" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <!-- Background elements -->
+  <circle cx="300" cy="200" r="180" fill="url(#badgeGradient)" opacity="0.15" />
+  <circle cx="300" cy="200" r="160" stroke="#3B82F6" stroke-width="1" stroke-dasharray="4 4" opacity="0.3" />
+  
+  <!-- Main Badge -->
+  <g filter="url(#dropShadow)">
+    <path d="M300 40L360 70V170C360 230 300 260 300 260C300 260 240 230 240 170V70L300 40Z" fill="url(#badgeShield)" />
+    
+    <!-- Checkmark -->
+    <path d="M270 160L290 180L330 140" stroke="white" stroke-width="10" stroke-linecap="round" stroke-linejoin="round" />
+    
+    <!-- Ribbon -->
+    <path d="M240 170V180L270 195L300 180L330 195L360 180V170" fill="#FF6B2C" />
+    <path d="M240 170V180L270 195L300 180L330 195L360 180V170" fill="url(#ribbonGradient)" />
+  </g>
+  
+  <!-- Glow effect -->
+  <circle cx="300" cy="150" r="100" fill="url(#glowGradient)" opacity="0.4" filter="url(#glow)" />
+  
+  <!-- Text elements -->
+  <g filter="url(#textShadow)">
+    <text x="300" y="280" fill="#FFFFFF" font-family="Arial" font-weight="bold" font-size="24" text-anchor="middle">CERTIFIED PARTNER</text>
+    <text x="300" y="310" fill="#FF6B2C" font-family="Arial" font-weight="bold" font-size="18" text-anchor="middle">CALANCE</text>
+    <text x="300" y="340" fill="#3B82F6" font-family="Arial" font-weight="bold" font-size="14" text-anchor="middle">PROCORE MARKETPLACE</text>
+  </g>
+  
+  <!-- Animated elements -->
+  <g>
+    <!-- Subtle pulsing effect for badge -->
+    <circle cx="300" cy="150" r="90" fill="none" stroke="#FF6B2C" stroke-width="2" opacity="0.2">
+      <animate attributeName="r" from="90" to="110" dur="3s" repeatCount="indefinite" />
+      <animate attributeName="opacity" from="0.2" to="0" dur="3s" repeatCount="indefinite" />
+    </circle>
+    
+    <!-- Small stars/sparkles -->
+    <g>
+      <circle cx="220" cy="120" r="3" fill="white" opacity="0.8">
+        <animate attributeName="opacity" values="0.8;0.2;0.8" dur="2s" repeatCount="indefinite" />
+      </circle>
+      <circle cx="380" cy="120" r="3" fill="white" opacity="0.8">
+        <animate attributeName="opacity" values="0.8;0.2;0.8" dur="2.5s" repeatCount="indefinite" />
+      </circle>
+      <circle cx="260" cy="70" r="3" fill="white" opacity="0.8">
+        <animate attributeName="opacity" values="0.8;0.2;0.8" dur="1.8s" repeatCount="indefinite" />
+      </circle>
+      <circle cx="340" cy="70" r="3" fill="white" opacity="0.8">
+        <animate attributeName="opacity" values="0.8;0.2;0.8" dur="1.5s" repeatCount="indefinite" />
+      </circle>
+      <path d="M230 200l5 5 5-5-5-5z" fill="white" opacity="0.6">
+        <animate attributeName="opacity" values="0.6;0.1;0.6" dur="2.2s" repeatCount="indefinite" />
+      </path>
+      <path d="M370 200l5 5 5-5-5-5z" fill="white" opacity="0.6">
+        <animate attributeName="opacity" values="0.6;0.1;0.6" dur="1.9s" repeatCount="indefinite" />
+      </path>
+    </g>
+  </g>
+  
+  <!-- Definitions -->
+  <defs>
+    <linearGradient id="badgeGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#FF6B2C" />
+      <stop offset="100%" stop-color="#3B82F6" />
+    </linearGradient>
+    
+    <linearGradient id="badgeShield" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#3B82F6" />
+      <stop offset="50%" stop-color="#2563EB" />
+      <stop offset="100%" stop-color="#1D4ED8" />
+    </linearGradient>
+    
+    <linearGradient id="ribbonGradient" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#FF6B2C" />
+      <stop offset="50%" stop-color="#FF8F59" />
+      <stop offset="100%" stop-color="#FF6B2C" />
+    </linearGradient>
+    
+    <radialGradient id="glowGradient" cx="50%" cy="50%" r="50%" fx="50%" fy="50%">
+      <stop offset="0%" stop-color="white" />
+      <stop offset="100%" stop-color="#3B82F6" stop-opacity="0" />
+    </radialGradient>
+    
+    <filter id="dropShadow" x="-10%" y="-10%" width="120%" height="120%">
+      <feDropShadow dx="0" dy="8" stdDeviation="8" flood-opacity="0.3" />
+    </filter>
+    
+    <filter id="textShadow" x="-10%" y="-10%" width="120%" height="120%">
+      <feDropShadow dx="0" dy="2" stdDeviation="2" flood-opacity="0.4" />
+    </filter>
+    
+    <filter id="glow" x="-50%" y="-50%" width="200%" height="200%">
+      <feGaussianBlur stdDeviation="10" result="blur" />
+      <feComposite in="SourceGraphic" in2="blur" operator="over" />
+    </filter>
+  </defs>
+</svg> 
