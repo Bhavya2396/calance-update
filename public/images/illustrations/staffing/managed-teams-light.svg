@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="800" height="600" viewBox="0 0 800 600" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <!-- Project Board Background -->
+  <rect x="250" y="150" width="300" height="300" rx="16" fill="#F472B6" opacity="0.1"/>
+  <rect x="250" y="150" width="300" height="60" rx="16" fill="#F472B6" opacity="0.2"/>
+  
+  <!-- Project Columns -->
+  <g transform="translate(270,230)">
+    <!-- Todo Column -->
+    <rect x="0" y="0" width="80" height="200" rx="8" fill="#F9A8D4" opacity="0.1"/>
+    <text x="40" y="-10" font-family="Arial" font-size="12" fill="#F472B6" text-anchor="middle">Todo</text>
+    
+    <!-- Task Cards -->
+    <rect x="5" y="10" width="70" height="40" rx="4" fill="#F472B6" opacity="0.2"/>
+    <rect x="5" y="60" width="70" height="40" rx="4" fill="#F472B6" opacity="0.2"/>
+  </g>
+  
+  <g transform="translate(370,230)">
+    <!-- In Progress Column -->
+    <rect x="0" y="0" width="80" height="200" rx="8" fill="#F9A8D4" opacity="0.1"/>
+    <text x="40" y="-10" font-family="Arial" font-size="12" fill="#F472B6" text-anchor="middle">In Progress</text>
+    
+    <!-- Task Cards -->
+    <rect x="5" y="10" width="70" height="40" rx="4" fill="#F472B6" opacity="0.2"/>
+    <rect x="5" y="60" width="70" height="40" rx="4" fill="#F472B6" opacity="0.2"/>
+  </g>
+  
+  <g transform="translate(470,230)">
+    <!-- Done Column -->
+    <rect x="0" y="0" width="80" height="200" rx="8" fill="#F9A8D4" opacity="0.1"/>
+    <text x="40" y="-10" font-family="Arial" font-size="12" fill="#F472B6" text-anchor="middle">Done</text>
+    
+    <!-- Task Cards -->
+    <rect x="5" y="10" width="70" height="40" rx="4" fill="#F472B6" opacity="0.2"/>
+  </g>
+  
+  <!-- Team Members -->
+  <g transform="translate(150,300)">
+    <!-- Manager -->
+    <circle cx="0" cy="0" r="25" fill="#F472B6"/>
+    <circle cx="0" cy="-15" r="10" fill="#0A1628"/>
+    <path d="M-15,6 Q0,25 15,6" stroke="#0A1628" stroke-width="2.5" fill="none"/>
+  </g>
+  
+  <g transform="translate(650,250)">
+    <!-- Team Member 1 -->
+    <circle cx="0" cy="0" r="20" fill="#F9A8D4"/>
+    <circle cx="0" cy="-12" r="8" fill="#0A1628"/>
+    <path d="M-12,5 Q0,20 12,5" stroke="#0A1628" stroke-width="2" fill="none"/>
+  </g>
+  
+  <g transform="translate(650,350)">
+    <!-- Team Member 2 -->
+    <circle cx="0" cy="0" r="20" fill="#F9A8D4"/>
+    <circle cx="0" cy="-12" r="8" fill="#0A1628"/>
+    <path d="M-12,5 Q0,20 12,5" stroke="#0A1628" stroke-width="2" fill="none"/>
+  </g>
+  
+  <!-- Connection Lines -->
+  <path d="M175,300 Q250,300 270,300" stroke="#F472B6" stroke-width="2" opacity="0.5"/>
+  <path d="M550,250 Q600,250 650,250" stroke="#F472B6" stroke-width="2" opacity="0.5"/>
+  <path d="M550,350 Q600,350 650,350" stroke="#F472B6" stroke-width="2" opacity="0.5"/>
+  
+  <!-- Progress Indicators -->
+  <g transform="translate(600,200)">
+    <circle cx="0" cy="0" r="15" fill="#F472B6" opacity="0.2"/>
+    <text x="0" y="5" font-family="Arial" font-size="12" fill="#F472B6" text-anchor="middle">75%</text>
+  </g>
+  
+  <g transform="translate(600,400)">
+    <circle cx="0" cy="0" r="15" fill="#F472B6" opacity="0.2"/>
+    <text x="0" y="5" font-family="Arial" font-size="12" fill="#F472B6" text-anchor="middle">90%</text>
+  </g>
+  
+  <!-- Decorative Elements -->
+  <rect x="100" y="150" width="30" height="30" rx="8" fill="#F472B6" opacity="0.2" transform="rotate(15)"/>
+  <rect x="650" y="450" width="30" height="30" rx="8" fill="#F9A8D4" opacity="0.2" transform="rotate(-15)"/>
+  
+  <circle cx="700" cy="150" r="4" fill="#F472B6" opacity="0.3"/>
+  <circle cx="100" cy="450" r="4" fill="#F9A8D4" opacity="0.3"/>
+</svg> 
