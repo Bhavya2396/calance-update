@@ -19,18 +19,6 @@ const solutions = [
     features: ['Microsoft 365', 'SharePoint', 'Dynamics 365', 'Azure Services'],
   },
   {
-    id: 'procore-tools',
-    title: 'Procore Tools',
-    description: 'Powerful integrations connecting Procore with your critical business systems for construction professionals.',
-    image: '/images/illustrations/procore-tools/hero.svg',
-    color: '#FF6B2C',
-    metrics: [
-      { label: 'Data Entry Reduction', value: '-80%' },
-      { label: 'Process Efficiency', value: '+65%' },
-    ],
-    features: ['ERP Integrations', 'Financial Syncing', 'Project Controls', 'Automated Workflows'],
-  },
-  {
     id: 'integrations',
     title: 'Enterprise Integration',
     description: 'Connect your systems seamlessly with our enterprise-grade integration platform.',

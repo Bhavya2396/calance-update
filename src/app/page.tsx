@@ -21,101 +21,140 @@ import {
   ClockIcon,
   UserGroupIcon,
   EnvelopeIcon,
-  PhoneIcon
+  PhoneIcon,
+  BuildingOfficeIcon,
+  ArrowsRightLeftIcon,
+  CpuChipIcon,
+  BeakerIcon
 } from '@heroicons/react/24/solid'
 import Image from 'next/image'
 import GlowingButton from '@/components/GlowingButton'
 import EndToEndSolution from '@/components/EndToEndSolution'
-import MainHeader from '@/components/MainHeader'
 import AISolutions from '@/components/sections/AISolutions'
 import SolutionsOverview from '@/components/sections/SolutionsOverview'
 import IntegrationTools from '@/components/sections/IntegrationTools'
 import CTASection from '@/components/sections/CTASection'
 import TechnologyPartners from '@/components/sections/TechnologyPartners'
 import Link from 'next/link'
+import StaffingSolutions from '@/components/sections/StaffingSolutions'
 
 export default function Home() {
   return (
     <main className="bg-[#0A1628] min-h-screen">
-      <MainHeader />
-      
       {/* Main Content */}
       <div className="pt-24 sm:pt-20">
       {/* Hero Section */}
-      <section className="relative py-16 sm:py-16 flex items-center overflow-hidden">
+      <section className="relative py-40 lg:py-48 overflow-hidden">
         {/* Background Effects */}
         <div className="absolute inset-0">
-          <div className="absolute inset-0 bg-gradient-to-br from-[#FF6B2C]/10 to-[#3B82F6]/10" />
+          <div className="absolute inset-0 bg-gradient-to-br from-[#FF6B2C]/20 to-[#3B82F6]/20" />
+          <div className="absolute inset-0 bg-[url('/images/grid.svg')] bg-center [mask-image:linear-gradient(180deg,white,rgba(255,255,255,0))]" />
           <motion.div 
             className="absolute inset-0"
             animate={{ 
               background: [
-                "radial-gradient(600px circle at 30% 30%, rgba(255, 107, 44, 0.15), transparent 70%)",
-                "radial-gradient(600px circle at 70% 70%, rgba(59, 130, 246, 0.15), transparent 70%)",
-                "radial-gradient(600px circle at 30% 70%, rgba(255, 107, 44, 0.15), transparent 70%)",
-                "radial-gradient(600px circle at 70% 30%, rgba(59, 130, 246, 0.15), transparent 70%)"
+                "radial-gradient(1000px circle at 70% 20%, rgba(255, 107, 44, 0.15), transparent 80%)",
+                "radial-gradient(800px circle at 30% 70%, rgba(59, 130, 246, 0.15), transparent 70%)"
               ]
             }}
-            transition={{ duration: 10, repeat: Infinity }}
+            transition={{ duration: 10, repeat: Infinity, repeatType: "mirror" }}
           />
-          <div className="absolute inset-0 bg-[url('/images/noise.png')] opacity-5" />
         </div>
 
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative">
-          <div className="grid lg:grid-cols-2 gap-6 items-center">
+          <div className="grid lg:grid-cols-12 gap-16 items-center">
             {/* Content */}
-          <motion.div 
-              initial={{ opacity: 0, x: -20 }}
-              animate={{ opacity: 1, x: 0 }}
-              transition={{ duration: 0.5 }}
+            <motion.div 
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              className="lg:col-span-6 order-2 lg:order-1"
             >
-              <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-[#1A2B44] text-[#FF6B2C] mb-4">
-                <SparklesIcon className="w-5 h-5" />
-                <span className="text-sm font-medium">Enterprise Technology Solutions</span>
-            </div>
+              <div className="flex items-center gap-4 mb-6">
+                <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-[#1A2B44] text-[#FF6B2C]">
+                  <SparklesIcon className="w-5 h-5" />
+                  <span className="text-sm font-medium">Enterprise Solutions</span>
+                </div>
+                <div className="h-[2px] w-12 bg-[#FF6B2C]" />
+              </div>
               
-              <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold text-white mb-4 leading-tight">
-                Transform Your Business with{' '}
-                <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#FF6B2C] to-[#3B82F6]">
-                  Innovative Technology
+              {/* Mobile Illustration */}
+              <motion.div 
+                initial={{ opacity: 0, scale: 0.95 }}
+                whileInView={{ opacity: 1, scale: 1 }}
+                viewport={{ once: true }}
+                className="relative aspect-[4/3] mb-8 lg:hidden"
+              >
+                <div className="absolute inset-0 bg-gradient-to-br from-[#FF6B2C]/10 to-[#3B82F6]/10 rounded-3xl" />
+                <Image
+                  src="/images/illustrations/hero-enterprise.svg"
+                  alt="Enterprise Technology Solutions"
+                  fill
+                  className="object-contain p-8"
+                  priority
+                />
+              </motion.div>
+              
+              <h1 className="text-4xl sm:text-5xl lg:text-6xl xl:text-7xl font-bold text-white mb-8 leading-tight">
+                Transform Your Business
+                <span className="block mt-2 text-[#FF6B2C]">
+                  With Innovation
                 </span>
               </h1>
               
-              <p className="text-lg text-gray-400 mb-6 max-w-lg">
-                Empowering enterprises with cutting-edge solutions in AI, Cloud, Security, and Digital Transformation.
-              </p>
+              <div className="max-w-xl">
+                <p className="text-xl text-gray-400 mb-8 leading-relaxed">
+                  Empowering enterprises with cutting-edge solutions in Cloud Infrastructure, Security, and Digital Transformation.
+                </p>
 
-              <div className="flex flex-wrap gap-4">
-                <GlowingButton href="/contact">
-                  Get Started
-                  <ArrowRightIcon className="w-4 h-4 ml-2" />
-                </GlowingButton>
-                <GlowingButton href="/solutions" variant="secondary">
-                  Explore Solutions
-                  <ArrowRightIcon className="w-4 h-4 ml-2" />
-                </GlowingButton>
+                <div className="flex flex-wrap gap-4 mb-8">
+                  <GlowingButton href="/contact" className="bg-[#FF6B2C] hover:bg-[#FF6B2C]/90">
+                    Get Started
+                    <ArrowRightIcon className="w-4 h-4 ml-2" />
+                  </GlowingButton>
+                  <GlowingButton href="/solutions" variant="secondary" className="bg-[#1A2B44] hover:bg-[#243B61] border border-[#FF6B2C]/20">
+                    Explore Solutions
+                    <ArrowRightIcon className="w-4 h-4 ml-2" />
+                  </GlowingButton>
+                </div>
+
+                <div className="flex items-center gap-8">
+                  <div className="flex items-center gap-2">
+                    <CheckIcon className="w-5 h-5 text-[#FF6B2C]" />
+                    <span className="text-gray-400">Enterprise-ready</span>
+                  </div>
+                  <div className="flex items-center gap-2">
+                    <CheckIcon className="w-5 h-5 text-[#FF6B2C]" />
+                    <span className="text-gray-400">Cloud-native</span>
+                  </div>
+                  <div className="flex items-center gap-2">
+                    <CheckIcon className="w-5 h-5 text-[#FF6B2C]" />
+                    <span className="text-gray-400">Secure by design</span>
+                  </div>
+                </div>
               </div>
-          </motion.div>
+            </motion.div>
 
-            {/* Hero Illustration */}
+            {/* Desktop Hero Illustration */}
             <motion.div 
-              className="relative"
               initial={{ opacity: 0, scale: 0.95 }}
-              animate={{ opacity: 1, scale: 1 }}
-              transition={{ duration: 0.5 }}
+              whileInView={{ opacity: 1, scale: 1 }}
+              viewport={{ once: true }}
+              className="lg:col-span-6 relative hidden lg:block order-1 lg:order-2"
             >
-              <div className="relative aspect-square">
-              <Image
-                  src="/images/illustrations/home/hero.svg"
+              <div className="relative aspect-[4/3]">
+                <div className="absolute inset-0 bg-gradient-to-br from-[#FF6B2C]/10 to-[#3B82F6]/10 rounded-3xl" />
+                <Image
+                  src="/images/illustrations/hero-enterprise.svg"
                   alt="Enterprise Technology Solutions"
-                fill
-                className="object-contain"
+                  fill
+                  className="object-contain p-8"
                   priority
                 />
-                    </div>
-                                </motion.div>
-                            </div>
-                                </div>
+              </div>
+            </motion.div>
+          </div>
+        </div>
       </section>
 
       {/* Client Logos Section */}
@@ -168,24 +207,366 @@ export default function Home() {
         </div>
       </section>
 
-      {/* End-to-End Solution Section */}
-      <div className="relative py-24">
+      {/* Our Approach Section */}
+      <section className="py-24 relative overflow-hidden">
+        <div className="absolute inset-0">
+          <div className="absolute inset-0 bg-[#0A1628]" />
+          <div className="absolute inset-0 bg-[url('/images/noise.png')] opacity-5" />
+          <motion.div 
+            className="absolute inset-0"
+            animate={{ 
+              background: [
+                "radial-gradient(600px circle at 0% 0%, rgba(255, 107, 44, 0.1), transparent 70%)",
+                "radial-gradient(600px circle at 100% 100%, rgba(255, 107, 44, 0.05), transparent 70%)",
+              ]
+            }}
+            transition={{ duration: 10, repeat: Infinity, repeatType: "reverse" }}
+          />
+        </div>
+
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative">
-          <EndToEndSolution />
-                        </div>
-                          </div>
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            className="text-center mb-16"
+          >
+            <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-[#1A2B44] text-[#FF6B2C] mb-4">
+              <RocketLaunchIcon className="w-5 h-5" />
+              <span className="text-sm font-medium">Our Approach</span>
+            </div>
+            <h2 className="text-3xl sm:text-4xl font-bold text-white mb-4">
+              Transforming Businesses Through{" "}
+              <span className="text-[#FF6B2C]">Technology Excellence</span>
+            </h2>
+            <p className="text-lg text-gray-400 max-w-2xl mx-auto">
+              We deliver end-to-end solutions that drive innovation and growth across your organization
+            </p>
+          </motion.div>
+
+          {/* Mobile Illustration */}
+          <motion.div
+            initial={{ opacity: 0, scale: 0.95 }}
+            whileInView={{ opacity: 1, scale: 1 }}
+            viewport={{ once: true }}
+            className="relative aspect-square mb-12 lg:hidden"
+          >
+            <Image
+              src="/images/illustrations/approach/hero.svg"
+              alt="Our Approach"
+              fill
+              className="object-contain"
+            />
+          </motion.div>
+
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              className="space-y-6"
+            >
+              <div className="relative">
+                {/* Timeline line with reduced width and more subtle gradient */}
+                <div className="absolute left-6 top-0 bottom-0 w-[2px] bg-gradient-to-b from-[#FF6B2C]/40 to-[#FF6B2C]/10" />
+                {[
+                  {
+                    icon: <LightBulbIcon className="w-6 h-6" />,
+                    title: "Discovery & Strategy",
+                    description: "We analyze your needs and develop a comprehensive roadmap for digital transformation",
+                  },
+                  {
+                    icon: <WrenchScrewdriverIcon className="w-6 h-6" />,
+                    title: "Custom Development",
+                    description: "Our experts build tailored solutions using cutting-edge technologies",
+                  },
+                  {
+                    icon: <ArrowsRightLeftIcon className="w-6 h-6" />,
+                    title: "Integration & Deployment",
+                    description: "Seamless integration with your existing systems and efficient deployment",
+                  },
+                  {
+                    icon: <ChartBarIcon className="w-6 h-6" />,
+                    title: "Optimization & Growth",
+                    description: "Continuous improvement and scaling of solutions to match your growth",
+                  }
+                ].map((item, index) => (
+                  <motion.div
+                    key={item.title}
+                    initial={{ opacity: 0, x: -20 }}
+                    whileInView={{ opacity: 1, x: 0 }}
+                    viewport={{ once: true }}
+                    transition={{ delay: index * 0.2 }}
+                    className="relative pl-12 pb-8 last:pb-0"
+                  >
+                    {/* Timeline Node */}
+                    <div className="absolute left-0 w-12 h-12 flex items-center justify-center rounded-xl bg-[#1A2B44] border border-[#FF6B2C]/20 text-[#FF6B2C]">
+                      {item.icon}
+                    </div>
+                    
+                    {/* Content */}
+                    <div className="bg-[#1A2B44]/50 backdrop-blur-sm rounded-xl p-6 border border-[#243B61] hover:border-[#FF6B2C]/20 transition-all duration-300">
+                      <h3 className="text-lg font-semibold text-white mb-2">
+                        {item.title}
+                      </h3>
+                      <p className="text-gray-400 text-sm">
+                        {item.description}
+                      </p>
+                    </div>
+                  </motion.div>
+                ))}
+              </div>
+
+              <Link 
+                href="/about"
+                className="inline-flex items-center gap-2 px-6 py-3 rounded-lg bg-[#FF6B2C] text-white font-medium hover:opacity-90 transition-opacity"
+              >
+                Learn More About Our Approach
+                <ArrowRightIcon className="w-5 h-5" />
+              </Link>
+            </motion.div>
+
+            {/* Desktop Illustration */}
+            <motion.div
+              initial={{ opacity: 0, scale: 0.95 }}
+              whileInView={{ opacity: 1, scale: 1 }}
+              viewport={{ once: true }}
+              className="relative aspect-square hidden lg:block"
+            >
+              <Image
+                src="/images/illustrations/approach/hero.svg"
+                alt="Our Approach"
+                fill
+                className="object-contain"
+              />
+            </motion.div>
+          </div>
+        </div>
+      </section>
+
+      {/* Procore Tools Section */}
+      <section className="py-24 relative overflow-hidden">
+        <div className="absolute inset-0">
+          <div className="absolute inset-0 bg-gradient-to-br from-orange-500/10 to-emerald-500/10" />
+          <div className="absolute inset-0 bg-[url('/images/noise.png')] opacity-5" />
+        </div>
+        
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative">
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            className="text-center mb-16"
+          >
+            <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-slate-800 text-emerald-500 mb-4">
+              <BuildingOfficeIcon className="w-5 h-5" />
+              <span className="text-sm font-medium">Construction Technology</span>
+            </div>
+            <h2 className="text-3xl sm:text-4xl font-bold text-white mb-4">
+              Enterprise-Grade Procore Integrations
+            </h2>
+            <p className="text-lg text-gray-400 max-w-2xl mx-auto">
+              Connect your critical business systems with Procore to streamline construction management workflows
+            </p>
+          </motion.div>
+
+          {/* Mobile Illustration */}
+          <motion.div
+            initial={{ opacity: 0, scale: 0.95 }}
+            whileInView={{ opacity: 1, scale: 1 }}
+            viewport={{ once: true }}
+            className="relative aspect-square mb-12 lg:hidden"
+          >
+            <div className="absolute top-4 left-1/2 -translate-x-1/2 w-96 h-24 z-10">
+              <Image
+                src="/images/illustrations/procore.png"
+                alt="Procore Logo"
+                fill
+                className="object-contain"
+              />
+            </div>
+            <Image
+              src="/images/illustrations/procore/hero.svg"
+              alt="Procore Integrations"
+              fill
+              className="object-contain"
+            />
+          </motion.div>
+
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              className="space-y-6 order-2 lg:order-1"
+            >
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                <div className="bg-slate-800/50 backdrop-blur-sm rounded-xl p-6 border border-slate-700">
+                  <ServerIcon className="w-8 h-8 text-emerald-500 mb-4" />
+                  <h3 className="text-lg font-semibold mb-2">ERP Systems</h3>
+                  <p className="text-gray-400">Seamless integration with leading ERP solutions</p>
+                </div>
+                <div className="bg-slate-800/50 backdrop-blur-sm rounded-xl p-6 border border-slate-700">
+                  <ChartBarIcon className="w-8 h-8 text-emerald-500 mb-4" />
+                  <h3 className="text-lg font-semibold mb-2">Financial Management</h3>
+                  <p className="text-gray-400">Automated cost tracking and reporting</p>
+                </div>
+                <div className="bg-slate-800/50 backdrop-blur-sm rounded-xl p-6 border border-slate-700">
+                  <ShieldCheckIcon className="w-8 h-8 text-emerald-500 mb-4" />
+                  <h3 className="text-lg font-semibold mb-2">Compliance</h3>
+                  <p className="text-gray-400">Insurance and regulatory compliance tracking</p>
+                </div>
+                <div className="bg-slate-800/50 backdrop-blur-sm rounded-xl p-6 border border-slate-700">
+                  <ArrowsRightLeftIcon className="w-8 h-8 text-emerald-500 mb-4" />
+                  <h3 className="text-lg font-semibold mb-2">Data Sync</h3>
+                  <p className="text-gray-400">Real-time two-way data synchronization</p>
+                </div>
+              </div>
+
+              <Link 
+                href="/solutions/procore-tools"
+                className="inline-flex items-center gap-2 px-6 py-3 rounded-lg bg-emerald-500 text-white font-medium hover:bg-emerald-600 transition-colors"
+              >
+                Explore Integrations
+                <ArrowRightIcon className="w-5 h-5" />
+              </Link>
+            </motion.div>
+
+            {/* Desktop Illustration */}
+            <motion.div
+              initial={{ opacity: 0, scale: 0.95 }}
+              whileInView={{ opacity: 1, scale: 1 }}
+              viewport={{ once: true }}
+              className="relative aspect-square hidden lg:block order-1 lg:order-2"
+            >
+              <div className="absolute top-4 left-1/2 -translate-x-1/2 w-96 h-24 z-10">
+                <Image
+                  src="/images/illustrations/procore.png"
+                  alt="Procore Logo"
+                  fill
+                  className="object-contain"
+                />
+              </div>
+              <Image
+                src="/images/illustrations/procore/hero.svg"
+                alt="Procore Integrations"
+                fill
+                className="object-contain"
+              />
+            </motion.div>
+          </div>
+        </div>
+      </section>
+
+      {/* Solutions Overview */}
+      <SolutionsOverview />
 
       {/* AI Solutions Section */}
-        <AISolutions />
+      <AISolutions />
 
-        {/* Solutions Overview */}
-        <SolutionsOverview />
+      {/* Technology Partners */}
+      <TechnologyPartners />
 
-        {/* Technology Partners */}
-        <TechnologyPartners />
+      {/* Enterprise Integration Solutions Section */}
+      <section className="py-24 relative overflow-hidden">
+        <div className="absolute inset-0">
+          <div className="absolute inset-0 bg-gradient-to-r from-[#3B82F6]/20 to-[#10B981]/20" />
+          <div className="absolute inset-0 bg-[url('/images/noise.png')] opacity-5" />
+        </div>
+        
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative">
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            className="text-center mb-16"
+          >
+            <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-[#1A2B44] text-[#3B82F6] mb-4">
+              <ArrowsRightLeftIcon className="w-5 h-5" />
+              <span className="text-sm font-medium">Enterprise Integration</span>
+            </div>
+            <h2 className="text-3xl sm:text-4xl font-bold text-white mb-4">
+              Enterprise{" "}
+              <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#3B82F6] to-[#10B981]">
+                Integration Solutions
+              </span>
+            </h2>
+            <p className="text-lg text-gray-400 max-w-2xl mx-auto">
+              Connect, synchronize, and automate your business systems with our enterprise-grade integration platform
+            </p>
+          </motion.div>
 
-        {/* Integration Tools Section */}
-        <IntegrationTools />
+          {/* Mobile Illustration */}
+          <motion.div
+            initial={{ opacity: 0, scale: 0.95 }}
+            whileInView={{ opacity: 1, scale: 1 }}
+            viewport={{ once: true }}
+            className="relative aspect-square mb-12 lg:hidden"
+          >
+            <Image
+              src="/images/illustrations/integrations/hero.svg"
+              alt="Enterprise Integration Solutions"
+              fill
+              className="object-contain"
+            />
+          </motion.div>
+
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              className="space-y-6"
+            >
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                <div className="bg-[#1A2B44]/50 backdrop-blur-sm rounded-xl p-6 border border-[#243B61] hover:border-[#3B82F6]/20 transition-colors">
+                  <CloudIcon className="w-8 h-8 text-[#3B82F6] mb-4" />
+                  <h3 className="text-lg font-semibold mb-2">API Integration</h3>
+                  <p className="text-gray-400">Connect and orchestrate APIs across your enterprise ecosystem</p>
+                </div>
+                <div className="bg-[#1A2B44]/50 backdrop-blur-sm rounded-xl p-6 border border-[#243B61] hover:border-[#3B82F6]/20 transition-colors">
+                  <ArrowsRightLeftIcon className="w-8 h-8 text-[#3B82F6] mb-4" />
+                  <h3 className="text-lg font-semibold mb-2">Data Synchronization</h3>
+                  <p className="text-gray-400">Real-time data sync with intelligent conflict resolution</p>
+                </div>
+                <div className="bg-[#1A2B44]/50 backdrop-blur-sm rounded-xl p-6 border border-[#243B61] hover:border-[#3B82F6]/20 transition-colors">
+                  <ServerIcon className="w-8 h-8 text-[#3B82F6] mb-4" />
+                  <h3 className="text-lg font-semibold mb-2">Cloud Connectivity</h3>
+                  <p className="text-gray-400">Seamless integration with major cloud platforms</p>
+                </div>
+                <div className="bg-[#1A2B44]/50 backdrop-blur-sm rounded-xl p-6 border border-[#243B61] hover:border-[#3B82F6]/20 transition-colors">
+                  <CogIcon className="w-8 h-8 text-[#3B82F6] mb-4" />
+                  <h3 className="text-lg font-semibold mb-2">Workflow Automation</h3>
+                  <p className="text-gray-400">Design and deploy automated business processes</p>
+                </div>
+              </div>
+
+              <Link 
+                href="/solutions/integrations"
+                className="inline-flex items-center gap-2 px-6 py-3 rounded-lg bg-gradient-to-r from-[#3B82F6] to-[#10B981] text-white font-medium hover:opacity-90 transition-opacity"
+              >
+                Explore Integration Solutions
+                <ArrowRightIcon className="w-5 h-5" />
+              </Link>
+            </motion.div>
+
+            {/* Desktop Illustration */}
+            <motion.div
+              initial={{ opacity: 0, scale: 0.95 }}
+              whileInView={{ opacity: 1, scale: 1 }}
+              viewport={{ once: true }}
+              className="relative aspect-square hidden lg:block"
+            >
+              <Image
+                src="/images/illustrations/integrations/hero.svg"
+                alt="Enterprise Integration Solutions"
+                fill
+                className="object-contain"
+              />
+            </motion.div>
+          </div>
+        </div>
+      </section>
 
         {/* Featured Case Studies */}
         <section className="py-24 relative overflow-hidden">
@@ -309,7 +690,7 @@ export default function Home() {
             >
               <Link
                 href="/case-studies"
-                className="inline-flex items-center px-6 py-3 rounded-lg bg-gradient-to-r from-[#3B82F6] to-[#60A5FA] text-white font-medium hover:opacity-90 transition-opacity"
+                className="inline-flex items-center px-6 py-3 rounded-lg bg-[#FF6B2C] text-white font-medium hover:opacity-90 transition-opacity"
               >
                 View All Case Studies
                 <ArrowRightIcon className="w-4 h-4 ml-2" />
@@ -317,6 +698,9 @@ export default function Home() {
                           </motion.div>
                           </div>
       </section>
+
+      {/* Staffing Solutions Section */}
+      <StaffingSolutions />
 
       {/* CTA Section */}
         <CTASection />

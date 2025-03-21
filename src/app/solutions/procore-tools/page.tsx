@@ -323,9 +323,11 @@ export default function Page() {
               animate={{ opacity: 1, y: 0 }}
               exit={{ opacity: 0, y: -20 }}
               transition={{ duration: 0.3 }}
-              className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center bg-slate-800/50 backdrop-blur-sm rounded-2xl p-8 border border-slate-700"
+              className="grid grid-cols-1 lg:grid-cols-2 gap-6 lg:gap-12 items-start bg-slate-800/50 backdrop-blur-sm rounded-2xl p-4 sm:p-6 lg:p-8 border border-slate-700"
             >
-              <div>
+              {/* Content Section */}
+              <div className="order-1">
+                {/* Header */}
                 <div className="flex items-center gap-4 mb-6">
                   <div className="p-3 rounded-xl bg-gradient-to-r from-orange-500/10 to-emerald-500/10 text-orange-500 w-16 h-16 relative">
                     <Image
@@ -336,6 +338,43 @@ export default function Page() {
                     />
                   </div>
                   <h3 className="text-2xl font-bold">{currentTool.title}</h3>
+                </div>
+
+                {/* Illustration for Mobile */}
+                <div className="lg:hidden mb-8 h-[250px] sm:h-[300px] bg-slate-800/50 rounded-xl overflow-hidden">
+                  <div className="relative w-full h-full flex items-center justify-center">
+                    <img
+                      src={currentTool.illustration}
+                      alt={currentTool.title}
+                      className="w-full h-full object-contain p-4 sm:p-6"
+                      onError={(e) => {
+                        const img = e.target as HTMLImageElement;
+                        console.error('Image load error details:', {
+                          tool: currentTool.title,
+                          path: currentTool.illustration,
+                          naturalWidth: img.naturalWidth,
+                          naturalHeight: img.naturalHeight,
+                          currentSrc: img.currentSrc,
+                          complete: img.complete,
+                          error: e
+                        });
+                        
+                        // Create fallback content
+                        const fallback = document.createElement('div');
+                        fallback.className = 'flex flex-col items-center justify-center text-slate-500 p-4';
+                        fallback.innerHTML = `
+                          <svg class="w-12 h-12 mb-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 14m-6-6h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z" />
+                          </svg>
+                          <p>Unable to load illustration</p>
+                          <p class="text-sm mt-2">${currentTool.illustration}</p>
+                        `;
+                        
+                        img.style.display = 'none';
+                        img.parentElement?.appendChild(fallback);
+                      }}
+                    />
+                  </div>
                 </div>
 
                 <p className="text-slate-400 text-lg mb-8">
@@ -365,58 +404,41 @@ export default function Page() {
                 </a>
               </div>
 
-              <div className="relative h-[400px] bg-slate-800/50 rounded-xl overflow-hidden">
-                {currentTool && (
-                  <div className="absolute inset-0 flex items-center justify-center">
-                    <img
-                      src={currentTool.illustration}
-                      alt={currentTool.title}
-                      className="max-w-full max-h-full p-4 object-contain"
-                      onError={(e) => {
-                        const img = e.target as HTMLImageElement;
-                        console.error('Image load error details:', {
-                          tool: currentTool.title,
-                          path: currentTool.illustration,
-                          naturalWidth: img.naturalWidth,
-                          naturalHeight: img.naturalHeight,
-                          currentSrc: img.currentSrc,
-                          complete: img.complete,
-                          error: e
-                        });
-                        
-                        // Create fallback content
-                        const fallback = document.createElement('div');
-                        fallback.className = 'flex flex-col items-center justify-center text-slate-500 p-4';
-                        fallback.innerHTML = `
-                          <svg class="w-12 h-12 mb-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 14m-6-6h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z" />
-                          </svg>
-                          <p>Unable to load illustration</p>
-                          <p class="text-sm mt-2">${currentTool.illustration}</p>
-                        `;
-                        
-                        // Replace the image with fallback
-                        img.style.display = 'none';
-                        img.parentElement?.appendChild(fallback);
-                        
-                        // Try to fetch the SVG directly to get more error details
-                        fetch(currentTool.illustration)
-                          .then(response => {
-                            if (!response.ok) {
-                              throw new Error(`HTTP error! status: ${response.status}`);
-                            }
-                            return response.text();
-                          })
-                          .then(text => {
-                            console.log('SVG content loaded successfully');
-                          })
-                          .catch(error => {
-                            console.error('Fetch error:', error);
-                          });
-                      }}
-                    />
-                  </div>
-                )}
+              {/* Illustration Section for Desktop */}
+              <div className="hidden lg:block h-[400px] bg-slate-800/50 rounded-xl overflow-hidden">
+                <div className="relative w-full h-full flex items-center justify-center">
+                  <img
+                    src={currentTool.illustration}
+                    alt={currentTool.title}
+                    className="w-full h-full object-contain p-8"
+                    onError={(e) => {
+                      const img = e.target as HTMLImageElement;
+                      console.error('Image load error details:', {
+                        tool: currentTool.title,
+                        path: currentTool.illustration,
+                        naturalWidth: img.naturalWidth,
+                        naturalHeight: img.naturalHeight,
+                        currentSrc: img.currentSrc,
+                        complete: img.complete,
+                        error: e
+                      });
+                      
+                      // Create fallback content
+                      const fallback = document.createElement('div');
+                      fallback.className = 'flex flex-col items-center justify-center text-slate-500 p-4';
+                      fallback.innerHTML = `
+                        <svg class="w-12 h-12 mb-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 14m-6-6h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z" />
+                        </svg>
+                        <p>Unable to load illustration</p>
+                        <p class="text-sm mt-2">${currentTool.illustration}</p>
+                      `;
+                      
+                      img.style.display = 'none';
+                      img.parentElement?.appendChild(fallback);
+                    }}
+                  />
+                </div>
               </div>
             </motion.div>
           )}

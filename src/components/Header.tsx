@@ -1,14 +1,191 @@
 'use client'
 
-import React, { useState, useEffect } from 'react'
+import React, { useState, useEffect, useRef } from 'react'
 import Image from 'next/image'
-import { ArrowRightIcon } from '@heroicons/react/24/solid'
+import { ArrowRightIcon, MagnifyingGlassIcon, XMarkIcon } from '@heroicons/react/24/solid'
 import { motion, AnimatePresence } from 'framer-motion'
+
+type SearchResult = {
+  title: string;
+  type: 'case-study' | 'solution' | 'partner' | 'tool' | 'page';
+  url: string;
+  keywords: string[];
+  description?: string;
+};
 
 export default function Header() {
   const [prevScrollPos, setPrevScrollPos] = useState(0)
   const [visible, setVisible] = useState(true)
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false)
+  const [isSearchOpen, setIsSearchOpen] = useState(false)
+  const [searchQuery, setSearchQuery] = useState('')
+  const [searchResults, setSearchResults] = useState<SearchResult[]>([])
+  const searchRef = useRef<HTMLDivElement>(null)
+
+  // Comprehensive search data
+  const searchData: SearchResult[] = [
+    // Solutions
+    { 
+      title: 'Apps & Automation',
+      type: 'solution',
+      url: '/solutions/apps-automation',
+      keywords: ['automation', 'applications', 'software development', 'digital transformation', 'enterprise apps'],
+      description: 'Custom application development and automation solutions for enterprises'
+    },
+    { 
+      title: 'DevOps Solutions',
+      type: 'solution',
+      url: '/solutions/devops',
+      keywords: ['ci/cd', 'automation', 'kubernetes', 'docker', 'infrastructure as code', 'devsecops'],
+      description: 'End-to-end DevOps implementation and automation'
+    },
+    {
+      title: 'IT Services',
+      type: 'solution',
+      url: '/solutions/it-services',
+      keywords: ['managed services', 'it support', 'infrastructure', 'help desk', 'technical support'],
+      description: 'Comprehensive IT services and support for enterprises'
+    },
+    {
+      title: 'Infrastructure Solutions',
+      type: 'solution',
+      url: '/solutions/infrastructure',
+      keywords: ['cloud', 'networking', 'servers', 'storage', 'data center', 'infrastructure management'],
+      description: 'Enterprise infrastructure solutions and management'
+    },
+    {
+      title: 'Security Solutions',
+      type: 'solution',
+      url: '/solutions/security',
+      keywords: ['cybersecurity', 'network security', 'data protection', 'compliance', 'security assessment'],
+      description: 'Enterprise security solutions and cybersecurity services'
+    },
+    {
+      title: 'Business Intelligence',
+      type: 'solution',
+      url: '/solutions/business-intelligence',
+      keywords: ['analytics', 'data visualization', 'reporting', 'dashboards', 'insights'],
+      description: 'Business intelligence and analytics solutions'
+    },
+    { 
+      title: 'AI Solutions',
+      type: 'solution',
+      url: '/solutions/ai',
+      keywords: ['artificial intelligence', 'machine learning', 'automation', 'data analytics', 'predictive analysis'],
+      description: 'Enterprise AI solutions for automation and intelligent decision making'
+    },
+    {
+      title: 'Microsoft Solutions',
+      type: 'solution',
+      url: '/solutions/microsoft-solutions',
+      keywords: ['microsoft', 'azure', 'office 365', 'sharepoint', 'dynamics', 'power platform'],
+      description: 'Microsoft technology solutions and implementations'
+    },
+    {
+      title: 'Enterprise Integration',
+      type: 'solution',
+      url: '/solutions/integrations',
+      keywords: ['api integration', 'data sync', 'erp', 'system integration', 'workflow automation'],
+      description: 'Connect and synchronize your enterprise systems'
+    },
+    {
+      title: 'Construction Solutions',
+      type: 'solution',
+      url: '/solutions/construction',
+      keywords: ['construction', 'procore', 'project management', 'construction tech', 'building'],
+      description: 'Technology solutions for the construction industry'
+    },
+    {
+      title: 'Blockchain Solutions',
+      type: 'solution',
+      url: '/solutions/blockchain',
+      keywords: ['blockchain', 'smart contracts', 'web3', 'cryptocurrency', 'distributed ledger'],
+      description: 'Enterprise blockchain solutions and implementations'
+    },
+    {
+      title: 'Staffing Solutions',
+      type: 'solution',
+      url: '/solutions/staffing',
+      keywords: ['it staffing', 'talent search', 'recruitment', 'team augmentation', 'managed teams'],
+      description: 'IT staffing and talent solutions for enterprises'
+    },
+
+    // Case Studies
+    {
+      title: 'AI-Enhanced Clinical Trials Platform',
+      type: 'case-study',
+      url: '/case-studies/clinical-trials',
+      keywords: ['healthcare', 'ai/ml', 'clinical trials', 'automation', 'medical'],
+      description: 'Intelligent platform for automated complexity scoring in clinical trials'
+    },
+    {
+      title: 'DevOps Transformation for Spotmentor',
+      type: 'case-study',
+      url: '/case-studies/spotmentor-devops',
+      keywords: ['devops', 'aws', 'kubernetes', 'ci/cd', 'automation'],
+      description: 'Comprehensive DevOps implementation with automated pipelines'
+    },
+    {
+      title: 'Secure FinTech Infrastructure',
+      type: 'case-study',
+      url: '/case-studies/alpha-fortress',
+      keywords: ['fintech', 'security', 'devops', 'aws', 'zero-trust'],
+      description: 'Zero-trust architecture implementation for fintech'
+    },
+    {
+      title: 'Construction Management Platform',
+      type: 'case-study',
+      url: '/case-studies/construction-platform',
+      keywords: ['construction', 'procore', 'project management', 'integration'],
+      description: 'Integrated construction management platform implementation'
+    },
+
+    // Tools & Products
+    {
+      title: 'Procore Integration Tools',
+      type: 'tool',
+      url: '/solutions/procore-tools',
+      keywords: ['procore', 'construction', 'erp', 'integration', 'automation'],
+      description: 'Enterprise-grade Procore integration solutions'
+    },
+    {
+      title: 'Automation Tools',
+      type: 'tool',
+      url: '/tools/automation',
+      keywords: ['rpa', 'workflow', 'business process', 'automation', 'integration'],
+      description: 'Business process automation tools and solutions'
+    },
+
+    // Company Pages
+    {
+      title: 'About Us',
+      type: 'page',
+      url: '/about',
+      keywords: ['company', 'team', 'mission', 'values', 'expertise'],
+      description: 'Learn about our company and mission'
+    },
+    {
+      title: 'Case Studies',
+      type: 'page',
+      url: '/case-studies',
+      keywords: ['portfolio', 'projects', 'success stories', 'implementations'],
+      description: 'Explore our successful client implementations'
+    },
+    {
+      title: 'Careers',
+      type: 'page',
+      url: '/careers',
+      keywords: ['jobs', 'opportunities', 'employment', 'work', 'positions'],
+      description: 'Join our team of technology experts'
+    },
+    {
+      title: 'Contact',
+      type: 'page',
+      url: '/contact',
+      keywords: ['contact', 'support', 'sales', 'inquiry', 'help'],
+      description: 'Get in touch with our team'
+    }
+  ];
 
   useEffect(() => {
     const handleScroll = () => {
@@ -50,6 +227,55 @@ export default function Header() {
     }
   }, [isMobileMenuOpen])
 
+  useEffect(() => {
+    const handleClickOutside = (event: MouseEvent) => {
+      if (searchRef.current && !searchRef.current.contains(event.target as Node)) {
+        setIsSearchOpen(false)
+      }
+    }
+    document.addEventListener('mousedown', handleClickOutside)
+    return () => document.removeEventListener('mousedown', handleClickOutside)
+  }, [])
+
+  const handleSearch = (query: string) => {
+    setSearchQuery(query);
+    if (query.trim() === '') {
+      setSearchResults([]);
+      return;
+    }
+
+    // Enhanced search logic
+    const searchTerms = query.toLowerCase().split(' ');
+    const filtered = searchData.filter(item => {
+      const titleMatch = item.title.toLowerCase().includes(query.toLowerCase());
+      const keywordMatch = item.keywords.some(keyword =>
+        searchTerms.some(term => keyword.toLowerCase().includes(term))
+      );
+      const descriptionMatch = item.description?.toLowerCase().includes(query.toLowerCase());
+      
+      return titleMatch || keywordMatch || descriptionMatch;
+    });
+
+    // Sort results by relevance
+    const sortedResults = filtered.sort((a, b) => {
+      const aTitle = a.title.toLowerCase();
+      const bTitle = b.title.toLowerCase();
+      const queryLower = query.toLowerCase();
+      
+      // Exact matches first
+      if (aTitle === queryLower && bTitle !== queryLower) return -1;
+      if (bTitle === queryLower && aTitle !== queryLower) return 1;
+      
+      // Starts with query next
+      if (aTitle.startsWith(queryLower) && !bTitle.startsWith(queryLower)) return -1;
+      if (bTitle.startsWith(queryLower) && !aTitle.startsWith(queryLower)) return 1;
+      
+      return 0;
+    });
+
+    setSearchResults(sortedResults.slice(0, 8)); // Limit to top 8 results
+  };
+
   const navigationLinks = [
     { href: '/solutions', label: 'Solutions' },
     { href: '/about', label: 'About Us' },
@@ -82,7 +308,64 @@ export default function Header() {
             </a>
 
             {/* Desktop Navigation Menu */}
-            <nav className="hidden md:flex items-center gap-8">
+            <nav className="hidden md:flex items-center gap-6">
+              {/* Search Bar */}
+              <div ref={searchRef} className="relative">
+                <div className={`flex items-center transition-all duration-300 ${isSearchOpen ? 'w-64' : 'w-48'}`}>
+                  <div className="relative flex-1">
+                    <input
+                      type="text"
+                      placeholder="Search..."
+                      value={searchQuery}
+                      onChange={(e) => handleSearch(e.target.value)}
+                      onFocus={() => setIsSearchOpen(true)}
+                      className="w-full bg-[#1A2B44] text-sm text-white placeholder-gray-400 rounded-lg pl-8 pr-8 py-2 focus:outline-none focus:ring-1 focus:ring-[#FF6B2C]"
+                    />
+                    <MagnifyingGlassIcon className="absolute left-2 top-1/2 -translate-y-1/2 w-4 h-4 text-gray-400" />
+                    {searchQuery && (
+                      <button
+                        onClick={() => handleSearch('')}
+                        className="absolute right-2 top-1/2 -translate-y-1/2"
+                      >
+                        <XMarkIcon className="w-4 h-4 text-gray-400 hover:text-white" />
+                      </button>
+                    )}
+                  </div>
+                </div>
+                {/* Search Results Dropdown */}
+                <AnimatePresence>
+                  {isSearchOpen && searchResults.length > 0 && (
+                    <motion.div
+                      initial={{ opacity: 0, y: -10 }}
+                      animate={{ opacity: 1, y: 0 }}
+                      exit={{ opacity: 0, y: -10 }}
+                      className="absolute right-0 mt-2 w-80 bg-[#1A2B44] border border-[#243B61] rounded-lg shadow-lg overflow-hidden"
+                    >
+                      {searchResults.map((result, index) => (
+                        <a
+                          key={index}
+                          href={result.url}
+                          className="block px-4 py-3 hover:bg-[#243B61] transition-colors"
+                          onClick={() => setIsSearchOpen(false)}
+                        >
+                          <div className="flex items-start justify-between">
+                            <div>
+                              <span className="font-medium text-white">{result.title}</span>
+                              <span className="ml-2 text-xs text-[#FF6B2C] capitalize">({result.type})</span>
+                              {result.description && (
+                                <p className="text-sm text-gray-400 mt-1 line-clamp-2">
+                                  {result.description}
+                                </p>
+                              )}
+                            </div>
+                            <ArrowRightIcon className="w-4 h-4 text-gray-400 mt-1 group-hover:text-white" />
+                          </div>
+                        </a>
+                      ))}
+                    </motion.div>
+                  )}
+                </AnimatePresence>
+              </div>
               {navigationLinks.map((link) => (
                 <a 
                   key={link.href}
