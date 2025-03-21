@@ -459,6 +459,69 @@ export default function Header() {
                 transition={{ delay: 0.1 }}
               >
                 <div className="space-y-6">
+                  {/* Mobile Search Bar */}
+                  <motion.div
+                    initial={{ opacity: 0, y: 20 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    transition={{ delay: 0.1 }}
+                    className="relative"
+                  >
+                    <div className="relative">
+                      <input
+                        type="text"
+                        placeholder="Search..."
+                        value={searchQuery}
+                        onChange={(e) => handleSearch(e.target.value)}
+                        className="w-full bg-[#1A2B44] text-white placeholder-gray-400 rounded-lg pl-10 pr-10 py-3 focus:outline-none focus:ring-1 focus:ring-[#FF6B2C] text-base"
+                      />
+                      <MagnifyingGlassIcon className="absolute left-3 top-1/2 -translate-y-1/2 w-5 h-5 text-gray-400" />
+                      {searchQuery && (
+                        <button
+                          onClick={() => handleSearch('')}
+                          className="absolute right-3 top-1/2 -translate-y-1/2"
+                        >
+                          <XMarkIcon className="w-5 h-5 text-gray-400 hover:text-white" />
+                        </button>
+                      )}
+                    </div>
+                    {/* Mobile Search Results */}
+                    <AnimatePresence>
+                      {searchResults.length > 0 && (
+                        <motion.div
+                          initial={{ opacity: 0, y: -10 }}
+                          animate={{ opacity: 1, y: 0 }}
+                          exit={{ opacity: 0, y: -10 }}
+                          className="absolute left-0 right-0 mt-2 bg-[#1A2B44] border border-[#243B61] rounded-lg shadow-lg overflow-hidden max-h-[60vh] overflow-y-auto"
+                        >
+                          {searchResults.map((result, index) => (
+                            <a
+                              key={index}
+                              href={result.url}
+                              className="block px-4 py-3 hover:bg-[#243B61] transition-colors"
+                              onClick={() => {
+                                setSearchQuery('');
+                                toggleMobileMenu();
+                              }}
+                            >
+                              <div className="flex items-start justify-between">
+                                <div>
+                                  <span className="font-medium text-white">{result.title}</span>
+                                  <span className="ml-2 text-xs text-[#FF6B2C] capitalize">({result.type})</span>
+                                  {result.description && (
+                                    <p className="text-sm text-gray-400 mt-1 line-clamp-2">
+                                      {result.description}
+                                    </p>
+                                  )}
+                                </div>
+                                <ArrowRightIcon className="w-4 h-4 text-gray-400 mt-1 group-hover:text-white" />
+                              </div>
+                            </a>
+                          ))}
+                        </motion.div>
+                      )}
+                    </AnimatePresence>
+                  </motion.div>
+
                   {navigationLinks.map((link, index) => (
                     <motion.div
                       key={link.href}
