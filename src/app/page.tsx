@@ -42,9 +42,9 @@ export default function Home() {
   return (
     <main className="bg-[#0A1628] min-h-screen">
       {/* Main Content */}
-      <div className="pt-24 sm:pt-20">
+      <div className="pt-16 sm:pt-12">
       {/* Hero Section */}
-      <section className="relative py-40 lg:py-48 overflow-hidden">
+      <section className="relative py-24 lg:py-32 overflow-hidden">
         {/* Background Effects */}
         <div className="absolute inset-0">
           <div className="absolute inset-0 bg-gradient-to-br from-[#FF6B2C]/20 to-[#3B82F6]/20" />
