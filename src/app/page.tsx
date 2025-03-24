@@ -117,21 +117,6 @@ export default function Home() {
                     <ArrowRightIcon className="w-4 h-4 ml-2" />
                   </GlowingButton>
                 </div>
-
-                <div className="flex items-center gap-8">
-                  <div className="flex items-center gap-2">
-                    <CheckIcon className="w-5 h-5 text-[#FF6B2C]" />
-                    <span className="text-gray-400">Enterprise-ready</span>
-                  </div>
-                  <div className="flex items-center gap-2">
-                    <CheckIcon className="w-5 h-5 text-[#FF6B2C]" />
-                    <span className="text-gray-400">Cloud-native</span>
-                  </div>
-                  <div className="flex items-center gap-2">
-                    <CheckIcon className="w-5 h-5 text-[#FF6B2C]" />
-                    <span className="text-gray-400">Secure by design</span>
-                  </div>
-                </div>
               </div>
             </motion.div>
 
